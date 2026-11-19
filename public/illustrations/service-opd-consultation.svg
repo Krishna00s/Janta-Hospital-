@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" fill="none" width="100%" height="100%">
+  <!-- Soft Mint Backdrop Card -->
+  <rect x="15" y="15" width="470" height="320" rx="28" fill="#EBF6F2" stroke="#D1E8DF" stroke-width="2" />
+  
+  <!-- Subtle Organic Wave in Background -->
+  <path d="M 15 250 C 140 210, 260 270, 360 220 C 420 190, 460 220, 485 210 L 485 335 L 15 335 Z" fill="#E0F3EC" opacity="0.7" />
+
+  <!-- Background Clinical Window / Caduceus / Wall Accent -->
+  <g transform="translate(210, 40)" opacity="0.4">
+    <circle cx="40" cy="40" r="35" fill="#D5EFE5" />
+    <path d="M 40 18 L 40 62 M 18 40 L 62 40" stroke="#0A5C4F" stroke-width="5" stroke-linecap="round" />
+  </g>
+
+  <!-- Consultation Desk -->
+  <!-- Desk Base Shadow -->
+  <ellipse cx="250" cy="295" rx="190" ry="14" fill="#0A5C4F" opacity="0.1" />
+  <!-- Desk Surface -->
+  <path d="M 100 240 L 400 240 L 415 258 L 85 258 Z" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="3" />
+  <!-- Desk Front Panel -->
+  <path d="M 105 258 L 395 258 L 390 295 L 110 295 Z" fill="#D5EBE2" stroke="#0A5C4F" stroke-width="3" />
+  <!-- Center Desk Modesty Panel -->
+  <rect x="180" y="260" width="140" height="32" rx="4" fill="#E8F6F1" stroke="#A9DCCB" stroke-width="1.5" />
+  <!-- Medical Cross on Desk -->
+  <path d="M 250 268 L 250 284 M 242 276 L 258 276" stroke="#0A5C4F" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Doctor (Left Side, Seated Behind Desk) -->
+  <g transform="translate(90, 100)">
+    <!-- Doctor Backrest -->
+    <rect x="25" y="70" width="70" height="90" rx="12" fill="#149E86" opacity="0.2" />
+    <!-- Doctor Body / White Coat -->
+    <path d="M 15 200 C 15 155, 35 125, 60 115 L 80 145 L 100 115 C 125 125, 145 155, 145 200 Z" fill="#FFFFFF" stroke="#D5E6DF" stroke-width="2" />
+    <path d="M 15 200 C 15 155, 35 125, 68 115 L 78 200 Z" fill="#F8FCFA" />
+    <path d="M 145 200 C 145 155, 125 125, 92 115 L 82 200 Z" fill="#EDF6F2" />
+    <!-- Teal Scrub V-Neck -->
+    <path d="M 68 115 L 80 138 L 92 115 L 88 95 L 72 95 Z" fill="#0A5C4F" />
+
+    <!-- Stethoscope -->
+    <path d="M 62 105 C 60 135, 66 160, 75 170 L 78 185" stroke="#0A5C4F" stroke-width="4" stroke-linecap="round" fill="none" />
+    <path d="M 98 105 C 100 135, 94 155, 82 172" stroke="#0A5C4F" stroke-width="4" stroke-linecap="round" fill="none" />
+    <circle cx="78" cy="190" r="8" fill="#75BCA5" stroke="#0A5C4F" stroke-width="2" />
+
+    <!-- Neck -->
+    <rect x="72" y="75" width="16" height="25" rx="3" fill="#E5B896" />
+
+    <!-- Head (Faceless) -->
+    <path d="M 60 55 C 60 85, 100 85, 100 55 C 100 25, 60 25, 60 55 Z" fill="#F0C7A8" />
+    <!-- Hair -->
+    <path d="M 58 52 C 56 32, 68 15, 80 15 C 92 15, 104 32, 102 52 C 98 32, 90 26, 80 26 C 70 26, 62 32, 58 52 Z" fill="#1C302B" />
+
+    <!-- Doctor's Right Arm on Desk holding Pen -->
+    <path d="M 95 150 C 115 155, 130 155, 150 150 L 155 160 C 135 168, 115 168, 92 160 Z" fill="#FFFFFF" stroke="#D5E6DF" stroke-width="1.5" />
+    <path d="M 148 148 C 155 148, 158 154, 152 158 Z" fill="#E5B896" />
+    <line x1="148" y1="160" x2="160" y2="148" stroke="#0A5C4F" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- Items on Consultation Desk -->
+  <!-- Prescription Pad -->
+  <g transform="translate(230, 222) rotate(-5)">
+    <rect x="0" y="0" width="45" height="34" rx="3" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="1.5" />
+    <path d="M 6 8 L 6 14 M 3 11 L 9 11" stroke="#0A5C4F" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="14" y1="9" x2="38" y2="9" stroke="#149E86" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="6" y1="18" x2="38" y2="18" stroke="#CBDDD6" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="6" y1="23" x2="34" y2="23" stroke="#CBDDD6" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="6" y1="28" x2="28" y2="28" stroke="#CBDDD6" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Stethoscope on Desk / Stand -->
+  <g transform="translate(290, 225)">
+    <!-- Small Medicine / Sanitizer Pump Bottle -->
+    <rect x="0" y="4" width="14" height="22" rx="3" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="1.5" />
+    <rect x="4" y="0" width="6" height="4" fill="#75BCA5" />
+    <line x1="2" y1="2" x2="12" y2="2" stroke="#0A5C4F" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="7" y1="0" x2="7" y2="4" stroke="#0A5C4F" stroke-width="1.5" />
+  </g>
+
+  <!-- Patient (Right Side, Seated Facing Doctor) -->
+  <g transform="translate(325, 115)">
+    <!-- Patient Backrest -->
+    <rect x="35" y="75" width="55" height="85" rx="10" fill="#A9DCCB" opacity="0.3" />
+    <!-- Patient Body / Attire (Comfortable Sage/Mint Kurta) -->
+    <path d="M 15 195 C 15 155, 30 130, 55 120 L 70 145 L 85 120 C 110 130, 125 155, 125 195 Z" fill="#A9DCCB" stroke="#0A5C4F" stroke-width="2" />
+    <path d="M 15 195 C 15 155, 30 130, 60 120 L 68 195 Z" fill="#BDE5D7" />
+    
+    <!-- Neck -->
+    <rect x="62" y="85" width="16" height="22" rx="3" fill="#E0B18E" />
+
+    <!-- Head (Faceless Silhouette) -->
+    <path d="M 52 62 C 52 90, 88 90, 88 62 C 88 34, 52 34, 52 62 Z" fill="#E8BFA0" />
+    <!-- Hair -->
+    <path d="M 50 60 C 48 40, 60 25, 70 25 C 80 25, 92 40, 90 60 C 86 42, 78 35, 70 35 C 62 35, 54 42, 50 60 Z" fill="#2C3E3A" />
+
+    <!-- Patient Hand Resting on Desk -->
+    <path d="M 10 155 C -5 155, -15 160, -25 155 L -28 165 C -15 170, -2 165, 10 162 Z" fill="#A9DCCB" stroke="#0A5C4F" stroke-width="1.5" />
+    <circle cx="-28" cy="160" r="5" fill="#E0B18E" />
+  </g>
+
+  <!-- Speech / Consultation Dialogue Accent (Top Center) -->
+  <g transform="translate(225, 75)">
+    <rect x="0" y="0" width="50" height="28" rx="8" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2" />
+    <polygon points="15,28 20,35 25,28" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2" />
+    <line x1="15" y1="27" x2="25" y2="27" stroke="#FFFFFF" stroke-width="3" />
+    <circle cx="15" cy="14" r="3" fill="#149E86" />
+    <circle cx="25" cy="14" r="3" fill="#149E86" />
+    <circle cx="35" cy="14" r="3" fill="#149E86" />
+  </g>
+</svg>

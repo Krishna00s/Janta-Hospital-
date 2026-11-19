@@ -20,11 +20,11 @@ export const hospitalConfig = {
 
   locationName: "LOHARDAGA",
   eyebrow: "JANTA HOSPITAL · LOHARDAGA",
-  draftHeadline: "Care, closer to home.",
+  draftHeadline: "आपकी सेहत, हमारी ज़िम्मेदारी।",
 
-  // Factual Short Intro
+  // Factual Short Intro in accessible Hindi/English
   shortIntro:
-    "A community healthcare center serving Lohardaga, Jharkhand with 24-hour emergency medical care, general outpatient consultations, and patient-first clinical guidance.",
+    "Lohardaga के Palmerganj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।",
 
   // Contact Information (Official Hospital Line: +91 96938 21174)
   contact: {
@@ -32,7 +32,7 @@ export const hospitalConfig = {
       value: "+919693821174",
       rawDigits: "9693821174",
       formatted: "+91 96938 21174",
-      display: "Call Hospital",
+      display: "अभी Call करें",
       alternatePhones: ["9308348608", "8340678334", "8825389125"],
       status: "verified" as const,
       source: "Hospital administration confirmed primary contact line",
@@ -40,7 +40,7 @@ export const hospitalConfig = {
     mapsUrl: {
       value:
         process.env.NEXT_PUBLIC_HOSPITAL_MAPS_URL ||
-        "https://maps.google.com/?q=Janta+Hospital+Palmerganj+Lohardaga+Jharkhand",
+        "https://www.google.com/maps/search/?api=1&query=Janta+Hospital,+Behind+Head+Post+Office,+Palmerganj,+Lohardaga,+Jharkhand+835302",
       status: "verified" as const,
     },
     whatsapp: {
@@ -59,11 +59,11 @@ export const hospitalConfig = {
     country: "India",
     area: "Palmerganj",
     landmark: "Behind Head Post Office / Near Bus Stand",
-    cardTitle: "Near Bus Stand / Palmerganj",
-    cardSubtext: "Lohardaga, Jharkhand – 835302",
+    cardTitle: "बस स्टैंड के पास, Palmerganj",
+    cardSubtext: "लोहरदगा, झारखंड – 835302",
     fullAddress: "Palmerganj, Behind Head Post Office, Lohardaga, Jharkhand – 835302",
     directionsNote:
-      "Conveniently situated in Palmerganj, directly behind the Head Post Office and a short walking distance from the Lohardaga Main Bus Stand.",
+      "Palmerganj में Head Post Office के ठीक पीछे, Lohardaga Main Bus Stand से केवल 5 मिनट की पैदल दूरी पर।",
     status: "verified" as const,
   },
 
@@ -89,34 +89,34 @@ export const hospitalConfig = {
   // Real Imagery Assets (All derived directly from authorized hospital photography)
   imagery: {
     exterior: {
-      src: "/images/janta-hospital-exterior.webp",
-      fallbackSrc: "/images/janta-hospital-exterior.png",
-      alt: "Janta Hospital modern facility exterior with spiral staircase and illuminated signage in Palmerganj, Lohardaga",
-      width: 1672,
-      height: 941,
+      src: "/images/janta-hospital-night-exterior.webp",
+      fallbackSrc: "/images/janta-hospital-night-exterior.png",
+      alt: "Nighttime illuminated facade and entrance of Janta Hospital Lohardaga with active 24-hour reception and pharmacy",
+      width: 1536,
+      height: 1024,
     },
     gallery: {
       entrance: {
-        src: "/images/gallery-entrance.webp",
-        alt: "Front veranda, reception entryway, and ground-floor access at Janta Hospital, Lohardaga",
+        src: "/illustrations/facility-reception-desk.svg",
+        alt: "Ground-floor reception entryway and patient inquiry desk illustration at Janta Hospital, Lohardaga",
         caption: "Main Veranda & Reception Entry",
         tag: "Ground Floor Access",
       },
       staircase: {
-        src: "/images/gallery-staircase.webp",
-        alt: "Architectural spiral staircase and warm exterior lighting at Janta Hospital",
-        caption: "Architectural Spiral Staircase",
-        tag: "Facility Architecture",
+        src: "/illustrations/facility-emergency-care.svg",
+        alt: "24-Hour emergency care station and patient vital signs monitor illustration",
+        caption: "24-Hour Emergency Care Station",
+        tag: "Emergency Facility",
       },
       signboard: {
-        src: "/images/gallery-signboard.webp",
-        alt: "Official illuminated Janta Hospital 24-hour medical signboard in Palmerganj, Lohardaga",
-        caption: "24-Hour Emergency Medical Signboard",
-        tag: "Verified Landmark",
+        src: "/illustrations/facility-clinical-ward.svg",
+        alt: "Clinical observation ward and inpatient setup illustration at Janta Hospital",
+        caption: "Clinical Care & Ward Setup",
+        tag: "Patient Care",
       },
       pharmacy: {
-        src: "/images/gallery-pharmacy.webp",
-        alt: "On-site medicine dispensary counter at Janta Hospital front porch",
+        src: "/illustrations/facility-pharmacy-dispensary.svg",
+        alt: "On-site medicine dispensary counter illustration at Janta Hospital front porch",
         caption: "On-Site Pharmacy & Medicine Counter",
         tag: "Essential Pharmacy",
       },
@@ -127,95 +127,95 @@ export const hospitalConfig = {
   services: [
     {
       id: "emergency-care",
-      title: "24-Hour Emergency Care",
+      title: "24 घंटे Emergency इलाज",
       shortDescription:
-        "Round-the-clock urgent clinical attention, vital stabilization, and immediate acute care for residents of Lohardaga.",
+        "अचानक तबीयत बिगड़ने, चोट या दर्द में तुरंत प्राथमिक इलाज और देखभाल।",
       status: "verified" as const,
-      badge: "24 / 7 Available",
+      badge: "24 घंटे Emergency",
       icon: "activity",
-      actionText: "Emergency Line",
+      actionText: "Emergency Call",
       actionHref: "tel:+919693821174",
     },
     {
       id: "opd-consultations",
-      title: "Outpatient (OPD) Consultations",
+      title: "Doctor से मिलें (OPD)",
       shortDescription:
-        "Daily clinical consultations covering general illness, follow-ups, and comprehensive medical diagnosis.",
+        "बुखार, सर्दी, पेट दर्द और सामान्य बीमारियों के लिए रोज़ाना सुबह-शाम Doctor से सलाह।",
       status: "verified" as const,
       badge: "Daily OPD",
       icon: "stethoscope",
-      actionText: "Inquire Timings",
+      actionText: "समय जानें",
       actionHref: "tel:+919693821174",
     },
     {
       id: "general-medicine",
-      title: "General Medicine & Care",
+      title: "सामान्य स्वास्थ्य और दवा",
       shortDescription:
-        "Diagnosis and evidence-based treatment for acute illnesses, fevers, infections, and chronic lifestyle conditions.",
+        "बीमारियों की सही जाँच, प्राथमिक उपचार और लंबे समय की बीमारियों की देखभाल।",
       status: "verified" as const,
       badge: "Primary Care",
       icon: "heart-pulse",
-      actionText: "Consultation Info",
+      actionText: "जानकारी लें",
       actionHref: "tel:+919693821174",
     },
     {
       id: "pharmacy-counter",
-      title: "On-Site Medicine Counter",
+      title: "Hospital में दवा की दुकान",
       shortDescription:
-        "Front-porch pharmacy counter (दवाई / स्वास्थ्य) providing immediate access to prescribed medications and supplies.",
+        "लिखी गई सभी ज़रूरी दवाएँ और पट्टियाँ सीधे front porch pharmacy counter पर उपलब्ध।",
       status: "verified" as const,
-      badge: "On-Premises",
+      badge: "दवा की दुकान",
       icon: "pill",
-      actionText: "Visit Dispensary",
+      actionText: "दवा काउंटर",
       actionHref: "#location",
     },
     {
       id: "minor-procedures",
-      title: "Clinical Procedures & Dressing",
+      title: "मरहम-पट्टी और Injection",
       shortDescription:
-        "Hygienic wound care, sterile dressing, injections, vital monitoring, and routine clinical procedural support.",
+        "घाव की सफ़ाई, पट्टी बदलना, injection और BP / Sugar की नियमित जाँच।",
       status: "verified" as const,
-      badge: "Clinical Support",
+      badge: "मरहम-पट्टी",
       icon: "band-aid",
-      actionText: "Direct Assistance",
+      actionText: "सीधे मिलें",
       actionHref: "tel:+919693821174",
     },
     {
       id: "patient-guidance",
-      title: "Patient Guidance & Navigation",
+      title: "मरीज़ों की मदद और मार्गदर्शन",
       shortDescription:
-        "Friendly, transparent guidance on consultation schedules, prescription follow-up, and regional medical referrals.",
+        "Doctor का समय, Token और ज़रूरत पड़ने पर Ranchi के बड़े अस्पतालों के लिए सही सलाह।",
       status: "verified" as const,
-      badge: "Patient-First",
+      badge: "मरीज़ों की मदद",
       icon: "compass",
-      actionText: "Speak with Staff",
+      actionText: "बात करें",
       actionHref: "tel:+919693821174",
     },
   ],
 
   // Medical Team & Roster Configuration
   medicalTeam: {
-    title: "Clinical Roster & Consulting Physicians",
+    title: "हमारे Doctors",
     subtitle:
-      "Consulting medical officers and visiting physicians serving Lohardaga with patient-first clinical attentiveness.",
+      "Lohardaga में आपकी सेहत की देखभाल के लिए समर्पित अनुभवी Doctors और Staff।",
     verificationNotice:
-      "Doctor rosters, visiting specialist schedules, and morning/evening OPD timings are updated daily at the reception desk. Call directly to confirm doctor availability before visiting.",
+      "Doctors के मिलने का समय और Token रोज़ सुबह Reception Desk पर तय होते हैं। आने से पहले Phone करके ज़रूर पता कर लें।",
     consultationPhone: "+91 96938 21174",
     departments: [
       {
         role: "General Medicine & OPD",
-        availability: "Morning & Evening Hours",
-        scope: "Comprehensive adult & pediatric general clinical consultations, triage, and ongoing medical management.",
+        availability: "सुबह और शाम OPD",
+        scope: "बुखार, सर्दी, कमज़ोरी और सामान्य बीमारियों की जाँच और इलाज।",
       },
       {
         role: "24-Hour Emergency Medical Officer",
-        availability: "24 Hours On-Call",
-        scope: "Immediate primary stabilization, acute medical assessment, and trauma evaluation.",
+        availability: "24 घंटे Duty पर",
+        scope: "अचानक चोट या आपातकालीन स्थिति में तुरंत प्राथमिक देखभाल।",
       },
       {
         role: "Visiting Specialists",
-        availability: "Scheduled Consultation Days",
-        scope: "Specialized clinical consultations coordinated through hospital reception.",
+        availability: "तय दिनों पर",
+        scope: "विशेषज्ञ Doctors से सलाह — पहले Token लेना ज़रूरी।",
       },
     ],
   },
@@ -224,38 +224,38 @@ export const hospitalConfig = {
   facilities: [
     {
       id: "fac-entrance",
-      title: "Accessible Ground-Floor Entry",
+      title: "आसान Ground-Floor प्रवेश",
       description:
-        "Front porch with clear visual pathways and ground-level reception to facilitate hassle-free entry for walking and assisted patients.",
-      highlight: "Step & Veranda Access",
+        "मरीज़ों के लिए आसान सीढ़ियाँ, रैंप और बैठने की साफ़-सुथरी जगह।",
+      highlight: "Ground Floor",
     },
     {
       id: "fac-emergency",
-      title: "24-Hour Emergency Response Area",
+      title: "24 घंटे Emergency वार्ड",
       description:
-        "Dedicated clinical response area equipped for immediate assessment, oxygen support, and primary clinical stabilization.",
-      highlight: "24-Hour Active",
+        "ऑक्सीजन, प्राथमिक जाँच और तुरंत इलाज के लिए हमेशा तैयार व्यवस्था।",
+      highlight: "24 घंटे चालू",
     },
     {
       id: "fac-pharmacy",
-      title: "Front-Porch Medicine Dispensary",
+      title: "Hospital में दवा की दुकान",
       description:
-        "Immediate on-site availability of essential medications, surgical dressings, and emergency pharmaceutical supplies.",
-      highlight: "Immediate Dispensing",
+        "Doctor को दिखाने के तुरंत बाद यहीं से सभी ज़रूरी दवाएँ मिल जाती हैं।",
+      highlight: "दवा काउंटर",
     },
     {
       id: "fac-consultation",
-      title: "Clean Outpatient Rooms",
+      title: "साफ़-सुथरे OPD कमरे",
       description:
-        "Sanitized clinical consultation chambers designed for patient privacy, careful examination, and doctor-patient dialogue.",
-      highlight: "Hygienic & Private",
+        "मरीज़ों की सुविधा और एकांत के लिए साफ़ और हवादार कमरे।",
+      highlight: "साफ़ और सुरक्षित",
     },
     {
       id: "fac-location",
-      title: "Centrally Situated in Lohardaga",
+      title: "Lohardaga के मुख्य केंद्र में",
       description:
-        "Located in Palmerganj, directly behind the Head Post Office and near the Bus Stand for rapid local access.",
-      highlight: "Heart of Lohardaga",
+        "Palmerganj में Head Post Office के पीछे और Main Bus Stand के पास।",
+      highlight: "Palmerganj",
     },
   ],
 };

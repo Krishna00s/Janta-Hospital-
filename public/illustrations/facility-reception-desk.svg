@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" fill="none" width="100%" height="100%">
+  <!-- Soft Mint Backdrop Card -->
+  <rect x="15" y="15" width="470" height="320" rx="28" fill="#EBF6F2" stroke="#D1E8DF" stroke-width="2" />
+  
+  <!-- Subtle Organic Wave in Background -->
+  <path d="M 15 250 C 130 200, 240 270, 360 215 C 410 190, 450 215, 485 205 L 485 335 L 15 335 Z" fill="#E0F3EC" opacity="0.7" />
+
+  <!-- Background Architecture Arches & Directional Sign -->
+  <g transform="translate(140, 45)">
+    <!-- Directional Overhead Signboard -->
+    <rect x="30" y="0" width="160" height="36" rx="6" fill="#0A5C4F" />
+    <text x="110" y="18" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="800" font-size="11" letter-spacing="1.5">RECEPTION / पूछताछ</text>
+    <text x="110" y="30" text-anchor="middle" fill="#7CE4C9" font-family="system-ui, sans-serif" font-weight="600" font-size="8" letter-spacing="1">GROUND FLOOR</text>
+    <!-- Suspension cables -->
+    <line x1="60" y1="0" x2="60" y2="-30" stroke="#75BCA5" stroke-width="2" />
+    <line x1="160" y1="0" x2="160" y2="-30" stroke="#75BCA5" stroke-width="2" />
+  </g>
+
+  <!-- Faceless Receptionist Seated Behind Counter -->
+  <g transform="translate(200, 110)">
+    <!-- Scrub / Formal Uniform -->
+    <path d="M 15 120 C 15 90, 30 75, 50 68 L 60 85 L 70 68 C 90 75, 105 90, 105 120 Z" fill="#149E86" stroke="#0A5C4F" stroke-width="2" />
+    <!-- V-neck -->
+    <path d="M 52 68 L 60 80 L 68 68 Z" fill="#0A5C4F" />
+    <!-- Headset Band & Earpiece -->
+    <path d="M 40 35 C 38 18, 50 8, 60 8 C 70 8, 82 18, 80 35" stroke="#0A5C4F" stroke-width="3" fill="none" />
+    <circle cx="40" cy="35" r="5" fill="#0A5C4F" />
+    <path d="M 40 37 C 40 45, 48 48, 54 48" stroke="#0A5C4F" stroke-width="2" fill="none" />
+    <circle cx="55" cy="48" r="2.5" fill="#75BCA5" />
+
+    <!-- Neck -->
+    <rect x="53" y="48" width="14" height="22" rx="3" fill="#E5B896" />
+
+    <!-- Head (Faceless Silhouette) -->
+    <path d="M 45 28 C 45 52, 75 52, 75 28 C 75 8, 45 8, 45 28 Z" fill="#F0C7A8" />
+    <!-- Hair -->
+    <path d="M 43 25 C 41 10, 52 2, 60 2 C 68 2, 79 10, 77 25 C 74 12, 67 6, 60 6 C 53 6, 46 12, 43 25 Z" fill="#1C302B" />
+  </g>
+
+  <!-- Reception Desk Counter -->
+  <!-- Shadow -->
+  <ellipse cx="250" cy="305" rx="195" ry="14" fill="#0A5C4F" opacity="0.12" />
+  <!-- Counter Top Surface -->
+  <path d="M 50 190 L 450 190 L 465 210 L 35 210 Z" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="3" />
+  <!-- Counter Front Panel -->
+  <path d="M 40 210 L 460 210 L 450 300 L 50 300 Z" fill="#D5EBE2" stroke="#0A5C4F" stroke-width="3" />
+  <!-- Decorative Mint Panels on Counter -->
+  <rect x="65" y="222" width="105" height="65" rx="8" fill="#E8F6F1" stroke="#A9DCCB" stroke-width="2" />
+  <rect x="185" y="222" width="130" height="65" rx="8" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2" />
+  <rect x="330" y="222" width="105" height="65" rx="8" fill="#E8F6F1" stroke="#A9DCCB" stroke-width="2" />
+  
+  <!-- Hospital Emblem on Center Desk Panel -->
+  <circle cx="250" cy="254" r="16" fill="#E8F6F1" stroke="#0A5C4F" stroke-width="2" />
+  <path d="M 250 244 L 250 264 M 240 254 L 260 254" stroke="#0A5C4F" stroke-width="4" stroke-linecap="round" />
+
+  <!-- Equipment on Counter -->
+  <!-- 1. Computer Monitor (Left) -->
+  <g transform="translate(75, 125)">
+    <rect x="0" y="0" width="65" height="48" rx="5" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2.5" />
+    <rect x="4" y="4" width="57" height="40" rx="3" fill="#EBF6F2" />
+    <!-- Stand -->
+    <rect x="27" y="48" width="11" height="15" fill="#A9DCCB" stroke="#0A5C4F" stroke-width="2" />
+    <rect x="18" y="62" width="29" height="5" rx="2" fill="#0A5C4F" />
+    <!-- Screen data rows -->
+    <line x1="8" y1="12" x2="35" y2="12" stroke="#0A5C4F" stroke-width="2" />
+    <line x1="8" y1="18" x2="52" y2="18" stroke="#149E86" stroke-width="1.5" />
+    <line x1="8" y1="24" x2="48" y2="24" stroke="#CBDDD6" stroke-width="1.5" />
+    <line x1="8" y1="30" x2="54" y2="30" stroke="#CBDDD6" stroke-width="1.5" />
+  </g>
+
+  <!-- 2. Desk Telephone (Right) -->
+  <g transform="translate(355, 145)">
+    <!-- Base -->
+    <rect x="0" y="15" width="50" height="38" rx="6" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2.5" />
+    <!-- Buttons -->
+    <circle cx="12" cy="26" r="2.5" fill="#149E86" />
+    <circle cx="20" cy="26" r="2.5" fill="#149E86" />
+    <circle cx="28" cy="26" r="2.5" fill="#149E86" />
+    <circle cx="12" cy="35" r="2.5" fill="#149E86" />
+    <circle cx="20" cy="35" r="2.5" fill="#149E86" />
+    <circle cx="28" cy="35" r="2.5" fill="#149E86" />
+    <!-- Handset -->
+    <path d="M -5 10 C -5 5, 45 5, 45 10 L 45 18 C 45 20, 38 20, 38 16 L 38 12 L 2 12 L 2 16 C 2 20, -5 20, -5 18 Z" fill="#0A5C4F" />
+    <!-- Cord -->
+    <path d="M 45 25 C 55 25, 55 35, 48 40" stroke="#75BCA5" stroke-width="2" fill="none" />
+  </g>
+
+  <!-- 3. Registration Register / Ledger & Pen Stand in Center -->
+  <g transform="translate(160, 172)">
+    <rect x="0" y="0" width="48" height="22" rx="3" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2" />
+    <line x1="24" y1="0" x2="24" y2="22" stroke="#0A5C4F" stroke-width="1.5" />
+    <line x1="4" y1="6" x2="20" y2="6" stroke="#CBDDD6" stroke-width="1" />
+    <line x1="4" y1="11" x2="18" y2="11" stroke="#CBDDD6" stroke-width="1" />
+    <line x1="4" y1="16" x2="20" y2="16" stroke="#CBDDD6" stroke-width="1" />
+    <line x1="28" y1="6" x2="44" y2="6" stroke="#CBDDD6" stroke-width="1" />
+    <line x1="28" y1="11" x2="42" y2="11" stroke="#CBDDD6" stroke-width="1" />
+  </g>
+</svg>

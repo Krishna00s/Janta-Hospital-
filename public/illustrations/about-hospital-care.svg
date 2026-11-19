@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none" width="100%" height="100%">
+  <!-- Soft Mint Backdrop Card -->
+  <rect x="15" y="15" width="570" height="370" rx="32" fill="#EBF6F2" stroke="#D1E8DF" stroke-width="2" />
+  
+  <!-- Subtle Organic Botanical Curves in Background -->
+  <path d="M 15 280 C 140 220, 280 320, 420 250 C 490 215, 540 250, 585 240 L 585 385 L 15 385 Z" fill="#E0F3EC" opacity="0.8" />
+  <path d="M 80 80 C 180 30, 320 60, 420 120 C 500 170, 540 260, 520 340" stroke="#A9DCCB" stroke-width="20" stroke-linecap="round" fill="none" opacity="0.3" />
+
+  <!-- Hospital Facility Silhouette in Background -->
+  <g transform="translate(180, 50)" opacity="0.35">
+    <!-- Two-Story Hospital Building Outline -->
+    <rect x="0" y="40" width="240" height="180" rx="8" fill="#D5EBE2" stroke="#0A5C4F" stroke-width="3" />
+    <!-- Upper Floor Windows -->
+    <rect x="25" y="60" width="35" height="40" rx="4" fill="#FFFFFF" />
+    <rect x="75" y="60" width="35" height="40" rx="4" fill="#FFFFFF" />
+    <rect x="130" y="60" width="35" height="40" rx="4" fill="#FFFFFF" />
+    <rect x="180" y="60" width="35" height="40" rx="4" fill="#FFFFFF" />
+    <!-- Ground Floor Entry & Veranda -->
+    <rect x="80" y="140" width="80" height="80" rx="4" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2" />
+    <!-- Medical Cross on Facade -->
+    <circle cx="120" cy="20" r="18" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2.5" />
+    <path d="M 120 10 L 120 30 M 110 20 L 130 20" stroke="#0A5C4F" stroke-width="4.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Left: Faceless Senior Physician (White Doctor's Coat) -->
+  <g transform="translate(110, 110)">
+    <!-- Shadow -->
+    <ellipse cx="80" cy="265" rx="60" ry="12" fill="#0A5C4F" opacity="0.12" />
+
+    <!-- Body / White Coat -->
+    <path d="M 20 270 C 20 205, 45 160, 75 145 L 95 175 L 115 145 C 145 160, 170 205, 170 270 Z" fill="#FFFFFF" stroke="#D5E6DF" stroke-width="2" />
+    <path d="M 20 270 C 20 205, 45 160, 85 145 L 95 270 Z" fill="#F8FCFA" />
+    <path d="M 170 270 C 170 205, 145 160, 105 145 L 95 270 Z" fill="#EDF6F2" />
+    
+    <!-- Inner Scrub / Collar -->
+    <path d="M 85 145 L 95 168 L 105 145 L 100 120 L 90 120 Z" fill="#149E86" />
+
+    <!-- Stethoscope -->
+    <path d="M 78 135 C 75 160, 80 185, 88 195 L 90 215" stroke="#0A5C4F" stroke-width="4.5" stroke-linecap="round" fill="none" />
+    <path d="M 112 135 C 115 160, 110 185, 98 198" stroke="#0A5C4F" stroke-width="4.5" stroke-linecap="round" fill="none" />
+    <circle cx="90" cy="222" r="9" fill="#75BCA5" stroke="#0A5C4F" stroke-width="2.5" />
+
+    <!-- Neck -->
+    <rect x="88" y="105" width="16" height="22" rx="3" fill="#E5B896" />
+
+    <!-- Head (Faceless Silhouette) -->
+    <path d="M 75 80 C 75 110, 115 110, 115 80 C 115 50, 75 50, 75 80 Z" fill="#F0C7A8" />
+    <!-- Hair -->
+    <path d="M 74 76 C 72 56, 84 40, 95 40 C 106 40, 118 56, 116 76 C 112 58, 104 50, 95 50 C 86 50, 78 58, 74 76 Z" fill="#1C302B" />
+
+    <!-- Right Hand Holding Clipboard -->
+    <g transform="translate(15, 175) rotate(-10)">
+      <rect x="0" y="0" width="38" height="52" rx="4" fill="#0A5C4F" />
+      <rect x="3" y="4" width="32" height="44" rx="3" fill="#FFFFFF" />
+      <line x1="8" y1="12" x2="30" y2="12" stroke="#149E86" stroke-width="2" />
+      <line x1="8" y1="20" x2="28" y2="20" stroke="#CBDDD6" stroke-width="1.5" />
+      <line x1="8" y1="26" x2="26" y2="26" stroke="#CBDDD6" stroke-width="1.5" />
+      <line x1="8" y1="32" x2="28" y2="32" stroke="#CBDDD6" stroke-width="1.5" />
+      <!-- Hand -->
+      <path d="M 32 25 C 38 25, 40 32, 35 36 Z" fill="#E5B896" />
+    </g>
+  </g>
+
+  <!-- Right: Faceless Clinical Officer / Nurse in Emerald Scrub -->
+  <g transform="translate(320, 120)">
+    <!-- Shadow -->
+    <ellipse cx="75" cy="255" rx="55" ry="12" fill="#0A5C4F" opacity="0.12" />
+
+    <!-- Scrub Body -->
+    <path d="M 20 260 C 20 200, 42 160, 70 148 L 78 175 L 86 148 C 114 160, 136 200, 136 260 Z" fill="#0D7A68" stroke="#0A5C4F" stroke-width="2" />
+    <path d="M 20 260 C 20 200, 42 160, 75 148 L 78 260 Z" fill="#149E86" />
+
+    <!-- V-Neck Detail -->
+    <path d="M 68 148 L 78 165 L 88 148 Z" fill="#0A5C4F" />
+
+    <!-- Clinical Badge / ID -->
+    <rect x="95" y="175" width="20" height="26" rx="2" fill="#FFFFFF" stroke="#C0DBD1" stroke-width="1" />
+    <rect x="95" y="175" width="20" height="7" fill="#75BCA5" />
+    <line x1="98" y1="188" x2="112" y2="188" stroke="#0A5C4F" stroke-width="1.5" />
+    <line x1="98" y1="193" x2="108" y2="193" stroke="#CBDDD6" stroke-width="1" />
+
+    <!-- Neck -->
+    <rect x="70" y="112" width="16" height="22" rx="3" fill="#E0B18E" />
+
+    <!-- Head (Faceless Silhouette) -->
+    <path d="M 60 88 C 60 116, 96 116, 96 88 C 96 60, 60 60, 60 88 Z" fill="#E8BFA0" />
+    <!-- Hair (Tied Back / Medical Bun) -->
+    <path d="M 58 85 C 56 64, 68 48, 78 48 C 88 48, 98 64, 96 85 C 94 68, 86 58, 78 58 C 70 58, 62 68, 58 85 Z" fill="#243833" />
+    <circle cx="78" cy="45" r="9" fill="#1C302B" />
+
+    <!-- Caring / Helpful Hand Gesture -->
+    <path d="M 30 190 C 15 195, 5 205, -5 215 L 2 225 C 15 215, 25 205, 38 200 Z" fill="#0D7A68" stroke="#0A5C4F" stroke-width="1.5" />
+    <circle cx="-5" cy="220" r="5" fill="#E0B18E" />
+  </g>
+
+  <!-- Compassionate Care Badge (Top Left) -->
+  <g transform="translate(45, 45)">
+    <rect x="0" y="0" width="125" height="34" rx="17" fill="#FFFFFF" stroke="#A9DCCB" stroke-width="1.5" />
+    <circle cx="17" cy="17" r="10" fill="#E8F6F1" />
+    <path d="M 17 11 L 17 23 M 11 17 L 23 17" stroke="#0A5C4F" stroke-width="2.5" stroke-linecap="round" />
+    <text x="35" y="21" fill="#0A5C4F" font-family="system-ui, sans-serif" font-weight="800" font-size="11" letter-spacing="1">LOCAL CARE</text>
+  </g>
+</svg>

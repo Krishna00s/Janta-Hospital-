@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" fill="none" width="100%" height="100%">
+  <!-- Soft Mint Backdrop Card -->
+  <rect x="15" y="15" width="470" height="320" rx="28" fill="#EBF6F2" stroke="#D1E8DF" stroke-width="2" />
+  
+  <!-- Subtle Organic Wave in Background -->
+  <path d="M 15 240 C 130 190, 240 270, 360 215 C 410 190, 450 215, 485 205 L 485 335 L 15 335 Z" fill="#E0F3EC" opacity="0.7" />
+
+  <!-- Radio Signals / Communication Waves in Background -->
+  <g transform="translate(180, 50)" opacity="0.4">
+    <circle cx="70" cy="70" r="40" stroke="#149E86" stroke-width="2" stroke-dasharray="6 4" fill="none" />
+    <circle cx="70" cy="70" r="65" stroke="#75BCA5" stroke-width="2" stroke-dasharray="8 6" fill="none" />
+    <circle cx="70" cy="70" r="90" stroke="#A9DCCB" stroke-width="2" stroke-dasharray="10 8" fill="none" />
+  </g>
+
+  <!-- Left: Big 24/7 Emergency Helpline Phone Icon Badge -->
+  <g transform="translate(60, 85)">
+    <!-- Shield / Badge -->
+    <path d="M 45 10 C 45 10, 85 18, 85 55 C 85 105, 45 130, 45 130 C 45 130, 5 105, 5 55 C 5 18, 45 10, 45 10 Z" fill="#0A5C4F" />
+    <!-- Inner border -->
+    <path d="M 45 18 C 45 18, 77 24, 77 55 C 77 98, 45 120, 45 120 C 45 120, 13 98, 13 55 C 13 24, 45 18, 45 18 Z" stroke="#7CE4C9" stroke-width="2" stroke-dasharray="4 3" fill="none" />
+    <!-- Phone Receiver in Center -->
+    <path d="M 33 42 C 30 40, 26 40, 24 43 L 21 47 C 19 50, 19 55, 23 63 C 27 71, 33 78, 41 82 C 49 86, 54 86, 57 84 L 61 81 C 64 79, 64 75, 62 72 L 56 65 C 54 63, 50 63, 48 65 L 46 67 C 45 68, 43 68, 41 67 C 37 64, 34 61, 32 57 C 31 55, 31 53, 33 52 L 35 50 C 37 48, 37 44, 35 42 Z" fill="#FFFFFF" />
+    <!-- 24/7 Tag -->
+    <text x="45" y="108" text-anchor="middle" fill="#7CE4C9" font-family="system-ui, sans-serif" font-weight="900" font-size="11" letter-spacing="1">24 HOURS</text>
+  </g>
+
+  <!-- Center-Right: Faceless Reception Support Officer -->
+  <g transform="translate(240, 100)">
+    <!-- Shadow -->
+    <ellipse cx="80" cy="235" rx="75" ry="14" fill="#0A5C4F" opacity="0.12" />
+
+    <!-- Uniform Body -->
+    <path d="M 20 240 C 20 180, 45 145, 75 135 L 85 160 L 95 135 C 125 145, 150 180, 150 240 Z" fill="#149E86" stroke="#0A5C4F" stroke-width="2.5" />
+    <path d="M 20 240 C 20 180, 45 145, 80 135 L 85 240 Z" fill="#0D7A68" />
+    
+    <!-- White Inner Collar -->
+    <path d="M 72 135 L 85 152 L 98 135 L 94 115 L 76 115 Z" fill="#FFFFFF" />
+    <polygon points="80,120 90,120 88,145 85,152 82,145" fill="#0A5C4F" />
+
+    <!-- Headset -->
+    <path d="M 64 55 C 60 30, 80 15, 95 15 C 110 15, 130 30, 126 55" stroke="#0A5C4F" stroke-width="4" fill="none" />
+    <circle cx="64" cy="55" r="7" fill="#0A5C4F" />
+    <path d="M 64 58 C 64 72, 75 78, 86 78" stroke="#0A5C4F" stroke-width="3" fill="none" />
+    <circle cx="87" cy="78" r="4" fill="#75BCA5" />
+
+    <!-- Neck -->
+    <rect x="78" y="98" width="18" height="25" rx="3" fill="#E5B896" />
+
+    <!-- Head (Faceless Silhouette) -->
+    <path d="M 70 70 C 70 102, 110 102, 110 70 C 110 38, 70 38, 70 70 Z" fill="#F0C7A8" />
+    <!-- Hair -->
+    <path d="M 68 66 C 66 42, 80 24, 95 24 C 110 24, 124 42, 122 66 C 118 44, 108 34, 95 34 C 82 34, 72 44, 68 66 Z" fill="#1C302B" />
+
+    <!-- Direct Assistance Speech Bubble -->
+    <g transform="translate(130, 20)">
+      <rect x="0" y="0" width="90" height="42" rx="12" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2.5" />
+      <polygon points="10,42 16,52 24,42" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2.5" />
+      <line x1="10" y1="41" x2="24" y2="41" stroke="#FFFFFF" stroke-width="4" />
+      <!-- Text inside bubble -->
+      <text x="45" y="19" text-anchor="middle" fill="#0A5C4F" font-family="system-ui, sans-serif" font-weight="800" font-size="10">HOW CAN WE</text>
+      <text x="45" y="32" text-anchor="middle" fill="#149E86" font-family="system-ui, sans-serif" font-weight="700" font-size="9">HELP YOU?</text>
+    </g>
+
+    <!-- Support Desk Tablet / Ledger in Front -->
+    <g transform="translate(45, 200)">
+      <rect x="0" y="0" width="80" height="40" rx="6" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2" />
+      <line x1="12" y1="12" x2="68" y2="12" stroke="#149E86" stroke-width="2" />
+      <line x1="12" y1="20" x2="55" y2="20" stroke="#CBDDD6" stroke-width="1.5" />
+      <line x1="12" y1="27" x2="60" y2="27" stroke="#CBDDD6" stroke-width="1.5" />
+    </g>
+  </g>
+
+  <!-- Location Pin on Palmerganj (Bottom Left) -->
+  <g transform="translate(45, 240)">
+    <rect x="0" y="0" width="150" height="32" rx="16" fill="#FFFFFF" stroke="#A9DCCB" stroke-width="1.5" />
+    <circle cx="16" cy="16" r="9" fill="#E8F6F1" />
+    <!-- Pin -->
+    <path d="M 16 9 C 13 9, 11 11, 11 14 C 11 18, 16 23, 16 23 C 16 23, 21 18, 21 14 C 21 11, 19 9, 16 9 Z" fill="#0A5C4F" />
+    <circle cx="16" cy="13" r="2" fill="#FFFFFF" />
+    <text x="32" y="20" fill="#0A5C4F" font-family="system-ui, sans-serif" font-weight="700" font-size="10">Near Bus Stand, Palmerganj</text>
+  </g>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" width="100%" height="100%">
+  <!-- Soft Mint Backdrop -->
+  <circle cx="200" cy="200" r="185" fill="#EBF7F2" />
+  <circle cx="200" cy="200" r="160" fill="#E0F3EC" opacity="0.6" />
+  <path d="M 120 70 C 260 50, 330 140, 310 250 C 290 350, 160 360, 90 280 C 40 220, 40 120, 120 70 Z" fill="#D3ECE2" opacity="0.4" />
+
+  <!-- Stethoscope Behind Neck -->
+  <path d="M 160 185 C 160 215, 240 215, 240 185" stroke="#0A5C4F" stroke-width="8" stroke-linecap="round" fill="none" />
+
+  <!-- Body / Shoulders (White Doctor's Coat) -->
+  <path d="M 90 390 C 90 315, 125 255, 160 240 L 200 280 L 240 240 C 275 255, 310 315, 310 390 Z" fill="#FFFFFF" stroke="#D5E6DF" stroke-width="2" />
+  
+  <!-- Coat Left Flap & Right Flap -->
+  <path d="M 90 390 C 90 315, 125 255, 175 240 L 195 390 Z" fill="#F8FCFA" />
+  <path d="M 310 390 C 310 315, 275 255, 225 240 L 205 390 Z" fill="#EDF6F2" />
+  
+  <!-- Inner Formal Shirt & Tie (Consultant Look) -->
+  <path d="M 175 240 L 200 275 L 225 240 L 218 198 L 182 198 Z" fill="#FFFFFF" stroke="#D0DFDA" stroke-width="1" />
+  <!-- Tie (Deep Emerald) -->
+  <path d="M 196 215 L 204 215 L 206 270 L 200 285 L 194 270 Z" fill="#0A5C4F" />
+  <polygon points="194,208 206,208 203,218 197,218" fill="#07463C" />
+
+  <!-- White Coat Lapels -->
+  <path d="M 165 240 L 182 285 L 195 245 Z" fill="#FFFFFF" stroke="#C8DFD6" stroke-width="1.5" />
+  <path d="M 235 240 L 218 285 L 205 245 Z" fill="#F0F7F4" stroke="#C8DFD6" stroke-width="1.5" />
+
+  <!-- Specialist Medical Chart / Case File in Hand -->
+  <g transform="translate(250, 275) rotate(12)">
+    <rect x="0" y="0" width="70" height="92" rx="6" fill="#149E86" />
+    <rect x="5" y="6" width="60" height="80" rx="4" fill="#FFFFFF" />
+    <!-- Stethoscope or ECG waveform symbol -->
+    <path d="M 15 25 L 25 25 L 30 18 L 35 32 L 40 22 L 45 27 L 55 27" stroke="#0A5C4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <line x1="15" y1="40" x2="55" y2="40" stroke="#CBDDD6" stroke-width="2" stroke-linecap="round" />
+    <line x1="15" y1="48" x2="50" y2="48" stroke="#CBDDD6" stroke-width="2" stroke-linecap="round" />
+    <line x1="15" y1="56" x2="45" y2="56" stroke="#CBDDD6" stroke-width="2" stroke-linecap="round" />
+    <line x1="15" y1="64" x2="52" y2="64" stroke="#CBDDD6" stroke-width="2" stroke-linecap="round" />
+    <!-- Specialist Stamp -->
+    <circle cx="48" cy="72" r="6" fill="#E8F6F1" stroke="#0A5C4F" stroke-width="1" />
+    <!-- Hand holding file -->
+    <path d="M -2 40 C -8 40, -10 50, -4 55 C 2 55, 4 45, 0 40 Z" fill="#ECC09F" />
+  </g>
+
+  <!-- Stethoscope Front Hang & Chest Piece -->
+  <path d="M 162 185 C 160 230, 168 280, 185 305" stroke="#0A5C4F" stroke-width="6" stroke-linecap="round" fill="none" />
+  <path d="M 238 185 C 240 230, 230 270, 205 310 L 205 330" stroke="#0A5C4F" stroke-width="6" stroke-linecap="round" fill="none" />
+  <!-- Stethoscope Chest Piece -->
+  <circle cx="205" cy="336" r="14" fill="#75BCA5" stroke="#0A5C4F" stroke-width="3" />
+  <circle cx="205" cy="336" r="7" fill="#E0F3EC" />
+
+  <!-- Neck -->
+  <path d="M 182 175 L 182 215 C 182 225, 218 225, 218 215 L 218 175 Z" fill="#E4BA97" />
+  <path d="M 182 205 C 190 215, 210 215, 218 205 L 218 215 C 218 225, 182 225, 182 215 Z" fill="#D6A783" opacity="0.6" />
+
+  <!-- Head (Faceless Silhouette - No Eyes, No Nose, No Mouth) -->
+  <path d="M 160 140 C 160 185, 240 185, 240 140 C 240 95, 160 95, 160 140 Z" fill="#F0C7A8" />
+  
+  <!-- Ears -->
+  <path d="M 158 135 C 154 135, 154 150, 158 150 Z" fill="#E4BA97" />
+  <path d="M 242 135 C 246 135, 246 150, 242 150 Z" fill="#E4BA97" />
+
+  <!-- Distinguished Hair Silhouette (Soft Gray/Dark Accent) -->
+  <path d="M 158 135 C 154 108, 170 84, 200 84 C 230 84, 246 108, 242 135 C 238 104, 224 98, 200 98 C 176 98, 162 106, 158 135 Z" fill="#243833" />
+  <path d="M 160 110 C 172 90, 210 88, 238 96 C 242 88, 228 82, 200 82 C 172 82, 160 94, 160 110 Z" fill="#3D5A52" />
+
+  <!-- Stethoscope Earpieces -->
+  <path d="M 158 145 C 150 155, 158 175, 164 185" stroke="#75BCA5" stroke-width="4" stroke-linecap="round" fill="none" />
+  <path d="M 242 145 C 250 155, 242 175, 236 185" stroke="#75BCA5" stroke-width="4" stroke-linecap="round" fill="none" />
+  <circle cx="158" cy="144" r="3" fill="#0A5C4F" />
+  <circle cx="242" cy="144" r="3" fill="#0A5C4F" />
+
+  <!-- Specialist Laurel / Star Badge (Top Right) -->
+  <g transform="translate(305, 45)">
+    <circle cx="20" cy="20" r="22" fill="#FFFFFF" stroke="#A9DCCB" stroke-width="2" />
+    <circle cx="20" cy="20" r="18" fill="#E8F6F1" />
+    <path d="M 20 10 L 23 16 L 30 17 L 25 22 L 26 29 L 20 25 L 14 29 L 15 22 L 10 17 L 17 16 Z" fill="#0A5C4F" />
+  </g>
+</svg>

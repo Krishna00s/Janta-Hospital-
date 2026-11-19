@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" width="100%" height="100%">
+  <!-- Soft Mint Backdrop -->
+  <circle cx="200" cy="200" r="185" fill="#EBF7F2" />
+  <circle cx="200" cy="200" r="160" fill="#E0F3EC" opacity="0.6" />
+  <!-- Pulse Line Accent in Background -->
+  <path d="M 50 200 L 110 200 L 125 175 L 145 225 L 160 190 L 175 205 L 185 200 L 350 200" stroke="#A9DCCB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.5" />
+
+  <!-- Stethoscope Behind Neck -->
+  <path d="M 160 185 C 160 215, 240 215, 240 185" stroke="#0A5C4F" stroke-width="8" stroke-linecap="round" fill="none" />
+
+  <!-- Body / Shoulders (White Doctor's Coat) -->
+  <path d="M 95 390 C 95 315, 125 255, 160 240 L 200 280 L 240 240 C 275 255, 305 315, 305 390 Z" fill="#FFFFFF" stroke="#D5E6DF" stroke-width="2" />
+  
+  <!-- Coat Left Flap & Right Flap -->
+  <path d="M 95 390 C 95 315, 125 255, 175 240 L 195 390 Z" fill="#F8FCFA" />
+  <path d="M 305 390 C 305 315, 275 255, 225 240 L 205 390 Z" fill="#EDF6F2" />
+  
+  <!-- Inner Medical Scrub (Deep Emergency Teal) -->
+  <path d="M 175 240 L 200 275 L 225 240 L 218 200 L 182 200 Z" fill="#0D7A68" />
+  <!-- V-Neck shadow -->
+  <path d="M 185 200 L 200 225 L 215 200 Z" fill="#0A5C4F" opacity="0.5" />
+
+  <!-- White Coat Lapels -->
+  <path d="M 165 240 L 182 285 L 195 245 Z" fill="#FFFFFF" stroke="#C8DFD6" stroke-width="1.5" />
+  <path d="M 235 240 L 218 285 L 205 245 Z" fill="#F0F7F4" stroke="#C8DFD6" stroke-width="1.5" />
+
+  <!-- Emergency 24/7 Duty ID Badge on Lapel -->
+  <g transform="translate(125, 280)">
+    <!-- Lanyard strap -->
+    <path d="M 35 -30 L 25 0" stroke="#0A5C4F" stroke-width="2" />
+    <rect x="10" y="0" width="30" height="42" rx="3" fill="#FFFFFF" stroke="#C0DBD1" stroke-width="1.5" />
+    <rect x="10" y="0" width="30" height="12" rx="3" fill="#0A5C4F" />
+    <!-- ID Photo Placeholder -->
+    <rect x="14" y="16" width="10" height="12" rx="2" fill="#E2ECE7" />
+    <line x1="28" y1="18" x2="36" y2="18" stroke="#149E86" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="28" y1="23" x2="36" y2="23" stroke="#CBDDD6" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="14" y1="33" x2="36" y2="33" stroke="#CBDDD6" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Stethoscope Front Hang & Chest Piece -->
+  <path d="M 162 185 C 160 230, 168 275, 182 300" stroke="#0A5C4F" stroke-width="6" stroke-linecap="round" fill="none" />
+  <path d="M 238 185 C 240 230, 232 275, 210 315 L 210 338" stroke="#0A5C4F" stroke-width="6" stroke-linecap="round" fill="none" />
+  <!-- Stethoscope Chest Piece -->
+  <circle cx="210" cy="344" r="14" fill="#75BCA5" stroke="#0A5C4F" stroke-width="3" />
+  <circle cx="210" cy="344" r="7" fill="#E0F3EC" />
+
+  <!-- Neck -->
+  <path d="M 182 175 L 182 215 C 182 225, 218 225, 218 215 L 218 175 Z" fill="#E0B18E" />
+  <path d="M 182 205 C 190 215, 210 215, 218 205 L 218 215 C 218 225, 182 225, 182 215 Z" fill="#D19F7C" opacity="0.6" />
+
+  <!-- Head (Faceless Silhouette - No Eyes, No Nose, No Mouth) -->
+  <path d="M 160 140 C 160 185, 240 185, 240 140 C 240 95, 160 95, 160 140 Z" fill="#ECC09F" />
+  
+  <!-- Ears -->
+  <path d="M 158 135 C 154 135, 154 150, 158 150 Z" fill="#E0B18E" />
+  <path d="M 242 135 C 246 135, 246 150, 242 150 Z" fill="#E0B18E" />
+
+  <!-- Clean Short Hair Silhouette -->
+  <path d="M 158 135 C 156 108, 172 86, 200 86 C 228 86, 244 108, 242 135 C 238 106, 224 100, 200 100 C 176 100, 162 108, 158 135 Z" fill="#182A25" />
+  <path d="M 162 110 C 172 92, 210 90, 238 98 C 240 90, 228 84, 200 84 C 172 84, 160 96, 162 110 Z" fill="#203831" />
+
+  <!-- Stethoscope Earpieces -->
+  <path d="M 158 145 C 150 155, 158 175, 164 185" stroke="#75BCA5" stroke-width="4" stroke-linecap="round" fill="none" />
+  <path d="M 242 145 C 250 155, 242 175, 236 185" stroke="#75BCA5" stroke-width="4" stroke-linecap="round" fill="none" />
+  <circle cx="158" cy="144" r="3" fill="#0A5C4F" />
+  <circle cx="242" cy="144" r="3" fill="#0A5C4F" />
+
+  <!-- 24/7 Emergency Glowing Badge (Top Right) -->
+  <g transform="translate(295, 45)">
+    <circle cx="25" cy="25" r="28" fill="#FFFFFF" stroke="#A9DCCB" stroke-width="2" />
+    <circle cx="25" cy="25" r="24" fill="#0A5C4F" />
+    <text x="25" y="24" text-anchor="middle" fill="#7CE4C9" font-family="system-ui, sans-serif" font-weight="900" font-size="13">24/7</text>
+    <text x="25" y="37" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="700" font-size="8" letter-spacing="1">DUTY</text>
+  </g>
+</svg>

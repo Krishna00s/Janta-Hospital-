@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Newsreader } from "next/font/google";
+import { Manrope, Newsreader, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
 import { generateHospitalJsonLd } from "@/lib/schema";
 
@@ -13,6 +13,13 @@ const newsreader = Newsreader({
   variable: "--font-newsreader",
   subsets: ["latin"],
   style: ["normal", "italic"],
+  display: "swap",
+});
+
+const notoDevanagari = Noto_Sans_Devanagari({
+  variable: "--font-devanagari",
+  subsets: ["devanagari"],
+  weight: ["400", "600", "700"],
   display: "swap",
 });
 
@@ -56,8 +63,8 @@ export default function RootLayout({
 
   return (
     <html
-      lang="en"
-      className={`${manrope.variable} ${newsreader.variable} scroll-smooth antialiased`}
+      lang="hi"
+      className={`${manrope.variable} ${newsreader.variable} ${notoDevanagari.variable} scroll-smooth antialiased`}
     >
       <head>
         <script

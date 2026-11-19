@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Phone, MapPin, Menu, X, ArrowUpRight } from "lucide-react";
 import { hospitalConfig } from "@/content/hospital";
 import { Button } from "@/components/shared/Button";
@@ -26,17 +27,17 @@ function MedicalCrossIcon({ className }: { className?: string }) {
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   const navLinks = [
-    { label: "Home", href: "/", current: true },
-    { label: "About", href: "/#about", current: false },
-    { label: "Doctors", href: "/#doctors", current: false },
-    { label: "Departments", href: "/#departments", current: false },
-    { label: "Facilities", href: "/#facilities", current: false },
-    { label: "Patient Info", href: "/#patient-info", current: false },
-    { label: "Contact", href: "/#contact", current: false },
+    { label: "Home", href: "/" },
+    { label: "हमारा Hospital", href: "/about" },
+    { label: "इलाज और सुविधाएँ", href: "/services" },
+    { label: "हमारे Doctors", href: "/doctors" },
+    { label: "तस्वीरें", href: "/gallery" },
+    { label: "Contact", href: "/contact" },
   ];
 
   // Close drawer on Escape key and manage body scroll
@@ -66,22 +67,22 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#EAF2EF] transition-colors w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 lg:h-[4.25rem] flex items-center justify-between">
         
         {/* Brand Wordmark & Emerald Medical Cross Emblem */}
         <Link
           href="/"
-          className="group flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F] rounded-lg p-1 -m-1 shrink-0"
-          aria-label="Janta Hospital Lohardaga - Home"
+          prefetch={false}
+          className="group flex items-center gap-2.5 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F] rounded-lg p-1 -m-1 shrink-0"
         >
-          <div className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-            <MedicalCrossIcon className="w-8 h-8 sm:w-9 sm:h-9" />
+          <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <MedicalCrossIcon className="w-7 h-7 sm:w-8 sm:h-8" />
           </div>
           <div className="flex flex-col">
-            <span className="font-sans font-extrabold text-lg sm:text-2xl tracking-tight text-[#122421] group-hover:text-[#0A5C4F] transition-colors leading-tight">
+            <span className="font-sans font-extrabold text-base sm:text-xl lg:text-[1.35rem] tracking-tight text-[#122421] group-hover:text-[#0A5C4F] transition-colors leading-tight">
               {hospitalConfig.name.value}
             </span>
-            <span className="text-[10px] font-bold tracking-widest text-[#6B7F7B] uppercase leading-none">
+            <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-[#475B57] uppercase leading-none">
               {hospitalConfig.locationName}
             </span>
           </div>
@@ -90,22 +91,26 @@ export function Header() {
         {/* Desktop Navigation */}
         <nav
           aria-label="Main Navigation"
-          className="hidden lg:flex items-center gap-8 text-sm font-sans font-medium text-[#475B57]"
+          className="hidden lg:flex items-center gap-7 text-sm font-sans font-medium text-[#475B57]"
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              aria-current={link.current ? "page" : undefined}
-              className={`relative py-1 transition-colors hover:text-[#0A5C4F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F] rounded px-1 -mx-1 ${
-                link.current
-                  ? "text-[#0A5C4F] font-semibold after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:bg-[#0A5C4F] after:rounded-full"
-                  : "text-[#475B57]"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isCurrent = link.href === "/" ? pathname === "/" : pathname?.startsWith(link.href);
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                prefetch={false}
+                aria-current={isCurrent ? "page" : undefined}
+                className={`relative py-1 transition-colors hover:text-[#0A5C4F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F] rounded px-1 -mx-1 ${
+                  isCurrent
+                    ? "text-[#0A5C4F] font-semibold after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:bg-[#0A5C4F] after:rounded-full"
+                    : "text-[#475B57]"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Desktop Actions */}
@@ -116,7 +121,7 @@ export function Header() {
             size="md"
             icon={<Phone className="w-4 h-4 text-[#0A5C4F]" aria-hidden="true" />}
           >
-            Call Hospital
+            अभी Call करें
           </Button>
 
           <Button
@@ -126,7 +131,7 @@ export function Header() {
             external
             icon={<MapPin className="w-4 h-4" aria-hidden="true" />}
           >
-            Get Directions
+            रास्ता देखें
           </Button>
         </div>
 
@@ -194,21 +199,25 @@ export function Header() {
 
             {/* Navigation Links */}
             <nav className="flex flex-col py-6 space-y-1.5" aria-label="Mobile menu links">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`text-base font-medium py-3 px-3.5 rounded-xl transition-colors min-h-[44px] flex items-center justify-between ${
-                    link.current
-                      ? "bg-[#E8F5F1] text-[#0A5C4F] font-semibold"
-                      : "text-gray-700 hover:bg-gray-50"
-                  }`}
-                >
-                  <span>{link.label}</span>
-                  <ArrowUpRight className="w-4 h-4 text-gray-400" aria-hidden="true" />
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isCurrent = link.href === "/" ? pathname === "/" : pathname?.startsWith(link.href);
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    prefetch={false}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`text-base font-medium py-3 px-3.5 rounded-xl transition-colors min-h-[44px] flex items-center justify-between ${
+                      isCurrent
+                        ? "bg-[#E8F5F1] text-[#0A5C4F] font-semibold"
+                        : "text-gray-700 hover:bg-gray-50"
+                    }`}
+                  >
+                    <span>{link.label}</span>
+                    <ArrowUpRight className="w-4 h-4 text-gray-400" aria-hidden="true" />
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Mobile Actions */}
@@ -221,7 +230,7 @@ export function Header() {
                 className="w-full"
                 icon={<Phone className="w-4 h-4" aria-hidden="true" />}
               >
-                Call Hospital ({hospitalConfig.contact.phone.formatted})
+                अभी Call करें ({hospitalConfig.contact.phone.formatted})
               </Button>
 
               <Button
@@ -233,7 +242,7 @@ export function Header() {
                 className="w-full"
                 icon={<MapPin className="w-4 h-4" aria-hidden="true" />}
               >
-                Get Directions
+                रास्ता देखें
               </Button>
             </div>
           </div>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" fill="none" width="100%" height="100%">
+  <!-- Soft Mint Backdrop Card -->
+  <rect x="15" y="15" width="470" height="320" rx="28" fill="#EBF6F2" stroke="#D1E8DF" stroke-width="2" />
+  
+  <!-- Subtle Organic Wave in Background -->
+  <path d="M 15 230 C 140 190, 240 270, 350 210 C 410 180, 450 215, 485 205 L 485 335 L 15 335 Z" fill="#E0F3EC" opacity="0.7" />
+
+  <!-- Background Decorative Shield / Protection Emblem -->
+  <g transform="translate(215, 45)" opacity="0.35">
+    <path d="M 35 15 C 35 15, 65 20, 65 45 C 65 75, 35 90, 35 90 C 35 90, 5 75, 5 45 C 5 20, 35 15, 35 15 Z" fill="#D5EFE5" stroke="#0A5C4F" stroke-width="3" />
+    <path d="M 35 32 L 35 58 M 22 45 L 48 45" stroke="#0A5C4F" stroke-width="5" stroke-linecap="round" />
+  </g>
+
+  <!-- Centerpiece: Sterile Clinical Medical Tray (Kidney Dish / Instrument Tray) -->
+  <g transform="translate(100, 140)">
+    <!-- Tray Shadow -->
+    <ellipse cx="150" cy="140" rx="160" ry="16" fill="#0A5C4F" opacity="0.12" />
+
+    <!-- Stainless Steel / Clinical White Tray -->
+    <rect x="10" y="25" width="280" height="110" rx="25" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="4" />
+    <rect x="18" y="33" width="264" height="94" rx="18" fill="#F4FAF7" stroke="#A9DCCB" stroke-width="2" />
+
+    <!-- Rolled Gauze Bandage -->
+    <g transform="translate(35, 48)">
+      <!-- Bandage Roll Cylinder -->
+      <ellipse cx="25" cy="30" rx="18" ry="24" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2.5" />
+      <path d="M 25 6 L 65 14 C 75 14, 82 22, 82 30 C 82 38, 75 46, 65 46 L 25 54 Z" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2.5" />
+      <ellipse cx="65" cy="30" rx="16" ry="16" fill="#E8F6F1" stroke="#0A5C4F" stroke-width="2" />
+      <circle cx="65" cy="30" r="5" fill="#0A5C4F" />
+      <!-- Gauze texture stripes -->
+      <line x1="38" y1="12" x2="38" y2="50" stroke="#CBDDD6" stroke-width="2" />
+      <line x1="50" y1="14" x2="50" y2="48" stroke="#CBDDD6" stroke-width="2" />
+    </g>
+
+    <!-- Medical Scissors (Blunt Dressing Shears) -->
+    <g transform="translate(140, 48) rotate(-15)">
+      <!-- Blade 1 -->
+      <path d="M 20 20 L 75 40 L 75 46 L 20 24 Z" fill="#CBDDD6" stroke="#0A5C4F" stroke-width="2" />
+      <!-- Blade 2 -->
+      <path d="M 20 30 L 75 18 L 75 24 L 20 34 Z" fill="#A9DCCB" stroke="#0A5C4F" stroke-width="2" />
+      <!-- Pivot screw -->
+      <circle cx="35" cy="26" r="3.5" fill="#0A5C4F" />
+      <!-- Handles / Rings -->
+      <circle cx="10" cy="18" r="10" fill="none" stroke="#0A5C4F" stroke-width="3" />
+      <circle cx="10" cy="36" r="10" fill="none" stroke="#0A5C4F" stroke-width="3" />
+    </g>
+
+    <!-- Cotton Swab Balls & Adhesive Plasters -->
+    <g transform="translate(210, 52)">
+      <circle cx="18" cy="22" r="12" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2" />
+      <circle cx="38" cy="24" r="14" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2" />
+      <circle cx="26" cy="40" r="13" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="2" />
+      <!-- Adhesive Plaster / Band-aid -->
+      <g transform="translate(10, 45) rotate(20)">
+        <rect x="0" y="0" width="44" height="16" rx="8" fill="#F0CBB1" stroke="#0A5C4F" stroke-width="2" />
+        <rect x="14" y="0" width="16" height="16" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="1.5" />
+        <circle cx="22" cy="8" r="2" fill="#149E86" />
+      </g>
+    </g>
+  </g>
+
+  <!-- Left: Antiseptic Dressing Solution Bottle (Dettol/Betadine Style) -->
+  <g transform="translate(45, 95)">
+    <rect x="15" y="30" width="46" height="85" rx="8" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="3" />
+    <rect x="26" y="16" width="24" height="16" rx="4" fill="#0A5C4F" />
+    <!-- Measuring cap -->
+    <path d="M 30 16 L 46 16 L 44 8 L 32 8 Z" fill="#75BCA5" stroke="#0A5C4F" stroke-width="2" />
+    <!-- Bottle Label -->
+    <rect x="20" y="48" width="36" height="50" rx="4" fill="#E8F6F1" stroke="#A9DCCB" stroke-width="1.5" />
+    <!-- First aid green cross -->
+    <circle cx="38" cy="66" r="11" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="1.5" />
+    <path d="M 38 60 L 38 72 M 32 66 L 44 66" stroke="#0A5C4F" stroke-width="3" stroke-linecap="round" />
+    <line x1="26" y1="84" x2="50" y2="84" stroke="#75BCA5" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+  <!-- Right: Sterile Medical Syringe & Needle Shield -->
+  <g transform="translate(375, 75) rotate(25)">
+    <!-- Barrel -->
+    <rect x="0" y="25" width="26" height="80" rx="4" fill="#FFFFFF" stroke="#0A5C4F" stroke-width="3" />
+    <!-- Measurement lines -->
+    <line x1="3" y1="40" x2="14" y2="40" stroke="#0A5C4F" stroke-width="2" />
+    <line x1="3" y1="52" x2="18" y2="52" stroke="#0A5C4F" stroke-width="2" />
+    <line x1="3" y1="64" x2="14" y2="64" stroke="#0A5C4F" stroke-width="2" />
+    <line x1="3" y1="76" x2="18" y2="76" stroke="#0A5C4F" stroke-width="2" />
+    <line x1="3" y1="88" x2="14" y2="88" stroke="#0A5C4F" stroke-width="2" />
+    <!-- Liquid Level inside -->
+    <rect x="3" y="55" width="20" height="48" fill="#75BCA5" opacity="0.3" />
+    <!-- Plunger -->
+    <rect x="8" y="105" width="10" height="45" fill="#D5E6DF" stroke="#0A5C4F" stroke-width="2.5" />
+    <rect x="0" y="150" width="26" height="8" rx="3" fill="#0A5C4F" />
+    <!-- Needle Hub & Needle -->
+    <path d="M 8 25 L 18 25 L 15 15 L 11 15 Z" fill="#75BCA5" stroke="#0A5C4F" stroke-width="2" />
+    <line x1="13" y1="15" x2="13" y2="-12" stroke="#0A5C4F" stroke-width="2" stroke-linecap="round" />
+  </g>
+</svg>

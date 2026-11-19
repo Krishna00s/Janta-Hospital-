@@ -1,244 +1,209 @@
 import Image from "next/image";
-import { MapPin, Phone, ShieldCheck, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { Phone, MapPin, ArrowUpRight, Clock, ShieldCheck, HeartPulse } from "lucide-react";
 import { hospitalConfig } from "@/content/hospital";
 import { Badge } from "@/components/shared/Badge";
+import { GalleryToServicesWave } from "@/components/ui/SectionWaves";
+import { BotanicalGrowingVine } from "@/components/ui/BotanicalDecorations";
+import { ScrollReveal } from "@/components/shared/ScrollReveal";
 
 export function HospitalGallery() {
-  const { gallery, exterior } = hospitalConfig.imagery;
+  const phoneHref = `tel:${hospitalConfig.contact.phone.value}`;
 
   return (
     <section
       id="about"
       aria-labelledby="gallery-heading"
-      className="relative w-full py-16 sm:py-20 lg:py-28 bg-[#FCFDFD] text-[#122421] overflow-hidden border-t border-[#EDF4F1]"
+      className="relative w-full pt-10 sm:pt-14 lg:pt-16 pb-0 bg-[#FCFDFD] text-[#122421] overflow-hidden"
     >
-      {/* Soft mint atmospheric depth in background */}
-      <div
-        className="pointer-events-none absolute -top-40 right-0 w-[500px] h-[500px] bg-gradient-to-b from-[#E8F5F1]/50 to-transparent rounded-full blur-3xl opacity-70 z-0"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-t from-[#E8F5F1]/40 to-transparent rounded-full blur-2xl opacity-60 z-0"
-        aria-hidden="true"
-      />
+      {/* Rich Abstract Organic Botanical Vine flowing visibly behind content */}
+      <BotanicalGrowingVine />
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 pb-8 sm:pb-12">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
-          <Badge variant="mint" dot className="mb-4">
-            INSIDE JANTA HOSPITAL
+        {/* Patient-Centric Header */}
+        <ScrollReveal direction="heading" className="max-w-2xl mb-6 sm:mb-8">
+          <Badge variant="mint" dot className="mb-2 sm:mb-3">
+            JANTA HOSPITAL
           </Badge>
           <h2
             id="gallery-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#122421] leading-[1.12]"
+            className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-[#122421] leading-tight"
           >
-            <span className="font-sans block">Care rooted in</span>
-            <span className="font-serif italic font-normal text-[#0A5C4F] block mt-1">
-              our local community.
-            </span>
+            Janta Hospital की एक झलक
           </h2>
-          <p className="mt-4 sm:mt-5 text-base sm:text-lg text-[#475B57] leading-relaxed">
-            Located in Palmerganj, behind the Head Post Office in Lohardaga, Janta Hospital provides
-            accessible general outpatient consultations, round-the-clock emergency medical assistance,
-            and an on-site medicine counter designed to serve local families with dependable, patient-first care.
+          <p className="mt-2 text-sm sm:text-base text-[#475B57] leading-relaxed">
+            Lohardaga के Palmerganj में आपकी सेहत का पूरा ध्यान — जानिए Hospital आने पर आपको क्या सुविधा मिलती है।
           </p>
-        </div>
+        </ScrollReveal>
 
-        {/* Asymmetric Editorial Photographic Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-8 items-stretch">
+        {/* Asymmetric Editorial Composition (Wide Patient Guide + 2 Stacked Focus Cards) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
           
-          {/* Main Dominant Image: Hospital Facade (Spans 7 columns on desktop) */}
-          <div className="lg:col-span-7 flex flex-col justify-between">
-            <div className="group relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/11] rounded-3xl overflow-hidden shadow-md border border-[#E2ECE9] bg-[#F4FAF7]">
-              <Image
-                src={exterior.src}
-                alt={exterior.alt}
-                fill
-                sizes="(min-width: 1024px) 58vw, 100vw"
-                className="w-full h-full object-cover object-[48%_35%] group-hover:scale-102 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"
-                aria-hidden="true"
-              />
+          {/* Left Column (7 cols): Wide Illustrated Patient Journey Feature */}
+          <ScrollReveal direction="card" delay={0} className="lg:col-span-7 flex">
+            <div className="group relative rounded-3xl overflow-hidden border border-[#D5EAE0] shadow-xs bg-white w-full card-hover-lift flex flex-col justify-between">
               
-              {/* Overlay Caption Card */}
-              <div className="absolute left-4 right-4 bottom-4 sm:left-6 sm:bottom-6 z-10 flex flex-wrap items-end justify-between gap-3 text-white">
+              {/* Generous Illustration Banner */}
+              <div className="relative w-full h-52 sm:h-64 bg-[#EDF7F3] border-b border-[#DDEFE8] overflow-hidden">
+                <Image
+                  src="/illustrations/about-hospital-care.svg"
+                  alt="Janta Hospital patient care and consultation illustration"
+                  fill
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
+                  loading="lazy"
+                />
+              </div>
+              
+              {/* Patient Care Steps */}
+              <div className="p-5 sm:p-7 space-y-4">
                 <div>
-                  <span className="inline-block px-2.5 py-1 rounded-full bg-[#0A5C4F]/90 backdrop-blur-md text-[11px] font-bold tracking-wider uppercase text-white mb-1.5">
-                    Verified Facility
-                  </span>
-                  <h3 className="text-lg sm:text-xl font-bold font-sans drop-shadow-sm">
-                    Two-Story Clinical Center with Veranda
+                  <h3 className="text-xl sm:text-2xl font-extrabold font-sans text-[#122421] tracking-tight">
+                    जब आप Hospital आते हैं
                   </h3>
-                  <p className="text-xs sm:text-sm text-gray-200 drop-shadow-sm">
-                    Palmerganj, Behind Head Post Office, Lohardaga
+                  <p className="text-xs sm:text-sm text-[#475B57] mt-1 leading-relaxed">
+                    मरीज़ों और उनके परिवार के लिए आसान व्यवस्था — बिना किसी उलझन के तुरंत सही देखभाल:
                   </p>
                 </div>
 
-                <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold text-white border border-white/30">
-                  <ShieldCheck className="w-4 h-4 text-[#8CE3BC]" aria-hidden="true" />
-                  <span>24-Hour Active</span>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+                  <div className="p-3.5 rounded-2xl bg-[#F4FAF7] border border-[#E0EFE8]">
+                    <span className="text-[11px] font-extrabold text-[#0A5C4F] uppercase tracking-wider block mb-1">
+                      1. Reception
+                    </span>
+                    <p className="text-xs text-[#3B524E] font-medium leading-snug">
+                      Ground Floor पर पर्ची बनवाएँ और Token लें।
+                    </p>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-[#F4FAF7] border border-[#E0EFE8]">
+                    <span className="text-[11px] font-extrabold text-[#0A5C4F] uppercase tracking-wider block mb-1">
+                      2. Doctor से मिलना
+                    </span>
+                    <p className="text-xs text-[#3B524E] font-medium leading-snug">
+                      बीमारी के अनुसार सही कमरे में Doctor को दिखाएँ।
+                    </p>
+                  </div>
+
+                  <div className="p-3.5 rounded-2xl bg-[#F4FAF7] border border-[#E0EFE8]">
+                    <span className="text-[11px] font-extrabold text-[#0A5C4F] uppercase tracking-wider block mb-1">
+                      3. दवा और पट्टी
+                    </span>
+                    <p className="text-xs text-[#3B524E] font-medium leading-snug">
+                      बरामदे पर ही दवा दुकान और ड्रेसिंग उपलब्ध है।
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-2 flex items-center justify-between">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0A5C4F] hover:underline"
+                  >
+                    <span>Hospital का रास्ता देखें</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                  </Link>
+                  <span className="text-[11px] text-[#6B7F7B]">Palmerganj, Lohardaga</span>
                 </div>
               </div>
             </div>
+          </ScrollReveal>
 
-            {/* Quick Community Narrative Strip beneath dominant image */}
-            <div className="mt-5 sm:mt-6 p-5 sm:p-6 rounded-2xl bg-white border border-[#EAF2EF] shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#E8F5F1] text-[#0A5C4F] flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5" aria-hidden="true" />
-                </div>
-                <div>
-                  <span className="font-bold text-sm text-[#122421] block">
-                    Centrally Located for Immediate Access
-                  </span>
-                  <span className="text-xs text-[#6B7F7B] block">
-                    Walking distance from Lohardaga Bus Stand & Palmerganj market
-                  </span>
-                </div>
-              </div>
-
-              <a
-                href={hospitalConfig.contact.mapsUrl.value}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0A5C4F] hover:text-[#074B40] transition-colors whitespace-nowrap"
-              >
-                <span>View on Map</span>
-                <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-
-          {/* Secondary Column: 2 Asymmetric Feature Crop Panels (Spans 5 columns on desktop) */}
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-5 sm:gap-6">
+          {/* Right Column (5 cols): Two Asymmetric Supporting Healthcare Cards */}
+          <div className="lg:col-span-5 flex flex-col gap-5 sm:gap-6 justify-between">
             
-            {/* Panel 1: Front Veranda & Ground-Floor Reception */}
-            <div className="group relative rounded-3xl overflow-hidden border border-[#E2ECE9] shadow-2xs bg-white flex flex-col">
-              <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/9] overflow-hidden bg-[#F4FAF7]">
-                <Image
-                  src={gallery.entrance.src}
-                  alt={gallery.entrance.alt}
-                  fill
-                  sizes="(min-width: 1024px) 42vw, (min-width: 640px) 50vw, 100vw"
-                  className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute top-3 right-3 z-10">
-                  <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-bold text-[#0A5C4F] shadow-xs border border-[#C2EADB]">
-                    {gallery.entrance.tag}
-                  </span>
+            {/* Card 1: 24-Hour Emergency Response */}
+            <ScrollReveal direction="card" delay={80} className="flex-1 flex">
+              <div className="group relative rounded-3xl p-5 sm:p-6 bg-gradient-to-br from-[#0A5C4F] to-[#074B40] text-white shadow-md overflow-hidden flex flex-col justify-between w-full card-hover-lift">
+                
+                {/* Background Subtle First-Aid Kit Illustration */}
+                <div className="pointer-events-none absolute -right-4 -bottom-4 w-44 h-36 opacity-30 overflow-hidden">
+                  <Image
+                    src="/illustrations/service-emergency-24h.svg"
+                    alt="Emergency care medical illustration"
+                    fill
+                    className="object-contain object-right-bottom"
+                  />
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-2 h-2 rounded-full bg-[#7CE4C9] animate-pulse" />
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-200">
+                      24 घंटे सेवा
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl font-extrabold text-white leading-tight">
+                    24 घंटे Emergency सेवा
+                  </h3>
+                  <p className="text-xs sm:text-sm text-emerald-100/90 mt-1.5 leading-relaxed max-w-sm">
+                    रात हो या दिन, अचानक तबीयत बिगड़ने, चोट या दर्द में तुरंत प्राथमिक देखभाल और इलाज।
+                  </p>
+                </div>
+
+                <div className="pt-4 mt-3 border-t border-white/20 relative z-10 flex items-center justify-between">
+                  <a
+                    href={phoneHref}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-[#0A5C4F] font-bold text-xs hover:bg-emerald-50 transition-colors shadow-xs"
+                  >
+                    <Phone className="w-3.5 h-3.5" aria-hidden="true" />
+                    <span>Emergency Call करें</span>
+                  </a>
+                  <span className="text-[11px] text-emerald-200 font-medium">Duty Doctors उपलब्ध</span>
                 </div>
               </div>
+            </ScrollReveal>
 
-              <div className="p-4 sm:p-5">
-                <h3 className="font-sans font-bold text-base text-[#122421] group-hover:text-[#0A5C4F] transition-colors">
-                  {gallery.entrance.caption}
-                </h3>
-                <p className="mt-1 text-xs text-[#475B57] leading-relaxed">
-                  Stepped porch with easy ground-level entrance, landscaped palm planters, and comfortable waiting access.
-                </p>
-              </div>
-            </div>
+            {/* Card 2: On-Site Medicine Dispensary */}
+            <ScrollReveal direction="card" delay={140} className="flex-1 flex">
+              <div className="group relative rounded-3xl p-5 sm:p-6 border border-[#D5EAE0] bg-white shadow-xs overflow-hidden flex flex-col justify-between w-full card-hover-lift">
+                
+                <div className="flex items-start gap-4">
+                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-[#EDF7F3] border border-[#CDEAE0] overflow-hidden shrink-0">
+                    <Image
+                      src="/illustrations/facility-pharmacy-dispensary.svg"
+                      alt="Dispensary counter medical illustration"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
 
-            {/* Panel 2: On-Site Medicine Dispensary */}
-            <div className="group relative rounded-3xl overflow-hidden border border-[#E2ECE9] shadow-2xs bg-white flex flex-col">
-              <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/9] overflow-hidden bg-[#F4FAF7]">
-                <Image
-                  src={gallery.pharmacy.src}
-                  alt={gallery.pharmacy.alt}
-                  fill
-                  sizes="(min-width: 1024px) 42vw, (min-width: 640px) 50vw, 100vw"
-                  className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute top-3 right-3 z-10">
-                  <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-bold text-[#0A5C4F] shadow-xs border border-[#C2EADB]">
-                    {gallery.pharmacy.tag}
-                  </span>
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#0A5C4F] block mb-1">
+                      Front Porch Counter
+                    </span>
+                    <h3 className="text-base sm:text-lg font-bold font-sans text-[#122421] group-hover:text-[#0A5C4F] transition-colors leading-snug">
+                      Hospital में दवा दुकान
+                    </h3>
+                    <p className="text-xs text-[#475B57] mt-1 leading-relaxed">
+                      Doctor को दिखाने के तुरंत बाद सभी ज़रूरी दवाएँ और पट्टियाँ सीधे Hospital में मिल जाती हैं।
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-3 mt-3 border-t border-[#EEF3F0] flex items-center justify-between">
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-[#0A5C4F] hover:underline"
+                  >
+                    <span>दवा और अन्य सेवाएँ देखें</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                  </Link>
+                  <span className="text-[11px] text-[#6B7F7B]">Ground Floor</span>
                 </div>
               </div>
+            </ScrollReveal>
 
-              <div className="p-4 sm:p-5">
-                <h3 className="font-sans font-bold text-base text-[#122421] group-hover:text-[#0A5C4F] transition-colors">
-                  {gallery.pharmacy.caption}
-                </h3>
-                <p className="mt-1 text-xs text-[#475B57] leading-relaxed">
-                  Front medicine counter (दवाई / स्वास्थ्य) providing immediate dispensing of prescribed pharmaceuticals.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* Third Row: Architectural Highlights & Verified Signage */}
-        <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-5 sm:gap-6">
-          
-          {/* Signboard Detail (Spans 7 cols on lg) */}
-          <div className="lg:col-span-7 rounded-3xl border border-[#E2ECE9] p-5 sm:p-6 bg-white shadow-2xs flex flex-col sm:flex-row items-center gap-5">
-            <div className="relative w-full sm:w-48 aspect-[16/9] rounded-2xl overflow-hidden shrink-0 border border-[#E2ECE9] bg-[#F4FAF7]">
-              <Image
-                src={gallery.signboard.src}
-                alt={gallery.signboard.alt}
-                fill
-                sizes="(min-width: 640px) 192px, 100vw"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-              />
-            </div>
-            <div className="text-left">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#0A5C4F] block">
-                Official Signage Record
-              </span>
-              <h3 className="font-bold text-base text-[#122421] mt-0.5">
-                Authorized 24-Hour Emergency Medical Care
-              </h3>
-              <p className="text-xs text-[#475B57] mt-1 leading-relaxed">
-                Registered on-site emergency contact lines: 9308348608, 8340678334, 8825389125, and direct hotline {hospitalConfig.contact.phone.formatted}.
-              </p>
-            </div>
-          </div>
-
-          {/* Spiral Staircase Architecture (Spans 5 cols on lg) */}
-          <div className="lg:col-span-5 rounded-3xl border border-[#E2ECE9] p-5 sm:p-6 bg-white shadow-2xs flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3.5">
-              <div className="relative w-16 h-16 rounded-2xl overflow-hidden shrink-0 border border-[#C2EADB] bg-[#F4FAF7]">
-                <Image
-                  src={gallery.staircase.src}
-                  alt={gallery.staircase.alt}
-                  fill
-                  sizes="64px"
-                  className="w-full h-full object-cover object-center"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <span className="font-bold text-sm text-[#122421] block">
-                  Modern Exterior Architecture
-                </span>
-                <span className="text-xs text-[#6B7F7B] block mt-0.5">
-                  Distinctive spiral staircase with illuminated facade cove lighting
-                </span>
-              </div>
-            </div>
-
-            <a
-              href={`tel:${hospitalConfig.contact.phone.value}`}
-              className="p-3 rounded-xl bg-[#E8F5F1] text-[#0A5C4F] hover:bg-[#0A5C4F] hover:text-white transition-colors shrink-0"
-              aria-label={`Call Hospital at ${hospitalConfig.contact.phone.formatted}`}
-            >
-              <Phone className="w-4 h-4" aria-hidden="true" />
-            </a>
           </div>
 
         </div>
 
       </div>
+
+      {/* Gallery → Services Wave Transition */}
+      <GalleryToServicesWave />
     </section>
   );
 }

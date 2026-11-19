@@ -10,7 +10,7 @@ export function generateHospitalJsonLd() {
       "Janta Hospital provides 24-hour emergency medical care, general outpatient consultations (OPD), and an on-site medicine dispensary in Palmerganj, Lohardaga, Jharkhand.",
     url: "https://jantahospital.in",
     telephone: hospitalConfig.contact.phone.value,
-    image: "https://jantahospital.in/images/janta-hospital-exterior.webp",
+    image: "https://jantahospital.in/images/janta-hospital-night-exterior.webp",
     hasMap: hospitalConfig.contact.mapsUrl.value,
     openingHoursSpecification: [
       {
