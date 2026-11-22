@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useRef, useState } from "react";
+import { FC } from "react";
 
 /**
  * SectionWaves Component Collection
@@ -17,8 +17,8 @@ import { FC, useEffect, useRef, useState } from "react";
  * - pointer-events: none, aria-hidden="true", overflow-hidden.
  */
 
-// 1. Hero → Inside Janta Hospital
-export const HeroToGalleryWave: FC<{ className?: string }> = ({ className = "" }) => {
+// 1. Hero → Emergency & Quick Help (also aliased as HeroToGalleryWave)
+export const HeroToEmergencyWave: FC<{ className?: string }> = ({ className = "" }) => {
   return (
     <div
       aria-hidden="true"
@@ -37,13 +37,13 @@ export const HeroToGalleryWave: FC<{ className?: string }> = ({ className = "" }
           fill="#E0F3EC"
           opacity="0.95"
         />
-        {/* Layer 2: Medium sage overlapping wave with asymmetric crest under courtyard */}
+        {/* Layer 2: Medium sage overlapping wave with asymmetric crest */}
         <path
           d="M 0,72 C 280,35 640,105 960,55 C 1180,20 1340,75 1440,60 L 1440,140 L 0,140 Z"
           fill="#A9DCCB"
           opacity="0.85"
         />
-        {/* Layer 3: Gallery surface transition into #FCFDFD */}
+        {/* Layer 3: Surface transition into #FCFDFD */}
         <path
           d="M 0,98 C 360,68 740,118 1100,82 C 1260,68 1370,92 1440,88 L 1440,140 L 0,140 Z"
           fill="#FCFDFD"
@@ -59,6 +59,8 @@ export const HeroToGalleryWave: FC<{ className?: string }> = ({ className = "" }
     </div>
   );
 };
+
+export const HeroToGalleryWave = HeroToEmergencyWave;
 
 // 1b. Dedicated Page Hero → Content Wave (Clean transition into #FFFFFF)
 export const PageHeroToContentWave: FC<{ className?: string; targetColor?: string }> = ({
@@ -102,8 +104,8 @@ export const PageHeroToContentWave: FC<{ className?: string; targetColor?: strin
   );
 };
 
-// 2. Inside Janta Hospital → Medical Services
-export const GalleryToServicesWave: FC<{ className?: string }> = ({ className = "" }) => {
+// 2. Emergency & Quick Help → Medical Services (also aliased as GalleryToServicesWave)
+export const EmergencyToServicesWave: FC<{ className?: string }> = ({ className = "" }) => {
   return (
     <div
       aria-hidden="true"
@@ -144,6 +146,8 @@ export const GalleryToServicesWave: FC<{ className?: string }> = ({ className = 
     </div>
   );
 };
+
+export const GalleryToServicesWave = EmergencyToServicesWave;
 
 // 3. Medical Services → Meet Our Doctors
 export const ServicesToDoctorsWave: FC<{ className?: string }> = ({ className = "" }) => {
@@ -188,8 +192,8 @@ export const ServicesToDoctorsWave: FC<{ className?: string }> = ({ className = 
   );
 };
 
-// 4. Meet Our Doctors → Location & Contact
-export const DoctorsToLocationWave: FC<{ className?: string }> = ({ className = "" }) => {
+// 4. Meet Our Doctors → About Janta Hospital
+export const DoctorsToAboutWave: FC<{ className?: string }> = ({ className = "" }) => {
   return (
     <div
       aria-hidden="true"
@@ -214,10 +218,10 @@ export const DoctorsToLocationWave: FC<{ className?: string }> = ({ className = 
           fill="#A9DCCB"
           opacity="0.85"
         />
-        {/* Layer 3: White transition into Location & Contact */}
+        {/* Layer 3: Warm off-white transition into About Hospital (#F8FAF9) */}
         <path
           d="M 0,82 C 340,55 720,100 1080,68 C 1260,50 1360,82 1440,78 L 1440,120 L 0,120 Z"
-          fill="#FFFFFF"
+          fill="#F8FAF9"
         />
         {/* Accent green contour line */}
         <path
@@ -231,125 +235,81 @@ export const DoctorsToLocationWave: FC<{ className?: string }> = ({ className = 
   );
 };
 
-// 5. Location & Contact → Deep Medical Green Footer (STRONGEST TRANSITION — ANIMATED)
-export const LocationToFooterWave: FC<{ className?: string }> = ({ className = "" }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el || typeof IntersectionObserver === "undefined") {
-      setInView(true);
-      return;
-    }
-
-    // Unpause 300px before entering viewport so drift is seamlessly active on arrival
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setInView(entry.isIntersecting);
-      },
-      { rootMargin: "300px 0px 300px 0px" }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
+// 4b. About Janta Hospital → Location & Contact
+export const AboutToLocationWave: FC<{ className?: string }> = ({ className = "" }) => {
   return (
     <div
-      ref={containerRef}
+      aria-hidden="true"
+      className={`pointer-events-none select-none relative w-full overflow-hidden leading-none z-10 ${className}`}
+    >
+      <svg
+        viewBox="0 0 1440 120"
+        fill="none"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-full h-10 sm:h-14 lg:h-20 block"
+      >
+        <path
+          d="M 0,20 C 320,55 640,10 980,45 C 1180,65 1320,25 1440,30 L 1440,120 L 0,120 Z"
+          fill="#E0F3EC"
+          opacity="0.9"
+        />
+        <path
+          d="M 0,48 C 280,75 620,28 960,60 C 1180,40 1340,70 1440,55 L 1440,120 L 0,120 Z"
+          fill="#A9DCCB"
+          opacity="0.85"
+        />
+        <path
+          d="M 0,78 C 320,50 680,95 1040,65 C 1220,50 1350,78 1440,75 L 1440,120 L 0,120 Z"
+          fill="#FFFFFF"
+        />
+        <path
+          d="M 0,48 C 280,75 620,28 960,60 C 1180,40 1340,70 1440,55"
+          stroke="#75BCA5"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+      </svg>
+    </div>
+  );
+};
+
+export const DoctorsToLocationWave = DoctorsToAboutWave;
+
+// 5. Location & Contact → Deep Medical Green Footer (#0A5C4F)
+// Restrained, single asymmetrical organic transition curve
+export const LocationToFooterWave: FC<{ className?: string }> = ({ className = "" }) => {
+  return (
+    <div
       aria-hidden="true"
       className={`pointer-events-none select-none relative w-full overflow-hidden leading-none z-20 ${className}`}
     >
-      <div className="relative w-full h-14 sm:h-20 lg:h-24 overflow-hidden">
-        {/* Layer 1: Light Mint Sky/Swell (#E0F3EC) */}
+      <div className="relative w-full h-12 sm:h-16 lg:h-20 overflow-hidden">
         <svg
-          viewBox="0 0 1440 200"
+          viewBox="0 0 1440 120"
           fill="none"
           preserveAspectRatio="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute inset-0 w-full h-full block"
+          className="w-full h-full block"
         >
+          {/* Subtle supportive soft mint curve underneath */}
           <path
-            d="M 0,35 C 340,100 740,0 1080,70 C 1260,105 1380,40 1440,30 L 1440,200 L 0,200 Z"
+            d="M 0,28 C 380,82 760,10 1140,54 C 1270,69 1370,42 1440,35 L 1440,120 L 0,120 Z"
             fill="#E0F3EC"
-            opacity="0.95"
+            opacity="0.6"
           />
-        </svg>
-
-        {/* Layer 2: Animated Drifting Medium Sage Wave (#A9DCCB) (Seamless continuous drift) */}
-        <div
-          className={`absolute inset-0 w-[200%] h-full animate-wave-slow flex opacity-90 ${
-            !inView ? "animation-paused" : ""
-          }`}
-        >
-          <svg
-            viewBox="0 0 2880 200"
-            fill="none"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-full block"
-          >
-            <path
-              d="M 0,70 
-                 C 260,30 580,110 900,60 
-                 C 1140,20 1320,90 1440,70 
-                 C 1700,30 2020,110 2340,60 
-                 C 2580,20 2760,90 2880,70 
-                 L 2880,200 L 0,200 Z"
-              fill="#A9DCCB"
-            />
-          </svg>
-        </div>
-
-        {/* Layer 3: Accent Green Wave (#75BCA5) */}
-        <svg
-          viewBox="0 0 1440 200"
-          fill="none"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute inset-0 w-full h-full block"
-        >
+          {/* Single restrained asymmetric organic curve into Deep Medical Green (#0A5C4F) */}
           <path
-            d="M 0,95 C 300,55 640,125 980,80 C 1180,50 1340,95 1440,90 L 1440,200 L 0,200 Z"
-            fill="#75BCA5"
-            opacity="0.85"
-          />
-        </svg>
-
-        {/* Layer 4: Deep Emerald Wave (#0A5C4F) with Luminous Mint Highlight */}
-        <svg
-          viewBox="0 0 1440 200"
-          fill="none"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute inset-0 w-full h-full block"
-        >
-          <path
-            d="M 0,120 C 320,75 680,150 1020,100 C 1220,70 1360,120 1440,115 L 1440,200 L 0,200 Z"
+            d="M 0,48 C 340,98 720,24 1080,68 C 1240,88 1360,52 1440,46 L 1440,120 L 0,120 Z"
             fill="#0A5C4F"
           />
-          {/* Luminous contour accent line */}
+          {/* Fine sage accent contour line */}
           <path
-            d="M 0,120 C 320,75 680,150 1020,100 C 1220,70 1360,120 1440,115"
-            stroke="#7CE4C9"
-            strokeWidth="2"
-            strokeOpacity="0.8"
+            d="M 0,48 C 340,98 720,24 1080,68 C 1240,88 1360,52 1440,46"
+            stroke="#75BCA5"
+            strokeWidth="1.5"
+            strokeOpacity="0.75"
             strokeLinecap="round"
-          />
-        </svg>
-
-        {/* Layer 5: Foundation Deep Green Footer Base (#073B32) */}
-        <svg
-          viewBox="0 0 1440 200"
-          fill="none"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute inset-0 w-full h-full block"
-        >
-          <path
-            d="M 0,155 C 280,125 620,180 960,140 C 1180,115 1340,160 1440,155 L 1440,200 L 0,200 Z"
-            fill="#073B32"
           />
         </svg>
       </div>

@@ -60,11 +60,11 @@ export function Facilities() {
                       <h3 className="font-sans font-bold text-sm sm:text-base text-[#122421]">
                         {facility.title}
                       </h3>
-                      <span className="px-2 py-0.5 rounded-full bg-[#EAF5F0] text-[10px] font-bold text-[#0A5C4F]">
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#EAF5F0] text-xs font-bold text-[#0A5C4F]">
                         {facility.highlight}
                       </span>
                     </div>
-                    <p className="text-xs sm:text-sm text-[#475B57] leading-relaxed">
+                    <p className="text-sm text-[#2E4540] font-medium leading-relaxed">
                       {facility.description}
                     </p>
                   </div>
@@ -73,7 +73,7 @@ export function Facilities() {
             </div>
 
             {/* Quick Assurance Strip */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-[#F4FAF7] border border-[#C2EADB] flex items-center gap-3.5 text-xs text-[#0A5C4F]">
+            <div className="p-4 sm:p-5 rounded-2xl bg-[#F4FAF7] border border-[#C2EADB] flex items-center gap-3.5 text-xs sm:text-sm font-medium text-[#0A5C4F]">
               <ShieldCheck className="w-5 h-5 shrink-0 text-[#0A5C4F]" aria-hidden="true" />
               <span>
                 <strong>Hygienic Standards:</strong> Regular sanitization across patient waiting areas,
@@ -100,7 +100,7 @@ export function Facilities() {
                 aria-hidden="true"
               />
               <div className="absolute left-4 right-4 bottom-4 text-white z-10">
-                <span className="px-2.5 py-0.5 rounded-full bg-[#0A5C4F]/90 backdrop-blur-md text-[10px] font-bold tracking-wider uppercase mb-1 inline-block">
+                <span className="px-2.5 py-0.5 rounded-full bg-[#0A5C4F]/90 backdrop-blur-md text-xs font-bold tracking-wider uppercase mb-1 inline-block">
                   Front Veranda
                 </span>
                 <p className="font-bold text-sm sm:text-base">
@@ -122,10 +122,10 @@ export function Facilities() {
                 />
               </div>
               <div className="p-3">
-                <span className="text-[10px] font-bold text-[#0A5C4F] uppercase tracking-wider block">
+                <span className="text-xs font-bold text-[#0A5C4F] uppercase tracking-wider block">
                   On-Premises
                 </span>
-                <span className="font-bold text-xs text-[#122421] block">
+                <span className="font-bold text-xs sm:text-sm text-[#122421] block">
                   Medicine Dispensary (दवाई)
                 </span>
               </div>
@@ -137,8 +137,8 @@ export function Facilities() {
                 <Building className="w-4 h-4" aria-hidden="true" />
               </div>
               <div>
-                <span className="font-bold text-xs text-[#122421] block">Two-Story Facility</span>
-                <span className="text-[10px] text-[#6B7F7B] block">Palmerganj, Lohardaga</span>
+                <span className="font-bold text-xs sm:text-sm text-[#122421] block">Two-Story Facility</span>
+                <span className="text-xs text-[#3B524E] font-medium block">Palmerganj, Lohardaga</span>
               </div>
             </div>
 

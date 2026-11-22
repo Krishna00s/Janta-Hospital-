@@ -34,13 +34,13 @@ export interface HospitalService {
 export const servicesData: HospitalService[] = [
   {
     id: "emergency-care",
-    name: "24 घंटे Emergency इलाज",
+    name: "24/7 Emergency Care",
     shortDescription:
-      "अचानक तबीयत बिगड़ने, चोट या दर्द में तुरंत प्राथमिक इलाज और देखभाल।",
+      "अचानक तबीयत खराब होने, चोट या दर्द में तुरंत प्राथमिक इलाज और emergency medical support।",
     fullDescription:
-      "Janta Hospital में Palmerganj, Lohardaga में 24 घंटे Emergency सेवा उपलब्ध है। Duty Doctors और Staff द्वारा तुरंत प्राथमिक जाँच, ऑक्सीजन, injection और आपातकालीन देखभाल की जाती है।",
+      "Janta Hospital Palmerganj, Lohardaga में 24 घंटे Emergency Care उपलब्ध है। Duty Doctor और trained staff द्वारा तुरंत प्राथमिक जाँच, ऑक्सीजन, emergency injection और immediate care की जाती है।",
     category: "Emergency",
-    badge: "24 घंटे Emergency",
+    badge: "24/7 Emergency",
     iconName: "activity",
     availability: "24 घंटे उपलब्ध • सातों दिन",
     image: {
@@ -52,8 +52,8 @@ export const servicesData: HospitalService[] = [
     keyFeatures: [
       "पहुँचते ही तुरंत प्राथमिक देखभाल",
       "ऑक्सीजन और नेबुलाइज़र की सुविधा",
-      "Emergency Injection और दवा",
-      "सीधी Emergency Helpline सेवा",
+      "Emergency Injection और दवाएँ",
+      "24 घंटे Duty Doctor Helpline",
     ],
     actionLabel: "Emergency Call करें",
     actionHref: "tel:+919693821174",
@@ -63,13 +63,13 @@ export const servicesData: HospitalService[] = [
   },
   {
     id: "opd-consultations",
-    name: "Doctor से मिलें (OPD)",
+    name: "OPD Consultation",
     shortDescription:
-      "बुखार, सर्दी, पेट दर्द और सामान्य बीमारियों के लिए रोज़ाना सुबह-शाम Doctor से सलाह।",
+      "बुखार, सर्दी, पेट दर्द और seasonal diseases के लिए रोज़ाना सुबह-शाम Doctor से सलाह।",
     fullDescription:
-      "Hospital के Ground Floor पर रोज़ाना OPD चलती है। यहाँ अनुभवी Doctors द्वारा सामान्य बीमारियों की जाँच, Blood Pressure और Sugar की जाँच और सही इलाज की सलाह दी जाती है।",
+      "Hospital के Ground Floor पर रोज़ाना morning व evening OPD चलती है। यहाँ अनुभवी Doctors द्वारा सामान्य बीमारियों की जाँच, Blood Pressure और Sugar testing और सही इलाज की सलाह दी जाती है।",
     category: "Outpatient",
-    badge: "रोज़ाना सुबह और शाम",
+    badge: "Daily OPD",
     iconName: "stethoscope",
     availability: "सोमवार से शनिवार • सुबह 9:00 - 1:00 और शाम 5:00 - 8:00",
     image: {
@@ -80,11 +80,11 @@ export const servicesData: HospitalService[] = [
     },
     keyFeatures: [
       "अनुभवी Doctor द्वारा व्यक्तिगत जाँच",
-      "बुखार, सर्दी, खाँसी और इन्फेक्शन का इलाज",
-      "BP और Diabetic की नियमित जाँच",
+      "बुखार, सर्दी, खाँसी और seasonal diseases का इलाज",
+      "BP और Blood Sugar की नियमित जाँच",
       "दवा और परहेज़ की सही जानकारी",
     ],
-    actionLabel: "OPD का समय जानें",
+    actionLabel: "OPD Timing देखें",
     actionHref: "tel:+919693821174",
     isEmergency: false,
     status: "verified",
@@ -92,13 +92,13 @@ export const servicesData: HospitalService[] = [
   },
   {
     id: "pharmacy-counter",
-    name: "Hospital में दवा की दुकान (Pharmacy)",
+    name: "Hospital Pharmacy",
     shortDescription:
-      "लिखी गई सभी ज़रूरी दवाएँ, पट्टियाँ और प्राथमिक चिकित्सा सामग्री सीधे Hospital में उपलब्ध।",
+      "Doctor द्वारा लिखी गई सभी ज़रूरी दवाएँ, injection और surgical सामान सीधे Hospital Pharmacy पर उपलब्ध।",
     fullDescription:
-      "Hospital के अंदर ही दवा का Counter बना है। Doctor को दिखाने के तुरंत बाद मरीज़ों और परिजनों को लिखी गई दवाएँ और सर्जिकल सामान आसानी से मिल जाता है।",
+      "Hospital के अंदर front porch पर दवा का counter बना है। Doctor Consultation के तुरंत बाद मरीज़ों और परिजनों को लिखी गई medicines और first-aid supplies आसानी से मिल जाती हैं।",
     category: "Pharmacy",
-    badge: "Hospital में उपलब्ध",
+    badge: "Hospital Pharmacy",
     iconName: "pill",
     availability: "Hospital खुलने के समय उपलब्ध",
     image: {
@@ -109,11 +109,11 @@ export const servicesData: HospitalService[] = [
     },
     keyFeatures: [
       "Doctor द्वारा लिखी गई सभी दवाएँ",
-      "मरहम, पट्टी और First Aid का सामान",
+      "Antiseptic, dressing और First Aid सामग्री",
       "Emergency दवाएँ हमेशा उपलब्ध",
-      "Ground Floor पर सीधे पहुँच",
+      "Ground Floor front porch पर सीधी पहुँच",
     ],
-    actionLabel: "दवा के बारे में पूछें",
+    actionLabel: "Pharmacy जानकारी लें",
     actionHref: "tel:+919693821174",
     isEmergency: false,
     status: "verified",
@@ -121,13 +121,13 @@ export const servicesData: HospitalService[] = [
   },
   {
     id: "clinical-procedures",
-    name: "मरहम-पट्टी और Injection",
+    name: "Dressing & Injection",
     shortDescription:
-      "घाव की साफ़-सफ़ाई, पट्टी बदलना, injection और प्राथमिक नर्सिंग सेवाएँ।",
+      "घाव की antiseptic dressing, पट्टी बदलना, injection और routine checkup।",
     fullDescription:
-      "हमारे यहाँ साफ़-सफ़ाई के साथ घाव की ड्रेसिंग, पट्टी बदलना, Tetanus और Doctor द्वारा लिखे गए Injection लगाने की सुविधा उपलब्ध है।",
+      "हमारे यहाँ trained medical staff द्वारा साफ़-सुथरे तरीके से घाव की dressing, पट्टी बदलना, Tetanus और Doctor द्वारा prescribed injections लगाने की सुविधा उपलब्ध है।",
     category: "Clinical Support",
-    badge: "मरहम-पट्टी",
+    badge: "Dressing",
     iconName: "shield-check",
     availability: "रोज़ाना Hospital समय में उपलब्ध",
     image: {
@@ -137,12 +137,12 @@ export const servicesData: HospitalService[] = [
       height: 350,
     },
     keyFeatures: [
-      "साफ़-सुथरे तरीके से घाव की ड्रेसिंग",
+      "Sterile तरीके से घाव की dressing",
       "Intramuscular & Intravenous Injection",
       "BP, Pulse और Oxygen की जाँच",
-      "चोट और खरोंच का तुरंत प्राथमिक उपचार",
+      "Minor cuts और चोट का तुरंत first aid",
     ],
-    actionLabel: "Nursing Desk से पूछें",
+    actionLabel: "Dressing Room जानकारी",
     actionHref: "tel:+919693821174",
     isEmergency: false,
     status: "verified",

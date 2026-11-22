@@ -127,31 +127,31 @@ export const hospitalConfig = {
   services: [
     {
       id: "emergency-care",
-      title: "24 घंटे Emergency इलाज",
+      title: "24/7 Emergency Care",
       shortDescription:
-        "अचानक तबीयत बिगड़ने, चोट या दर्द में तुरंत प्राथमिक इलाज और देखभाल।",
+        "अचानक तबीयत खराब होने, चोट या दर्द में तुरंत प्राथमिक इलाज और emergency support।",
       status: "verified" as const,
-      badge: "24 घंटे Emergency",
+      badge: "24/7 Emergency",
       icon: "activity",
       actionText: "Emergency Call",
       actionHref: "tel:+919693821174",
     },
     {
       id: "opd-consultations",
-      title: "Doctor से मिलें (OPD)",
+      title: "OPD Consultation",
       shortDescription:
         "बुखार, सर्दी, पेट दर्द और सामान्य बीमारियों के लिए रोज़ाना सुबह-शाम Doctor से सलाह।",
       status: "verified" as const,
       badge: "Daily OPD",
       icon: "stethoscope",
-      actionText: "समय जानें",
+      actionText: "OPD Timing देखें",
       actionHref: "tel:+919693821174",
     },
     {
       id: "general-medicine",
-      title: "सामान्य स्वास्थ्य और दवा",
+      title: "General Medicine",
       shortDescription:
-        "बीमारियों की सही जाँच, प्राथमिक उपचार और लंबे समय की बीमारियों की देखभाल।",
+        "बीमारियों की सही जाँच, प्राथमिक उपचार और BP / Sugar की नियमित देखभाल।",
       status: "verified" as const,
       badge: "Primary Care",
       icon: "heart-pulse",
@@ -160,22 +160,22 @@ export const hospitalConfig = {
     },
     {
       id: "pharmacy-counter",
-      title: "Hospital में दवा की दुकान",
+      title: "Hospital Pharmacy",
       shortDescription:
-        "लिखी गई सभी ज़रूरी दवाएँ और पट्टियाँ सीधे front porch pharmacy counter पर उपलब्ध।",
+        "Doctor द्वारा लिखी गई सभी ज़रूरी medicines सीधे front porch pharmacy counter पर उपलब्ध।",
       status: "verified" as const,
-      badge: "दवा की दुकान",
+      badge: "Pharmacy",
       icon: "pill",
       actionText: "दवा काउंटर",
       actionHref: "#location",
     },
     {
       id: "minor-procedures",
-      title: "मरहम-पट्टी और Injection",
+      title: "Dressing & Injection",
       shortDescription:
-        "घाव की सफ़ाई, पट्टी बदलना, injection और BP / Sugar की नियमित जाँच।",
+        "घाव की antiseptic dressing, पट्टी बदलना, injection और routine checkup।",
       status: "verified" as const,
-      badge: "मरहम-पट्टी",
+      badge: "Dressing",
       icon: "band-aid",
       actionText: "सीधे मिलें",
       actionHref: "tel:+919693821174",

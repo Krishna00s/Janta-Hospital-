@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 type ButtonBaseProps = {
   children: ReactNode;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "emergency" | "emergency-white";
   size?: "sm" | "md" | "lg";
   className?: string;
   icon?: ReactNode;
@@ -46,6 +46,10 @@ export function Button({
     secondary:
       "bg-white hover:bg-[#F4FAF7] text-[#0A5C4F] border border-[#C2EADB] shadow-sm hover:border-[#0A5C4F]",
     ghost: "bg-transparent hover:bg-[#F4FAF7] text-[#0A5C4F]",
+    emergency:
+      "bg-[#A63F45] hover:bg-[#8E3339] text-white font-bold border border-[#A63F45] shadow-sm shadow-[#A63F45]/20 focus-visible:ring-[#A63F45]",
+    "emergency-white":
+      "bg-white hover:bg-[#F9EDEE] text-[#A63F45] font-bold border border-[#ECCDD0] shadow-sm focus-visible:ring-[#A63F45]",
   };
 
   const combinedClassName = cn(

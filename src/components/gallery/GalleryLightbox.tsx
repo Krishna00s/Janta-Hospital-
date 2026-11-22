@@ -93,7 +93,7 @@ export function GalleryLightbox({
             <span className="px-2.5 py-0.5 rounded-full bg-[#0A5C4F] text-[#7CE4C9] text-xs font-bold uppercase tracking-wider">
               {currentItem.category}
             </span>
-            <span className="text-xs text-[#80C8B5] font-mono">
+            <span className="text-xs sm:text-sm text-[#80C8B5] font-mono font-semibold">
               तस्वीर {currentIndex + 1} / {items.length}
             </span>
           </div>
@@ -146,7 +146,7 @@ export function GalleryLightbox({
           <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
             {currentItem.title}
           </h3>
-          <p className="text-xs sm:text-sm text-[#A5D8CA] mt-1 leading-relaxed">
+          <p className="text-sm sm:text-base text-[#D1EBE3] mt-1.5 leading-relaxed font-medium">
             {currentItem.description}
           </p>
         </div>

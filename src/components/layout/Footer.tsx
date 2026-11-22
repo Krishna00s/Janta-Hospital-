@@ -16,7 +16,7 @@ function MedicalCrossIcon({ className }: { className?: string }) {
     >
       <path
         d="M8.5 3C8.5 2.17157 9.17157 1.5 10 1.5H14C14.8284 1.5 15.5 2.17157 15.5 3V8.5H21C21.8284 8.5 22.5 9.17157 22.5 10V14C22.5 14.8284 21.8284 15.5 21 15.5H15.5V21C15.5 21.8284 14.8284 22.5 14 22.5H10C9.17157 22.5 8.5 21.8284 8.5 21V15.5H3C2.17157 15.5 1.5 14.8284 1.5 14V10C1.5 9.17157 2.17157 8.5 3 8.5H8.5V3Z"
-        fill="#7CE4C9"
+        fill="#75BCA5"
       />
     </svg>
   );
@@ -28,180 +28,174 @@ export function Footer() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "हमारा Hospital", href: "/about" },
-    { label: "इलाज और सुविधाएँ", href: "/services" },
-    { label: "हमारे Doctors", href: "/doctors" },
-    { label: "Hospital की तस्वीरें", href: "/gallery" },
-    { label: "पता और Contact", href: "/contact" },
+    { label: "Services", href: "/services" },
+    { label: "Doctors", href: "/doctors" },
+    { label: "About", href: "/about" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
-    <footer id="footer" className="relative w-full bg-[#073B32] text-white overflow-hidden">
-      {/* 1. Dramatic Wave Transition from Location (#FFFFFF) into Deep Green (#073B32) */}
+    <footer id="footer" className="relative w-full bg-[#0A5C4F] text-white overflow-hidden">
+      {/* 1. Restrained Asymmetrical Organic Transition into #0A5C4F */}
       <LocationToFooterWave />
 
-      {/* 2. Main Editorial Footer Container (Efficient, Proportional Grid) */}
-      <div className="relative z-20 pt-6 sm:pt-10 lg:pt-12 pb-6 sm:pb-8 bg-[#073B32]">
+      {/* 2. Main Editorial Footer Container */}
+      <div className="relative z-20 pt-6 sm:pt-8 lg:pt-10 pb-8 sm:pb-12 bg-[#0A5C4F]">
         <Container>
           
-          {/* Integrated Master Grid: Editorial Message (Left) & Essential Directory (Right) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 pb-8 sm:pb-10 border-b border-[#12584A] items-start">
-            
-            {/* Left Column (lg:col-span-6): Editorial Headline, Prompt & Primary Actions */}
-            <div className="lg:col-span-6 space-y-4 sm:space-y-5">
-              <div>
-                <span className="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-[#0A5C4F] text-[#7CE4C9] text-[11px] sm:text-xs font-bold uppercase tracking-widest mb-3 border border-[#166E5E]">
-                  24 घंटे Emergency सेवा
+          {/* Top Section: Strong Editorial Heading & Primary Contact Actions */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 pb-8 sm:pb-10 border-b border-[#147061]">
+            <div className="max-w-xl space-y-2 sm:space-y-3">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#A9DCCB] block">
+                Janta Hospital • Lohardaga
+              </span>
+              <h2 className="text-2xl min-[360px]:text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold tracking-tight text-white leading-tight">
+                <span>ज़रूरत के समय, </span>
+                <span className="font-serif italic font-normal text-[#E0F3EC]">
+                  आपके साथ।
                 </span>
-                <h2 className="text-2xl min-[360px]:text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold tracking-tight text-white leading-tight">
-                  <span>यहाँ जब आपको हमारी </span>
-                  <span className="font-serif italic font-normal text-[#7CE4C9]">
-                    ज़रूरत हो।
+              </h2>
+              <p className="text-sm sm:text-base text-[#E0F3EC] font-semibold leading-relaxed">
+                Lohardaga के Palmerganj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।
+              </p>
+            </div>
+
+            {/* Clear Primary Contact Actions */}
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 shrink-0">
+              <a
+                href={phoneHref}
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-[#0A5C4F] font-bold text-xs sm:text-sm hover:bg-[#E0F3EC] transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              >
+                <Phone className="w-4 h-4 text-[#A63F45]" aria-hidden="true" />
+                <span>अभी Call करें ({hospitalConfig.contact.phone.formatted})</span>
+              </a>
+
+              <a
+                href={hospitalConfig.contact.mapsUrl.value}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#084F43] text-white font-bold text-xs sm:text-sm border border-[#167868] hover:bg-[#074338] transition-colors shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              >
+                <MapPin className="w-4 h-4 text-[#A9DCCB]" aria-hidden="true" />
+                <span>रास्ता देखें (Google Maps)</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Middle Section: Spacious, Balanced 3-Column Layout on Desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 py-8 sm:py-10 border-b border-[#147061] items-start">
+            
+            {/* Column 1: Hospital Identity & Verified Location (4 cols) */}
+            <div className="lg:col-span-5 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#084F43] border border-[#167868] flex items-center justify-center shrink-0">
+                  <MedicalCrossIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+                </div>
+                <div>
+                  <span className="font-sans font-bold text-lg sm:text-xl tracking-tight text-white block leading-tight">
+                    {hospitalConfig.name.value}
                   </span>
-                </h2>
-                <p className="mt-2 text-xs sm:text-sm lg:text-base text-[#C8E8DC] max-w-lg font-normal leading-relaxed">
-                  Lohardaga के Palmerganj में 24 घंटे Emergency और रोज़ाना OPD की सुविधा।
+                  <span className="text-xs font-bold text-[#A9DCCB] tracking-widest uppercase">
+                    {hospitalConfig.locationName}
+                  </span>
+                </div>
+              </div>
+
+              <div className="text-xs sm:text-sm text-[#E0F3EC] space-y-1.5 leading-relaxed max-w-sm">
+                <p className="font-bold text-white">
+                  {hospitalConfig.location.fullAddress}
+                </p>
+                <p className="text-xs text-[#A8D8C8] font-semibold">
+                  Head Post Office के ठीक पीछे • Main Bus Stand के पास
                 </p>
               </div>
 
-              {/* Primary Contact Actions */}
-              <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 pt-1">
-                <a
-                  href={phoneHref}
-                  className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-white text-[#073B32] font-bold text-xs sm:text-sm hover:bg-[#E8F5F1] transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7CE4C9]"
-                >
-                  <Phone className="w-3.5 h-3.5 text-[#0A5C4F]" aria-hidden="true" />
-                  <span>अभी Call करें ({hospitalConfig.contact.phone.formatted})</span>
-                </a>
-
-                <a
-                  href={hospitalConfig.contact.mapsUrl.value}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-[#0A5C4F]/80 text-white font-bold text-xs sm:text-sm border border-[#1E7767] hover:bg-[#0A5C4F] transition-colors shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7CE4C9]"
-                >
-                  <MapPin className="w-3.5 h-3.5 text-[#7CE4C9]" aria-hidden="true" />
-                  <span>रास्ता देखें</span>
-                </a>
-              </div>
-
-              {/* 24/7 Status Indicator */}
               <div className="pt-1">
-                <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#0A5C4F]/60 text-[11px] sm:text-xs text-[#7CE4C9] border border-[#166E5E]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#7CE4C9] animate-pulse" />
-                  24 घंटे Emergency सेवा चालू है
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#084F43] text-xs font-semibold text-[#E0F3EC] border border-[#167868]">
+                  <span className="w-2 h-2 rounded-full bg-[#A9DCCB]" />
+                  24 घंटे Emergency सेवा उपलब्ध
                 </span>
               </div>
             </div>
 
-            {/* Right Column (lg:col-span-6): Hospital Identity, Address & Fast Directory */}
-            <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 pt-2 lg:pt-0">
-              
-              {/* Identity & Address */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#0A5C4F] border border-[#1D7767] flex items-center justify-center shrink-0">
-                    <MedicalCrossIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-                  </div>
-                  <div>
-                    <span className="font-sans font-bold text-base sm:text-lg tracking-tight text-white block leading-tight">
-                      {hospitalConfig.name.value}
-                    </span>
-                    <span className="text-[10px] sm:text-[11px] font-semibold text-[#80C8B5] tracking-widest uppercase">
-                      {hospitalConfig.locationName}
-                    </span>
-                  </div>
-                </div>
+            {/* Column 2: Useful Navigation (3 cols) */}
+            <div className="lg:col-span-3 space-y-3">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#A9DCCB]">
+                Hospital Directory
+              </h3>
+              <ul className="space-y-1 text-xs sm:text-sm font-semibold text-[#E0F3EC]">
+                {navLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      prefetch={false}
+                      className="inline-flex items-center py-1.5 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#A9DCCB] rounded"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-                <div className="text-xs text-[#C8E8DC] space-y-1 leading-relaxed">
-                  <p className="font-medium text-white">
-                    {hospitalConfig.location.fullAddress}
-                  </p>
-                  <p className="text-[11px] text-[#80C8B5]">
-                    Head Post Office के पीछे · Main Bus Stand के पास
-                  </p>
-                </div>
-
-                {/* Quick Navigation Links */}
-                <div className="pt-2">
-                  <h3 className="text-[11px] font-bold uppercase tracking-wider text-[#7CE4C9] mb-2 font-sans">
-                    Navigation
-                  </h3>
-                  <ul className="grid grid-cols-2 gap-x-2 gap-y-1 text-xs text-[#C8E8DC]">
-                    {navLinks.map((link) => (
-                      <li key={link.label}>
-                        <Link
-                          href={link.href}
-                          prefetch={false}
-                          className="inline-flex items-center min-h-[36px] py-1.5 px-1 -mx-1 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#7CE4C9] rounded"
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Direct Contact Numbers & WhatsApp */}
-              <div className="space-y-3">
-                <h3 className="text-[11px] font-bold uppercase tracking-wider text-[#7CE4C9] font-sans">
-                  सीधे संपर्क करें
+            {/* Column 3: Direct Contact Numbers & WhatsApp (4 cols) */}
+            <div className="lg:col-span-4 space-y-4">
+              <div>
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#A9DCCB] mb-2">
+                  Emergency व पूछताछ
                 </h3>
+                <a
+                  href={phoneHref}
+                  className="font-sans font-extrabold text-xl sm:text-2xl text-white hover:text-[#E0F3EC] transition-colors block"
+                >
+                  {hospitalConfig.contact.phone.formatted}
+                </a>
+                <span className="text-xs text-[#E0F3EC] font-semibold mt-0.5 block">
+                  दिन और रात — कभी भी संपर्क करें
+                </span>
+              </div>
 
-                <div>
-                  <span className="text-[11px] text-[#80C8B5] block mb-0.5">
-                    Emergency और Reception
-                  </span>
-                  <a
-                    href={phoneHref}
-                    className="font-sans font-extrabold text-lg sm:text-xl text-white hover:text-[#7CE4C9] transition-colors"
-                  >
-                    {hospitalConfig.contact.phone.formatted}
-                  </a>
-                </div>
-
-                <div className="pt-1.5 border-t border-[#12584A]">
-                  <span className="text-[11px] text-[#80C8B5] block mb-1">
-                    अन्य संपर्क नंबर:
-                  </span>
-                  <div className="flex flex-wrap gap-x-3 gap-y-1">
-                    {hospitalConfig.contact.phone.alternatePhones.map((ph) => (
-                      <a
-                        key={ph}
-                        href={`tel:+91${ph}`}
-                        className="font-mono text-xs font-medium text-[#C8E8DC] hover:text-[#7CE4C9]"
-                      >
-                        +91 {ph}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="pt-1.5">
-                  <a
-                    href={hospitalConfig.contact.whatsapp.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#7CE4C9] hover:underline"
-                  >
-                    <MessageSquare className="w-3.5 h-3.5" aria-hidden="true" />
-                    <span>WhatsApp पर बात करें (+91 {hospitalConfig.contact.whatsapp.value})</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
-                  </a>
+              {/* Alternate Staff Duty Lines */}
+              <div className="pt-2 border-t border-[#147061]">
+                <span className="text-xs text-[#A8D8C8] font-semibold block mb-1.5">
+                  अन्य संपर्क नंबर (Other Duty Lines):
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {hospitalConfig.contact.phone.alternatePhones.map((ph) => (
+                    <a
+                      key={ph}
+                      href={`tel:+91${ph}`}
+                      className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-[#084F43] text-[#E0F3EC] hover:bg-[#074338] hover:text-white transition-colors border border-[#167868]"
+                    >
+                      +91 {ph}
+                    </a>
+                  ))}
                 </div>
               </div>
 
+              <div className="pt-1">
+                <a
+                  href={hospitalConfig.contact.whatsapp.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#A9DCCB] hover:text-[#E0F3EC] transition-colors"
+                >
+                  <MessageSquare className="w-4 h-4 text-[#A9DCCB]" aria-hidden="true" />
+                  <span>WhatsApp पर संदेश भेजें</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                </a>
+              </div>
             </div>
 
           </div>
 
-          {/* Bottom Row: Legal / Verified Credits */}
-          <div className="pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] sm:text-xs text-[#80C8B5]">
+          {/* Bottom Section: Legal & Clean Attribution */}
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-[#A8D8C8] font-semibold">
             <p>
               © {currentYear} {hospitalConfig.name.value}, Lohardaga. All rights reserved.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5 text-xs text-[#A8D8C8]">
               <span>Palmerganj, Lohardaga</span>
               <span>•</span>
               <span>Near Bus Stand</span>

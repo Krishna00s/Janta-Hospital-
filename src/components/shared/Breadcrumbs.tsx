@@ -15,7 +15,7 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
   return (
     <nav
       aria-label="Breadcrumb"
-      className={`text-xs text-[#526964] ${className}`}
+      className={`text-xs sm:text-sm font-semibold text-[#3B524E] ${className}`}
     >
       <ol
         className="flex flex-wrap items-center gap-1.5 sm:gap-2"
@@ -32,10 +32,10 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
             href="/"
             prefetch={false}
             itemProp="item"
-            className="flex items-center gap-1 hover:text-[#0A5C4F] transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F] rounded"
+            className="flex items-center gap-1 hover:text-[#0A5C4F] transition-colors py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F] rounded font-bold"
           >
             <Home className="w-3.5 h-3.5 text-[#0A5C4F]" aria-hidden="true" />
-            <span itemProp="name" className="sr-only sm:not-sr-only font-medium">
+            <span itemProp="name" className="sr-only sm:not-sr-only">
               Home
             </span>
           </Link>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, MapPin, ArrowUpRight, Clock, ShieldCheck, HeartPulse } from "lucide-react";
+import { Phone, ArrowUpRight } from "lucide-react";
 import { hospitalConfig } from "@/content/hospital";
 import { Badge } from "@/components/shared/Badge";
 import { GalleryToServicesWave } from "@/components/ui/SectionWaves";
@@ -32,7 +32,7 @@ export function HospitalGallery() {
           >
             Janta Hospital की एक झलक
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-[#475B57] leading-relaxed">
+          <p className="mt-2 text-sm sm:text-base text-[#2E4540] font-semibold leading-relaxed">
             Lohardaga के Palmerganj में आपकी सेहत का पूरा ध्यान — जानिए Hospital आने पर आपको क्या सुविधा मिलती है।
           </p>
         </ScrollReveal>
@@ -62,35 +62,35 @@ export function HospitalGallery() {
                   <h3 className="text-xl sm:text-2xl font-extrabold font-sans text-[#122421] tracking-tight">
                     जब आप Hospital आते हैं
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#475B57] mt-1 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#2E4540] font-semibold mt-1 leading-relaxed">
                     मरीज़ों और उनके परिवार के लिए आसान व्यवस्था — बिना किसी उलझन के तुरंत सही देखभाल:
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
                   <div className="p-3.5 rounded-2xl bg-[#F4FAF7] border border-[#E0EFE8]">
-                    <span className="text-[11px] font-extrabold text-[#0A5C4F] uppercase tracking-wider block mb-1">
+                    <span className="text-xs font-extrabold text-[#0A5C4F] uppercase tracking-wider block mb-1">
                       1. Reception
                     </span>
-                    <p className="text-xs text-[#3B524E] font-medium leading-snug">
+                    <p className="text-xs sm:text-sm text-[#2E4540] font-semibold leading-snug">
                       Ground Floor पर पर्ची बनवाएँ और Token लें।
                     </p>
                   </div>
 
                   <div className="p-3.5 rounded-2xl bg-[#F4FAF7] border border-[#E0EFE8]">
-                    <span className="text-[11px] font-extrabold text-[#0A5C4F] uppercase tracking-wider block mb-1">
-                      2. Doctor से मिलना
+                    <span className="text-xs font-extrabold text-[#0A5C4F] uppercase tracking-wider block mb-1">
+                      2. OPD Consultation
                     </span>
-                    <p className="text-xs text-[#3B524E] font-medium leading-snug">
+                    <p className="text-xs sm:text-sm text-[#2E4540] font-semibold leading-snug">
                       बीमारी के अनुसार सही कमरे में Doctor को दिखाएँ।
                     </p>
                   </div>
 
                   <div className="p-3.5 rounded-2xl bg-[#F4FAF7] border border-[#E0EFE8]">
-                    <span className="text-[11px] font-extrabold text-[#0A5C4F] uppercase tracking-wider block mb-1">
-                      3. दवा और पट्टी
+                    <span className="text-xs font-extrabold text-[#0A5C4F] uppercase tracking-wider block mb-1">
+                      3. Pharmacy &amp; Dressing
                     </span>
-                    <p className="text-xs text-[#3B524E] font-medium leading-snug">
+                    <p className="text-xs sm:text-sm text-[#2E4540] font-semibold leading-snug">
                       बरामदे पर ही दवा दुकान और ड्रेसिंग उपलब्ध है।
                     </p>
                   </div>
@@ -99,12 +99,12 @@ export function HospitalGallery() {
                 <div className="pt-2 flex items-center justify-between">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0A5C4F] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0A5C4F] hover:underline"
                   >
                     <span>Hospital का रास्ता देखें</span>
                     <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </Link>
-                  <span className="text-[11px] text-[#6B7F7B]">Palmerganj, Lohardaga</span>
+                  <span className="text-xs sm:text-sm text-[#2E4540] font-bold">Palmerganj, Lohardaga</span>
                 </div>
               </div>
             </div>
@@ -113,12 +113,12 @@ export function HospitalGallery() {
           {/* Right Column (5 cols): Two Asymmetric Supporting Healthcare Cards */}
           <div className="lg:col-span-5 flex flex-col gap-5 sm:gap-6 justify-between">
             
-            {/* Card 1: 24-Hour Emergency Response */}
+            {/* Card 1: 24-Hour Emergency Response (Muted Crimson Emergency Accent) */}
             <ScrollReveal direction="card" delay={80} className="flex-1 flex">
-              <div className="group relative rounded-3xl p-5 sm:p-6 bg-gradient-to-br from-[#0A5C4F] to-[#074B40] text-white shadow-md overflow-hidden flex flex-col justify-between w-full card-hover-lift">
+              <div className="group relative rounded-3xl p-5 sm:p-6 bg-[#FAFCFA] border border-[#ECCDD0] shadow-sm overflow-hidden flex flex-col justify-between w-full card-hover-lift">
                 
                 {/* Background Subtle First-Aid Kit Illustration */}
-                <div className="pointer-events-none absolute -right-4 -bottom-4 w-44 h-36 opacity-30 overflow-hidden">
+                <div className="pointer-events-none absolute -right-4 -bottom-4 w-44 h-36 opacity-15 overflow-hidden">
                   <Image
                     src="/illustrations/service-emergency-24h.svg"
                     alt="Emergency care medical illustration"
@@ -129,29 +129,29 @@ export function HospitalGallery() {
 
                 <div>
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="w-2 h-2 rounded-full bg-[#7CE4C9] animate-pulse" />
-                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-200">
-                      24 घंटे सेवा
+                    <span className="w-2 h-2 rounded-full bg-[#A63F45]" />
+                    <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#A63F45]">
+                      24/7 Emergency Care
                     </span>
                   </div>
 
-                  <h3 className="text-lg sm:text-xl font-extrabold text-white leading-tight">
-                    24 घंटे Emergency सेवा
+                  <h3 className="text-lg sm:text-xl font-extrabold text-[#122421] leading-tight">
+                    24/7 Emergency Care
                   </h3>
-                  <p className="text-xs sm:text-sm text-emerald-100/90 mt-1.5 leading-relaxed max-w-sm">
+                  <p className="text-sm text-[#2E4540] font-semibold mt-1.5 leading-relaxed max-w-sm">
                     रात हो या दिन, अचानक तबीयत बिगड़ने, चोट या दर्द में तुरंत प्राथमिक देखभाल और इलाज।
                   </p>
                 </div>
 
-                <div className="pt-4 mt-3 border-t border-white/20 relative z-10 flex items-center justify-between">
+                <div className="pt-4 mt-3 border-t border-[#ECCDD0]/60 relative z-10 flex items-center justify-between">
                   <a
                     href={phoneHref}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-[#0A5C4F] font-bold text-xs hover:bg-emerald-50 transition-colors shadow-xs"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#A63F45] text-white hover:bg-[#8E3339] font-bold text-xs sm:text-sm shadow-xs transition-colors"
                   >
-                    <Phone className="w-3.5 h-3.5" aria-hidden="true" />
+                    <Phone className="w-3.5 h-3.5 text-white" aria-hidden="true" />
                     <span>Emergency Call करें</span>
                   </a>
-                  <span className="text-[11px] text-emerald-200 font-medium">Duty Doctors उपलब्ध</span>
+                  <span className="text-xs sm:text-sm text-[#A63F45] font-bold">Duty Doctors उपलब्ध</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -171,13 +171,13 @@ export function HospitalGallery() {
                   </div>
 
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#0A5C4F] block mb-1">
+                    <span className="text-xs font-extrabold uppercase tracking-wider text-[#0A5C4F] block mb-1">
                       Front Porch Counter
                     </span>
                     <h3 className="text-base sm:text-lg font-bold font-sans text-[#122421] group-hover:text-[#0A5C4F] transition-colors leading-snug">
-                      Hospital में दवा दुकान
+                      Hospital Pharmacy
                     </h3>
-                    <p className="text-xs text-[#475B57] mt-1 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#2E4540] font-semibold mt-1 leading-relaxed">
                       Doctor को दिखाने के तुरंत बाद सभी ज़रूरी दवाएँ और पट्टियाँ सीधे Hospital में मिल जाती हैं।
                     </p>
                   </div>
@@ -186,12 +186,12 @@ export function HospitalGallery() {
                 <div className="pt-3 mt-3 border-t border-[#EEF3F0] flex items-center justify-between">
                   <Link
                     href="/services"
-                    className="inline-flex items-center gap-1 text-xs font-bold text-[#0A5C4F] hover:underline"
+                    className="inline-flex items-center gap-1 text-xs sm:text-sm font-bold text-[#0A5C4F] hover:underline"
                   >
-                    <span>दवा और अन्य सेवाएँ देखें</span>
+                    <span>Services देखें</span>
                     <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </Link>
-                  <span className="text-[11px] text-[#6B7F7B]">Ground Floor</span>
+                  <span className="text-xs sm:text-sm text-[#2E4540] font-bold">Ground Floor</span>
                 </div>
               </div>
             </ScrollReveal>

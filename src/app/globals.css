@@ -142,6 +142,63 @@ body {
   will-change: transform;
 }
 
+/* Telephone Ringing Wobble & Vibration Animation (Active burst ~1s, resting pause ~4.5s) */
+@keyframes phoneRing {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  2% {
+    transform: rotate(-16deg) scale(1.12);
+  }
+  4% {
+    transform: rotate(16deg) scale(1.12);
+  }
+  6% {
+    transform: rotate(-14deg) scale(1.1);
+  }
+  8% {
+    transform: rotate(14deg) scale(1.1);
+  }
+  10% {
+    transform: rotate(-10deg) scale(1.06);
+  }
+  12% {
+    transform: rotate(10deg) scale(1.06);
+  }
+  14% {
+    transform: rotate(-4deg) scale(1.02);
+  }
+  16% {
+    transform: rotate(4deg) scale(1.02);
+  }
+  18% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.animate-call-ring {
+  display: inline-block;
+  transform-origin: center center;
+  animation: phoneRing 5.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes emergencyPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(220, 38, 38, 0);
+  }
+}
+
+.animate-emergency-glow {
+  animation: emergencyPulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 .animate-wave-reverse {
   animation: waveDriftReverse 26s linear infinite;
   will-change: transform;
@@ -174,33 +231,35 @@ body {
 /* Progressive Visible Editorial Scroll Reveals */
 .reveal-pending {
   opacity: 0;
-  transform: translateY(32px);
+  transform: translateY(24px);
   /* Crucial: No transition during arming phase so offscreen elements snap invisibly */
   transition: none !important;
 }
 
 .reveal-pending.reveal-card {
-  transform: translateY(38px);
+  transform: translateY(24px);
 }
 
 .reveal-pending.reveal-heading {
-  transform: translateY(32px);
+  transform: translateY(24px);
 }
 
-/* Entrance transition triggers only when is-revealed is added */
+.reveal-pending.reveal-fade {
+  transform: none;
+}
+
+/* Entrance transition triggers smoothly when is-revealed is added */
 .reveal-pending.is-revealed {
   opacity: 1 !important;
   transform: translateY(0) !important;
-  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition-property: opacity, transform !important;
+  transition-duration: 650ms !important;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: opacity, transform;
 }
 
-.reveal-pending.reveal-card.is-revealed {
-  transition: opacity 750ms cubic-bezier(0.16, 1, 0.3, 1), transform 750ms cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.reveal-pending.reveal-heading.is-revealed {
-  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+.reveal-pending.reveal-fade.is-revealed {
+  transition-property: opacity !important;
 }
 
 /* Utility to pause continuous animations when offscreen */
@@ -236,7 +295,9 @@ body {
   .animate-hero-swell-1,
   .animate-hero-swell-2,
   .animate-hero-swell-3,
-  .animate-hero-fade-in {
+  .animate-hero-fade-in,
+  .animate-call-ring,
+  .animate-emergency-glow {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;

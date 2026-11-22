@@ -39,9 +39,9 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
     <article
       className={`group relative bg-white rounded-2xl sm:rounded-3xl border ${
         service.isEmergency
-          ? "border-[#A9DCCB] ring-1 ring-[#A9DCCB]/50"
+          ? "border border-[#ECCDD0] shadow-sm"
           : "border-[#E5ECE8]"
-      } overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between`}
+      } overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between h-full`}
     >
       <div>
         {/* Medical Illustration Header */}
@@ -58,19 +58,23 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
             <div className="absolute inset-0 bg-linear-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
             
             <div className="absolute top-3 left-3 flex flex-wrap gap-2">
-              <span className="px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-xs text-[#0A5C4F] text-[11px] font-bold uppercase tracking-wider shadow-xs">
+              <span className={`px-3 py-1 rounded-full backdrop-blur-xs text-xs font-bold uppercase tracking-wider shadow-xs ${
+                service.isEmergency
+                  ? "bg-white text-[#A63F45]"
+                  : "bg-white/95 text-[#0A5C4F]"
+              }`}>
                 {service.category}
               </span>
               {service.isEmergency && (
-                <span className="px-2.5 py-1 rounded-full bg-[#0A5C4F] text-white text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#7CE4C9] animate-pulse" />
+                <span className="px-3 py-1 rounded-full bg-[#A63F45] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white" />
                   24 / 7 Active
                 </span>
               )}
             </div>
 
             <div className="absolute bottom-3 left-3 right-3 text-white">
-              <span className="text-xs font-medium text-[#E0F3EC] flex items-center gap-1.5">
+              <span className="text-xs sm:text-sm font-semibold text-[#E0F3EC] flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5" aria-hidden="true" />
                 {service.availability}
               </span>
@@ -85,7 +89,7 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
               <div className="w-10 h-10 rounded-xl bg-[#E8F5F1] flex items-center justify-center">
                 {renderIcon()}
               </div>
-              <span className="px-2.5 py-1 rounded-full bg-[#E8F5F1] text-[#0A5C4F] text-xs font-bold uppercase tracking-wider">
+              <span className="px-3 py-1 rounded-full bg-[#E8F5F1] text-[#0A5C4F] text-xs font-extrabold uppercase tracking-wider">
                 {service.category}
               </span>
             </div>
@@ -94,33 +98,45 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
           <div>
             <div className="flex items-center gap-2 mb-1.5">
               {service.image && (
-                <div className="w-7 h-7 rounded-lg bg-[#E8F5F1] flex items-center justify-center shrink-0">
-                  {renderIcon()}
+                <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
+                  service.isEmergency ? "bg-[#F9EDEE]" : "bg-[#E8F5F1]"
+                }`}>
+                  {service.isEmergency ? (
+                    <Activity className="w-5 h-5 text-[#A63F45]" aria-hidden="true" />
+                  ) : (
+                    renderIcon()
+                  )}
                 </div>
               )}
-              <h3 className="text-lg sm:text-xl font-extrabold text-[#122421] tracking-tight group-hover:text-[#0A5C4F] transition-colors leading-tight">
+              <h3 className={`text-lg sm:text-xl font-extrabold tracking-tight transition-colors leading-tight ${
+                service.isEmergency
+                  ? "text-[#A63F45]"
+                  : "text-[#122421] group-hover:text-[#0A5C4F]"
+              }`}>
                 {service.name}
               </h3>
             </div>
             
-            <p className="text-xs sm:text-sm text-[#475B57] leading-relaxed mt-2">
+            <p className="text-sm sm:text-base text-[#1F3330] font-semibold leading-relaxed mt-2">
               {service.fullDescription}
             </p>
           </div>
 
           {/* Key Features List */}
           <div className="space-y-2 pt-2 border-t border-[#EEF3F0]">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[#3B524E] block">
+            <span className="text-xs font-extrabold uppercase tracking-wider text-[#2E4540] block">
               ख़ास बातें और सुविधाएँ
             </span>
             <ul className="space-y-1.5">
               {service.keyFeatures.map((feature) => (
                 <li
                   key={feature}
-                  className="flex items-start gap-2 text-xs text-[#2A3E39] font-medium"
+                  className="flex items-start gap-2 text-xs sm:text-sm text-[#1E302C] font-semibold"
                 >
                   <CheckCircle2
-                    className="w-3.5 h-3.5 text-[#0A5C4F] shrink-0 mt-0.5"
+                    className={`w-4 h-4 shrink-0 mt-0.5 ${
+                      service.isEmergency ? "text-[#A63F45]" : "text-[#0A5C4F]"
+                    }`}
                     aria-hidden="true"
                   />
                   <span>{feature}</span>
@@ -135,10 +151,10 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
       <div className="p-5 sm:p-6 lg:p-7 pt-0">
         <a
           href={service.actionHref}
-          className={`w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F] ${
+          className={`w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all focus-visible:outline-none focus-visible:ring-2 ${
             service.isEmergency
-              ? "bg-[#0A5C4F] text-white hover:bg-[#07463C] shadow-sm"
-              : "bg-[#E8F5F1] text-[#0A5C4F] hover:bg-[#0A5C4F] hover:text-white"
+              ? "bg-[#A63F45] text-white hover:bg-[#8E3339] shadow-sm shadow-[#A63F45]/20 focus-visible:ring-[#A63F45]"
+              : "bg-[#E8F5F1] text-[#0A5C4F] hover:bg-[#0A5C4F] hover:text-white focus-visible:ring-[#0A5C4F]"
           }`}
         >
           {service.actionHref.startsWith("tel:") ? (

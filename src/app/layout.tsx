@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Manrope, Newsreader, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
 import { generateHospitalJsonLd } from "@/lib/schema";
+import { ScrollManager } from "@/components/shared/ScrollManager";
 
 const manrope = Manrope({
   variable: "--font-sans",
@@ -12,14 +13,14 @@ const manrope = Manrope({
 const newsreader = Newsreader({
   variable: "--font-newsreader",
   subsets: ["latin"],
-  style: ["normal", "italic"],
+  style: ["italic"],
   display: "swap",
 });
 
 const notoDevanagari = Noto_Sans_Devanagari({
   variable: "--font-devanagari",
   subsets: ["devanagari"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -64,7 +65,7 @@ export default function RootLayout({
   return (
     <html
       lang="hi"
-      className={`${manrope.variable} ${newsreader.variable} ${notoDevanagari.variable} scroll-smooth antialiased`}
+      className={`${manrope.variable} ${newsreader.variable} ${notoDevanagari.variable} antialiased`}
     >
       <head>
         <script
@@ -73,6 +74,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-white text-[#122421] flex flex-col font-sans selection:bg-[#E8F5F1] selection:text-[#0A5C4F] overflow-x-hidden">
+        <ScrollManager />
         {children}
       </body>
     </html>

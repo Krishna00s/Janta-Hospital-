@@ -2,22 +2,26 @@
  * Centralized Homepage Section Visibility Configuration
  * Controls which sections are rendered on the homepage.
  *
- * Mandatory homepage order:
- * 1. Hero
- * 2. Inside Janta Hospital (hospitalGallery)
+ * Direct Patient Journey Order:
+ * 1. Hero (hero)
+ * 2. Emergency and Quick Help (emergencyHelp)
  * 3. Medical Services (services)
- * 4. Meet Our Doctors (doctors)
- * 5. Location & Contact (location)
- * 6. Footer
+ * 4. Our Doctors (doctors)
+ * 5. A Short Hospital Introduction (aboutHospital)
+ * 6. Location and Contact (location)
+ * 7. Footer
  */
 
 export const homepageSections = {
   hero: true,
-  hospitalGallery: true,
+  emergencyHelp: true,
   services: true,
   doctors: true,
-  medicalTeam: true, // Alias for backward compatibility
+  aboutHospital: true,
   location: true,
+  // Backwards compatibility aliases
+  hospitalGallery: false,
+  medicalTeam: true,
 } as const;
 
 export type HomepageSectionKey = keyof typeof homepageSections;

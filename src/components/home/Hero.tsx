@@ -5,218 +5,67 @@ import { Badge } from "@/components/shared/Badge";
 import { HeroToGalleryWave } from "@/components/ui/SectionWaves";
 import { HeroSwellWaves } from "@/components/home/HeroSwellWaves";
 
-// Realistic Botanical Leaf Foliage SVG component
-function BotanicalLeavesTopLeft({ className }: { className?: string }) {
+// Crisp abstract botanical vine accent for top-left framing (closed irregular Bézier shapes)
+function BotanicalOrganicAccentTopLeft({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 220 220"
+      viewBox="0 0 200 180"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       aria-hidden="true"
     >
-      {/* Branch stem */}
+      {/* Broad mint stem expanding and tapering */}
       <path
-        d="M-10 -10 C30 25, 75 60, 130 75"
-        stroke="#274833"
-        strokeWidth="3.5"
-        strokeLinecap="round"
-        opacity="0.8"
+        d="M -10,-10 C 35,20 80,45 130,55 C 160,60 180,50 190,35 C 175,25 140,30 110,25 C 70,20 30,5 -10,-10 Z"
+        fill="#E0F3EC"
+        opacity="0.95"
       />
+      {/* Sage tendril body */}
       <path
-        d="M60 40 C95 45, 140 35, 175 15"
-        stroke="#274833"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        opacity="0.75"
+        d="M -10,15 C 25,35 60,65 95,95 C 115,115 135,130 145,150 C 138,155 125,145 110,128 C 80,95 45,60 -10,15 Z"
+        fill="#A9DCCB"
+        opacity="0.85"
       />
+      {/* Fine curling accent flourish */}
       <path
-        d="M85 55 C115 80, 135 125, 140 160"
-        stroke="#274833"
+        d="M 90,85 C 110,105 130,118 148,115 C 162,112 170,98 165,85 C 158,74 142,76 138,88 C 135,98 145,104 150,98"
+        stroke="#75BCA5"
         strokeWidth="2"
         strokeLinecap="round"
-        opacity="0.7"
-      />
-
-      {/* Leaf 1 - large drooping leaf */}
-      <path
-        d="M-5 15 C25 20, 65 65, 80 100 C50 95, 15 65, -5 15 Z"
-        fill="#2E6941"
-        opacity="0.9"
-      />
-      <path
-        d="M-5 15 C20 45, 55 75, 80 100"
-        stroke="#458C5D"
-        strokeWidth="1.5"
-        opacity="0.6"
-      />
-
-      {/* Leaf 2 - highlighted sunlit leaf */}
-      <path
-        d="M45 35 C80 30, 130 50, 155 70 C125 80, 75 75, 45 35 Z"
-        fill="#428E5A"
-        opacity="0.92"
-      />
-      <path
-        d="M45 35 C85 50, 120 62, 155 70"
-        stroke="#67B681"
-        strokeWidth="1.5"
-        opacity="0.7"
-      />
-
-      {/* Leaf 3 - bright top leaf */}
-      <path
-        d="M75 15 C110 5, 160 8, 185 20 C155 32, 105 32, 75 15 Z"
-        fill="#55A870"
-        opacity="0.85"
-      />
-
-      {/* Leaf 4 - deep background shadow leaf */}
-      <path
-        d="M20 5 C50 -5, 95 -10, 130 -5 C105 15, 60 20, 20 5 Z"
-        fill="#1E472C"
-        opacity="0.8"
-      />
-
-      {/* Leaf 5 - hanging tip leaf */}
-      <path
-        d="M95 65 C125 90, 140 135, 142 165 C125 140, 105 105, 95 65 Z"
-        fill="#397F50"
-        opacity="0.88"
       />
     </svg>
   );
 }
 
-function BotanicalLeavesRight({ className }: { className?: string }) {
+// Subtle desktop organic vine connecting the text column to the photograph
+function BotanicalOrganicAccentDesktopRight({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 240 280"
+      viewBox="0 0 220 260"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       aria-hidden="true"
     >
-      {/* Branch stem from right edge */}
+      {/* Pale mint flowing tendril behind curve */}
       <path
-        d="M250 80 C200 95, 140 120, 90 170"
-        stroke="#274833"
-        strokeWidth="3.5"
-        strokeLinecap="round"
+        d="M 230,20 C 180,40 130,80 90,130 C 55,175 40,215 50,240 C 60,250 75,230 85,200 C 115,150 160,100 230,60 Z"
+        fill="#E0F3EC"
+        opacity="0.9"
+      />
+      {/* Medium sage inner curve */}
+      <path
+        d="M 230,70 C 190,95 150,135 120,180 C 100,210 95,235 105,250 C 112,255 120,240 128,220 C 148,180 185,135 230,105 Z"
+        fill="#A9DCCB"
         opacity="0.8"
       />
+      {/* Accent green tip spiral */}
       <path
-        d="M170 110 C150 70, 120 30, 80 5"
-        stroke="#274833"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        opacity="0.7"
-      />
-      <path
-        d="M130 145 C95 160, 60 190, 30 230"
-        stroke="#274833"
+        d="M 120,180 C 105,202 92,225 80,235 C 68,245 52,242 48,230 C 45,218 55,208 65,212 C 72,215 72,225 66,228"
+        stroke="#75BCA5"
         strokeWidth="2"
         strokeLinecap="round"
-        opacity="0.75"
-      />
-
-      {/* Leaf 1 - right top drooping */}
-      <path
-        d="M240 40 C195 45, 145 25, 100 10 C140 5, 195 10, 240 40 Z"
-        fill="#36794B"
-        opacity="0.88"
-      />
-      {/* Leaf 2 - foreground lush leaf */}
-      <path
-        d="M210 85 C170 80, 115 105, 80 140 C115 145, 170 125, 210 85 Z"
-        fill="#4EA068"
-        opacity="0.92"
-      />
-      <path
-        d="M210 85 C165 100, 125 120, 80 140"
-        stroke="#75C690"
-        strokeWidth="1.5"
-        opacity="0.65"
-      />
-      {/* Leaf 3 - sunlit lower leaf */}
-      <path
-        d="M150 135 C110 145, 65 180, 35 220 C65 210, 115 180, 150 135 Z"
-        fill="#2F6E43"
-        opacity="0.9"
-      />
-      {/* Leaf 4 - tip small leaf */}
-      <path
-        d="M110 160 C80 185, 45 220, 20 255 C35 235, 70 205, 110 160 Z"
-        fill="#5BB177"
-        opacity="0.85"
-      />
-    </svg>
-  );
-}
-
-function MobileBottomRightFoliage({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 160 120"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden="true"
-    >
-      <path
-        d="M 170 120 C 140 90, 100 65, 50 50"
-        stroke="#274833"
-        strokeWidth="2.5"
-        opacity="0.7"
-      />
-      <path
-        d="M 150 100 C 125 75, 85 65, 55 70 C 75 85, 110 105, 150 100 Z"
-        fill="#3B7D50"
-        opacity="0.85"
-      />
-      <path
-        d="M 120 80 C 95 55, 50 45, 25 50 C 45 65, 80 85, 120 80 Z"
-        fill="#4EA068"
-        opacity="0.9"
-      />
-      <path
-        d="M 90 60 C 70 35, 30 25, 10 30 C 25 45, 55 65, 90 60 Z"
-        fill="#66B983"
-        opacity="0.8"
-      />
-    </svg>
-  );
-}
-
-function MobileBottomFoliage({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 160 120"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden="true"
-    >
-      <path
-        d="M-10 130 C20 100, 60 70, 110 50"
-        stroke="#274833"
-        strokeWidth="2.5"
-        opacity="0.7"
-      />
-      <path
-        d="M10 110 C35 85, 75 75, 105 80 C85 95, 50 115, 10 110 Z"
-        fill="#3B7D50"
-        opacity="0.85"
-      />
-      <path
-        d="M40 90 C65 65, 110 55, 135 60 C115 75, 80 95, 40 90 Z"
-        fill="#4EA068"
-        opacity="0.9"
-      />
-      <path
-        d="M70 70 C90 45, 130 35, 150 40 C135 55, 105 75, 70 70 Z"
-        fill="#66B983"
-        opacity="0.8"
       />
     </svg>
   );
@@ -231,22 +80,22 @@ export function Hero() {
       className="relative w-full overflow-hidden bg-white text-[#122421] min-h-0 lg:h-[calc(100svh-4.25rem)] lg:min-h-[560px] lg:max-h-[780px] xl:max-h-[840px] lg:flex lg:items-center"
     >
       {/* ------------------------------------------------------------- */}
-      {/* 1. CINEMATIC BOTANICAL FOLIAGE ACCENTS (Framing)              */}
+      {/* 1. CINEMATIC BOTANICAL ORGANIC ACCENTS (Framing)             */}
       {/* ------------------------------------------------------------- */}
-      {/* Top-Left Ambient Leaves */}
+      {/* Top-Left Crisp Organic Accent (No blur filters) */}
       <div
-        className="pointer-events-none absolute -top-4 -left-4 sm:-top-8 sm:-left-8 w-28 h-28 sm:w-44 sm:h-44 lg:w-56 lg:h-56 z-30 select-none opacity-85 blur-[1.2px]"
+        className="pointer-events-none absolute -top-3 -left-3 sm:-top-6 sm:-left-6 w-24 h-24 sm:w-36 sm:h-36 lg:w-48 lg:h-44 z-30 select-none opacity-90"
         aria-hidden="true"
       >
-        <BotanicalLeavesTopLeft className="w-full h-full" />
+        <BotanicalOrganicAccentTopLeft className="w-full h-full" />
       </div>
 
-      {/* Top-Right & Right-Edge Ambient Leaves (Desktop only to keep mobile whitespace pristine) */}
+      {/* Top-Right & Right-Edge Ambient Botanical Accent (Desktop only) */}
       <div
-        className="hidden lg:block pointer-events-none absolute top-0 -right-6 xl:-right-8 w-60 h-64 xl:w-72 xl:h-80 z-30 select-none opacity-85 blur-[1.5px]"
+        className="hidden lg:block pointer-events-none absolute top-0 -right-4 xl:-right-6 w-52 h-56 xl:w-64 xl:h-68 z-30 select-none opacity-90"
         aria-hidden="true"
       >
-        <BotanicalLeavesRight className="w-full h-full" />
+        <BotanicalOrganicAccentDesktopRight className="w-full h-full" />
       </div>
 
       {/* ------------------------------------------------------------- */}
@@ -321,10 +170,12 @@ export function Hero() {
         <div className="relative w-full h-full [clip-path:url(#hero-organic-curve)] z-10 bg-[#0D2420]">
           <picture className="w-full h-full">
             <source
+              media="(min-width: 1024px)"
               type="image/avif"
               srcSet="/images/janta-hospital-night-exterior.avif"
             />
             <source
+              media="(min-width: 1024px)"
               type="image/webp"
               srcSet="/images/janta-hospital-night-exterior.webp"
             />
@@ -333,7 +184,7 @@ export function Hero() {
               alt={hospitalConfig.imagery.exterior.alt}
               width={1536}
               height={1024}
-              loading="eager"
+              loading="lazy"
               decoding="async"
               className="w-full h-full object-cover object-[50%_38%] pointer-events-auto"
             />
@@ -413,11 +264,13 @@ export function Hero() {
                 
                 <picture className="w-full h-full">
                   <source
+                    media="(max-width: 1023px)"
                     type="image/avif"
                     srcSet="/images/janta-hospital-night-exterior-mobile-sm.avif 480w, /images/janta-hospital-night-exterior-mobile.avif 800w"
                     sizes="(max-width: 640px) 100vw, 800px"
                   />
                   <source
+                    media="(max-width: 1023px)"
                     type="image/webp"
                     srcSet="/images/janta-hospital-night-exterior-mobile-sm.webp 480w, /images/janta-hospital-night-exterior-mobile.webp 800w"
                     sizes="(max-width: 640px) 100vw, 800px"
@@ -429,7 +282,7 @@ export function Hero() {
                     height={533}
                     loading="eager"
                     fetchPriority="high"
-                    decoding="async"
+                    decoding="sync"
                     className="w-full h-full object-cover object-[50%_25%]"
                   />
                 </picture>
@@ -448,16 +301,6 @@ export function Hero() {
                   </svg>
                 </div>
 
-                {/* Mobile Bottom-Left Corner Foliage Accent */}
-                <div className="pointer-events-none absolute -bottom-4 -left-4 w-28 h-24 z-20 opacity-80 blur-[0.8px]" aria-hidden="true">
-                  <MobileBottomFoliage className="w-full h-full" />
-                </div>
-
-                {/* Mobile Bottom-Right Corner Foliage Accent */}
-                <div className="pointer-events-none absolute -bottom-4 right-0 w-28 h-24 z-20 opacity-80 blur-[0.8px]" aria-hidden="true">
-                  <MobileBottomRightFoliage className="w-full h-full" />
-                </div>
-
                 {/* Floating Location Landmark Card hovering over the bottom of the photo */}
                 <div className="absolute left-2.5 right-2.5 min-[360px]:left-3.5 min-[360px]:right-3.5 sm:left-6 sm:right-6 bottom-2 min-[360px]:bottom-2.5 sm:bottom-4 z-20">
                   <a
@@ -471,10 +314,10 @@ export function Hero() {
                         <MapPin className="w-3.5 h-3.5 sm:w-5 sm:h-5" aria-hidden="true" />
                       </div>
                       <div className="text-left min-w-0">
-                        <span className="font-sans font-bold text-[11px] min-[360px]:text-xs sm:text-sm text-[#122421] block leading-snug truncate">
+                        <span className="font-sans font-bold text-xs sm:text-sm text-[#122421] block leading-snug truncate">
                           {hospitalConfig.location.cardTitle}
                         </span>
-                        <span className="text-[9px] min-[360px]:text-[10px] sm:text-xs text-[#6B7F7B] block truncate">
+                        <span className="text-xs sm:text-sm text-[#3B524E] font-semibold block truncate">
                           {hospitalConfig.location.cardSubtext}
                         </span>
                       </div>
@@ -487,7 +330,7 @@ export function Hero() {
             </div>
 
             {/* 4. Concise Factual Introduction */}
-            <p className="text-xs min-[360px]:text-sm sm:text-base lg:text-base xl:text-lg text-[#475B57] leading-relaxed max-w-md font-normal">
+            <p className="text-sm min-[360px]:text-base sm:text-base lg:text-base xl:text-lg text-[#1F3330] leading-relaxed max-w-md font-semibold">
               Lohardaga के Palmerganj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।
             </p>
 
@@ -528,10 +371,10 @@ export function Hero() {
                     <MapPin className="w-4 h-4 xl:w-5 xl:h-5" aria-hidden="true" />
                   </div>
                   <div className="text-left min-w-0">
-                    <span className="font-sans font-bold text-xs sm:text-sm text-[#122421] block leading-snug truncate">
+                    <span className="font-sans font-bold text-sm text-[#122421] block leading-snug truncate">
                       {hospitalConfig.location.cardTitle}
                     </span>
-                    <span className="text-[11px] sm:text-xs text-[#6B7F7B] block truncate">
+                    <span className="text-xs sm:text-sm text-[#3B524E] font-semibold block truncate">
                       {hospitalConfig.location.cardSubtext}
                     </span>
                   </div>
