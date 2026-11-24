@@ -38,12 +38,12 @@ export function PageHero({
 
         {/* Content Block */}
         <div className="max-w-3xl space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A5C4F]/10 border border-[#0A5C4F]/20 text-[#0A5C4F] text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A5C4F]/10 border border-[#0A5C4F]/20 text-[#0A5C4F] text-xs font-medium uppercase tracking-wider">
             <span className="w-1.5 h-1.5 rounded-full bg-[#0A5C4F]" aria-hidden="true" />
             <span>{eyebrow}</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#122421] tracking-tight leading-[1.15]">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#122421] tracking-tight leading-[1.15]">
             <span>{title} </span>
             {italicWord && (
               <span className="font-serif italic font-normal text-[#0A5C4F]">

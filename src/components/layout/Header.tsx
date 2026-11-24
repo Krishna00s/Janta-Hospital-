@@ -4,7 +4,13 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, MapPin, Menu, X, ArrowRight, Navigation } from "lucide-react";
-import { hospitalConfig } from "@/content/hospital";
+import {
+  hospitalConfig,
+  primaryPhone,
+  primaryPhoneHref,
+  emergencyPhone,
+  emergencyPhoneHref,
+} from "@/content/hospital";
 import { Button } from "@/components/shared/Button";
 
 // Custom Emerald Medical Cross Emblem matching the brand identity
@@ -91,10 +97,10 @@ export function Header() {
               <MedicalCrossIcon className="w-7 h-7 sm:w-8 sm:h-8" />
             </div>
             <div className="flex flex-col">
-              <span className="font-sans font-extrabold text-base sm:text-xl lg:text-[1.35rem] tracking-tight text-[#122421] group-hover:text-[#0A5C4F] transition-colors leading-tight">
+              <span className="font-sans font-bold text-base sm:text-xl lg:text-[1.35rem] tracking-tight text-[#122421] group-hover:text-[#0A5C4F] transition-colors leading-tight">
                 {hospitalConfig.name.value}
               </span>
-              <span className="text-xs font-bold tracking-widest text-[#3B524E] uppercase leading-none mt-0.5">
+              <span className="text-xs font-medium tracking-widest text-[#3B524E] uppercase leading-none mt-0.5">
                 {hospitalConfig.locationName}
               </span>
             </div>
@@ -128,7 +134,7 @@ export function Header() {
           {/* Desktop Action Buttons (lg+) */}
           <div className="hidden lg:flex items-center gap-3">
             <Button
-              href={phoneHref}
+              href={primaryPhoneHref}
               variant="emergency"
               size="md"
               icon={<Phone className="w-4 h-4 text-white" aria-hidden="true" />}
@@ -150,9 +156,9 @@ export function Header() {
           {/* Mobile & Tablet Call Button + Hamburger/Close Toggle Button (< lg) */}
           <div className="flex items-center lg:hidden gap-2.5 sm:gap-3">
             <a
-              href={phoneHref}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#A63F45] text-white flex items-center justify-center shadow-xs hover:bg-[#8E3339] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A63F45]"
-              aria-label={`Emergency Call Hospital at ${hospitalConfig.contact.phone.formatted}`}
+              href={primaryPhoneHref}
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0A5C4F] text-white flex items-center justify-center shadow-xs hover:bg-[#07463C] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
+              aria-label={`Call Hospital at ${primaryPhone}`}
             >
               <Phone className="w-4 h-4 text-white" aria-hidden="true" />
             </a>
@@ -218,7 +224,7 @@ export function Header() {
                 >
                   <div className="flex flex-col">
                     <span
-                      className={`text-base sm:text-lg font-extrabold tracking-tight ${
+                      className={`text-base sm:text-lg font-semibold tracking-tight ${
                         isCurrent ? "text-white" : "text-[#122421] group-hover:text-[#0A5C4F]"
                       }`}
                     >
@@ -251,7 +257,7 @@ export function Header() {
           <div className="pt-2 space-y-3">
             {/* 24-Hour Emergency Line Card */}
             <a
-              href={phoneHref}
+              href={emergencyPhoneHref}
               onClick={closeMenu}
               className="w-full flex items-center justify-between p-4 rounded-2xl bg-[#0A5C4F] text-white shadow-sm hover:bg-[#074B40] transition-all min-h-[56px] border border-[#167868] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
@@ -266,13 +272,13 @@ export function Header() {
                     </span>
                   </div>
                   <span className="text-base sm:text-lg font-mono font-bold tracking-tight block mt-0.5 text-[#FAFCFA]">
-                    {hospitalConfig.contact.phone.formatted}
+                    {emergencyPhone}
                   </span>
                 </div>
               </div>
 
               <span className="px-3.5 py-1.5 rounded-full bg-white text-[#0A5C4F] text-xs sm:text-sm font-bold shrink-0 shadow-sm">
-                Call Now
+                Emergency Call
               </span>
             </a>
 

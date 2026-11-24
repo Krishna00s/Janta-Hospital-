@@ -26,14 +26,38 @@ export const hospitalConfig = {
   shortIntro:
     "Lohardaga के Palmerganj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।",
 
-  // Contact Information (Official Hospital Line: +91 96938 21174)
+  // Contact Information
+  // Primary Hospital Line (+91 93419 00715): General Enquiries, Reception, OPD, Doctor Availability, WhatsApp
+  // Secondary & Emergency Line (+91 93083 48606): 24/7 Emergency Care, Urgent Triage, Acute Medical Response
   contact: {
+    primary: {
+      value: "+919341900715",
+      rawDigits: "9341900715",
+      formatted: "+91 93419 00715",
+      href: "tel:+919341900715",
+      label: "Hospital Enquiries",
+      status: "verified" as const,
+      source: "Official hospital administration confirmed primary contact line",
+    },
+    emergency: {
+      value: "+919308348606",
+      rawDigits: "9308348606",
+      formatted: "+91 93083 48606",
+      href: "tel:+919308348606",
+      label: "Emergency Contact",
+      status: "verified" as const,
+      source: "Official 24-hour acute and emergency response line",
+    },
     phone: {
-      value: "+919693821174",
-      rawDigits: "9693821174",
-      formatted: "+91 96938 21174",
+      value: "+919341900715",
+      rawDigits: "9341900715",
+      formatted: "+91 93419 00715",
+      href: "tel:+919341900715",
       display: "अभी Call करें",
-      alternatePhones: ["9308348608", "8340678334", "8825389125"],
+      emergencyFormatted: "+91 93083 48606",
+      emergencyValue: "+919308348606",
+      emergencyHref: "tel:+919308348606",
+      alternatePhones: ["8340678334", "8825389125"],
       status: "verified" as const,
       source: "Hospital administration confirmed primary contact line",
     },
@@ -44,8 +68,9 @@ export const hospitalConfig = {
       status: "verified" as const,
     },
     whatsapp: {
-      value: "9693821174",
-      link: "https://wa.me/919693821174",
+      value: "9341900715",
+      formatted: "+91 93419 00715",
+      link: "https://wa.me/919341900715",
       status: "verified" as const,
     },
   },
@@ -97,26 +122,26 @@ export const hospitalConfig = {
     },
     gallery: {
       entrance: {
-        src: "/illustrations/facility-reception-desk.svg",
-        alt: "Ground-floor reception entryway and patient inquiry desk illustration at Janta Hospital, Lohardaga",
+        src: "/images/gallery-entrance.webp",
+        alt: "Ground-floor reception entryway and patient ramp at Janta Hospital, Lohardaga",
         caption: "Main Veranda & Reception Entry",
         tag: "Ground Floor Access",
       },
       staircase: {
-        src: "/illustrations/facility-emergency-care.svg",
-        alt: "24-Hour emergency care station and patient vital signs monitor illustration",
-        caption: "24-Hour Emergency Care Station",
-        tag: "Emergency Facility",
+        src: "/images/gallery-staircase.webp",
+        alt: "Hospital staircase and clinical consultation corridor access at Janta Hospital",
+        caption: "Clinical Corridor & Floor Access",
+        tag: "Hospital Facility",
       },
       signboard: {
-        src: "/illustrations/facility-clinical-ward.svg",
-        alt: "Clinical observation ward and inpatient setup illustration at Janta Hospital",
-        caption: "Clinical Care & Ward Setup",
-        tag: "Patient Care",
+        src: "/images/gallery-signboard.webp",
+        alt: "Official hospital signboard displaying doctor timings and verified registrations",
+        caption: "Official Signboard & Timings",
+        tag: "Verified Information",
       },
       pharmacy: {
-        src: "/illustrations/facility-pharmacy-dispensary.svg",
-        alt: "On-site medicine dispensary counter illustration at Janta Hospital front porch",
+        src: "/images/gallery-pharmacy.webp",
+        alt: "On-site medicine dispensary counter at Janta Hospital front porch",
         caption: "On-Site Pharmacy & Medicine Counter",
         tag: "Essential Pharmacy",
       },
@@ -134,7 +159,7 @@ export const hospitalConfig = {
       badge: "24/7 Emergency",
       icon: "activity",
       actionText: "Emergency Call",
-      actionHref: "tel:+919693821174",
+      actionHref: "tel:+919308348606",
     },
     {
       id: "opd-consultations",
@@ -145,7 +170,7 @@ export const hospitalConfig = {
       badge: "Daily OPD",
       icon: "stethoscope",
       actionText: "OPD Timing देखें",
-      actionHref: "tel:+919693821174",
+      actionHref: "tel:+919341900715",
     },
     {
       id: "general-medicine",
@@ -156,7 +181,7 @@ export const hospitalConfig = {
       badge: "Primary Care",
       icon: "heart-pulse",
       actionText: "जानकारी लें",
-      actionHref: "tel:+919693821174",
+      actionHref: "tel:+919341900715",
     },
     {
       id: "pharmacy-counter",
@@ -178,7 +203,7 @@ export const hospitalConfig = {
       badge: "Dressing",
       icon: "band-aid",
       actionText: "सीधे मिलें",
-      actionHref: "tel:+919693821174",
+      actionHref: "tel:+919341900715",
     },
     {
       id: "patient-guidance",
@@ -189,18 +214,18 @@ export const hospitalConfig = {
       badge: "मरीज़ों की मदद",
       icon: "compass",
       actionText: "बात करें",
-      actionHref: "tel:+919693821174",
+      actionHref: "tel:+919341900715",
     },
   ],
 
-  // Medical Team & Roster Configuration
+  // Medical Team & Availability Configuration
   medicalTeam: {
     title: "हमारे Doctors",
     subtitle:
       "Lohardaga में आपकी सेहत की देखभाल के लिए समर्पित अनुभवी Doctors और Staff।",
     verificationNotice:
       "Doctors के मिलने का समय और Token रोज़ सुबह Reception Desk पर तय होते हैं। आने से पहले Phone करके ज़रूर पता कर लें।",
-    consultationPhone: "+91 96938 21174",
+    consultationPhone: "+91 93419 00715",
     departments: [
       {
         role: "General Medicine & OPD",
@@ -259,3 +284,13 @@ export const hospitalConfig = {
     },
   ],
 };
+
+// ============================================================================
+// Centralized Communication Routing Constants (Direct single source of truth)
+// ============================================================================
+export const primaryPhone = hospitalConfig.contact.primary.formatted; // "+91 93419 00715"
+export const primaryPhoneHref = hospitalConfig.contact.primary.href; // "tel:+919341900715"
+export const emergencyPhone = hospitalConfig.contact.emergency.formatted; // "+91 93083 48606"
+export const emergencyPhoneHref = hospitalConfig.contact.emergency.href; // "tel:+919308348606"
+export const whatsappNumber = hospitalConfig.contact.whatsapp.value; // "9341900715"
+export const whatsappHref = hospitalConfig.contact.whatsapp.link; // "https://wa.me/919341900715"

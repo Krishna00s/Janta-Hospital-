@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { Phone, MapPin, MessageSquare, ArrowUpRight } from "lucide-react";
-import { hospitalConfig } from "@/content/hospital";
+import {
+  hospitalConfig,
+  primaryPhone,
+  primaryPhoneHref,
+  emergencyPhone,
+  emergencyPhoneHref,
+  whatsappHref,
+} from "@/content/hospital";
 import { Container } from "@/components/shared/Container";
 import { LocationToFooterWave } from "@/components/ui/SectionWaves";
 
@@ -47,16 +54,16 @@ export function Footer() {
           {/* Top Section: Strong Editorial Heading & Primary Contact Actions */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 pb-8 sm:pb-10 border-b border-[#147061]">
             <div className="max-w-xl space-y-2 sm:space-y-3">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#A9DCCB] block">
+              <span className="text-xs font-medium uppercase tracking-widest text-[#A9DCCB] block">
                 Janta Hospital • Lohardaga
               </span>
-              <h2 className="text-2xl min-[360px]:text-3xl sm:text-4xl lg:text-[2.6rem] font-extrabold tracking-tight text-white leading-tight">
+              <h2 className="text-2xl min-[360px]:text-3xl sm:text-4xl lg:text-[2.6rem] font-semibold tracking-tight text-white leading-tight">
                 <span>ज़रूरत के समय, </span>
                 <span className="font-serif italic font-normal text-[#E0F3EC]">
                   आपके साथ।
                 </span>
               </h2>
-              <p className="text-sm sm:text-base text-[#E0F3EC] font-semibold leading-relaxed">
+              <p className="text-sm sm:text-base text-[#E0F3EC] font-normal leading-relaxed">
                 Lohardaga के Palmerganj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।
               </p>
             </div>
@@ -64,18 +71,18 @@ export function Footer() {
             {/* Clear Primary Contact Actions */}
             <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 shrink-0">
               <a
-                href={phoneHref}
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-[#0A5C4F] font-bold text-xs sm:text-sm hover:bg-[#E0F3EC] transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                href={primaryPhoneHref}
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-[#0A5C4F] font-semibold text-xs sm:text-sm hover:bg-[#E0F3EC] transition-colors shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 <Phone className="w-4 h-4 text-[#A63F45]" aria-hidden="true" />
-                <span>अभी Call करें ({hospitalConfig.contact.phone.formatted})</span>
+                <span>अभी Call करें ({primaryPhone})</span>
               </a>
 
               <a
                 href={hospitalConfig.contact.mapsUrl.value}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#084F43] text-white font-bold text-xs sm:text-sm border border-[#167868] hover:bg-[#074338] transition-colors shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#084F43] text-white font-medium text-xs sm:text-sm border border-[#167868] hover:bg-[#074338] transition-colors shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 <MapPin className="w-4 h-4 text-[#A9DCCB]" aria-hidden="true" />
                 <span>रास्ता देखें (Google Maps)</span>
@@ -93,26 +100,26 @@ export function Footer() {
                   <MedicalCrossIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <span className="font-sans font-bold text-lg sm:text-xl tracking-tight text-white block leading-tight">
+                  <span className="font-sans font-semibold text-lg sm:text-xl tracking-tight text-white block leading-tight">
                     {hospitalConfig.name.value}
                   </span>
-                  <span className="text-xs font-bold text-[#A9DCCB] tracking-widest uppercase">
+                  <span className="text-xs font-medium text-[#A9DCCB] tracking-widest uppercase">
                     {hospitalConfig.locationName}
                   </span>
                 </div>
               </div>
 
               <div className="text-xs sm:text-sm text-[#E0F3EC] space-y-1.5 leading-relaxed max-w-sm">
-                <p className="font-bold text-white">
+                <p className="font-semibold text-white">
                   {hospitalConfig.location.fullAddress}
                 </p>
-                <p className="text-xs text-[#A8D8C8] font-semibold">
+                <p className="text-xs text-[#A8D8C8] font-normal">
                   Head Post Office के ठीक पीछे • Main Bus Stand के पास
                 </p>
               </div>
 
               <div className="pt-1">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#084F43] text-xs font-semibold text-[#E0F3EC] border border-[#167868]">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#084F43] text-xs font-medium text-[#E0F3EC] border border-[#167868]">
                   <span className="w-2 h-2 rounded-full bg-[#A9DCCB]" />
                   24 घंटे Emergency सेवा उपलब्ध
                 </span>
@@ -121,10 +128,10 @@ export function Footer() {
 
             {/* Column 2: Useful Navigation (3 cols) */}
             <div className="lg:col-span-3 space-y-3">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-[#A9DCCB]">
+              <h3 className="text-xs font-medium uppercase tracking-wider text-[#A9DCCB]">
                 Hospital Directory
               </h3>
-              <ul className="space-y-1 text-xs sm:text-sm font-semibold text-[#E0F3EC]">
+              <ul className="space-y-1 text-xs sm:text-sm font-normal text-[#E0F3EC]">
                 {navLinks.map((link) => (
                   <li key={link.label}>
                     <Link
@@ -142,44 +149,43 @@ export function Footer() {
             {/* Column 3: Direct Contact Numbers & WhatsApp (4 cols) */}
             <div className="lg:col-span-4 space-y-4">
               <div>
-                <h3 className="text-xs font-bold uppercase tracking-wider text-[#A9DCCB] mb-2">
-                  Emergency व पूछताछ
+                <h3 className="text-xs font-medium uppercase tracking-wider text-[#A9DCCB] mb-1.5">
+                  Hospital Enquiries
                 </h3>
                 <a
-                  href={phoneHref}
-                  className="font-sans font-extrabold text-xl sm:text-2xl text-white hover:text-[#E0F3EC] transition-colors block"
+                  href={primaryPhoneHref}
+                  className="font-sans font-semibold text-xl sm:text-2xl text-white hover:text-[#E0F3EC] transition-colors block"
                 >
-                  {hospitalConfig.contact.phone.formatted}
+                  {primaryPhone}
                 </a>
-                <span className="text-xs text-[#E0F3EC] font-semibold mt-0.5 block">
-                  दिन और रात — कभी भी संपर्क करें
+                <span className="text-xs text-[#E0F3EC] font-normal mt-0.5 block">
+                  सामान्य पूछताछ, OPD व डॉक्टर परामर्श
                 </span>
               </div>
 
-              {/* Alternate Staff Duty Lines */}
+              {/* Secondary & Emergency Line */}
               <div className="pt-2 border-t border-[#147061]">
-                <span className="text-xs text-[#A8D8C8] font-semibold block mb-1.5">
-                  अन्य संपर्क नंबर (Other Duty Lines):
+                <h3 className="text-xs font-medium uppercase tracking-wider text-[#FF9EAA] mb-1.5 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF7588]" />
+                  Emergency Contact (24/7)
+                </h3>
+                <a
+                  href={emergencyPhoneHref}
+                  className="font-sans font-semibold text-lg sm:text-xl text-white hover:text-[#FFD2D8] transition-colors block"
+                >
+                  {emergencyPhone}
+                </a>
+                <span className="text-xs text-[#E0F3EC] font-normal mt-0.5 block">
+                  24 घंटे आपातकालीन चिकित्सा एवं ट्रॉमा सहायता
                 </span>
-                <div className="flex flex-wrap gap-2">
-                  {hospitalConfig.contact.phone.alternatePhones.map((ph) => (
-                    <a
-                      key={ph}
-                      href={`tel:+91${ph}`}
-                      className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-[#084F43] text-[#E0F3EC] hover:bg-[#074338] hover:text-white transition-colors border border-[#167868]"
-                    >
-                      +91 {ph}
-                    </a>
-                  ))}
-                </div>
               </div>
 
               <div className="pt-1">
                 <a
-                  href={hospitalConfig.contact.whatsapp.link}
+                  href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#A9DCCB] hover:text-[#E0F3EC] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-[#A9DCCB] hover:text-[#E0F3EC] transition-colors"
                 >
                   <MessageSquare className="w-4 h-4 text-[#A9DCCB]" aria-hidden="true" />
                   <span>WhatsApp पर संदेश भेजें</span>
@@ -190,18 +196,22 @@ export function Footer() {
 
           </div>
 
-          {/* Bottom Section: Legal & Clean Attribution */}
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-[#A8D8C8] font-semibold">
-            <p>
-              © {currentYear} {hospitalConfig.name.value}, Lohardaga. All rights reserved.
+          {/* Bottom Section: Legal Copyright & Agency Signature */}
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-[#A8D8C8] font-normal">
+            <p className="text-center sm:text-left">
+              © {currentYear} {hospitalConfig.name.value}. All rights reserved.
             </p>
-            <div className="flex items-center gap-2.5 text-xs text-[#A8D8C8]">
-              <span>Palmerganj, Lohardaga</span>
-              <span>•</span>
-              <span>Near Bus Stand</span>
-              <span>•</span>
-              <span>Emergency 24x7</span>
-            </div>
+            <p className="text-center sm:text-right text-[#A8D8C8]">
+              <span>Designed &amp; Developed by </span>
+              <a
+                href="https://zenova-enterprises.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-white hover:text-[#7CE4C9] transition-colors underline decoration-[#167868] hover:decoration-[#7CE4C9] underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7CE4C9] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A5C4F] rounded-xs"
+              >
+                Zenova Enterprises
+              </a>
+            </p>
           </div>
 
         </Container>

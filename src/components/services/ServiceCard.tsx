@@ -9,6 +9,7 @@ import {
   CheckCircle2,
   Clock,
   ArrowUpRight,
+  AlertCircle,
 } from "lucide-react";
 import { HospitalService } from "@/content/services";
 
@@ -18,9 +19,12 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ service, priority = false }: ServiceCardProps) {
-  // Select icon dynamically
+  const isEmergency = service.isEmergency;
+  const isSurgical = Boolean(service.isSurgical);
+  const isPendingConfirmation = service.status === "pending_confirmation";
+
   const renderIcon = () => {
-    const iconClass = "w-5 h-5 text-[#0A5C4F]";
+    const iconClass = `w-5 h-5 ${isEmergency ? "text-[#A63F45]" : "text-[#0A5C4F]"}`;
     switch (service.iconName) {
       case "activity":
         return <Activity className={iconClass} aria-hidden="true" />;
@@ -37,16 +41,18 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
 
   return (
     <article
-      className={`group relative bg-white rounded-2xl sm:rounded-3xl border ${
-        service.isEmergency
-          ? "border border-[#ECCDD0] shadow-sm"
-          : "border-[#E5ECE8]"
-      } overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between h-full`}
+      className={`group relative rounded-2xl sm:rounded-3xl border transition-all flex flex-col justify-between h-full card-hover-lift ${
+        isEmergency
+          ? "bg-[#FAFCFA] border-2 border-[#ECCDD0] hover:border-[#DDA5AB] shadow-2xs"
+          : isSurgical
+          ? "bg-white border-2 border-[#C0DCD4] hover:border-[#0A5C4F] shadow-xs hover:shadow-md"
+          : "bg-white border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-2xs"
+      } overflow-hidden`}
     >
       <div>
-        {/* Medical Illustration Header */}
-        {service.image && (
-          <div className="relative w-full h-44 sm:h-52 overflow-hidden bg-[#EDF7F3] flex items-center justify-center border-b border-[#E2EDE8]">
+        {/* Visual Header: Authentic Photography for verified services or Representative for Surgery */}
+        {service.image ? (
+          <div className="relative w-full h-40 sm:h-44 overflow-hidden bg-[#EDF7F3] flex items-center justify-center border-b border-[#D2E6DC]">
             <Image
               src={service.image.src}
               alt={service.image.alt}
@@ -55,114 +61,116 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
               priority={priority}
               className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/55 via-black/20 to-transparent pointer-events-none" />
             
-            <div className="absolute top-3 left-3 flex flex-wrap gap-2">
-              <span className={`px-3 py-1 rounded-full backdrop-blur-xs text-xs font-bold uppercase tracking-wider shadow-xs ${
-                service.isEmergency
+            <div className="absolute top-3 left-3 flex items-center gap-2">
+              <span className={`px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider shadow-xs ${
+                isEmergency
                   ? "bg-white text-[#A63F45]"
-                  : "bg-white/95 text-[#0A5C4F]"
+                  : isSurgical
+                  ? "bg-[#0A5C4F] text-white"
+                  : "bg-white/95 text-[#0A5C4F] border border-[#B7D8CA]"
               }`}>
                 {service.category}
               </span>
-              {service.isEmergency && (
-                <span className="px-3 py-1 rounded-full bg-[#A63F45] text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white" />
-                  24 / 7 Active
-                </span>
-              )}
             </div>
 
-            <div className="absolute bottom-3 left-3 right-3 text-white">
-              <span className="text-xs sm:text-sm font-semibold text-[#E0F3EC] flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5" aria-hidden="true" />
-                {service.availability}
+            <div className="absolute bottom-2.5 left-3 right-3 text-white">
+              <span className="text-xs sm:text-sm font-normal text-[#E0F3EC] flex items-center gap-1.5 drop-shadow-xs">
+                <Clock className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                <span>{service.availability}</span>
+              </span>
+            </div>
+          </div>
+        ) : (
+          /* Typography-Led Header for Surgical Specialties (No fake stock surgery photos) */
+          <div className="p-5 pb-0">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span
+                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider ${
+                  isEmergency
+                    ? "bg-[#F9EDEE] text-[#A63F45] border border-[#ECCDD0]"
+                    : "bg-[#E8F5F1] text-[#0A5C4F] border border-[#B7D8CA]"
+                }`}
+              >
+                {renderIcon()}
+                <span>{service.category}</span>
+              </span>
+
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#F4FAF7] text-[#2E4540] border border-[#D2E6DC] text-[11px] font-medium">
+                <Clock className="w-3 h-3 text-[#0A5C4F]" aria-hidden="true" />
+                <span>{service.availability}</span>
               </span>
             </div>
           </div>
         )}
 
-        {/* Card Body */}
-        <div className="p-5 sm:p-6 lg:p-7 space-y-4">
-          {!service.image && (
-            <div className="flex items-center justify-between gap-2">
-              <div className="w-10 h-10 rounded-xl bg-[#E8F5F1] flex items-center justify-center">
-                {renderIcon()}
-              </div>
-              <span className="px-3 py-1 rounded-full bg-[#E8F5F1] text-[#0A5C4F] text-xs font-extrabold uppercase tracking-wider">
-                {service.category}
-              </span>
-            </div>
-          )}
-
+        {/* Card Body with Consistent 5-Point Anatomy */}
+        <div className="p-5 sm:p-6 space-y-3.5">
+          {/* 1. Specialty / Service Name */}
           <div>
-            <div className="flex items-center gap-2 mb-1.5">
-              {service.image && (
-                <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
-                  service.isEmergency ? "bg-[#F9EDEE]" : "bg-[#E8F5F1]"
-                }`}>
-                  {service.isEmergency ? (
-                    <Activity className="w-5 h-5 text-[#A63F45]" aria-hidden="true" />
-                  ) : (
-                    renderIcon()
-                  )}
-                </div>
-              )}
-              <h3 className={`text-lg sm:text-xl font-extrabold tracking-tight transition-colors leading-tight ${
-                service.isEmergency
+            <h3
+              className={`text-lg sm:text-xl font-semibold tracking-tight transition-colors leading-snug ${
+                isEmergency
                   ? "text-[#A63F45]"
                   : "text-[#122421] group-hover:text-[#0A5C4F]"
-              }`}>
-                {service.name}
-              </h3>
-            </div>
+              }`}
+            >
+              {service.name}
+            </h3>
+
+            {service.hindiName && (
+              <p className="text-xs font-medium text-[#0A5C4F] mt-0.5">
+                {service.hindiName}
+              </p>
+            )}
             
-            <p className="text-sm sm:text-base text-[#1F3330] font-semibold leading-relaxed mt-2">
-              {service.fullDescription}
+            {/* 2. Short, Useful Description */}
+            <p className="text-xs sm:text-sm text-[#2E4540] font-normal leading-relaxed mt-1.5">
+              {service.shortDescription}
             </p>
           </div>
 
-          {/* Key Features List */}
-          <div className="space-y-2 pt-2 border-t border-[#EEF3F0]">
-            <span className="text-xs font-extrabold uppercase tracking-wider text-[#2E4540] block">
-              ख़ास बातें और सुविधाएँ
-            </span>
-            <ul className="space-y-1.5">
-              {service.keyFeatures.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-start gap-2 text-xs sm:text-sm text-[#1E302C] font-semibold"
-                >
-                  <CheckCircle2
-                    className={`w-4 h-4 shrink-0 mt-0.5 ${
-                      service.isEmergency ? "text-[#A63F45]" : "text-[#0A5C4F]"
-                    }`}
-                    aria-hidden="true"
-                  />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* 3. Two or Three Relevant Verified Details */}
+          <ul className="space-y-2 pt-2 border-t border-[#D2E6DC]/60 text-xs text-[#2E4540]" role="list">
+            {service.keyFeatures.slice(0, 3).map((feature, idx) => (
+              <li key={idx} className="flex items-start gap-2">
+                <CheckCircle2
+                  className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${
+                    isEmergency ? "text-[#A63F45]" : "text-[#0A5C4F]"
+                  }`}
+                  aria-hidden="true"
+                />
+                <span className="leading-relaxed">{feature}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* 4. Availability & Confirmation Caveat */}
+          {isPendingConfirmation && (
+            <div className="p-2.5 rounded-xl bg-[#F7FAF9] border border-[#D2E6DC] text-[11px] text-[#475B57] leading-relaxed flex items-start gap-1.5">
+              <AlertCircle className="w-3.5 h-3.5 text-[#0A5C4F] shrink-0 mt-0.5" aria-hidden="true" />
+              <span>प्रक्रिया की उपलब्धता एवं ओटी समय अस्पताल प्रबंधन की पुष्टि अनुसार।</span>
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Action Footer */}
-      <div className="p-5 sm:p-6 lg:p-7 pt-0">
+      {/* 5. One Clear Details / Contact Action */}
+      <div className="p-5 sm:p-6 pt-0 mt-auto">
         <a
           href={service.actionHref}
-          className={`w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all focus-visible:outline-none focus-visible:ring-2 ${
-            service.isEmergency
-              ? "bg-[#A63F45] text-white hover:bg-[#8E3339] shadow-sm shadow-[#A63F45]/20 focus-visible:ring-[#A63F45]"
-              : "bg-[#E8F5F1] text-[#0A5C4F] hover:bg-[#0A5C4F] hover:text-white focus-visible:ring-[#0A5C4F]"
+          className={`w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-colors min-h-[44px] ${
+            isEmergency
+              ? "bg-[#A63F45] text-white hover:bg-[#8E3339] shadow-xs"
+              : isSurgical
+              ? "bg-[#0A5C4F] text-white hover:bg-[#07463C] shadow-xs"
+              : "bg-[#EAF6F1] text-[#0A5C4F] hover:bg-[#0A5C4F] hover:text-white border border-[#B7D8CA]"
           }`}
         >
-          {service.actionHref.startsWith("tel:") ? (
-            <Phone className="w-4 h-4" aria-hidden="true" />
-          ) : (
-            <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
-          )}
+          {isEmergency && <Phone className="w-3.5 h-3.5" aria-hidden="true" />}
           <span>{service.actionLabel}</span>
+          {!isEmergency && <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />}
         </a>
       </div>
     </article>

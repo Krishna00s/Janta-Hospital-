@@ -1,5 +1,5 @@
 import { Phone, MapPin, ArrowUpRight } from "lucide-react";
-import { hospitalConfig } from "@/content/hospital";
+import { hospitalConfig, primaryPhoneHref } from "@/content/hospital";
 import { Button } from "@/components/shared/Button";
 import { Badge } from "@/components/shared/Badge";
 import { HeroToGalleryWave } from "@/components/ui/SectionWaves";
@@ -72,7 +72,7 @@ function BotanicalOrganicAccentDesktopRight({ className }: { className?: string 
 }
 
 export function Hero() {
-  const phoneHref = `tel:${hospitalConfig.contact.phone.value}`;
+  const phoneHref = primaryPhoneHref;
 
   return (
     <section
@@ -84,7 +84,7 @@ export function Hero() {
       {/* ------------------------------------------------------------- */}
       {/* Top-Left Crisp Organic Accent (No blur filters) */}
       <div
-        className="pointer-events-none absolute -top-3 -left-3 sm:-top-6 sm:-left-6 w-24 h-24 sm:w-36 sm:h-36 lg:w-48 lg:h-44 z-30 select-none opacity-90"
+        className="pointer-events-none absolute -top-3 -left-3 sm:-top-6 sm:-left-6 w-24 h-24 sm:w-36 sm:h-36 lg:w-48 lg:h-44 z-30 select-none opacity-60"
         aria-hidden="true"
       >
         <BotanicalOrganicAccentTopLeft className="w-full h-full" />
@@ -92,7 +92,7 @@ export function Hero() {
 
       {/* Top-Right & Right-Edge Ambient Botanical Accent (Desktop only) */}
       <div
-        className="hidden lg:block pointer-events-none absolute top-0 -right-4 xl:-right-6 w-52 h-56 xl:w-64 xl:h-68 z-30 select-none opacity-90"
+        className="hidden lg:block pointer-events-none absolute top-0 -right-4 xl:-right-6 w-52 h-56 xl:w-64 xl:h-68 z-30 select-none opacity-60"
         aria-hidden="true"
       >
         <BotanicalOrganicAccentDesktopRight className="w-full h-full" />
@@ -217,7 +217,7 @@ export function Hero() {
             {/* 2. Impactful Headline with Newsreader Editorial Serif Italic Accent */}
             <h1
               id="hero-heading"
-              className="text-3xl min-[360px]:text-[2.2rem] sm:text-5xl lg:text-[clamp(2.3rem,3.4vw,3.6rem)] xl:text-[clamp(2.7rem,4vw,4.25rem)] font-extrabold tracking-tight text-[#122421] leading-[1.08] sm:leading-[1.05]"
+              className="text-3xl min-[360px]:text-[2.2rem] sm:text-5xl lg:text-[clamp(2.3rem,3.4vw,3.6rem)] xl:text-[clamp(2.7rem,4vw,4.25rem)] font-semibold tracking-tight text-[#122421] leading-[1.08] sm:leading-[1.05]"
             >
               <span className="font-sans block text-[#122421]">आपकी सेहत, </span>
               <span className="font-serif italic font-normal text-[#0A5C4F] relative inline-block mt-0.5 sm:mt-1">
@@ -307,17 +307,17 @@ export function Hero() {
                     href={hospitalConfig.contact.mapsUrl.value}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between gap-2 min-[360px]:gap-2.5 p-2 min-[360px]:p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-[#EAF2EF] shadow-lg hover:border-[#C2EADB] transition-all w-full"
+                    className="group flex items-center justify-between gap-2 min-[360px]:gap-2.5 p-2 min-[360px]:p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-md border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-xs transition-all w-full"
                   >
                     <div className="flex items-center gap-2 min-[360px]:gap-2.5 min-w-0">
                       <div className="w-7 h-7 min-[360px]:w-8 min-[360px]:h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#E8F5F1] text-[#0A5C4F] flex items-center justify-center shrink-0 group-hover:bg-[#0A5C4F] group-hover:text-white transition-colors">
                         <MapPin className="w-3.5 h-3.5 sm:w-5 sm:h-5" aria-hidden="true" />
                       </div>
                       <div className="text-left min-w-0">
-                        <span className="font-sans font-bold text-xs sm:text-sm text-[#122421] block leading-snug truncate">
+                        <span className="font-sans font-semibold text-xs sm:text-sm text-[#122421] block leading-snug truncate">
                           {hospitalConfig.location.cardTitle}
                         </span>
-                        <span className="text-xs sm:text-sm text-[#3B524E] font-semibold block truncate">
+                        <span className="text-xs sm:text-sm text-[#3B524E] font-normal block truncate">
                           {hospitalConfig.location.cardSubtext}
                         </span>
                       </div>
@@ -330,18 +330,18 @@ export function Hero() {
             </div>
 
             {/* 4. Concise Factual Introduction */}
-            <p className="text-sm min-[360px]:text-base sm:text-base lg:text-base xl:text-lg text-[#1F3330] leading-relaxed max-w-md font-semibold">
+            <p className="text-sm min-[360px]:text-base sm:text-base lg:text-base xl:text-lg text-[#2E4540] leading-relaxed max-w-md font-normal">
               Lohardaga के Palmerganj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।
             </p>
 
             {/* 5. Actions: Call Hospital & Get Directions */}
-            <div className="flex items-center gap-2 sm:gap-3.5 pt-0.5 sm:pt-1 w-full max-w-md">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1 w-full max-w-md">
               <Button
                 href={phoneHref}
                 variant="primary"
                 size="md"
-                className="flex-1 sm:flex-initial px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-base font-bold whitespace-nowrap"
-                icon={<Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0" aria-hidden="true" />}
+                className="w-full sm:w-auto px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold min-h-[44px] shadow-sm"
+                icon={<Phone className="w-4 h-4 text-white shrink-0" aria-hidden="true" />}
               >
                 अभी Call करें
               </Button>
@@ -350,9 +350,9 @@ export function Hero() {
                 href={hospitalConfig.contact.mapsUrl.value}
                 variant="secondary"
                 size="md"
-                className="flex-1 sm:flex-initial px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-base font-bold whitespace-nowrap"
+                className="w-full sm:w-auto px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold min-h-[44px] border-[#B7D8CA]"
                 external
-                icon={<MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0A5C4F] shrink-0" aria-hidden="true" />}
+                icon={<MapPin className="w-4 h-4 text-[#0A5C4F] shrink-0" aria-hidden="true" />}
               >
                 रास्ता देखें
               </Button>
@@ -364,17 +364,17 @@ export function Hero() {
                 href={hospitalConfig.contact.mapsUrl.value}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-between gap-3 sm:gap-4 p-3 sm:p-3.5 rounded-2xl bg-white/95 backdrop-blur-sm border border-[#EAF2EF] shadow-lg shadow-[#0A5C4F]/5 hover:border-[#C2EADB] card-hover-lift max-w-[340px] xl:max-w-[380px] w-full"
+                className="group inline-flex items-center justify-between gap-3 sm:gap-4 p-3 sm:p-3.5 rounded-2xl bg-white/95 backdrop-blur-sm border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-xs hover:shadow-sm transition-all max-w-[340px] xl:max-w-[380px] w-full card-hover-lift"
               >
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="w-9 h-9 xl:w-10 xl:h-10 rounded-xl bg-[#E8F5F1] text-[#0A5C4F] flex items-center justify-center shrink-0 group-hover:bg-[#0A5C4F] group-hover:text-white transition-colors">
                     <MapPin className="w-4 h-4 xl:w-5 xl:h-5" aria-hidden="true" />
                   </div>
                   <div className="text-left min-w-0">
-                    <span className="font-sans font-bold text-sm text-[#122421] block leading-snug truncate">
+                    <span className="font-sans font-semibold text-sm text-[#122421] block leading-snug truncate">
                       {hospitalConfig.location.cardTitle}
                     </span>
-                    <span className="text-xs sm:text-sm text-[#3B524E] font-semibold block truncate">
+                    <span className="text-xs sm:text-sm text-[#3B524E] font-normal block truncate">
                       {hospitalConfig.location.cardSubtext}
                     </span>
                   </div>

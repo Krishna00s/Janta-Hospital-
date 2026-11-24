@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { Phone, MessageSquare, MapPin, ArrowUpRight } from "lucide-react";
-import { hospitalConfig } from "@/content/hospital";
+import {
+  hospitalConfig,
+  primaryPhone,
+  primaryPhoneHref,
+  whatsappHref,
+} from "@/content/hospital";
 import { Container } from "@/components/shared/Container";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 
@@ -9,8 +14,6 @@ interface ContactCTAProps {
 }
 
 export function ContactCTA({ className = "" }: ContactCTAProps) {
-  const phoneHref = `tel:${hospitalConfig.contact.phone.value}`;
-
   return (
     <section className={`w-full py-10 sm:py-14 bg-[#F2F8F5] relative overflow-hidden ${className}`}>
       {/* Decorative Mint Wavelet */}
@@ -25,19 +28,19 @@ export function ContactCTA({ className = "" }: ContactCTAProps) {
             
             {/* Text Content */}
             <div className="space-y-2 sm:space-y-3 max-w-xl">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F5F1] text-[#0A5C4F] text-xs font-bold uppercase tracking-wider">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F5F1] text-[#0A5C4F] text-xs font-medium uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0A5C4F] animate-pulse" aria-hidden="true" />
                 Doctor से बात करनी है?
               </span>
 
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#122421] tracking-tight leading-tight">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-[#122421] tracking-tight leading-tight">
                 <span>मदद चाहिए या </span>
                 <span className="font-serif italic font-normal text-[#0A5C4F]">
                   Hospital आना है?
                 </span>
               </h2>
 
-              <p className="text-sm sm:text-base text-[#1F3330] font-semibold leading-relaxed">
+              <p className="text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
                 Palmerganj, Lohardaga में 24/7 Emergency Care और रोज़ाना Doctor OPD उपलब्ध है।
                 Doctor की जानकारी के लिए Phone करें या तुरंत इलाज के लिए सीधे Hospital आएँ।
               </p>
@@ -46,18 +49,18 @@ export function ContactCTA({ className = "" }: ContactCTAProps) {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
               <a
-                href={phoneHref}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#0A5C4F] text-white font-bold text-sm hover:bg-[#07463C] transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
+                href={primaryPhoneHref}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#0A5C4F] text-white font-semibold text-sm hover:bg-[#07463C] transition-colors shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
               >
                 <Phone className="w-4 h-4 text-white" aria-hidden="true" />
-                <span>अभी Call करें ({hospitalConfig.contact.phone.formatted})</span>
+                <span>अभी Call करें ({primaryPhone})</span>
               </a>
 
               <a
-                href={hospitalConfig.contact.whatsapp.link}
+                href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#E8F5F1] text-[#0A5C4F] font-bold text-sm hover:bg-[#D5EFE6] transition-colors border border-[#A9DCCB] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#E8F5F1] text-[#0A5C4F] font-medium text-sm hover:bg-[#D5EFE6] transition-colors border border-[#A9DCCB] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
               >
                 <MessageSquare className="w-4 h-4 text-[#0A5C4F]" aria-hidden="true" />
                 <span>WhatsApp पर बात करें</span>
@@ -66,7 +69,7 @@ export function ContactCTA({ className = "" }: ContactCTAProps) {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-[#122421] font-bold text-sm hover:bg-gray-50 transition-colors border border-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-[#122421] font-medium text-sm hover:bg-gray-50 transition-colors border border-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
               >
                 <MapPin className="w-4 h-4 text-[#475B57]" aria-hidden="true" />
                 <span>Hospital का पता</span>

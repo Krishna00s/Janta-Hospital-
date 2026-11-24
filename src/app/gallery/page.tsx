@@ -9,7 +9,7 @@ import { ContactCTA } from "@/components/shared/ContactCTA";
 import { Container } from "@/components/shared/Container";
 import { BotanicalGrowingVine } from "@/components/ui/BotanicalDecorations";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
-import { hospitalConfig } from "@/content/hospital";
+import { hospitalConfig, emergencyPhone, emergencyPhoneHref } from "@/content/hospital";
 
 export const metadata: Metadata = {
   title: "Hospital की सुविधाएँ और व्यवस्था | Janta Hospital Lohardaga",
@@ -35,8 +35,8 @@ export default function GalleryPage() {
       <link
         rel="preload"
         as="image"
-        href="/illustrations/about-hospital-care.svg"
-        type="image/svg+xml"
+        href="/images/janta-hospital-exterior.webp"
+        type="image/webp"
         fetchPriority="high"
       />
       <Header />
@@ -53,17 +53,17 @@ export default function GalleryPage() {
             <>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0A5C4F] text-white font-bold text-xs sm:text-sm hover:bg-[#07463C] transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0A5C4F] text-white font-semibold text-xs sm:text-sm hover:bg-[#07463C] transition-colors shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
               >
                 <MapPin className="w-4 h-4 text-white" aria-hidden="true" />
                 <span>Hospital का पता देखें</span>
               </Link>
               <a
-                href={phoneHref}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#A63F45] text-white font-bold text-xs sm:text-sm hover:bg-[#8E3339] transition-colors border border-[#A63F45] shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A63F45]"
+                href={emergencyPhoneHref}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#A63F45] text-white font-semibold text-xs sm:text-sm hover:bg-[#8E3339] transition-colors border border-[#A63F45] shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A63F45]"
               >
                 <Phone className="w-4 h-4 text-white animate-call-ring" aria-hidden="true" />
-                <span>Emergency Call ({hospitalConfig.contact.phone.formatted})</span>
+                <span>Emergency Call ({emergencyPhone})</span>
               </a>
             </>
           }
@@ -72,16 +72,16 @@ export default function GalleryPage() {
         {/* Section A: Patient Guide Notice */}
         <section className="py-4 sm:py-4.5 bg-[#F2F8F5] border-b border-[#D8ECE2]">
           <Container>
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm text-[#1F3330] font-semibold">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm text-[#1F3330] font-normal">
               <div className="flex items-center gap-2">
                 <HeartPulse className="w-4 h-4 text-[#0A5C4F]" aria-hidden="true" />
-                <span className="font-bold text-[#122421]">
+                <span className="font-semibold text-[#122421]">
                   मरीज़ों की सुविधा गाइड (Patient Guide)
                 </span>
                 <span className="hidden sm:inline text-gray-300">•</span>
                 <span>Hospital आने पर आपको किस विभाग में क्या सुविधा मिलती है, यहाँ साफ़ जानकारी दी गई है।</span>
               </div>
-              <span className="font-mono text-xs sm:text-sm text-[#0A5C4F] font-bold">
+              <span className="font-mono text-xs sm:text-sm text-[#0A5C4F] font-medium">
                 Palmerganj, Lohardaga
               </span>
             </div>
@@ -94,16 +94,16 @@ export default function GalleryPage() {
           <BotanicalGrowingVine className="opacity-50" />
           <Container className="relative z-10">
             <ScrollReveal direction="heading" className="max-w-2xl mb-8 sm:mb-10 space-y-2">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#0A5C4F]">
+              <span className="text-xs font-medium uppercase tracking-widest text-[#0A5C4F]">
                 Patient Guide &amp; Facilities
               </span>
-              <h2 id="facilities-guide-heading" className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#122421] tracking-tight mt-1 leading-tight">
+              <h2 id="facilities-guide-heading" className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#122421] tracking-tight mt-1 leading-tight">
                 <span>Hospital की सुविधाएँ और </span>
                 <span className="font-serif italic font-normal text-[#0A5C4F]">
                   व्यवस्था।
                 </span>
               </h2>
-              <p className="text-sm sm:text-base text-[#2E4540] font-semibold leading-relaxed">
+              <p className="text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
                 Ground Floor Reception, 24/7 Emergency Care, OPD Consultation, Hospital Pharmacy और Ward व्यवस्था की पूरी जानकारी।
               </p>
             </ScrollReveal>

@@ -39,7 +39,7 @@ export function GoogleMapPreview({ mapsUrl }: GoogleMapPreviewProps) {
   }, []);
 
   return (
-    <div className="w-full rounded-3xl overflow-hidden border border-[#E0F3EC] shadow-md hover:shadow-xl bg-white card-hover-lift transition-all">
+    <div className="w-full rounded-3xl overflow-hidden border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-xs hover:shadow-md bg-white card-hover-lift transition-all">
       {/* Map Viewport Area */}
       <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] bg-[#E0F3EC] overflow-hidden">
         
@@ -70,7 +70,7 @@ export function GoogleMapPreview({ mapsUrl }: GoogleMapPreviewProps) {
             </span>
             <span className="text-xs sm:text-sm text-[#3B524E] mt-1.5 font-semibold flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-[#0A5C4F] animate-ping" />
-              Loading Google Maps preview...
+              Loading Google Maps...
             </span>
           </div>
         )}
@@ -84,7 +84,7 @@ export function GoogleMapPreview({ mapsUrl }: GoogleMapPreviewProps) {
             <div className="w-12 h-12 rounded-2xl bg-[#A63F45] text-white flex items-center justify-center shadow-md mb-3">
               <AlertCircle className="w-6 h-6" />
             </div>
-            <span className="font-sans font-bold text-sm text-[#122421]">Google Maps Preview Unavailable</span>
+            <span className="font-sans font-bold text-sm text-[#122421]">Google Maps Unavailable</span>
             <span className="text-xs text-[#A63F45] font-semibold mt-0.5">
               Palmerganj, Behind Head Post Office, Lohardaga (PIN 835302)
             </span>
@@ -112,9 +112,9 @@ export function GoogleMapPreview({ mapsUrl }: GoogleMapPreviewProps) {
 
         {/* Floating Verified Destination Pill over the Map */}
         <div className="absolute top-3.5 left-3.5 z-20 pointer-events-none">
-          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-[#A9DCCB] shadow-sm text-xs font-bold text-[#0A5C4F]">
+          <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-[#A9DCCB] shadow-sm text-xs font-semibold text-[#0A5C4F]">
             <span className="w-2 h-2 rounded-full bg-[#0A5C4F] animate-pulse" />
-            <span>Live Map Preview</span>
+            <span>Hospital Location</span>
           </div>
         </div>
       </div>

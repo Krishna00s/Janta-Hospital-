@@ -27,7 +27,7 @@ export function Facilities() {
           </Badge>
           <h2
             id="facilities-heading"
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#122421] leading-[1.12]"
+            className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#122421] leading-[1.12]"
           >
             <span className="font-sans block">Thoughtfully structured</span>
             <span className="font-serif italic font-normal text-[#0A5C4F] block mt-1">
