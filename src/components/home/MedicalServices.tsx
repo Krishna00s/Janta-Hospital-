@@ -125,8 +125,9 @@ export function MedicalServices() {
                           src={service.image.src}
                           alt={service.image.alt}
                           fill
-                          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, calc(100vw - 32px)"
                           className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                          loading="lazy"
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-black/55 via-black/20 to-transparent pointer-events-none" />
                         <div className="absolute top-2 left-2 flex items-center gap-1">

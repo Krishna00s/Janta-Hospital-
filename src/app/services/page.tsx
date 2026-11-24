@@ -17,27 +17,60 @@ import {
   generalServices,
 } from "@/content/services";
 import { hospitalConfig, emergencyPhone, emergencyPhoneHref } from "@/content/hospital";
+import { getCanonicalUrl, siteConfig } from "@/config/site";
+import { generateBreadcrumbJsonLd, generateServicesJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Medical Services & Surgery Showcase | Janta Hospital Lohardaga",
+  title: {
+    absolute: "Hospital Services in Lohardaga | Janta Hospital",
+  },
   description:
-    "Explore healthcare services at Janta Hospital in Palmerganj, Lohardaga. Offering 24-hour emergency care, specialist surgical consultations (General, Orthopaedic, Laparoscopic, Neurosurgery), daily OPD, and on-site pharmacy.",
+    "Explore emergency care, OPD consultations, surgical service enquiries, pharmacy and other healthcare services at Janta Hospital, Lohardaga.",
   alternates: {
-    canonical: "/services",
+    canonical: getCanonicalUrl("/services"),
   },
   openGraph: {
-    title: "Medical & Surgical Services | Janta Hospital Lohardaga",
+    title: "Hospital Services in Lohardaga | Janta Hospital",
     description:
-      "24/7 emergency response, on-call surgical specialists, daily OPD consultations, and on-site pharmacy dispensary in Lohardaga.",
-    url: "https://jantahospital.in/services",
+      "Explore emergency care, OPD consultations, surgical service enquiries, pharmacy and other healthcare services at Janta Hospital, Lohardaga.",
+    url: getCanonicalUrl("/services"),
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: "website",
+    images: [
+      {
+        url: siteConfig.defaultOgImage.url,
+        width: siteConfig.defaultOgImage.width,
+        height: siteConfig.defaultOgImage.height,
+        alt: siteConfig.defaultOgImage.alt,
+        type: siteConfig.defaultOgImage.type,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hospital Services in Lohardaga | Janta Hospital",
+    description:
+      "Explore emergency care, OPD consultations, surgical service enquiries, pharmacy and other healthcare services at Janta Hospital, Lohardaga.",
+    images: [siteConfig.defaultOgImage.url],
   },
 };
 
 export default function ServicesPage() {
   const phoneHref = emergencyPhoneHref;
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([{ name: "Services", path: "/services" }]);
+  const servicesJsonLd = generateServicesJsonLd();
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+      />
       <Header />
 
       <main className="flex-1">

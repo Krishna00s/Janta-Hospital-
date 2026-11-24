@@ -13,6 +13,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/shared/PageHero";
 import { GoogleMapPreview } from "@/components/home/GoogleMapPreview";
+import { HospitalFAQ } from "@/components/home/HospitalFAQ";
 import { ContactCTA } from "@/components/shared/ContactCTA";
 import { Container } from "@/components/shared/Container";
 import { BotanicalSideClimber } from "@/components/ui/BotanicalDecorations";
@@ -26,25 +27,59 @@ import {
   whatsappNumber,
   whatsappHref,
 } from "@/content/hospital";
+import { getCanonicalUrl, siteConfig } from "@/config/site";
+import { generateBreadcrumbJsonLd, generateContactPageJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Contact & Directions | 24-Hour Emergency Line | Janta Hospital",
+  title: {
+    absolute: "Janta Hospital Lohardaga | Contact & Directions",
+  },
   description:
-    "Contact Janta Hospital in Palmerganj, Lohardaga, Jharkhand. Hospital Enquiries: +91 93419 00715, 24-Hour Emergency Helpline: +91 93083 48606, WhatsApp assistance, Google Maps directions, and visiting hours.",
+    "Contact Janta Hospital Lohardaga at +91 9341900715. Emergency contact: +91 9308348606. Find our hospital address and Google Maps directions.",
   alternates: {
-    canonical: "/contact",
+    canonical: getCanonicalUrl("/contact"),
   },
   openGraph: {
-    title: "Contact & Directions | Janta Hospital Lohardaga",
+    title: "Janta Hospital Lohardaga | Contact & Directions",
     description:
-      "Find Janta Hospital behind Head Post Office in Palmerganj, Lohardaga. General enquiries: +91 93419 00715, 24/7 Emergency: +91 93083 48606, alternate duty numbers, and interactive Google Maps.",
-    url: "https://jantahospital.in/contact",
+      "Contact Janta Hospital Lohardaga at +91 9341900715. Emergency contact: +91 9308348606. Find our hospital address and Google Maps directions.",
+    url: getCanonicalUrl("/contact"),
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: "website",
+    images: [
+      {
+        url: siteConfig.defaultOgImage.url,
+        width: siteConfig.defaultOgImage.width,
+        height: siteConfig.defaultOgImage.height,
+        alt: siteConfig.defaultOgImage.alt,
+        type: siteConfig.defaultOgImage.type,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Janta Hospital Lohardaga | Contact & Directions",
+    description:
+      "Contact Janta Hospital Lohardaga at +91 9341900715. Emergency contact: +91 9308348606. Find our hospital address and Google Maps directions.",
+    images: [siteConfig.defaultOgImage.url],
   },
 };
 
 export default function ContactPage() {
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([{ name: "Contact", path: "/contact" }]);
+  const contactJsonLd = generateContactPageJsonLd();
+
   return (
     <div className="flex min-h-screen flex-col bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactJsonLd) }}
+      />
       <Header />
 
       <main className="flex-1">
@@ -414,6 +449,9 @@ export default function ContactPage() {
             </div>
           </Container>
         </section>
+
+        {/* Patient Frequently Asked Questions */}
+        <HospitalFAQ />
 
         {/* Pre-Footer Call to Action */}
         <ContactCTA />

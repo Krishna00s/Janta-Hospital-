@@ -165,7 +165,7 @@ export function Footer() {
 
               {/* Secondary & Emergency Line */}
               <div className="pt-2 border-t border-[#147061]">
-                <h3 className="text-xs font-medium uppercase tracking-wider text-[#FF9EAA] mb-1.5 flex items-center gap-1.5">
+                <h3 className="text-xs font-medium uppercase tracking-wider text-[#FFD1D8] mb-1.5 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#FF7588]" />
                   Emergency Contact (24/7)
                 </h3>

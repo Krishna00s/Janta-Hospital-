@@ -1,3 +1,4 @@
+import ReactDOM from "react-dom";
 import { Metadata } from "next";
 import Image from "next/image";
 import { Phone, Clock, ShieldCheck, AlertCircle, CheckCircle2, Stethoscope, ArrowRight } from "lucide-react";
@@ -11,34 +12,65 @@ import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { departmentGroups, doctorsData, allDoctors } from "@/content/doctors";
 import { hospitalConfig, primaryPhone, primaryPhoneHref } from "@/content/hospital";
 import { DoctorCard } from "@/components/doctors/DoctorCard";
+import { getCanonicalUrl, siteConfig } from "@/config/site";
+import { generateBreadcrumbJsonLd, generateDoctorsJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Our Doctors & Clinical Team | Janta Hospital Lohardaga",
+  title: {
+    absolute: "Doctors in Lohardaga | Janta Hospital",
+  },
   description:
-    "Meet the medical team at Janta Hospital, Lohardaga. Led by Dr. Parwej Alam (Hospital Director & Consulting Physician) and Dr. Rahbar Bharti, with on-call specialists in General Surgery, Neurosurgery, and Anaesthesia.",
+    "Meet the general physicians and on-call specialists at Janta Hospital, Lohardaga. Contact reception to confirm doctor availability and consultation timings.",
   alternates: {
-    canonical: "/doctors",
+    canonical: getCanonicalUrl("/doctors"),
   },
   openGraph: {
-    title: "Meet Our Doctors | Janta Hospital Lohardaga",
+    title: "Doctors in Lohardaga | Janta Hospital",
     description:
-      "Dedicated medical officers, general physicians, and on-call surgical specialists serving Palmerganj, Lohardaga.",
-    url: "https://jantahospital.in/doctors",
+      "Meet the general physicians and on-call specialists at Janta Hospital, Lohardaga. Contact reception to confirm doctor availability and consultation timings.",
+    url: getCanonicalUrl("/doctors"),
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: "website",
+    images: [
+      {
+        url: siteConfig.defaultOgImage.url,
+        width: siteConfig.defaultOgImage.width,
+        height: siteConfig.defaultOgImage.height,
+        alt: siteConfig.defaultOgImage.alt,
+        type: siteConfig.defaultOgImage.type,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Doctors in Lohardaga | Janta Hospital",
+    description:
+      "Meet the general physicians and on-call specialists at Janta Hospital, Lohardaga. Contact reception to confirm doctor availability and consultation timings.",
+    images: [siteConfig.defaultOgImage.url],
   },
 };
 
 export default function DoctorsPage() {
+  ReactDOM.preload("/images/gallery-signboard.webp", {
+    as: "image",
+    type: "image/webp",
+    fetchPriority: "high",
+  });
+
   const phoneHref = primaryPhoneHref;
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([{ name: "Doctors", path: "/doctors" }]);
+  const doctorsJsonLd = generateDoctorsJsonLd();
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      {/* High-Priority LCP Image Preload for Doctors Page */}
-      <link
-        rel="preload"
-        as="image"
-        href="/images/gallery-signboard.webp"
-        type="image/webp"
-        fetchPriority="high"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(doctorsJsonLd) }}
       />
       <Header />
 
@@ -257,6 +289,7 @@ export default function DoctorsPage() {
                           fill
                           sizes="(min-width: 1024px) 70vw, 100vw"
                           className="object-cover"
+                          loading="lazy"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                         <span className="absolute bottom-2 left-2.5 right-2.5 text-xs text-white/95 font-medium truncate drop-shadow-xs">
@@ -319,6 +352,7 @@ export default function DoctorsPage() {
                               fill
                               sizes="(min-width: 1024px) 35vw, 100vw"
                               className="object-cover"
+                              loading="lazy"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                             <span className="absolute bottom-2 left-2 right-2 text-xs text-white/95 font-medium truncate drop-shadow-xs">
@@ -373,6 +407,7 @@ export default function DoctorsPage() {
                               fill
                               sizes="(min-width: 1024px) 35vw, 100vw"
                               className="object-cover"
+                              loading="lazy"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
                             <span className="absolute bottom-2 left-2 right-2 text-xs text-white/95 font-medium truncate drop-shadow-xs">

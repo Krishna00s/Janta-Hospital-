@@ -1,3 +1,4 @@
+import ReactDOM from "react-dom";
 import { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Phone, HeartPulse } from "lucide-react";
@@ -10,34 +11,60 @@ import { Container } from "@/components/shared/Container";
 import { BotanicalGrowingVine } from "@/components/ui/BotanicalDecorations";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { hospitalConfig, emergencyPhone, emergencyPhoneHref } from "@/content/hospital";
+import { getCanonicalUrl, siteConfig } from "@/config/site";
+import { generateBreadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Hospital की सुविधाएँ और व्यवस्था | Janta Hospital Lohardaga",
+  title: {
+    absolute: "Hospital Photos & Facilities | Janta Hospital Lohardaga",
+  },
   description:
-    "Lohardaga के Palmerganj में Janta Hospital की व्यवस्था और सुविधाएँ: 24 घंटे Emergency, Doctor से मिलना (OPD), दवा की दुकान और वार्ड व्यवस्था।",
+    "Explore authentic photographs of Janta Hospital in Lohardaga, including its exterior, pharmacy and hospital premises.",
   alternates: {
-    canonical: "/gallery",
+    canonical: getCanonicalUrl("/gallery"),
   },
   openGraph: {
-    title: "Hospital की सुविधाएँ और व्यवस्था | Janta Hospital Lohardaga",
+    title: "Hospital Photos & Facilities | Janta Hospital Lohardaga",
     description:
-      "Lohardaga के Palmerganj में Janta Hospital की सुविधाएँ: 24 घंटे Emergency सेवा, OPD और दवा काउंटर।",
-    url: "https://jantahospital.in/gallery",
+      "Explore authentic photographs of Janta Hospital in Lohardaga, including its exterior, pharmacy and hospital premises.",
+    url: getCanonicalUrl("/gallery"),
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: "website",
+    images: [
+      {
+        url: siteConfig.defaultOgImage.url,
+        width: siteConfig.defaultOgImage.width,
+        height: siteConfig.defaultOgImage.height,
+        alt: siteConfig.defaultOgImage.alt,
+        type: siteConfig.defaultOgImage.type,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hospital Photos & Facilities | Janta Hospital Lohardaga",
+    description:
+      "Explore authentic photographs of Janta Hospital in Lohardaga, including its exterior, pharmacy and hospital premises.",
+    images: [siteConfig.defaultOgImage.url],
   },
 };
 
 export default function GalleryPage() {
+  ReactDOM.preload("/images/janta-hospital-exterior.webp", {
+    as: "image",
+    type: "image/webp",
+    fetchPriority: "high",
+  });
+
   const phoneHref = `tel:${hospitalConfig.contact.phone.value}`;
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([{ name: "Gallery", path: "/gallery" }]);
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      {/* High-Priority LCP Image Preload for Gallery Guide Page */}
-      <link
-        rel="preload"
-        as="image"
-        href="/images/janta-hospital-exterior.webp"
-        type="image/webp"
-        fetchPriority="high"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <Header />
 
@@ -53,6 +80,7 @@ export default function GalleryPage() {
             <>
               <Link
                 href="/contact"
+                prefetch={false}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0A5C4F] text-white font-semibold text-xs sm:text-sm hover:bg-[#07463C] transition-colors shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
               >
                 <MapPin className="w-4 h-4 text-white" aria-hidden="true" />

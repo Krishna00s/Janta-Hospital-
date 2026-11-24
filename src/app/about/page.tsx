@@ -1,3 +1,4 @@
+import ReactDOM from "react-dom";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -24,34 +25,65 @@ import {
   emergencyPhone,
   emergencyPhoneHref,
 } from "@/content/hospital";
+import { getCanonicalUrl, siteConfig } from "@/config/site";
+import { generateBreadcrumbJsonLd, generateAboutPageJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About Janta Hospital | 24-Hour Healthcare in Lohardaga",
+  title: {
+    absolute: "About Janta Hospital | Lohardaga, Jharkhand",
+  },
   description:
-    "Learn about Janta Hospital in Palmerganj, Lohardaga, Jharkhand. Providing 24-hour emergency medical care, outpatient consultations, on-site pharmacy, and patient-first healthcare.",
+    "Learn about Janta Hospital, its medical team, healthcare services and patient-focused approach in Lohardaga, Jharkhand.",
   alternates: {
-    canonical: "/about",
+    canonical: getCanonicalUrl("/about"),
   },
   openGraph: {
     title: "About Janta Hospital | Lohardaga, Jharkhand",
     description:
-      "A trusted community healthcare center in Palmerganj, Lohardaga, providing 24-hour emergency medical response, daily OPD, and on-site medicine counter.",
-    url: "https://jantahospital.in/about",
+      "Learn about Janta Hospital, its medical team, healthcare services and patient-focused approach in Lohardaga, Jharkhand.",
+    url: getCanonicalUrl("/about"),
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: "website",
+    images: [
+      {
+        url: siteConfig.defaultOgImage.url,
+        width: siteConfig.defaultOgImage.width,
+        height: siteConfig.defaultOgImage.height,
+        alt: siteConfig.defaultOgImage.alt,
+        type: siteConfig.defaultOgImage.type,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Janta Hospital | Lohardaga, Jharkhand",
+    description:
+      "Learn about Janta Hospital, its medical team, healthcare services and patient-focused approach in Lohardaga, Jharkhand.",
+    images: [siteConfig.defaultOgImage.url],
   },
 };
 
 export default function AboutPage() {
+  ReactDOM.preload("/images/janta-hospital-exterior.webp", {
+    as: "image",
+    type: "image/webp",
+    fetchPriority: "high",
+  });
+
   const phoneHref = primaryPhoneHref;
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([{ name: "About", path: "/about" }]);
+  const aboutJsonLd = generateAboutPageJsonLd();
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      {/* High-Priority LCP Image Preload for About Page */}
-      <link
-        rel="preload"
-        as="image"
-        href="/images/janta-hospital-exterior.webp"
-        type="image/webp"
-        fetchPriority="high"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
       />
       <Header />
 

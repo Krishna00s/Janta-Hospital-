@@ -3,6 +3,7 @@ import { Manrope, Newsreader, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
 import { generateHospitalJsonLd } from "@/lib/schema";
 import { ScrollManager } from "@/components/shared/ScrollManager";
+import { getSiteUrl, getCanonicalUrl, siteConfig, getRobotsConfig } from "@/config/site";
 
 const manrope = Manrope({
   variable: "--font-sans",
@@ -30,29 +31,46 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     template: "%s | Janta Hospital Lohardaga",
-    default: "Janta Hospital, Lohardaga | 24-Hour Healthcare & Clinical Services",
+    default: "Janta Hospital Lohardaga | Doctors & Emergency Care",
   },
   description:
-    "Official website for Janta Hospital in Palmerganj, Lohardaga, Jharkhand. Providing 24-hour emergency care, outpatient consultations, and patient-first medicine.",
-  metadataBase: new URL("https://jantahospital.in"),
+    "Visit Janta Hospital in Lohardaga, Jharkhand, for general physician consultations, emergency care and specialist enquiries. Located near the Head Post Office.",
   alternates: {
-    canonical: "/",
+    canonical: getCanonicalUrl("/"),
   },
   openGraph: {
-    title: "Janta Hospital, Lohardaga | Care, closer to home.",
+    title: "Janta Hospital Lohardaga | Doctors & Emergency Care",
     description:
-      "24-hour emergency medical care, outpatient consultations, and patient-first healthcare in Palmerganj, Lohardaga, Jharkhand.",
-    siteName: "Janta Hospital",
-    locale: "en_IN",
+      "Visit Janta Hospital in Lohardaga, Jharkhand, for general physician consultations, emergency care and specialist enquiries. Located near the Head Post Office.",
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    alternateLocale: [...siteConfig.alternateLocales],
+    url: getCanonicalUrl("/"),
     type: "website",
+    images: [
+      {
+        url: siteConfig.defaultOgImage.url,
+        width: siteConfig.defaultOgImage.width,
+        height: siteConfig.defaultOgImage.height,
+        alt: siteConfig.defaultOgImage.alt,
+        type: siteConfig.defaultOgImage.type,
+      },
+    ],
   },
-  robots: {
-    index: true,
-    follow: true,
+  twitter: {
+    card: "summary_large_image",
+    title: "Janta Hospital Lohardaga | Doctors & Emergency Care",
+    description:
+      "Visit Janta Hospital in Lohardaga, Jharkhand, for general physician consultations, emergency care and specialist enquiries. Located near the Head Post Office.",
+    images: [siteConfig.defaultOgImage.url],
   },
+  robots: getRobotsConfig(),
 };
 
 export default function RootLayout({

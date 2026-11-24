@@ -205,7 +205,7 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-center">
           
           {/* Left Column: Eyebrow, Headline, Micro-Pills, Actions, Desktop Location Card */}
-          <div className="lg:col-span-6 xl:col-span-5 space-y-2.5 sm:space-y-4 lg:space-y-3.5 xl:space-y-5 max-w-lg lg:max-w-none animate-hero-fade-in">
+          <div className="lg:col-span-6 xl:col-span-5 space-y-2.5 sm:space-y-4 lg:space-y-3.5 xl:space-y-5 max-w-lg lg:max-w-none">
             
             {/* 1. Eyebrow Pill */}
             <div>
@@ -267,13 +267,13 @@ export function Hero() {
                     media="(max-width: 1023px)"
                     type="image/avif"
                     srcSet="/images/janta-hospital-night-exterior-mobile-sm.avif 480w, /images/janta-hospital-night-exterior-mobile.avif 800w"
-                    sizes="(max-width: 640px) 100vw, 800px"
+                    sizes="(max-width: 640px) calc(100vw - 32px), 800px"
                   />
                   <source
                     media="(max-width: 1023px)"
                     type="image/webp"
                     srcSet="/images/janta-hospital-night-exterior-mobile-sm.webp 480w, /images/janta-hospital-night-exterior-mobile.webp 800w"
-                    sizes="(max-width: 640px) 100vw, 800px"
+                    sizes="(max-width: 640px) calc(100vw - 32px), 800px"
                   />
                   <img
                     src="/images/janta-hospital-night-exterior-mobile.webp"
@@ -282,7 +282,7 @@ export function Hero() {
                     height={533}
                     loading="eager"
                     fetchPriority="high"
-                    decoding="sync"
+                    decoding="async"
                     className="w-full h-full object-cover object-[50%_25%]"
                   />
                 </picture>

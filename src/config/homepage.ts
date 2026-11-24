@@ -18,6 +18,7 @@ export const homepageSections = {
   services: true,
   doctors: true,
   aboutHospital: true,
+  faqs: true,
   location: true,
   // Backwards compatibility aliases
   hospitalGallery: false,

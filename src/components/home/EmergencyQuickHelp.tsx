@@ -96,8 +96,9 @@ export function EmergencyQuickHelp() {
                   src="/images/gallery-entrance.webp"
                   alt="24/7 Emergency Ramp & Entrance - Janta Hospital Lohardaga"
                   fill
-                  sizes="(min-width: 1024px) 38vw, 100vw"
+                  sizes="(min-width: 1024px) 38vw, (min-width: 640px) 448px, calc(100vw - 32px)"
                   className="object-cover"
+                  loading="lazy"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-80" aria-hidden="true" />
                 
