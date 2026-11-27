@@ -70,13 +70,13 @@
     </g>
   </g>
 
-  <!-- Location Pin on Palmerganj (Bottom Left) -->
+  <!-- Location Pin on Powergunj (Bottom Left) -->
   <g transform="translate(45, 240)">
     <rect x="0" y="0" width="150" height="32" rx="16" fill="#FFFFFF" stroke="#A9DCCB" stroke-width="1.5" />
     <circle cx="16" cy="16" r="9" fill="#E8F6F1" />
     <!-- Pin -->
     <path d="M 16 9 C 13 9, 11 11, 11 14 C 11 18, 16 23, 16 23 C 16 23, 21 18, 21 14 C 21 11, 19 9, 16 9 Z" fill="#0A5C4F" />
     <circle cx="16" cy="13" r="2" fill="#FFFFFF" />
-    <text x="32" y="20" fill="#0A5C4F" font-family="system-ui, sans-serif" font-weight="700" font-size="10">Near Bus Stand, Palmerganj</text>
+    <text x="32" y="20" fill="#0A5C4F" font-family="system-ui, sans-serif" font-weight="700" font-size="10">Near Bus Stand, Powergunj</text>
   </g>
 </svg>

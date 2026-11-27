@@ -10,7 +10,7 @@ interface GoogleMapPreviewProps {
 /**
  * GoogleMapPreview Component
  *
- * Real, interactive Google Maps embed displaying Janta Hospital in Palmerganj, Lohardaga.
+ * Real, interactive Google Maps embed displaying Janta Hospital in Powergunj, Lohardaga.
  *
  * Requirements fulfilled:
  * - Direct, canonical Google Maps embed URL with zero-API-key and zero 301-redirect/X-Frame-Options block.
@@ -24,9 +24,9 @@ interface GoogleMapPreviewProps {
 export function GoogleMapPreview({ mapsUrl }: GoogleMapPreviewProps) {
   const [mapStatus, setMapStatus] = useState<"loading" | "loaded" | "error">("loading");
 
-  // Canonical zero-redirect Google Maps embed URL for Janta Hospital, Palmerganj, Lohardaga
+  // Canonical zero-redirect Google Maps embed URL for Janta Hospital, Main Road, Powergunj, Lohardaga
   const canonicalEmbedUrl =
-    "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1sJanta+Hospital,+Behind+Head+Post+Office,+Palmerganj,+Lohardaga,+Jharkhand+835302!6i16";
+    "https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1sJanta+Hospital,+Main+Road,+near+Head+Post+Office,+Powergunj,+Lohardaga,+Jharkhand+835302!6i16";
 
   useEffect(() => {
     // Safety fallback: if iframe takes longer than 6 seconds, gracefully reveal the map
@@ -46,7 +46,7 @@ export function GoogleMapPreview({ mapsUrl }: GoogleMapPreviewProps) {
         {/* Real Interactive Google Maps Iframe */}
         <iframe
           src={canonicalEmbedUrl}
-          title="Google Maps location of Janta Hospital in Palmerganj, Lohardaga"
+          title="Google Maps location of Janta Hospital on Main Road, Powergunj, Lohardaga"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           onLoad={() => setMapStatus("loaded")}
@@ -66,7 +66,7 @@ export function GoogleMapPreview({ mapsUrl }: GoogleMapPreviewProps) {
             </div>
             <span className="font-sans font-bold text-sm text-[#122421]">Janta Hospital</span>
             <span className="text-xs text-[#0A5C4F] font-semibold mt-0.5">
-              Palmerganj, Behind Head Post Office, Lohardaga
+              Main Road, near Head Post Office, Powergunj, Lohardaga
             </span>
             <span className="text-xs sm:text-sm text-[#3B524E] mt-1.5 font-semibold flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-[#0A5C4F] animate-ping" />
@@ -86,7 +86,7 @@ export function GoogleMapPreview({ mapsUrl }: GoogleMapPreviewProps) {
             </div>
             <span className="font-sans font-bold text-sm text-[#122421]">Google Maps Unavailable</span>
             <span className="text-xs text-[#A63F45] font-semibold mt-0.5">
-              Palmerganj, Behind Head Post Office, Lohardaga (PIN 835302)
+              Main Road, near Head Post Office, Powergunj, Lohardaga (PIN 835302)
             </span>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
               <a
@@ -132,7 +132,7 @@ export function GoogleMapPreview({ mapsUrl }: GoogleMapPreviewProps) {
           </div>
           {/* Natural line wrapping without ellipsis */}
           <span className="text-sm sm:text-base font-bold text-[#122421] block mt-1 break-words leading-snug">
-            Head Post Office के पीछे · Main Bus Stand के पास
+            Main Road, Near Head Post Office · Main Bus Stand के पास
           </span>
           <span className="text-xs sm:text-sm text-[#3B524E] font-medium block mt-0.5 break-words">
             Google Maps पर सीधा रास्ता देखने के लिए नीचे दिए गए बटन पर क्लिक करें

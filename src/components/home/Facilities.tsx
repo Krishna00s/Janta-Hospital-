@@ -36,7 +36,7 @@ export function Facilities() {
           </h2>
           <p className="mt-4 sm:mt-5 text-base sm:text-lg text-[#475B57] leading-relaxed">
             From easy ground-floor veranda access to an on-premises medicine dispensary and 24-hour emergency
-            readiness, our Palmerganj facility is planned to eliminate delays and ensure patient comfort.
+            readiness, our Powergunj facility is planned to eliminate delays and ensure patient comfort.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export function Facilities() {
               </div>
               <div>
                 <span className="font-bold text-xs sm:text-sm text-[#122421] block">Two-Story Facility</span>
-                <span className="text-xs text-[#3B524E] font-medium block">Palmerganj, Lohardaga</span>
+                <span className="text-xs text-[#3B524E] font-medium block">Powergunj, Lohardaga</span>
               </div>
             </div>
 

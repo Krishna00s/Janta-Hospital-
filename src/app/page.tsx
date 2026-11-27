@@ -14,17 +14,17 @@ import { getCanonicalUrl, siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Janta Hospital Lohardaga | Doctors & Emergency Care",
+    absolute: "Janta Hospital Lohardaga | Hospital in Lohardaga, Jharkhand",
   },
   description:
-    "Visit Janta Hospital in Lohardaga, Jharkhand, for general physician consultations, emergency care and specialist enquiries. Located near the Head Post Office.",
+    "Janta Hospital is a trusted hospital in Powergunj, Lohardaga, Jharkhand providing 24-hour emergency care, general physician OPD consultations, and specialist doctor enquiries near Head Post Office.",
   alternates: {
     canonical: getCanonicalUrl("/"),
   },
   openGraph: {
-    title: "Janta Hospital Lohardaga | Doctors & Emergency Care",
+    title: "Janta Hospital Lohardaga | Hospital in Lohardaga, Jharkhand",
     description:
-      "Visit Janta Hospital in Lohardaga, Jharkhand, for general physician consultations, emergency care and specialist enquiries. Located near the Head Post Office.",
+      "Janta Hospital is a trusted hospital in Powergunj, Lohardaga, Jharkhand providing 24-hour emergency care, general physician OPD consultations, and specialist doctor enquiries near Head Post Office.",
     url: getCanonicalUrl("/"),
     siteName: siteConfig.name,
     locale: siteConfig.locale,
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Janta Hospital Lohardaga | Doctors & Emergency Care",
+    title: "Janta Hospital Lohardaga | Hospital in Lohardaga, Jharkhand",
     description:
-      "Visit Janta Hospital in Lohardaga, Jharkhand, for general physician consultations, emergency care and specialist enquiries. Located near the Head Post Office.",
+      "Janta Hospital is a trusted hospital in Powergunj, Lohardaga, Jharkhand providing 24-hour emergency care, general physician OPD consultations, and specialist doctor enquiries near Head Post Office.",
     images: [siteConfig.defaultOgImage.url],
   },
 };

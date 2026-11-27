@@ -41,7 +41,7 @@ export function ContactCTA({ className = "" }: ContactCTAProps) {
               </h2>
 
               <p className="text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
-                Palmerganj, Lohardaga में 24/7 Emergency Care और रोज़ाना Doctor OPD उपलब्ध है।
+                Powergunj, Lohardaga में 24/7 Emergency Care और रोज़ाना Doctor OPD उपलब्ध है।
                 Doctor की जानकारी के लिए Phone करें या तुरंत इलाज के लिए सीधे Hospital आएँ।
               </p>
             </div>

@@ -30,17 +30,17 @@ import { generateBreadcrumbJsonLd, generateAboutPageJsonLd } from "@/lib/schema"
 
 export const metadata: Metadata = {
   title: {
-    absolute: "About Janta Hospital | Lohardaga, Jharkhand",
+    absolute: "About Janta Hospital | Hospital in Lohardaga, Jharkhand",
   },
   description:
-    "Learn about Janta Hospital, its medical team, healthcare services and patient-focused approach in Lohardaga, Jharkhand.",
+    "Learn about Janta Hospital in Powergunj, Lohardaga, Jharkhand. Dedicated to compassionate patient healthcare, 24-hour emergency care, experienced physicians, and honest community medicine.",
   alternates: {
     canonical: getCanonicalUrl("/about"),
   },
   openGraph: {
-    title: "About Janta Hospital | Lohardaga, Jharkhand",
+    title: "About Janta Hospital | Hospital in Lohardaga, Jharkhand",
     description:
-      "Learn about Janta Hospital, its medical team, healthcare services and patient-focused approach in Lohardaga, Jharkhand.",
+      "Learn about Janta Hospital in Powergunj, Lohardaga, Jharkhand. Dedicated to compassionate patient healthcare, 24-hour emergency care, experienced physicians, and honest community medicine.",
     url: getCanonicalUrl("/about"),
     siteName: siteConfig.name,
     locale: siteConfig.locale,
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Janta Hospital | Lohardaga, Jharkhand",
+    title: "About Janta Hospital | Hospital in Lohardaga, Jharkhand",
     description:
-      "Learn about Janta Hospital, its medical team, healthcare services and patient-focused approach in Lohardaga, Jharkhand.",
+      "Learn about Janta Hospital in Powergunj, Lohardaga, Jharkhand. Dedicated to compassionate patient healthcare, 24-hour emergency care, experienced physicians, and honest community medicine.",
     images: [siteConfig.defaultOgImage.url],
   },
 };
@@ -94,7 +94,7 @@ export default function AboutPage() {
           eyebrow="ABOUT JANTA HOSPITAL"
           title="हमारा"
           italicWord="Hospital"
-          description="Lohardaga के Palmerganj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।"
+          description="Lohardaga के Powergunj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।"
           action={
             <>
               <a
@@ -128,7 +128,7 @@ export default function AboutPage() {
                 <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-2xs card-hover-lift transition-all bg-[#0D2420]">
                   <Image
                     src="/images/janta-hospital-exterior.webp"
-                    alt="Daytime exterior photograph of Janta Hospital building in Palmerganj, Lohardaga"
+                    alt="Daytime exterior photograph of Janta Hospital building in Powergunj, Lohardaga"
                     width={800}
                     height={533}
                     priority
@@ -137,10 +137,10 @@ export default function AboutPage() {
                   <div className="p-4 sm:p-5 bg-white border-t border-[#D2E6DC]">
                     <div className="flex items-center gap-2 text-xs font-semibold text-[#0A5C4F] uppercase tracking-wider mb-1">
                       <Building2 className="w-4 h-4" aria-hidden="true" />
-                      <span>Palmerganj में सेवा और देखभाल</span>
+                      <span>Powergunj में सेवा और देखभाल</span>
                     </div>
                     <p className="text-xs sm:text-sm text-[#2E4540] font-normal leading-relaxed">
-                      Head Post Office के ठीक पीछे स्थित Hospital — Ground Floor पर Reception, दवा काउंटर और 24 घंटे Emergency सेवाएँ।
+                      Head Post Office के पास स्थित Hospital — Ground Floor पर Reception, दवा काउंटर और 24 घंटे Emergency सेवाएँ।
                     </p>
                   </div>
                 </div>
@@ -161,7 +161,7 @@ export default function AboutPage() {
                 </div>
 
                 <p className="text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
-                  Lohardaga के Palmerganj में Head Post Office के ठीक पीछे स्थित Janta Hospital स्थानीय लोगों और आस-पास के ग्रामीण परिवारों के लिए एक भरोसेमंद स्वास्थ्य केंद्र है।
+                  Lohardaga के Powergunj में Head Post Office के पास स्थित Janta Hospital स्थानीय लोगों और आस-पास के ग्रामीण परिवारों के लिए एक भरोसेमंद स्वास्थ्य केंद्र है।
                 </p>
 
                 <p className="text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">

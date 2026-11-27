@@ -21,7 +21,7 @@ export function generateHospitalJsonLd() {
         alternateName: [
           siteConfig.alternateName,
           siteConfig.hindiName,
-          "Janta Hospital Palmerganj",
+          "Janta Hospital Powergunj",
         ],
         description: siteConfig.description,
         url: siteUrl,
@@ -49,6 +49,9 @@ export function generateHospitalJsonLd() {
           },
         ],
         hasMap: hospitalConfig.contact.mapsUrl.value,
+        sameAs: [
+          "https://maps.app.goo.gl/VETU3wJP8DgVGKbp7?g_st=aw",
+        ],
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
@@ -89,21 +92,54 @@ export function generateHospitalJsonLd() {
         department: [
           {
             "@type": "MedicalOrganization",
-            name: "24-Hour Emergency & Acute Care",
+            name: "24-Hour Emergency Care",
             description:
-              "Immediate vital triage, emergency observation, wound care, and acute medical stabilization.",
+              "Round-the-clock emergency medical assistance, first-aid support, and duty doctor coverage in Lohardaga.",
+            telephone: hospitalConfig.contact.emergency.value,
           },
           {
             "@type": "MedicalOrganization",
-            name: "General Outpatient Consultation (OPD)",
+            name: "General Outpatient Department (OPD)",
             description:
-              "Daily general clinical consultations and physician assessments in Lohardaga.",
+              "Daily morning and evening outpatient consultations with general physicians for seasonal illnesses and routine clinical checkups in Lohardaga.",
+            telephone: hospitalConfig.contact.primary.value,
           },
           {
             "@type": "Pharmacy",
-            name: "On-Site Medicine Dispensary",
+            "@id": `${siteUrl}/#pharmacy`,
+            name: "Janta Hospital Medicine Dispensary",
             description:
-              "24-hour prescription medication dispensing and surgical supply counter.",
+              "On-site 24/7 medicine dispensary counter located on the ground floor front porch, providing essential prescribed medicines and dressing supplies for outpatients and emergency arrivals. Enquiries handled by hospital reception at +91 9341900715.",
+            url: `${siteUrl}/#location`,
+            image: `${siteUrl}/images/gallery-pharmacy.webp`,
+            telephone: hospitalConfig.contact.primary.value,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: siteConfig.address.street,
+              addressLocality: siteConfig.address.city,
+              addressRegion: siteConfig.address.state,
+              postalCode: siteConfig.address.postalCode,
+              addressCountry: siteConfig.address.country,
+            },
+            openingHoursSpecification: [
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday",
+                ],
+                opens: "00:00",
+                closes: "23:59",
+              },
+            ],
+            parentOrganization: {
+              "@id": `${siteUrl}/#hospital`,
+            },
           },
         ],
       },

@@ -169,7 +169,7 @@ export function GalleryGrid() {
                       <Phone className="w-4 h-4 text-[#0A5C4F]" aria-hidden="true" />
                       <span>Reception से पूछें: {primaryPhone}</span>
                     </a>
-                    <span className="text-xs sm:text-sm text-[#3B524E] font-normal">Palmerganj</span>
+                    <span className="text-xs sm:text-sm text-[#3B524E] font-normal">Powergunj</span>
                   </div>
                 </div>
               </div>
@@ -216,7 +216,7 @@ export function GalleryGrid() {
                         24/7 Emergency Care
                       </h3>
                       <p className="text-sm sm:text-base text-[#2E4540] font-normal mt-1.5 leading-relaxed">
-                        Palmerganj में 24 घंटे आपातकालीन सेवा — अचानक तबीयत खराब होने, सांस में तकलीफ, चोट या तेज दर्द में तुरंत प्राथमिक देखभाल और इलाज।
+                        Powergunj में 24 घंटे आपातकालीन सेवा — अचानक तबीयत खराब होने, सांस में तकलीफ, चोट या तेज दर्द में तुरंत प्राथमिक देखभाल और इलाज।
                       </p>
                     </div>
 

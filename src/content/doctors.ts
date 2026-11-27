@@ -204,7 +204,7 @@ export const departmentGroups: DepartmentGroup[] = [
     titleHindi: "सामान्य फिजिशियन एवं प्राथमिक चिकित्सा",
     badge: "24/7 Hospital Coverage",
     description:
-      "Palmerganj, Lohardaga में 24 घंटे फिजिशियन व ड्यूटी डॉक्टर कवरेज और दैनिक सुबह-शाम OPD परामर्श।",
+      "Powergunj, Lohardaga में 24 घंटे फिजिशियन व ड्यूटी डॉक्टर कवरेज और दैनिक सुबह-शाम OPD परामर्श।",
     disclaimer:
       "24/7 लेबल हॉस्पिटल में फिजिशियन व ड्यूटी मेडिकल टीम की सतत उपस्थिति को दर्शाता है। व्यक्तिगत डॉक्टर की वर्तमान उपस्थिति रिसेप्शन से पता करें।",
     doctors: allDoctors.filter((d) => d.category === "General Physicians"),
@@ -248,7 +248,7 @@ export const doctorsData: DoctorsSectionConfig = {
   eyebrow: "OUR DOCTORS & CLINICAL TEAM",
   title: "हमारे Doctors",
   subtitle:
-    "Palmerganj, Lohardaga में 24 घंटे फिजिशियन कवरेज और ऑन-कॉल विशेषज्ञ सर्जिकल टीम।",
+    "Powergunj, Lohardaga में 24 घंटे फिजिशियन कवरेज और ऑन-कॉल विशेषज्ञ सर्जिकल टीम।",
   physicianCoverageNotice: {
     highlight: "24/7 Hospital Physician Coverage",
     description:

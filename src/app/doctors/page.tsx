@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom";
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Phone, Clock, ShieldCheck, AlertCircle, CheckCircle2, Stethoscope, ArrowRight } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -17,17 +18,17 @@ import { generateBreadcrumbJsonLd, generateDoctorsJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Doctors in Lohardaga | Janta Hospital",
+    absolute: "Doctors in Lohardaga | General Physicians & Specialists | Janta Hospital",
   },
   description:
-    "Meet the general physicians and on-call specialists at Janta Hospital, Lohardaga. Contact reception to confirm doctor availability and consultation timings.",
+    "Consult experienced doctors in Lohardaga at Janta Hospital. Resident general physicians available for daily OPD with on-call specialist doctors in general surgery, orthopaedics, and neurosurgery.",
   alternates: {
     canonical: getCanonicalUrl("/doctors"),
   },
   openGraph: {
-    title: "Doctors in Lohardaga | Janta Hospital",
+    title: "Doctors in Lohardaga | General Physicians & Specialists | Janta Hospital",
     description:
-      "Meet the general physicians and on-call specialists at Janta Hospital, Lohardaga. Contact reception to confirm doctor availability and consultation timings.",
+      "Consult experienced doctors in Lohardaga at Janta Hospital. Resident general physicians available for daily OPD with on-call specialist doctors in general surgery, orthopaedics, and neurosurgery.",
     url: getCanonicalUrl("/doctors"),
     siteName: siteConfig.name,
     locale: siteConfig.locale,
@@ -44,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Doctors in Lohardaga | Janta Hospital",
+    title: "Doctors in Lohardaga | General Physicians & Specialists | Janta Hospital",
     description:
-      "Meet the general physicians and on-call specialists at Janta Hospital, Lohardaga. Contact reception to confirm doctor availability and consultation timings.",
+      "Consult experienced doctors in Lohardaga at Janta Hospital. Resident general physicians available for daily OPD with on-call specialist doctors in general surgery, orthopaedics, and neurosurgery.",
     images: [siteConfig.defaultOgImage.url],
   },
 };
@@ -81,7 +82,7 @@ export default function DoctorsPage() {
           eyebrow="OUR DOCTORS & SPECIALISTS"
           title="हमारे"
           italicWord="Doctors"
-          description="Palmerganj, Lohardaga में 24 घंटे फिजिशियन कवरेज और ऑन-कॉल विशेषज्ञ सर्जिकल टीम — आपकी और आपके परिवार की देखभाल के लिए समर्पित।"
+          description="Powergunj, Lohardaga में 24 घंटे फिजिशियन कवरेज और ऑन-कॉल विशेषज्ञ सर्जिकल टीम — आपकी और आपके परिवार की देखभाल के लिए समर्पित।"
           action={
             <a
               href={primaryPhoneHref}
@@ -105,7 +106,7 @@ export default function DoctorsPage() {
                 <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-[#B7D8CA] hover:border-[#8DBDAA] bg-[#0D2420] shadow-2xs card-hover-lift transition-all">
                   <Image
                     src="/images/gallery-signboard.webp"
-                    alt="Hospital entrance signboard displaying doctor timings and consultation schedule at Janta Hospital Palmerganj"
+                    alt="Hospital entrance signboard displaying doctor timings and consultation schedule at Janta Hospital Powergunj"
                     fill
                     sizes="(min-width: 1024px) 40vw, 100vw"
                     className="object-cover"
@@ -513,6 +514,16 @@ export default function DoctorsPage() {
                     <Phone className="w-3.5 h-3.5" aria-hidden="true" />
                     <span>Call {primaryPhone}</span>
                   </a>
+                </div>
+
+                <div className="mt-6 flex justify-center">
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#0A5C4F] font-semibold text-xs sm:text-sm hover:bg-[#E8F5F1] transition-all border border-[#A9DCCB] shadow-2xs"
+                  >
+                    <span>हॉस्पिटल की सभी Services और सर्जरी सुविधाएँ देखें</span>
+                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  </Link>
                 </div>
               </ScrollReveal>
 

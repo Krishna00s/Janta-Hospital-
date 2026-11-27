@@ -52,7 +52,7 @@ export const servicesData: HospitalService[] = [
     shortDescription:
       "अचानक तबीयत खराब होने, चोट या दर्द में तुरंत प्राथमिक इलाज, स्थिरीकरण और आपातकालीन चिकित्सा सहायता।",
     fullDescription:
-      "Janta Hospital Palmerganj, Lohardaga में 24 घंटे Emergency Care उपलब्ध है। Duty Doctor और प्रशिक्षित मेडिकल स्टाफ द्वारा तुरंत प्राथमिक जाँच, ऑक्सीजन, आपातकालीन इंजेक्शन और प्राथमिक उपचार प्रदान किया जाता है।",
+      "Janta Hospital Powergunj, Lohardaga में 24 घंटे Emergency Care उपलब्ध है। Duty Doctor और प्रशिक्षित मेडिकल स्टाफ द्वारा तुरंत प्राथमिक जाँच, ऑक्सीजन, आपातकालीन इंजेक्शन और प्राथमिक उपचार प्रदान किया जाता है।",
     category: "Emergency",
     badge: "24/7 Emergency",
     iconName: "activity",

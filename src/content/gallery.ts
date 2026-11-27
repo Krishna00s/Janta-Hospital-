@@ -26,11 +26,11 @@ export const galleryItems: GalleryItem[] = [
   {
     id: "about-hospital-care",
     title: "Hospital परिसर और मुख्य भवन",
-    caption: "Palmerganj में स्थित Janta Hospital का मुख्य भवन एवं परिसर",
+    caption: "Powergunj में स्थित Janta Hospital का मुख्य भवन एवं परिसर",
     description:
       "Janta Hospital में मरीज़ों और उनके परिवारों के लिए व्यवस्थित और साफ़-सुथरी व्यवस्था — ताकि बिना किसी परेशानी के सही समय पर इलाज मिल सके।",
     src: "/images/janta-hospital-exterior.webp",
-    alt: "Exterior facade and building of Janta Hospital in Palmerganj, Lohardaga",
+    alt: "Exterior facade and building of Janta Hospital in Powergunj, Lohardaga",
     category: "Clinical Care",
     badge: "Hospital Campus",
     width: 1536,
@@ -44,7 +44,7 @@ export const galleryItems: GalleryItem[] = [
     title: "24/7 Emergency Facility",
     caption: "24 घंटे आपातकालीन सेवा, प्राथमिक उपचार एवं ड्यूटी डॉक्टर",
     description:
-      "Palmerganj में 24 घंटे emergency प्राथमिक उपचार — रात हो या दिन, अचानक तबीयत बिगड़ने पर तुरंत medical care।",
+      "Powergunj में 24 घंटे emergency प्राथमिक उपचार — रात हो या दिन, अचानक तबीयत बिगड़ने पर तुरंत medical care।",
     src: "/images/janta-hospital-night-exterior.webp",
     alt: "Illuminated nighttime facade and emergency entrance of Janta Hospital Lohardaga",
     category: "Emergency",

@@ -32,7 +32,7 @@ export function AboutHospital() {
             <span className="font-medium">Janta Hospital</span> <span>के बारे में</span>
           </h2>
           <p className="mt-2 text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
-            Palmerganj, Lohardaga में स्थानीय और ग्रामीण परिवारों के लिए एक सुलभ और भरोसेमंद स्वास्थ्य केंद्र।
+            Powergunj, Lohardaga में स्थानीय और ग्रामीण परिवारों के लिए एक सुलभ और भरोसेमंद स्वास्थ्य केंद्र।
           </p>
         </ScrollReveal>
 
@@ -49,7 +49,7 @@ export function AboutHospital() {
                 </span>
               </h3>
               <p className="mt-3 text-xs sm:text-sm lg:text-base text-[#2E4540] font-normal leading-relaxed">
-                Lohardaga के Palmerganj में Head Post Office के ठीक पीछे स्थित Janta Hospital स्थानीय लोगों और आस-पास के ग्रामीण क्षेत्रों के लिए एक भरोसेमंद स्वास्थ्य केंद्र है। यहाँ हर मरीज़ को तुरंत सही सलाह, 24 घंटे आपातकालीन सेवा और आवश्यक दवाएँ एक ही स्थान पर उपलब्ध कराई जाती हैं।
+                Lohardaga के Powergunj में Head Post Office के ठीक पीछे स्थित Janta Hospital स्थानीय लोगों और आस-पास के ग्रामीण क्षेत्रों के लिए एक भरोसेमंद स्वास्थ्य केंद्र है। यहाँ हर मरीज़ को तुरंत सही सलाह, 24 घंटे आपातकालीन सेवा और आवश्यक दवाएँ एक ही स्थान पर उपलब्ध कराई जाती हैं।
               </p>
             </div>
 
@@ -121,7 +121,7 @@ export function AboutHospital() {
             <div className="relative w-full max-w-md aspect-[4/3] rounded-3xl overflow-hidden border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-xs bg-white card-hover-lift">
               <Image
                 src="/images/janta-hospital-exterior.webp"
-                alt="Janta Hospital Daytime Exterior Building Facade at Palmerganj Lohardaga"
+                alt="Janta Hospital Daytime Exterior Building Facade at Powergunj Lohardaga"
                 fill
                 sizes="(min-width: 1024px) 42vw, 100vw"
                 className="object-cover"
@@ -129,7 +129,7 @@ export function AboutHospital() {
               />
               <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" aria-hidden="true" />
               <span className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-xs font-semibold text-[#0A5C4F] uppercase tracking-wider border border-[#B7D8CA] shadow-2xs">
-                Palmerganj, Lohardaga
+                Powergunj, Lohardaga
               </span>
               <span className="absolute bottom-3 left-3.5 text-xs text-white/95 font-medium drop-shadow-xs">
                 Head Post Office के ठीक पीछे

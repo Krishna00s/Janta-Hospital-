@@ -302,7 +302,7 @@ export function Header() {
             {/* Hospital Landmark & Location Context */}
             <div className="text-center pt-1 pb-2">
               <span className="text-xs sm:text-sm text-[#3B524E] font-semibold block">
-                Behind Head Post Office, Palmerganj, Lohardaga
+                Main Road, near Head Post Office, Powergunj, Lohardaga
               </span>
             </div>
           </div>

@@ -15,7 +15,7 @@ export const hospitalConfig = {
   name: {
     value: "Janta Hospital",
     status: "verified",
-    source: "Official illuminated building signboard, Palmerganj, Lohardaga",
+    source: "Official illuminated building signboard, Powergunj, Lohardaga",
   } as FactField<string>,
 
   locationName: "LOHARDAGA",
@@ -24,11 +24,11 @@ export const hospitalConfig = {
 
   // Factual Short Intro in accessible Hindi/English
   shortIntro:
-    "Lohardaga के Palmerganj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।",
+    "Lohardaga के Powergunj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।",
 
   // Contact Information
   // Primary Hospital Line (+91 93419 00715): General Enquiries, Reception, OPD, Doctor Availability, WhatsApp
-  // Secondary & Emergency Line (+91 93083 48606): 24/7 Emergency Care, Urgent Triage, Acute Medical Response
+  // Secondary & Emergency Line (+91 93083 48606): 24/7 Emergency Care, Urgent First Aid, Duty Doctor Response
   contact: {
     primary: {
       value: "+919341900715",
@@ -64,7 +64,7 @@ export const hospitalConfig = {
     mapsUrl: {
       value:
         process.env.NEXT_PUBLIC_HOSPITAL_MAPS_URL ||
-        "https://www.google.com/maps/search/?api=1&query=Janta+Hospital,+Behind+Head+Post+Office,+Palmerganj,+Lohardaga,+Jharkhand+835302",
+        "https://maps.app.goo.gl/VETU3wJP8DgVGKbp7?g_st=aw",
       status: "verified" as const,
     },
     whatsapp: {
@@ -75,20 +75,22 @@ export const hospitalConfig = {
     },
   },
 
-  // Location Details (Verified from hospital exterior signboard)
+  // Location Details (Official hospital address)
   location: {
     town: "Lohardaga",
     district: "Lohardaga",
     state: "Jharkhand",
     pin: "835302",
     country: "India",
-    area: "Palmerganj",
-    landmark: "Behind Head Post Office / Near Bus Stand",
-    cardTitle: "बस स्टैंड के पास, Palmerganj",
-    cardSubtext: "लोहरदगा, झारखंड – 835302",
-    fullAddress: "Palmerganj, Behind Head Post Office, Lohardaga, Jharkhand – 835302",
+    area: "Powergunj",
+    street: "Main Road",
+    landmark: "near Head Post Office / Close to Main Bus Stand",
+    cardTitle: "Main Road, near Head Post Office",
+    cardSubtext: "Powergunj, लोहरदगा – 835302",
+    fullAddress:
+      "Main Road, near Head Post Office, Powergunj, Lohardaga, Jharkhand – 835302, India",
     directionsNote:
-      "Palmerganj में Head Post Office के ठीक पीछे, Lohardaga Main Bus Stand से केवल 5 मिनट की पैदल दूरी पर।",
+      "Main Road पर Head Post Office के पास, Powergunj, Lohardaga Main Bus Stand से केवल 5 मिनट की पैदल दूरी पर।",
     status: "verified" as const,
   },
 
@@ -185,14 +187,14 @@ export const hospitalConfig = {
     },
     {
       id: "pharmacy-counter",
-      title: "Hospital Pharmacy",
+      title: "Hospital Pharmacy (24/7)",
       shortDescription:
-        "Doctor द्वारा लिखी गई सभी ज़रूरी medicines सीधे front porch pharmacy counter पर उपलब्ध।",
+        "Doctor द्वारा लिखी गई सभी ज़रूरी medicines 24 घंटे front porch pharmacy counter पर उपलब्ध। पूछताछ रिसेप्शन (+91 9341900715) पर।",
       status: "verified" as const,
-      badge: "Pharmacy",
+      badge: "24/7 Pharmacy",
       icon: "pill",
       actionText: "दवा काउंटर",
-      actionHref: "#location",
+      actionHref: "tel:+919341900715",
     },
     {
       id: "minor-procedures",
@@ -279,8 +281,8 @@ export const hospitalConfig = {
       id: "fac-location",
       title: "Lohardaga के मुख्य केंद्र में",
       description:
-        "Palmerganj में Head Post Office के पीछे और Main Bus Stand के पास।",
-      highlight: "Palmerganj",
+        "Main Road, Powergunj में Head Post Office के पास और Main Bus Stand के निकट।",
+      highlight: "Main Road",
     },
   ],
 };

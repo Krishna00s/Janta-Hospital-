@@ -5,7 +5,7 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Production release timestamp for verified content revision
-  const lastModified = new Date("2026-11-24T00:00:00.000Z");
+  const lastModified = new Date("2026-11-27T00:00:00.000Z");
 
   return [
     {

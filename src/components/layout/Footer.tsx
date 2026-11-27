@@ -64,7 +64,7 @@ export function Footer() {
                 </span>
               </h2>
               <p className="text-sm sm:text-base text-[#E0F3EC] font-normal leading-relaxed">
-                Lohardaga के Palmerganj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।
+                Lohardaga के Powergunj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।
               </p>
             </div>
 
@@ -114,7 +114,7 @@ export function Footer() {
                   {hospitalConfig.location.fullAddress}
                 </p>
                 <p className="text-xs text-[#A8D8C8] font-normal">
-                  Head Post Office के ठीक पीछे • Main Bus Stand के पास
+                  Head Post Office के पास • Main Bus Stand के निकट
                 </p>
               </div>
 
@@ -202,7 +202,7 @@ export function Footer() {
               © {currentYear} {hospitalConfig.name.value}. All rights reserved.
             </p>
             <p className="text-center sm:text-right text-[#A8D8C8]">
-              <span>Designed &amp; Developed by </span>
+              <span>Beautifully crafted by </span>
               <a
                 href="https://zenova-enterprises.vercel.app/"
                 target="_blank"

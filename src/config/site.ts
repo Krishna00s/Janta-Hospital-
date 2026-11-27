@@ -7,14 +7,14 @@ import type { Metadata } from "next";
  * Supports Cloudflare Pages, Vercel, and custom domain deployment workflows.
  */
 
-export const DEFAULT_SITE_URL = "https://janta-hospital.pages.dev";
+export const DEFAULT_SITE_URL = "https://jantahospitallohardaga.in";
 
 /**
  * Resolves the canonical base site URL without trailing slash.
  * Priority:
- * 1. NEXT_PUBLIC_SITE_URL (custom domain or Cloudflare Pages project domain)
+ * 1. NEXT_PUBLIC_SITE_URL (custom canonical domain or environment override)
  * 2. CF_PAGES_URL (automatic system environment variable provided in Cloudflare Pages build environment)
- * 3. DEFAULT_SITE_URL fallback (https://janta-hospital.pages.dev)
+ * 3. DEFAULT_SITE_URL fallback (https://jantahospitallohardaga.in)
  */
 export function getSiteUrl(): string {
   const envUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.CF_PAGES_URL;
@@ -94,14 +94,14 @@ export const siteConfig = {
   alternateName: "Janta Hospital Lohardaga",
   hindiName: "जनता हॉस्पिटल लोहरदगा",
   description:
-    "Official website for Janta Hospital in Palmerganj, Lohardaga, Jharkhand. Providing 24-hour emergency medical care, general physician outpatient consultations (OPD), and on-site pharmacy dispensary.",
+    "Official website for Janta Hospital in Powergunj, Lohardaga, Jharkhand. Providing 24-hour emergency medical care, general physician outpatient consultations (OPD), and 24/7 on-site medicine dispensary counter.",
   locale: "en_IN",
   alternateLocales: ["hi_IN"],
   defaultOgImage: {
     url: "/images/og-image.jpg",
     width: 1200,
     height: 630,
-    alt: "Illuminated nighttime facade and entrance of Janta Hospital in Palmerganj, Lohardaga",
+    alt: "Illuminated nighttime facade and entrance of Janta Hospital in Powergunj, Lohardaga",
     type: "image/jpeg",
   },
   themeColor: "#0A5C4F",
@@ -113,16 +113,17 @@ export const siteConfig = {
     whatsappNumber: "9341900715",
   },
   address: {
-    street: "Palmerganj, Behind Head Post Office",
-    locality: "Palmerganj",
+    street: "Main Road, near Head Post Office, Powergunj",
+    locality: "Powergunj",
     city: "Lohardaga",
     state: "Jharkhand",
     postalCode: "835302",
     country: "IN",
-    landmark: "Behind Head Post Office / Near Lohardaga Main Bus Stand",
+    landmark: "near Head Post Office / Near Lohardaga Main Bus Stand",
   },
   geo: {
-    latitude: 23.435,
-    longitude: 84.68,
+    // Exact Google Maps listing coordinates for Janta Hospital, Powergunj, Lohardaga
+    latitude: 23.4437601,
+    longitude: 84.6887953,
   },
 } as const;

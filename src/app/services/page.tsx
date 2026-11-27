@@ -22,17 +22,17 @@ import { generateBreadcrumbJsonLd, generateServicesJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Hospital Services in Lohardaga | Janta Hospital",
+    absolute: "Emergency Care & Hospital Services in Lohardaga | Janta Hospital",
   },
   description:
-    "Explore emergency care, OPD consultations, surgical service enquiries, pharmacy and other healthcare services at Janta Hospital, Lohardaga.",
+    "24-hour emergency care in Lohardaga, daily OPD consultations, on-site pharmacy, and on-call specialist surgical consultations (General Surgery, Orthopaedic, Laparoscopic, Neurosurgery) at Janta Hospital.",
   alternates: {
     canonical: getCanonicalUrl("/services"),
   },
   openGraph: {
-    title: "Hospital Services in Lohardaga | Janta Hospital",
+    title: "Emergency Care & Hospital Services in Lohardaga | Janta Hospital",
     description:
-      "Explore emergency care, OPD consultations, surgical service enquiries, pharmacy and other healthcare services at Janta Hospital, Lohardaga.",
+      "24-hour emergency care in Lohardaga, daily OPD consultations, on-site pharmacy, and on-call specialist surgical consultations (General Surgery, Orthopaedic, Laparoscopic, Neurosurgery) at Janta Hospital.",
     url: getCanonicalUrl("/services"),
     siteName: siteConfig.name,
     locale: siteConfig.locale,
@@ -49,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hospital Services in Lohardaga | Janta Hospital",
+    title: "Emergency Care & Hospital Services in Lohardaga | Janta Hospital",
     description:
-      "Explore emergency care, OPD consultations, surgical service enquiries, pharmacy and other healthcare services at Janta Hospital, Lohardaga.",
+      "24-hour emergency care in Lohardaga, daily OPD consultations, on-site pharmacy, and on-call specialist surgical consultations (General Surgery, Orthopaedic, Laparoscopic, Neurosurgery) at Janta Hospital.",
     images: [siteConfig.defaultOgImage.url],
   },
 };
@@ -80,7 +80,7 @@ export default function ServicesPage() {
           eyebrow="MEDICAL &amp; SURGICAL SERVICES"
           title="इलाज और"
           italicWord="सुविधाएँ"
-          description="24/7 Emergency Care, विशेषज्ञ सर्जरी परामर्श (General, Ortho, Laparoscopic, Neuro), दैनिक OPD और अस्पताल फार्मेसी — Palmerganj, Lohardaga में संपूर्ण देखभाल।"
+          description="24/7 Emergency Care, विशेषज्ञ सर्जरी परामर्श (General, Ortho, Laparoscopic, Neuro), दैनिक OPD और अस्पताल फार्मेसी — Powergunj, Lohardaga में संपूर्ण देखभाल।"
           action={
             <>
               <a
@@ -175,7 +175,7 @@ export default function ServicesPage() {
                         <span>Emergency Call: {emergencyPhone}</span>
                       </a>
                       <span className="text-xs text-[#475B57] font-medium text-center sm:text-left">
-                        Palmerganj, Lohardaga • सीधे अस्पताल आएँ
+                        Powergunj, Lohardaga • सीधे अस्पताल आएँ
                       </span>
                     </div>
                   </div>
@@ -323,7 +323,7 @@ export default function ServicesPage() {
                     24/7 Emergency Care
                   </h3>
                   <p className="text-xs sm:text-sm text-[#471E21] leading-relaxed font-normal">
-                    अचानक तबीयत खराब होने या चोट लगने पर बिना किसी देरी के सीधे Palmerganj Hospital आएँ। 24 घंटे Duty Staff मौजूद रहता है।
+                    अचानक तबीयत खराब होने या चोट लगने पर बिना किसी देरी के सीधे Powergunj Hospital आएँ। 24 घंटे Duty Staff मौजूद रहता है।
                   </p>
                   <div className="pt-2">
                     <a

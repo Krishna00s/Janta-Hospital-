@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Janta Hospital Lohardaga",
     short_name: "Janta Hospital",
     description:
-      "Official website of Janta Hospital in Palmerganj, Lohardaga, Jharkhand. 24-hour emergency care, consultations, and pharmacy.",
+      "Official website of Janta Hospital in Powergunj, Lohardaga, Jharkhand. 24-hour emergency care, consultations, and 24/7 on-site pharmacy.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

@@ -45,7 +45,7 @@ export function LocationContact() {
             <span className="font-medium">Hospital</span> <span>का पता</span>
           </h2>
           <p className="mt-2 text-sm sm:text-base text-[#2E4540] font-normal">
-            Palmerganj, Lohardaga — Head Post Office के ठीक पीछे, Bus Stand के पास। Emergency के लिए 24 घंटे खुला है।
+            Powergunj, Lohardaga — Head Post Office के ठीक पीछे, Bus Stand के पास। Emergency के लिए 24 घंटे खुला है।
           </p>
         </ScrollReveal>
 
@@ -84,7 +84,7 @@ export function LocationContact() {
                   24 घंटे Emergency खुला
                 </span>
                 <span className="text-xs text-[#2E4540] font-normal">
-                  Palmerganj, Lohardaga
+                  Powergunj, Lohardaga
                 </span>
               </div>
             </div>

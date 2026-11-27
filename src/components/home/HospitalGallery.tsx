@@ -33,7 +33,7 @@ export function HospitalGallery() {
             <span className="font-medium">Janta Hospital</span> <span>की एक झलक</span>
           </h2>
           <p className="mt-2 text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
-            Lohardaga के Palmerganj में आपकी सेहत का पूरा ध्यान — जानिए Hospital आने पर आपको क्या सुविधा मिलती है।
+            Lohardaga के Powergunj में आपकी सेहत का पूरा ध्यान — जानिए Hospital आने पर आपको क्या सुविधा मिलती है।
           </p>
         </ScrollReveal>
 
@@ -48,7 +48,7 @@ export function HospitalGallery() {
               <div className="relative w-full h-52 sm:h-64 bg-[#0D2420] border-b border-[#D2E6DC] overflow-hidden">
                 <Image
                   src="/images/janta-hospital-exterior.webp"
-                  alt="Janta Hospital daytime exterior building facade in Palmerganj, Lohardaga"
+                  alt="Janta Hospital daytime exterior building facade in Powergunj, Lohardaga"
                   fill
                   sizes="(min-width: 1024px) 58vw, 100vw"
                   className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500 ease-out"
@@ -104,7 +104,7 @@ export function HospitalGallery() {
                     <span>Hospital का रास्ता देखें</span>
                     <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </Link>
-                  <span className="text-xs sm:text-sm text-[#2E4540] font-normal">Palmerganj, Lohardaga</span>
+                  <span className="text-xs sm:text-sm text-[#2E4540] font-normal">Powergunj, Lohardaga</span>
                 </div>
               </div>
             </div>

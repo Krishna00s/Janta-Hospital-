@@ -16,17 +16,17 @@ import { generateBreadcrumbJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Hospital Photos & Facilities | Janta Hospital Lohardaga",
+    absolute: "Hospital Photos & Premises | Janta Hospital Lohardaga",
   },
   description:
-    "Explore authentic photographs of Janta Hospital in Lohardaga, including its exterior, pharmacy and hospital premises.",
+    "View genuine photographs of Janta Hospital in Lohardaga, Jharkhand — including the hospital entrance, emergency reception, consultation chambers, and on-site medicine counter.",
   alternates: {
     canonical: getCanonicalUrl("/gallery"),
   },
   openGraph: {
-    title: "Hospital Photos & Facilities | Janta Hospital Lohardaga",
+    title: "Hospital Photos & Premises | Janta Hospital Lohardaga",
     description:
-      "Explore authentic photographs of Janta Hospital in Lohardaga, including its exterior, pharmacy and hospital premises.",
+      "View genuine photographs of Janta Hospital in Lohardaga, Jharkhand — including the hospital entrance, emergency reception, consultation chambers, and on-site medicine counter.",
     url: getCanonicalUrl("/gallery"),
     siteName: siteConfig.name,
     locale: siteConfig.locale,
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hospital Photos & Facilities | Janta Hospital Lohardaga",
+    title: "Hospital Photos & Premises | Janta Hospital Lohardaga",
     description:
-      "Explore authentic photographs of Janta Hospital in Lohardaga, including its exterior, pharmacy and hospital premises.",
+      "View genuine photographs of Janta Hospital in Lohardaga, Jharkhand — including the hospital entrance, emergency reception, consultation chambers, and on-site medicine counter.",
     images: [siteConfig.defaultOgImage.url],
   },
 };
@@ -75,7 +75,7 @@ export default function GalleryPage() {
           eyebrow="PATIENT GUIDE"
           title="Hospital की"
           italicWord="सुविधाएँ"
-          description="Lohardaga के Palmerganj में मरीज़ों की सुविधा और देखभाल की पूरी जानकारी — 24/7 Emergency Care, OPD Consultation, Hospital Pharmacy और Patient Care Ward व्यवस्था।"
+          description="Lohardaga के Powergunj में मरीज़ों की सुविधा और देखभाल की पूरी जानकारी — 24/7 Emergency Care, OPD Consultation, Hospital Pharmacy और Patient Care Ward व्यवस्था।"
           action={
             <>
               <Link
@@ -110,7 +110,7 @@ export default function GalleryPage() {
                 <span>Hospital आने पर आपको किस विभाग में क्या सुविधा मिलती है, यहाँ साफ़ जानकारी दी गई है।</span>
               </div>
               <span className="font-mono text-xs sm:text-sm text-[#0A5C4F] font-medium">
-                Palmerganj, Lohardaga
+                Powergunj, Lohardaga
               </span>
             </div>
           </Container>

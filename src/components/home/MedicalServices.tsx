@@ -64,7 +64,7 @@ export function MedicalServices() {
                 24/7 Emergency Care &amp; Assessment
               </h3>
               <p className="text-sm sm:text-base text-[#2E4540] font-normal max-w-2xl leading-relaxed">
-                अचानक तबीयत बिगड़ने, चोट लगने या तेज दर्द में बिना किसी पूर्व सूचना के सीधे Palmerganj Hospital आएँ। 24 घंटे Duty Doctor व प्रशिक्षित मेडिकल स्टाफ द्वारा तुरंत प्राथमिक चिकित्सा व स्थिरीकरण किया जाता है।
+                अचानक तबीयत बिगड़ने, चोट लगने या तेज दर्द में बिना किसी पूर्व सूचना के सीधे Powergunj Hospital आएँ। 24 घंटे Duty Doctor व प्रशिक्षित मेडिकल स्टाफ द्वारा तुरंत प्राथमिक चिकित्सा व स्थिरीकरण किया जाता है।
               </p>
 
               <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-[#471E21] font-medium pt-1">
@@ -86,7 +86,7 @@ export function MedicalServices() {
                 <span>Emergency Call ({emergencyPhone})</span>
               </a>
               <span className="text-[11px] text-[#A63F45] font-medium text-center">
-                Palmerganj, Lohardaga • 24 घंटे उपलब्ध
+                Powergunj, Lohardaga • 24 घंटे उपलब्ध
               </span>
             </div>
           </div>

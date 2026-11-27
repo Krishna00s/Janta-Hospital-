@@ -20,7 +20,7 @@ export const generalFaqs: FAQItem[] = [
     question: "Where is Janta Hospital located in Lohardaga?",
     hindiQuestion: "जनता हॉस्पिटल लोहरदगा में कहाँ स्थित है?",
     answer:
-      "Janta Hospital is located at Palmerganj, Behind Head Post Office, Lohardaga, Jharkhand – 835302. It is conveniently situated within 5 minutes walking distance from the Lohardaga Main Bus Stand with direct patient vehicle access.",
+      "Janta Hospital is located at Main Road, near Head Post Office, Powergunj, Lohardaga, Jharkhand – 835302, India. It is conveniently situated within 3 to 5 minutes walking distance from the Lohardaga Main Bus Stand with direct patient vehicle access.",
     category: "visit",
   },
   {
@@ -36,7 +36,7 @@ export const generalFaqs: FAQItem[] = [
     question: "How do I contact Janta Hospital during a medical emergency?",
     hindiQuestion: "आपातकालीन स्थिति में हॉस्पिटल से कैसे संपर्क करें?",
     answer:
-      "For acute medical emergencies, immediately call our 24/7 dedicated emergency line at +91 9308348606. Our emergency observation, acute triage, and wound care desk operate round the clock, 365 days a year.",
+      "For medical emergencies, immediately call our 24/7 dedicated emergency line at +91 9308348606. Our emergency desk, duty doctor coverage, and first-aid support operate round the clock, 365 days a year.",
     category: "emergency",
   },
   {
@@ -60,7 +60,7 @@ export const generalFaqs: FAQItem[] = [
     question: "Does Janta Hospital have an on-site medicine shop / pharmacy?",
     hindiQuestion: "क्या हॉस्पिटल परिसर में दवा की दुकान उपलब्ध है?",
     answer:
-      "Yes. Janta Hospital operates an on-site medicine dispensary counter on the ground floor, dispensing essential prescribed medicines, dressing supplies, and surgical items for outpatients and emergency arrivals.",
+      "Yes. Janta Hospital operates a 24/7 on-site medicine dispensary counter on the ground floor, dispensing essential prescribed medicines, dressing supplies, and surgical items round the clock for outpatients and emergency arrivals. Pharmacy enquiries are handled directly by reception at +91 9341900715.",
     category: "services",
   },
 ];

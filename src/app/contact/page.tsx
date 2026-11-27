@@ -32,17 +32,17 @@ import { generateBreadcrumbJsonLd, generateContactPageJsonLd } from "@/lib/schem
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Janta Hospital Lohardaga | Contact & Directions",
+    absolute: "Janta Hospital Contact Number & Address | Lohardaga, Jharkhand",
   },
   description:
-    "Contact Janta Hospital Lohardaga at +91 9341900715. Emergency contact: +91 9308348606. Find our hospital address and Google Maps directions.",
+    "Janta Hospital contact number: +91 9341900715, 24/7 Emergency: +91 9308348606. Hospital address: Main Road, near Head Post Office, Powergunj, Lohardaga, Jharkhand – 835302, India.",
   alternates: {
     canonical: getCanonicalUrl("/contact"),
   },
   openGraph: {
-    title: "Janta Hospital Lohardaga | Contact & Directions",
+    title: "Janta Hospital Contact Number & Address | Lohardaga, Jharkhand",
     description:
-      "Contact Janta Hospital Lohardaga at +91 9341900715. Emergency contact: +91 9308348606. Find our hospital address and Google Maps directions.",
+      "Janta Hospital contact number: +91 9341900715, 24/7 Emergency: +91 9308348606. Hospital address: Main Road, near Head Post Office, Powergunj, Lohardaga, Jharkhand – 835302, India.",
     url: getCanonicalUrl("/contact"),
     siteName: siteConfig.name,
     locale: siteConfig.locale,
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Janta Hospital Lohardaga | Contact & Directions",
+    title: "Janta Hospital Contact Number & Address | Lohardaga, Jharkhand",
     description:
-      "Contact Janta Hospital Lohardaga at +91 9341900715. Emergency contact: +91 9308348606. Find our hospital address and Google Maps directions.",
+      "Janta Hospital contact number: +91 9341900715, 24/7 Emergency: +91 9308348606. Hospital address: Main Road, near Head Post Office, Powergunj, Lohardaga, Jharkhand – 835302, India.",
     images: [siteConfig.defaultOgImage.url],
   },
 };
@@ -89,7 +89,7 @@ export default function ContactPage() {
           eyebrow="CONTACT & DIRECTIONS"
           title="पता और"
           italicWord="Contact"
-          description="Lohardaga के Palmerganj में Head Post Office के पीछे। Emergency में तुरंत आएँ या Phone पर संपर्क करें।"
+          description="Main Road, near Head Post Office, Powergunj, Lohardaga. 24 घंटे Emergency, OPD परामर्श या जानकारी के लिए संपर्क करें।"
           action={
             <a
               href={emergencyPhoneHref}
@@ -295,7 +295,7 @@ export default function ContactPage() {
                     {hospitalConfig.location.fullAddress}
                   </p>
                   <p className="text-xs sm:text-sm text-[#2E4540] font-normal pt-1">
-                    Head Post Office के ठीक पीछे, Palmerganj, Lohardaga, Jharkhand – 835302
+                    Main Road, near Head Post Office, Powergunj, Lohardaga, Jharkhand – 835302
                   </p>
                 </div>
 
@@ -309,7 +309,7 @@ export default function ContactPage() {
                     <Navigation className="w-4 h-4 text-[#0A5C4F] shrink-0 mt-0.5" aria-hidden="true" />
                     <div className="text-xs sm:text-sm leading-relaxed text-[#2E4540] font-normal">
                       <strong className="text-[#122421] font-semibold block mb-0.5">Lohardaga Main Bus Stand से</strong>
-                      बस स्टैंड से केवल 3 से 5 मिनट की पैदल दूरी। Palmerganj मुख्य डाकघर की तरफ आएँ।
+                      बस स्टैंड से केवल 3 से 5 मिनट की पैदल दूरी। Main Road, Powergunj मुख्य डाकघर की तरफ आएँ।
                     </div>
                   </div>
 
@@ -317,7 +317,7 @@ export default function ContactPage() {
                     <Building className="w-4 h-4 text-[#0A5C4F] shrink-0 mt-0.5" aria-hidden="true" />
                     <div className="text-xs sm:text-sm leading-relaxed text-[#2E4540] font-normal">
                       <strong className="text-[#122421] font-semibold block mb-0.5">Head Post Office Landmark</strong>
-                      लोहरदगा मुख्य डाकघर के ठीक पीछे वाली गली में। सामने 24 घंटे का Signboard दिखाई देगा।
+                      लोहरदगा मुख्य डाकघर के पास वाली सड़क पर। सामने 24 घंटे का Signboard दिखाई देगा।
                     </div>
                   </div>
                 </div>
@@ -327,7 +327,7 @@ export default function ContactPage() {
                   <div className="relative w-20 h-20 rounded-xl bg-[#0D2420] border border-[#D5EAE0] overflow-hidden shrink-0">
                     <Image
                       src="/images/gallery-entrance.webp"
-                      alt="Janta Hospital entrance and reception veranda in Palmerganj"
+                      alt="Janta Hospital entrance and reception veranda in Powergunj, Lohardaga"
                       fill
                       className="object-cover"
                     />

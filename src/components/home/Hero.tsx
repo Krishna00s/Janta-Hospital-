@@ -331,7 +331,7 @@ export function Hero() {
 
             {/* 4. Concise Factual Introduction */}
             <p className="text-sm min-[360px]:text-base sm:text-base lg:text-base xl:text-lg text-[#2E4540] leading-relaxed max-w-md font-normal">
-              Lohardaga के Palmerganj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।
+              Lohardaga के Powergunj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।
             </p>
 
             {/* 5. Actions: Call Hospital & Get Directions */}

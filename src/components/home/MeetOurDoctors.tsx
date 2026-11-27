@@ -34,7 +34,7 @@ export function MeetOurDoctors() {
             <span>हमारे</span> <span className="font-medium">Doctors</span>
           </h2>
           <p className="mt-2 text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
-            Palmerganj, Lohardaga में 24 घंटे फिजिशियन कवरेज और ऑन-कॉल विशेषज्ञ सर्जिकल टीम।
+            Powergunj, Lohardaga में 24 घंटे फिजिशियन कवरेज और ऑन-कॉल विशेषज्ञ सर्जिकल टीम।
           </p>
         </ScrollReveal>
 
@@ -251,7 +251,7 @@ export function MeetOurDoctors() {
             />
             <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/45 via-transparent to-transparent" aria-hidden="true" />
             <span className="absolute bottom-2.5 left-3 text-xs text-white font-medium drop-shadow-xs">
-              Palmerganj Main Entrance
+              Powergunj Main Entrance
             </span>
           </div>
 

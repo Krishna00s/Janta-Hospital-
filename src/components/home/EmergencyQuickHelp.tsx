@@ -30,7 +30,7 @@ export function EmergencyQuickHelp() {
                   24/7 Emergency Active
                 </span>
                 <span className="text-xs sm:text-sm text-[#475B57] font-medium">
-                  Palmerganj, Lohardaga
+                  Powergunj, Lohardaga
                 </span>
               </div>
 
