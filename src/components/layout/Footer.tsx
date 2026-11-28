@@ -35,11 +35,22 @@ export function Footer() {
 
   const navLinks = [
     { label: "Home", href: "/" },
+    { label: "24/7 Emergency", href: "/emergency" },
     { label: "Services", href: "/services" },
     { label: "Doctors", href: "/doctors" },
     { label: "About", href: "/about" },
     { label: "Gallery", href: "/gallery" },
     { label: "Contact", href: "/contact" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+  ];
+
+  const serviceLinks = [
+    { label: "General Medicine (OPD)", href: "/services/general-medicine" },
+    { label: "General Surgery", href: "/services/general-surgery" },
+    { label: "Orthopaedic Surgery", href: "/services/orthopaedic-surgery" },
+    { label: "Laparoscopic Surgery", href: "/services/laparoscopic-surgery" },
+    { label: "Neurosurgery & Spine", href: "/services/neurosurgery" },
+    { label: "24/7 Hospital Pharmacy", href: "/services/pharmacy" },
   ];
 
   return (
@@ -50,7 +61,7 @@ export function Footer() {
       {/* 2. Main Editorial Footer Container */}
       <div className="relative z-20 pt-6 sm:pt-8 lg:pt-10 pb-8 sm:pb-12 bg-[#0A5C4F]">
         <Container>
-          
+
           {/* Top Section: Strong Editorial Heading & Primary Contact Actions */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 pb-8 sm:pb-10 border-b border-[#147061]">
             <div className="max-w-xl space-y-2 sm:space-y-3">
@@ -75,7 +86,7 @@ export function Footer() {
                 className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-[#0A5C4F] font-semibold text-xs sm:text-sm hover:bg-[#E0F3EC] transition-colors shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 <Phone className="w-4 h-4 text-[#A63F45]" aria-hidden="true" />
-                <span>अभी Call करें ({primaryPhone})</span>
+                <span>Call Now ({primaryPhone})</span>
               </a>
 
               <a
@@ -85,16 +96,16 @@ export function Footer() {
                 className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#084F43] text-white font-medium text-xs sm:text-sm border border-[#167868] hover:bg-[#074338] transition-colors shadow-2xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 <MapPin className="w-4 h-4 text-[#A9DCCB]" aria-hidden="true" />
-                <span>रास्ता देखें (Google Maps)</span>
+                <span>Get Directions (Google Maps)</span>
               </a>
             </div>
           </div>
 
-          {/* Middle Section: Spacious, Balanced 3-Column Layout on Desktop */}
+          {/* Middle Section: Spacious 4-Column Layout on Desktop */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 py-8 sm:py-10 border-b border-[#147061] items-start">
-            
+
             {/* Column 1: Hospital Identity & Verified Location (4 cols) */}
-            <div className="lg:col-span-5 space-y-4">
+            <div className="lg:col-span-4 space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#084F43] border border-[#167868] flex items-center justify-center shrink-0">
                   <MedicalCrossIcon className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -118,16 +129,25 @@ export function Footer() {
                 </p>
               </div>
 
-              <div className="pt-1">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#084F43] text-xs font-medium text-[#E0F3EC] border border-[#167868]">
-                  <span className="w-2 h-2 rounded-full bg-[#A9DCCB]" />
-                  24 घंटे Emergency सेवा उपलब्ध
-                </span>
+              <div className="pt-1 flex flex-wrap gap-2">
+                <Link
+                  href="/emergency"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#084F43] text-xs font-medium text-[#E0F3EC] border border-[#167868] hover:bg-[#074338] transition-colors"
+                >
+                  <span className="w-2 h-2 rounded-full bg-[#FF7588] animate-pulse" />
+                  <span>24/7 Emergency Care</span>
+                </Link>
+                <Link
+                  href="/services/pharmacy"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#084F43] text-xs font-medium text-[#E0F3EC] border border-[#167868] hover:bg-[#074338] transition-colors"
+                >
+                  <span>24/7 Hospital Pharmacy</span>
+                </Link>
               </div>
             </div>
 
-            {/* Column 2: Useful Navigation (3 cols) */}
-            <div className="lg:col-span-3 space-y-3">
+            {/* Column 2: Quick Directory (2 cols) */}
+            <div className="lg:col-span-2 space-y-3">
               <h3 className="text-xs font-medium uppercase tracking-wider text-[#A9DCCB]">
                 Hospital Directory
               </h3>
@@ -137,7 +157,7 @@ export function Footer() {
                     <Link
                       href={link.href}
                       prefetch={false}
-                      className="inline-flex items-center py-1.5 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#A9DCCB] rounded"
+                      className="inline-flex items-center py-1 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#A9DCCB] rounded"
                     >
                       {link.label}
                     </Link>
@@ -146,15 +166,35 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Column 3: Direct Contact Numbers & WhatsApp (4 cols) */}
-            <div className="lg:col-span-4 space-y-4">
+            {/* Column 3: Medical Services (3 cols) */}
+            <div className="lg:col-span-3 space-y-3">
+              <h3 className="text-xs font-medium uppercase tracking-wider text-[#A9DCCB]">
+                Medical Services
+              </h3>
+              <ul className="space-y-1 text-xs sm:text-sm font-normal text-[#E0F3EC]">
+                {serviceLinks.map((s) => (
+                  <li key={s.label}>
+                    <Link
+                      href={s.href}
+                      prefetch={false}
+                      className="inline-flex items-center py-1 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#A9DCCB] rounded"
+                    >
+                      {s.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Column 4: Direct Contact Numbers & WhatsApp (3 cols) */}
+            <div className="lg:col-span-3 space-y-4">
               <div>
                 <h3 className="text-xs font-medium uppercase tracking-wider text-[#A9DCCB] mb-1.5">
                   Hospital Enquiries
                 </h3>
                 <a
                   href={primaryPhoneHref}
-                  className="font-sans font-semibold text-xl sm:text-2xl text-white hover:text-[#E0F3EC] transition-colors block"
+                  className="font-sans font-semibold text-lg sm:text-xl text-white hover:text-[#E0F3EC] transition-colors block"
                 >
                   {primaryPhone}
                 </a>
@@ -167,7 +207,7 @@ export function Footer() {
               <div className="pt-2 border-t border-[#147061]">
                 <h3 className="text-xs font-medium uppercase tracking-wider text-[#FFD1D8] mb-1.5 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#FF7588]" />
-                  Emergency Contact (24/7)
+                  Emergency Helpline (24/7)
                 </h3>
                 <a
                   href={emergencyPhoneHref}
@@ -176,7 +216,7 @@ export function Footer() {
                   {emergencyPhone}
                 </a>
                 <span className="text-xs text-[#E0F3EC] font-normal mt-0.5 block">
-                  24 घंटे आपातकालीन चिकित्सा एवं ट्रॉमा सहायता
+                  24 घंटे आपातकालीन चिकित्सा सहायता
                 </span>
               </div>
 
@@ -188,7 +228,7 @@ export function Footer() {
                   className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-[#A9DCCB] hover:text-[#E0F3EC] transition-colors"
                 >
                   <MessageSquare className="w-4 h-4 text-[#A9DCCB]" aria-hidden="true" />
-                  <span>WhatsApp पर संदेश भेजें</span>
+                  <span>WhatsApp</span>
                   <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                 </a>
               </div>
@@ -196,11 +236,31 @@ export function Footer() {
 
           </div>
 
-          {/* Bottom Section: Legal Copyright & Agency Signature */}
+          {/* Bottom Section: Legal Copyright, Privacy Policy & Agency Signature */}
           <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-[#A8D8C8] font-normal">
-            <p className="text-center sm:text-left">
-              © {currentYear} {hospitalConfig.name.value}. All rights reserved.
-            </p>
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4">
+              <p>
+                © {currentYear} {hospitalConfig.name.value}. All rights reserved.
+              </p>
+              <span>•</span>
+              <Link
+                href="/privacy-policy"
+                prefetch={false}
+                className="hover:text-white transition-colors underline decoration-[#167868] underline-offset-4"
+              >
+                Privacy Policy
+              </Link>
+              <span>•</span>
+              <Link
+                href="https://g.page/r/CVIq-h0LaN_qEAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                prefetch={false}
+                className="hover:text-white transition-colors underline decoration-[#167868] underline-offset-4"
+              >
+                Patient Reviews
+              </Link>
+            </div>
             <p className="text-center sm:text-right text-[#A8D8C8]">
               <span>Beautifully crafted by </span>
               <a
