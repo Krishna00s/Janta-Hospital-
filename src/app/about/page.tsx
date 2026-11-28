@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -65,12 +64,6 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  ReactDOM.preload("/images/janta-hospital-exterior.webp", {
-    as: "image",
-    type: "image/webp",
-    fetchPriority: "high",
-  });
-
   const phoneHref = primaryPhoneHref;
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([{ name: "About", path: "/about" }]);
   const aboutJsonLd = generateAboutPageJsonLd();
@@ -92,9 +85,9 @@ export default function AboutPage() {
         <PageHero
           breadcrumbs={[{ label: "About" }]}
           eyebrow="ABOUT JANTA HOSPITAL"
-          title="हमारा"
-          italicWord="Hospital"
-          description="Lohardaga के Powergunj में 24 घंटे Emergency सेवा, अनुभवी Doctors और सभी ज़रूरी दवाएँ एक ही जगह।"
+          title="About"
+          italicWord="Janta Hospital"
+          description="Providing 24-hour emergency medical care, resident physician OPD consultations, and an on-site 24/7 pharmacy in Powergunj, Lohardaga. (Lohardaga के Powergunj में 24 घंटे Emergency सेवा और अनुभवी Doctors की देखरेख।)"
           action={
             <>
               <a
@@ -102,70 +95,102 @@ export default function AboutPage() {
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0A5C4F] text-white font-semibold text-xs sm:text-sm hover:bg-[#07463C] transition-colors shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
               >
                 <Phone className="w-4 h-4 text-white" aria-hidden="true" />
-                <span>अभी Call करें ({primaryPhone})</span>
+                <span>Call Reception ({primaryPhone})</span>
               </a>
-              <Link
-                href="/contact"
-                prefetch={false}
+              <a
+                href={hospitalConfig.contact.mapsUrl.value}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#122421] font-medium text-xs sm:text-sm hover:bg-gray-50 transition-colors border border-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
               >
                 <MapPin className="w-4 h-4 text-[#0A5C4F]" aria-hidden="true" />
-                <span>Hospital का पता देखें</span>
-              </Link>
+                <span>Get Directions</span>
+              </a>
             </>
           }
         />
 
         {/* Section A: Narrative & Daytime Campus Photograph */}
         <section className="relative py-10 sm:py-16 bg-white overflow-hidden">
-          {/* Abstract Organic Botanical Sweep connecting photograph and narrative with restrained opacity */}
           <BotanicalOrganicSweep className="opacity-20 sm:opacity-25" />
           <Container className="relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
-              {/* Authentic Hospital Exterior Photograph (Left on desktop, second on mobile) */}
+              {/* Authentic Hospital Exterior Photograph */}
               <ScrollReveal direction="card" delay={0} className="lg:col-span-6 order-2 lg:order-1">
                 <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-2xs card-hover-lift transition-all bg-[#0D2420]">
-                  <Image
-                    src="/images/janta-hospital-exterior.webp"
-                    alt="Daytime exterior photograph of Janta Hospital building in Powergunj, Lohardaga"
-                    width={800}
-                    height={533}
-                    priority
-                    className="w-full h-auto object-cover"
-                  />
+                  <picture className="w-full h-auto">
+                    <source
+                      media="(min-width: 1024px)"
+                      type="image/avif"
+                      srcSet="/images/janta-hospital-exterior.avif"
+                    />
+                    <source
+                      media="(min-width: 1024px)"
+                      type="image/webp"
+                      srcSet="/images/janta-hospital-exterior.webp"
+                    />
+                    <source
+                      media="(max-width: 1023px)"
+                      type="image/avif"
+                      srcSet="/images/janta-hospital-exterior-mobile-sm.avif 480w, /images/janta-hospital-exterior-mobile.avif 800w"
+                      sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                    />
+                    <source
+                      media="(max-width: 1023px)"
+                      type="image/webp"
+                      srcSet="/images/janta-hospital-exterior-mobile-sm.webp 480w, /images/janta-hospital-exterior-mobile.webp 800w"
+                      sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                    />
+                    <img
+                      src="/images/janta-hospital-exterior-mobile.webp"
+                      alt="Daytime exterior photograph of Janta Hospital building in Powergunj, Lohardaga"
+                      width={800}
+                      height={533}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-auto object-cover"
+                    />
+                  </picture>
                   <div className="p-4 sm:p-5 bg-white border-t border-[#D2E6DC]">
                     <div className="flex items-center gap-2 text-xs font-semibold text-[#0A5C4F] uppercase tracking-wider mb-1">
                       <Building2 className="w-4 h-4" aria-hidden="true" />
-                      <span>Powergunj में सेवा और देखभाल</span>
+                      <span>Healthcare Facility in Powergunj, Lohardaga</span>
                     </div>
                     <p className="text-xs sm:text-sm text-[#2E4540] font-normal leading-relaxed">
-                      Head Post Office के पास स्थित Hospital — Ground Floor पर Reception, दवा काउंटर और 24 घंटे Emergency सेवाएँ।
+                      Located near Head Post Office, Powergunj — Featuring Ground Floor Reception, 24/7 on-site pharmacy, and round-the-clock emergency care.
                     </p>
                   </div>
                 </div>
               </ScrollReveal>
 
-              {/* Editorial Mission Narrative (Right on desktop, first on mobile) */}
+              {/* Editorial Mission Narrative */}
               <ScrollReveal direction="card" delay={100} className="lg:col-span-6 space-y-4 sm:space-y-6 order-1 lg:order-2">
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-widest text-[#0A5C4F]">
-                    हमारा संकल्प
+                    OUR CLINICAL MISSION
                   </span>
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#122421] tracking-tight mt-1 leading-snug py-0.5">
-                    <span>हर परिवार के लिए आसान और </span>
+                    <span>Trusted Healthcare for Every </span>
                     <span className="font-serif italic font-normal text-[#0A5C4F]">
-                      भरोसेमंद इलाज।
+                      Family in Lohardaga.
                     </span>
                   </h2>
                 </div>
 
                 <p className="text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
-                  Lohardaga के Powergunj में Head Post Office के पास स्थित Janta Hospital स्थानीय लोगों और आस-पास के ग्रामीण परिवारों के लिए एक भरोसेमंद स्वास्थ्य केंद्र है।
+                  Located near the Head Post Office in Powergunj, Janta Hospital serves as a dependable healthcare institution for the people of Lohardaga and neighbouring rural communities. Under the administrative direction of{" "}
+                  <Link
+                    href="/leadership/jiyaul-ansari"
+                    className="font-medium text-[#0A5C4F] hover:underline"
+                  >
+                    Hospital Director Jiyaul Ansari
+                  </Link>
+                  {" "}and clinical guidance of Consulting Physician Dr. Parwej Alam, the hospital is committed to providing accessible outpatient clinical care, prompt trauma stabilization, and round-the-clock emergency support.
                 </p>
 
                 <p className="text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
-                  चाहे रात में अचानक Emergency में आना हो, सुबह Doctor से सलाह लेनी हो या दवाई Counter से दवा लेनी हो — यहाँ हर मरीज़ को अपना समझकर सही सलाह और देखभाल दी जाती है।
+                  Whether arriving for an urgent medical emergency in the middle of the night, seeking daily OPD consultations for fevers and chronic conditions, or filling prescriptions at our on-site pharmacy, every patient is treated with dignity, clinical transparency, and honest care — लोहरदगा में हर मरीज़ को सही सलाह, प्रामाणिक दवा और 24 घंटे आपातकालीन सहायता मिलती है।
                 </p>
 
                 {/* Key Pillars */}
@@ -177,7 +202,7 @@ export default function AboutPage() {
                         24/7 Emergency Care
                       </span>
                       <span className="text-xs text-[#471E21] font-normal leading-snug block">
-                        Duty Doctors द्वारा तुरंत प्राथमिक जाँच और इलाज
+                        Immediate primary stabilization by on-duty resident doctors. (24 घंटे ड्यूटी डॉक्टर की उपस्थिति)
                       </span>
                     </div>
                   </div>
@@ -186,10 +211,10 @@ export default function AboutPage() {
                     <HeartPulse className="w-4 h-4 text-[#0A5C4F] shrink-0 mt-0.5" aria-hidden="true" />
                     <div>
                       <span className="text-xs sm:text-sm font-semibold text-[#122421] block">
-                        सही सलाह और मदद
+                        Compassionate Guidance
                       </span>
                       <span className="text-xs text-[#2E4540] font-normal leading-snug block">
-                        ईमानदार जाँच, दवा और ज़रूरत पर Ranchi के लिए मार्गदर्शन
+                        Honest diagnosis, genuine medicines, and Ranchi referral support — ईमानदार सलाह व रेफरल मार्गदर्शन
                       </span>
                     </div>
                   </div>
@@ -206,16 +231,16 @@ export default function AboutPage() {
           <Container>
             <ScrollReveal direction="heading" className="max-w-2xl mb-8 sm:mb-12">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#0A5C4F]">
-                Hospital व्यवस्था
+                HOSPITAL INFRASTRUCTURE
               </span>
               <h2 className="text-2xl sm:text-3xl font-semibold text-[#122421] tracking-tight mt-1 leading-snug py-0.5">
-                <span>Hospital के मुख्य </span>
+                <span>Key Facilities &amp; </span>
                 <span className="font-serif italic font-normal text-[#0A5C4F]">
-                  हिस्से।
+                  Hospital Spaces.
                 </span>
               </h2>
               <p className="text-xs sm:text-sm text-[#2E4540] mt-2 leading-relaxed font-normal">
-                मरीज़ों और परिवारों की सुविधा के लिए अस्पताल की व्यवस्था:
+                Thoughtfully organized facilities designed for patient comfort, accessibility, and clinical efficiency: मरीज़ों और परिजनों की सुविधा के लिए अस्पताल की व्यवस्था
               </p>
             </ScrollReveal>
 
@@ -236,17 +261,17 @@ export default function AboutPage() {
                     </div>
                     <div className="p-5">
                       <h3 className="font-semibold text-base sm:text-lg text-[#122421] mb-1">
-                        मुख्य द्वार और Reception
+                        Reception &amp; Triage Entryway
                       </h3>
                       <p className="text-xs sm:text-sm text-[#2E4540] leading-relaxed font-normal">
-                        Ground Floor पर प्रवेश करते ही Reception डेस्क, जहाँ से टोकन, पर्ची और डॉक्टर से मिलने की तुरंत जानकारी मिलती है।
+                        Immediate assistance upon entering the ground floor. Patients receive OPD tokens, consultation slips, and direct guidance to on-duty physicians — ग्राउंड फ्लोर रिसेप्शन से ओपीडी पर्ची और टोकन प्राप्त करें।
                       </p>
                     </div>
                   </div>
                   <div className="px-5 pb-5">
                     <span className="text-xs text-[#0A5C4F] font-semibold flex items-center gap-1">
                       <CheckCircle2 className="w-3.5 h-3.5" aria-hidden="true" />
-                      <span>Ground Floor से आसान प्रवेश</span>
+                      <span>Accessible Ground Floor Entrance</span>
                     </span>
                   </div>
                 </div>
@@ -267,17 +292,17 @@ export default function AboutPage() {
                     </div>
                     <div className="p-5">
                       <h3 className="font-semibold text-base sm:text-lg text-[#122421] mb-1">
-                        Hospital Pharmacy
+                        24/7 On-Site Pharmacy
                       </h3>
                       <p className="text-xs sm:text-sm text-[#2E4540] leading-relaxed font-normal">
-                        Doctor को दिखाने के तुरंत बाद Hospital में ही सभी ज़रूरी दवाइयाँ और पट्टियाँ आसानी से मिल जाती हैं।
+                        Located conveniently in the front veranda. Stocks genuine prescription drugs, emergency injections, and sterile surgical bandages round the clock — अस्पताल परिसर में 24 घंटे दवा काउंटर उपलब्ध।
                       </p>
                     </div>
                   </div>
                   <div className="px-5 pb-5">
                     <span className="text-xs text-[#0A5C4F] font-semibold flex items-center gap-1">
                       <CheckCircle2 className="w-3.5 h-3.5" aria-hidden="true" />
-                      <span>Hospital Pharmacy Counter</span>
+                      <span>Round-the-Clock Medicine Availability</span>
                     </span>
                   </div>
                 </div>
@@ -298,17 +323,17 @@ export default function AboutPage() {
                     </div>
                     <div className="p-5">
                       <h3 className="font-semibold text-base sm:text-lg text-[#122421] mb-1">
-                        Clinic Floor &amp; Consultation
+                        Consultation Chambers &amp; Care Ward
                       </h3>
                       <p className="text-xs sm:text-sm text-[#2E4540] leading-relaxed font-normal">
-                        सुव्यवस्थित परामर्श कक्ष, ड्रेसिंग रूम और शांत वातावरण में 24 घंटे प्राथमिक स्वास्थ्य देखभाल।
+                        Clean consulting chambers, sterile dressing rooms, and an observation ward for patients requiring day-care IV fluids and stabilization — परामर्श कक्ष, ड्रेसिंग रूम और शांत वातावरण में उपचार।
                       </p>
                     </div>
                   </div>
                   <div className="px-5 pb-5">
                     <span className="text-xs text-[#0A5C4F] font-semibold flex items-center gap-1">
                       <CheckCircle2 className="w-3.5 h-3.5" aria-hidden="true" />
-                      <span>साफ़ और सुव्यवस्थित परिसर</span>
+                      <span>Clean &amp; Maintained Environment</span>
                     </span>
                   </div>
                 </div>
@@ -324,16 +349,16 @@ export default function AboutPage() {
             <div className="max-w-3xl mx-auto">
               <ScrollReveal direction="heading" className="text-center mb-8">
                 <span className="text-xs font-semibold uppercase tracking-widest text-[#0A5C4F]">
-                  Hospital Ledger
+                  HOSPITAL DETAILS
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-semibold text-[#122421] tracking-tight mt-1 leading-snug py-0.5">
-                  <span>Hospital से जुड़ी </span>
+                  <span>Essential Hospital </span>
                   <span className="font-serif italic font-normal text-[#0A5C4F]">
-                    ज़रूरी जानकारी।
+                    Information.
                   </span>
                 </h2>
                 <p className="text-xs sm:text-sm text-[#2E4540] font-normal mt-2">
-                  मरीज़ों की सुविधा के लिए Janta Hospital द्वारा प्रमाणित जानकारी।
+                  Verified institutional details and key contact numbers for patients and visitors — प्रमाणित जानकारी व संपर्क सूत्र
                 </p>
               </ScrollReveal>
 
@@ -341,7 +366,7 @@ export default function AboutPage() {
                 <div className="rounded-2xl border border-[#B7D8CA] overflow-hidden shadow-2xs divide-y divide-[#EBF2EE]">
                   <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-[#FCFDFD]">
                     <span className="text-xs font-medium uppercase text-[#3B524E] tracking-wider">
-                      Hospital का नाम
+                      Hospital Name
                     </span>
                     <span className="text-sm font-semibold text-[#122421]">
                       {hospitalConfig.name.value} / जनता हॉस्पिटल
@@ -350,9 +375,39 @@ export default function AboutPage() {
 
                   <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-white">
                     <span className="text-xs font-medium uppercase text-[#3B524E] tracking-wider">
-                      Hospital का पता
+                      Hospital Director
                     </span>
-                    <span className="text-xs sm:text-sm text-[#122421] font-normal text-right sm:text-right">
+                    <span className="text-xs sm:text-sm text-[#122421] font-normal">
+                      <Link
+                        href="/leadership/jiyaul-ansari"
+                        className="font-semibold text-[#0A5C4F] hover:underline"
+                      >
+                        Jiyaul Ansari
+                      </Link>{" "}
+                      (Executive Administration)
+                    </span>
+                  </div>
+
+                  <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-[#FCFDFD]">
+                    <span className="text-xs font-medium uppercase text-[#3B524E] tracking-wider">
+                      Consulting Physician
+                    </span>
+                    <span className="text-xs sm:text-sm text-[#122421] font-normal">
+                      <Link
+                        href="/doctors/dr-parwej-alam"
+                        className="font-semibold text-[#0A5C4F] hover:underline"
+                      >
+                        Dr. Parwej Alam
+                      </Link>{" "}
+                      (Clinical Outpatient Care)
+                    </span>
+                  </div>
+
+                  <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-white">
+                    <span className="text-xs font-medium uppercase text-[#3B524E] tracking-wider">
+                      Official Address
+                    </span>
+                    <span className="text-xs sm:text-sm text-[#122421] font-normal text-left sm:text-right">
                       {hospitalConfig.location.fullAddress}
                     </span>
                   </div>
@@ -364,31 +419,31 @@ export default function AboutPage() {
                     <div className="flex flex-col sm:items-end gap-1">
                       <span className="text-xs sm:text-sm font-semibold text-[#A63F45] inline-flex items-center gap-1.5">
                         <span className="w-2.5 h-2.5 rounded-full bg-[#A63F45]" />
-                        24/7 चालू (Duty Doctors द्वारा)
+                        Active 24/7 • On-Duty Resident Doctors (24 घंटे उपलब्ध)
                       </span>
                       <a
                         href={emergencyPhoneHref}
                         className="text-xs sm:text-sm font-mono font-semibold text-[#A63F45] hover:underline inline-flex items-center gap-1.5"
                       >
                         <Phone className="w-3.5 h-3.5 text-[#A63F45]" aria-hidden="true" />
-                        <span>हेल्पलाइन: {emergencyPhone}</span>
+                        <span>Helpline: {emergencyPhone}</span>
                       </a>
                     </div>
                   </div>
 
                   <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-white">
                     <span className="text-xs sm:text-sm font-medium uppercase text-[#3B524E] tracking-wider">
-                      OPD Consultation Timing
+                      OPD Consultation
                     </span>
                     <span className="text-xs sm:text-sm text-[#122421] font-normal">
-                      सोमवार से शनिवार • सुबह और शाम
+                      Daily OPD Consultation • Confirm via Reception (+91 9341900715)
                     </span>
                   </div>
 
                   <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-[#FCFDFD]">
                     <div>
                       <span className="text-xs sm:text-sm font-medium uppercase text-[#3B524E] tracking-wider block">
-                        मुख्य Phone नंबर
+                        Main Telephone
                       </span>
                       <span className="text-xs text-[#526661] font-normal">
                         Hospital Enquiries &amp; OPD
@@ -408,18 +463,18 @@ export default function AboutPage() {
                       Hospital Pharmacy
                     </span>
                     <span className="text-xs sm:text-sm text-[#122421] font-normal">
-                      Hospital परिसर में सामने ही उपलब्ध
+                      Ground floor front veranda • Open 24/7 (24 घंटे सातों दिन खुला)
                     </span>
                   </div>
                 </div>
 
-                {/* Link to Services and Doctors */}
+                {/* Link to Services, Doctors, and Leadership */}
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-xs sm:text-sm font-medium">
                   <Link
                     href="/services"
                     className="inline-flex items-center gap-1.5 text-[#0A5C4F] hover:underline"
                   >
-                    <span>Services देखें</span>
+                    <span>Explore Hospital Services</span>
                     <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </Link>
                   <span className="hidden sm:inline text-gray-300">•</span>
@@ -427,7 +482,15 @@ export default function AboutPage() {
                     href="/doctors"
                     className="inline-flex items-center gap-1.5 text-[#0A5C4F] hover:underline"
                   >
-                    <span>Doctors देखें</span>
+                    <span>Meet Our Clinical Team</span>
+                    <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                  </Link>
+                  <span className="hidden sm:inline text-gray-300">•</span>
+                  <Link
+                    href="/leadership/jiyaul-ansari"
+                    className="inline-flex items-center gap-1.5 text-[#0A5C4F] hover:underline"
+                  >
+                    <span>Hospital Director Profile</span>
                     <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </Link>
                 </div>

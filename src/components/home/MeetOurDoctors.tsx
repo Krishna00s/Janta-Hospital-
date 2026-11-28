@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, Phone, ShieldCheck, ArrowRight } from "lucide-react";
+import { Clock, Phone, ShieldCheck, ArrowRight, Building2 } from "lucide-react";
 import { allDoctors, doctorsData } from "@/content/doctors";
+import { hospitalDirector } from "@/content/leadership";
 import { hospitalConfig, primaryPhone, primaryPhoneHref } from "@/content/hospital";
 import { Badge } from "@/components/shared/Badge";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { DoctorPortrait } from "@/components/doctors/DoctorPortrait";
+import { LeadershipPortrait } from "@/components/leadership/LeadershipPortrait";
 
 export function MeetOurDoctors() {
   const phoneHref = primaryPhoneHref;
@@ -31,11 +33,58 @@ export function MeetOurDoctors() {
             id="doctors-heading"
             className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#122421] leading-snug py-0.5"
           >
-            <span>हमारे</span> <span className="font-medium">Doctors</span>
+            <span>Our Clinical </span>
+            <span className="font-serif italic font-normal text-[#0A5C4F]">Doctors</span>
           </h2>
           <p className="mt-2 text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
-            Powergunj, Lohardaga में 24 घंटे फिजिशियन कवरेज और ऑन-कॉल विशेषज्ञ सर्जिकल टीम।
+            Resident general physicians with 24-hour hospital medical coverage and visiting specialist surgeons in Lohardaga. (24 घंटे फिजिशियन कवरेज और ऑन-कॉल विशेषज्ञ टीम।)
           </p>
+        </ScrollReveal>
+
+        {/* ============================================================ */}
+        {/* Integrated Director Card: Jiyaul Ansari (Hospital Director)  */}
+        {/* ============================================================ */}
+        <ScrollReveal direction="card" delay={0} className="mb-8 sm:mb-10">
+          <div className="w-full rounded-2xl p-4 sm:p-5 bg-linear-to-r from-white via-[#F7FCF9] to-[#EDF7F3] border border-[#96C7B4] shadow-2xs flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-4 w-full sm:w-auto">
+              {/* Director Portrait / Initials slot in 4:5 ratio */}
+              <div className="w-20 sm:w-24 shrink-0">
+                <LeadershipPortrait leader={hospitalDirector} compact />
+              </div>
+
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="px-2 py-0.5 rounded-full bg-[#0A5C4F] text-white text-[10px] sm:text-[11px] font-semibold tracking-wide uppercase">
+                    {hospitalDirector.badge}
+                  </span>
+                  <span className="text-[11px] text-[#475B57] font-medium hidden md:inline">
+                    Executive Governance
+                  </span>
+                </div>
+                <h3 className="text-base sm:text-lg font-semibold text-[#122421] leading-snug">
+                  <Link href={`/leadership/${hospitalDirector.slug}`} className="hover:underline">
+                    {hospitalDirector.name}
+                  </Link>
+                </h3>
+                <p className="text-xs sm:text-sm font-medium text-[#0A5C4F]">
+                  {hospitalDirector.designation}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between sm:justify-end gap-3 w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-[#D2E6DC]/60">
+              <p className="hidden lg:block text-xs text-[#2E4540] max-w-xs font-normal leading-relaxed">
+                Hospital administration, facility management, and reception coordination at Janta Hospital, Lohardaga.
+              </p>
+              <Link
+                href={`/leadership/${hospitalDirector.slug}`}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#0A5C4F] text-white text-xs sm:text-sm font-semibold hover:bg-[#07463C] transition-colors shadow-2xs min-h-[36px]"
+              >
+                <span>View Profile</span>
+                <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
         </ScrollReveal>
 
         {/* ============================================================ */}
@@ -47,18 +96,18 @@ export function MeetOurDoctors() {
               General Physicians • 24/7 Hospital Coverage
             </span>
             <span className="text-xs text-[#475B57] font-medium hidden sm:inline">
-              दैनिक सुबह व शाम OPD परामर्श
+              Daily Outpatient (OPD) Consultations
             </span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
             
-            {/* Featured: Dr. Parwej Alam (Hospital Director & Consulting Physician) */}
+            {/* Featured: Dr. Parwej Alam (Consulting Physician) */}
             <ScrollReveal direction="card" delay={0} className="lg:col-span-7 flex">
               <div className="w-full rounded-3xl p-5 sm:p-6 bg-linear-to-b from-white to-[#F7FCF9] border-2 border-[#96C7B4] shadow-xs flex flex-col sm:flex-row gap-5 items-center justify-between card-hover-lift">
-                {/* Doctor Portrait Slot */}
-                <div className="w-full sm:w-44 md:w-48 shrink-0">
-                  <DoctorPortrait doctor={drParwej} aspectRatio="compact" priority />
+                {/* Doctor Portrait Slot in 4:5 ratio */}
+                <div className="w-36 sm:w-44 md:w-48 shrink-0 mx-auto sm:mx-0">
+                  <DoctorPortrait doctor={drParwej} priority />
                 </div>
 
                 {/* Doctor Details */}
@@ -66,15 +115,17 @@ export function MeetOurDoctors() {
                   <div>
                     <div className="flex flex-wrap items-center gap-2 mb-1.5">
                       <span className="px-2.5 py-0.5 rounded-full bg-[#0A5C4F] text-white text-[11px] font-semibold tracking-wide">
-                        Hospital Director
+                        Consulting Physician
                       </span>
                       <span className="px-2.5 py-0.5 rounded-full bg-[#E8F5F1] text-[#0A5C4F] border border-[#B7D8CA] text-[11px] font-medium">
-                        Consulting Physician
+                        24/7 Coverage
                       </span>
                     </div>
 
                     <h3 className="text-xl sm:text-2xl font-semibold text-[#122421] leading-snug">
-                      {drParwej.name}
+                      <Link href="/doctors/dr-parwej-alam" className="hover:underline">
+                        {drParwej.name}
+                      </Link>
                     </h3>
                     <p className="text-xs sm:text-sm font-medium text-[#0A5C4F] mt-0.5">
                       {drParwej.role}
@@ -86,13 +137,22 @@ export function MeetOurDoctors() {
                   </div>
 
                   <div className="pt-3 border-t border-[#D2E6DC]/70 flex flex-wrap items-center justify-between gap-3">
-                    <a
-                      href={phoneHref}
-                      className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0A5C4F] text-white text-xs sm:text-sm font-semibold hover:bg-[#07463C] transition-colors shadow-2xs min-h-[40px]"
-                    >
-                      <Phone className="w-3.5 h-3.5 text-emerald-200" aria-hidden="true" />
-                      <span>परामर्श व टोकन जानकारी</span>
-                    </a>
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={phoneHref}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0A5C4F] text-white text-xs sm:text-sm font-semibold hover:bg-[#07463C] transition-colors shadow-2xs min-h-[38px]"
+                      >
+                        <Phone className="w-3.5 h-3.5 text-emerald-200" aria-hidden="true" />
+                        <span>Check Availability</span>
+                      </a>
+                      <Link
+                        href="/doctors/dr-parwej-alam"
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-[#0A5C4F] hover:underline px-2.5 py-2 rounded-lg hover:bg-[#E8F5F1] transition-colors"
+                      >
+                        <span>View Profile</span>
+                        <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                      </Link>
+                    </div>
                     <span className="text-xs text-[#475B57] font-medium">
                       Ground Floor OPD
                     </span>
@@ -105,8 +165,8 @@ export function MeetOurDoctors() {
             <ScrollReveal direction="card" delay={80} className="lg:col-span-5 flex">
               <div className="w-full rounded-3xl p-5 sm:p-6 bg-white border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-2xs flex flex-col justify-between card-hover-lift">
                 <div className="flex flex-col sm:flex-row gap-4 items-center">
-                  <div className="w-full sm:w-32 shrink-0">
-                    <DoctorPortrait doctor={drRahbar} aspectRatio="compact" />
+                  <div className="w-32 sm:w-36 shrink-0 mx-auto sm:mx-0">
+                    <DoctorPortrait doctor={drRahbar} />
                   </div>
 
                   <div className="flex-1 space-y-1 w-full">
@@ -114,7 +174,9 @@ export function MeetOurDoctors() {
                       General Physician
                     </span>
                     <h3 className="text-lg sm:text-xl font-semibold text-[#122421] leading-snug">
-                      {drRahbar.name}
+                      <Link href="/doctors/dr-rahbar-bharti" className="hover:underline">
+                        {drRahbar.name}
+                      </Link>
                     </h3>
                     <p className="text-xs font-medium text-[#0A5C4F]">
                       {drRahbar.specialty}
@@ -125,14 +187,23 @@ export function MeetOurDoctors() {
                   </div>
                 </div>
 
-                <div className="pt-3 mt-4 border-t border-[#D2E6DC]/70 flex items-center justify-between gap-2">
-                  <a
-                    href={phoneHref}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#EAF6F1] text-[#0A5C4F] hover:bg-[#0A5C4F] hover:text-white border border-[#B7D8CA] text-xs font-semibold transition-colors min-h-[38px]"
-                  >
-                    <Phone className="w-3 h-3" aria-hidden="true" />
-                    <span>उपलब्धता पूछें</span>
-                  </a>
+                <div className="pt-3 mt-4 border-t border-[#D2E6DC]/70 flex flex-wrap items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={phoneHref}
+                      className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#EAF6F1] text-[#0A5C4F] hover:bg-[#0A5C4F] hover:text-white border border-[#B7D8CA] text-xs font-semibold transition-colors min-h-[38px]"
+                    >
+                      <Phone className="w-3 h-3" aria-hidden="true" />
+                      <span>Check Availability</span>
+                    </a>
+                    <Link
+                      href="/doctors/dr-rahbar-bharti"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-[#0A5C4F] hover:underline px-2 py-2 rounded-lg hover:bg-[#E8F5F1] transition-colors"
+                    >
+                      <span>View Profile</span>
+                      <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                    </Link>
+                  </div>
                   <span className="text-xs text-[#475B57] font-medium">
                     24/7 ड्यूटी कवरेज
                   </span>
@@ -166,7 +237,7 @@ export function MeetOurDoctors() {
                 </span>
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold text-[#122421] tracking-tight leading-snug">
-                विशेषज्ञ सर्जन एवं कंसल्टेंट टीम
+                Visiting Specialist Surgeons
               </h3>
               <p className="text-xs sm:text-sm text-[#2E4540] font-normal leading-relaxed mt-1">
                 General Surgery, Neurosurgery एवं Anaesthesia के विशेषज्ञ ऑन-कॉल उपलब्ध हैं। इन्हें क्लिनिकल आवश्यकता एवं पूर्व पुष्टि के अनुसार हॉस्पिटल बुलाया जाता है।
@@ -197,8 +268,10 @@ export function MeetOurDoctors() {
                       <span className="text-[10px] text-[#2A6B62] font-medium">On-call</span>
                     </div>
 
-                    {/* Compact Portrait Slot */}
-                    <DoctorPortrait doctor={doc} aspectRatio="compact" />
+                    {/* Compact 4:5 Portrait Slot */}
+                    <div className="w-full max-w-[180px] sm:max-w-[200px] mx-auto">
+                      <DoctorPortrait doctor={doc} />
+                    </div>
 
                     {/* Name & Role */}
                     <div className="space-y-0.5 pt-1">
@@ -221,7 +294,7 @@ export function MeetOurDoctors() {
                       className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#E0F2F1] hover:bg-[#00796B] text-[#00695C] hover:text-white border border-[#80CBC4] text-xs font-semibold transition-colors min-h-[36px]"
                     >
                       <Phone className="w-3 h-3" aria-hidden="true" />
-                      <span>उपलब्धता पूछें</span>
+                      <span>Check Availability</span>
                     </a>
                   </div>
                 </div>
@@ -263,20 +336,20 @@ export function MeetOurDoctors() {
                 <span>OPD &amp; Token Protocol</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-semibold text-[#122421] leading-snug">
-                <span className="font-medium">Doctor</span> <span>कब मिलेंगे? टोकन एवं समय</span>
+                <span className="font-medium">Doctor Consultation</span> <span>&amp; OPD Timings</span>
               </h3>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
               <div className="p-3.5 rounded-xl bg-[#F8FAF9] border border-[#D2E6DC]">
-                <strong className="text-[#0A5C4F] block font-semibold mb-0.5">सुबह की OPD (सोम – शनि)</strong>
-                <span className="text-[#122421] font-medium block">सुबह 9:00 से दोपहर 1:00</span>
-                <span className="text-[#475B57] text-xs">टोकन सुबह 8:30 बजे से रिसेप्शन पर उपलब्ध</span>
+                <strong className="text-[#0A5C4F] block font-semibold mb-0.5">Daily OPD Consultation</strong>
+                <span className="text-[#122421] font-medium block">सोमवार से शनिवार</span>
+                <span className="text-[#475B57] text-xs">टोकन व पर्ची Ground Floor Reception पर उपलब्ध</span>
               </div>
               <div className="p-3.5 rounded-xl bg-[#F8FAF9] border border-[#D2E6DC]">
-                <strong className="text-[#0A5C4F] block font-semibold mb-0.5">शाम की OPD (सोम – शनि)</strong>
-                <span className="text-[#122421] font-medium block">शाम 5:00 से रात 8:00</span>
-                <span className="text-[#475B57] text-xs">दैनिक फॉलो-अप व सामान्य परामर्श</span>
+                <strong className="text-[#0A5C4F] block font-semibold mb-0.5">Doctor Availability</strong>
+                <span className="text-[#122421] font-medium block">Contact Reception for Timings</span>
+                <span className="text-[#475B57] text-xs">आज के समय के लिए Call करें: {primaryPhone}</span>
               </div>
             </div>
 
@@ -293,7 +366,7 @@ export function MeetOurDoctors() {
             href="/doctors"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0A5C4F] text-white font-semibold text-xs sm:text-sm hover:bg-[#07463C] transition-colors shadow-xs min-h-[44px]"
           >
-            <span>हमारे Doctors और Specialists देखें</span>
+            <span>View All Doctors</span>
             <ArrowRight className="w-4 h-4" aria-hidden="true" />
           </Link>
 
@@ -302,7 +375,7 @@ export function MeetOurDoctors() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#EAF6F1] text-[#0A5C4F] font-semibold text-xs sm:text-sm hover:bg-[#D5EFE5] transition-colors border border-[#B7D8CA] min-h-[44px]"
           >
             <Phone className="w-3.5 h-3.5" aria-hidden="true" />
-            <span>Duty Desk पर Call करें ({primaryPhone})</span>
+            <span>Call Reception ({primaryPhone})</span>
           </a>
         </div>
 

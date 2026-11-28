@@ -29,10 +29,11 @@ export function AboutHospital() {
             id="about-heading"
             className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#122421] leading-snug py-0.5"
           >
-            <span className="font-medium">Janta Hospital</span> <span>के बारे में</span>
+            <span>About </span>
+            <span className="font-serif italic font-normal text-[#0A5C4F]">Janta Hospital</span>
           </h2>
           <p className="mt-2 text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
-            Powergunj, Lohardaga में स्थानीय और ग्रामीण परिवारों के लिए एक सुलभ और भरोसेमंद स्वास्थ्य केंद्र।
+            Accessible, patient-centered healthcare for families in Lohardaga and surrounding rural communities. (Powergunj, Lohardaga में एक सुलभ और भरोसेमंद स्वास्थ्य केंद्र।)
           </p>
         </ScrollReveal>
 
@@ -43,13 +44,13 @@ export function AboutHospital() {
           <ScrollReveal direction="card" delay={0} className="lg:col-span-7 space-y-5 sm:space-y-6">
             <div>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-[#122421] tracking-tight leading-snug">
-                <span>हर परिवार के लिए आसान और </span>
+                <span>Accessible &amp; Trusted Healthcare </span>
                 <span className="font-serif italic font-normal text-[#0A5C4F]">
-                  भरोसेमंद इलाज।
+                  for Every Family.
                 </span>
               </h3>
               <p className="mt-3 text-xs sm:text-sm lg:text-base text-[#2E4540] font-normal leading-relaxed">
-                Lohardaga के Powergunj में Head Post Office के ठीक पीछे स्थित Janta Hospital स्थानीय लोगों और आस-पास के ग्रामीण क्षेत्रों के लिए एक भरोसेमंद स्वास्थ्य केंद्र है। यहाँ हर मरीज़ को तुरंत सही सलाह, 24 घंटे आपातकालीन सेवा और आवश्यक दवाएँ एक ही स्थान पर उपलब्ध कराई जाती हैं।
+                Located near the Head Post Office in Powergunj, Lohardaga, Janta Hospital serves as a dependable medical institution for our local community. Every patient receives honest medical advice, 24-hour emergency care, and prescribed pharmaceuticals under one roof — यहाँ हर मरीज़ को 24 घंटे आपातकालीन सेवा और आवश्यक दवाएँ एक ही स्थान पर उपलब्ध कराई जाती हैं।
               </p>
             </div>
 
@@ -61,10 +62,10 @@ export function AboutHospital() {
                   <span>Ground Floor</span>
                 </div>
                 <h4 className="font-sans font-semibold text-sm text-[#122421]">
-                  आसान पहुँच
+                  Easy Ground Floor Access
                 </h4>
                 <p className="text-xs sm:text-sm text-[#2E4540] font-normal leading-snug">
-                  प्रवेश करते ही Reception, पर्ची, टोकन और दवा काउंटर।
+                  Immediate reception, OPD tokens, and on-site pharmacy — प्रवेश करते ही टोकन व दवा काउंटर
                 </p>
               </div>
 
@@ -74,23 +75,23 @@ export function AboutHospital() {
                   <span>24/7 Coverage</span>
                 </div>
                 <h4 className="font-sans font-semibold text-sm text-[#122421]">
-                  Duty Doctor
+                  24/7 Duty Doctors
                 </h4>
                 <p className="text-xs sm:text-sm text-[#2E4540] font-normal leading-snug">
-                  रात हो या दिन, Duty Doctors हमेशा प्राथमिक इलाज के लिए मौजूद।
+                  Day and night on-site resident medical officers. (24 घंटे ड्यूटी डॉक्टर की उपस्थिति)
                 </p>
               </div>
 
               <div className="p-3.5 sm:p-4 rounded-2xl bg-white border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-2xs space-y-1 transition-all">
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-[#0A5C4F]">
                   <HeartPulse className="w-3.5 h-3.5 text-[#0A5C4F]" aria-hidden="true" />
-                  <span>सही सलाह</span>
+                  <span>Care Guidance</span>
                 </div>
                 <h4 className="font-sans font-semibold text-sm text-[#122421]">
-                  उचित मार्गदर्शन
+                  Compassionate Guidance
                 </h4>
                 <p className="text-xs sm:text-sm text-[#2E4540] font-normal leading-snug">
-                  ईमानदार जाँच, दवा और आवश्यकता पड़ने पर सही केंद्र के लिए मार्गदर्शन।
+                  Honest diagnosis, genuine medicines, and referral support — ईमानदार सलाह व मार्गदर्शन
                 </p>
               </div>
             </div>
@@ -101,7 +102,7 @@ export function AboutHospital() {
                 href="/about"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#0A5C4F] text-white font-semibold text-xs sm:text-sm hover:bg-[#07463C] transition-colors shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
               >
-                <span>Hospital के बारे में जानें</span>
+                <span>Learn More About Us</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
 
@@ -110,7 +111,7 @@ export function AboutHospital() {
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-[#0A5C4F] font-semibold text-xs sm:text-sm border border-[#B7D8CA] hover:bg-[#E8F5F1] transition-colors"
               >
                 <Phone className="w-4 h-4 text-[#0A5C4F]" aria-hidden="true" />
-                <span>Reception पर बात करें</span>
+                <span>Call Reception</span>
               </a>
             </div>
 

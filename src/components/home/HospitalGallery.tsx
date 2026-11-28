@@ -101,7 +101,7 @@ export function HospitalGallery() {
                     href="/contact"
                     className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#0A5C4F] hover:underline"
                   >
-                    <span>Hospital का रास्ता देखें</span>
+                    <span>Get Directions</span>
                     <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </Link>
                   <span className="text-xs sm:text-sm text-[#2E4540] font-normal">Powergunj, Lohardaga</span>
@@ -138,7 +138,7 @@ export function HospitalGallery() {
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#A63F45] text-white hover:bg-[#8E3339] font-semibold text-xs sm:text-sm shadow-xs transition-colors"
                   >
                     <Phone className="w-3.5 h-3.5 text-white" aria-hidden="true" />
-                    <span>Emergency Call करें</span>
+                    <span>Emergency Call</span>
                   </a>
                   <span className="text-xs sm:text-sm text-[#A63F45] font-medium">Duty Doctors उपलब्ध</span>
                 </div>
@@ -177,7 +177,7 @@ export function HospitalGallery() {
                     href="/services"
                     className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-[#0A5C4F] hover:underline"
                   >
-                    <span>Services देखें</span>
+                    <span>Explore Services</span>
                     <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </Link>
                   <span className="text-xs sm:text-sm text-[#2E4540] font-normal">Ground Floor</span>

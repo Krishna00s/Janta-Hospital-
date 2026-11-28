@@ -53,7 +53,7 @@ export const hospitalConfig = {
       rawDigits: "9341900715",
       formatted: "+91 93419 00715",
       href: "tel:+919341900715",
-      display: "अभी Call करें",
+      display: "Call Now",
       emergencyFormatted: "+91 93083 48606",
       emergencyValue: "+919308348606",
       emergencyHref: "tel:+919308348606",
@@ -86,7 +86,7 @@ export const hospitalConfig = {
     street: "Main Road",
     landmark: "near Head Post Office / Close to Main Bus Stand",
     cardTitle: "Main Road, near Head Post Office",
-    cardSubtext: "Powergunj, लोहरदगा – 835302",
+    cardSubtext: "Powergunj, Lohardaga – 835302",
     fullAddress:
       "Main Road, near Head Post Office, Powergunj, Lohardaga, Jharkhand – 835302, India",
     directionsNote:
@@ -171,7 +171,7 @@ export const hospitalConfig = {
       status: "verified" as const,
       badge: "Daily OPD",
       icon: "stethoscope",
-      actionText: "OPD Timing देखें",
+      actionText: "Check OPD Timing",
       actionHref: "tel:+919341900715",
     },
     {
@@ -182,7 +182,7 @@ export const hospitalConfig = {
       status: "verified" as const,
       badge: "Primary Care",
       icon: "heart-pulse",
-      actionText: "जानकारी लें",
+      actionText: "Call for Details",
       actionHref: "tel:+919341900715",
     },
     {
@@ -193,7 +193,7 @@ export const hospitalConfig = {
       status: "verified" as const,
       badge: "24/7 Pharmacy",
       icon: "pill",
-      actionText: "दवा काउंटर",
+      actionText: "Contact Pharmacy",
       actionHref: "tel:+919341900715",
     },
     {
@@ -204,18 +204,18 @@ export const hospitalConfig = {
       status: "verified" as const,
       badge: "Dressing",
       icon: "band-aid",
-      actionText: "सीधे मिलें",
+      actionText: "View Details",
       actionHref: "tel:+919341900715",
     },
     {
       id: "patient-guidance",
-      title: "मरीज़ों की मदद और मार्गदर्शन",
+      title: "Patient Guidance & Support",
       shortDescription:
         "Doctor का समय, Token और ज़रूरत पड़ने पर Ranchi के बड़े अस्पतालों के लिए सही सलाह।",
       status: "verified" as const,
-      badge: "मरीज़ों की मदद",
+      badge: "Patient Guidance",
       icon: "compass",
-      actionText: "बात करें",
+      actionText: "Call Reception",
       actionHref: "tel:+919341900715",
     },
   ],
@@ -231,17 +231,17 @@ export const hospitalConfig = {
     departments: [
       {
         role: "General Medicine & OPD",
-        availability: "सुबह और शाम OPD",
+        availability: "Daily OPD (Call Reception for Timing)",
         scope: "बुखार, सर्दी, कमज़ोरी और सामान्य बीमारियों की जाँच और इलाज।",
       },
       {
         role: "24-Hour Emergency Medical Officer",
-        availability: "24 घंटे Duty पर",
+        availability: "24/7 On Duty",
         scope: "अचानक चोट या आपातकालीन स्थिति में तुरंत प्राथमिक देखभाल।",
       },
       {
         role: "Visiting Specialists",
-        availability: "तय दिनों पर",
+        availability: "On-call Specialists",
         scope: "विशेषज्ञ Doctors से सलाह — पहले Token लेना ज़रूरी।",
       },
     ],

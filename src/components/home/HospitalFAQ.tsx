@@ -36,14 +36,13 @@ export function HospitalFAQ() {
             id="faq-heading"
             className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#122421] leading-snug"
           >
-            <span>मरीज़ों के</span>{" "}
+            <span>Frequently Asked Questions &amp; </span>
             <span className="font-serif italic font-normal text-[#0A5C4F]">
-              ज़रूरी सवाल
-            </span>{" "}
-            <span>और उनके जवाब</span>
+              Answers.
+            </span>
           </h2>
           <p className="mt-2.5 text-sm sm:text-base text-[#38534C] font-normal leading-relaxed">
-            Lohardaga में Janta Hospital आने से पहले location, doctor availability, emergency helpline और OPD से जुड़े सामान्य सवालों के प्रामाणिक उत्तर।
+            Essential information regarding hospital location, doctor availability, emergency care, and daily OPD timings in Lohardaga — लोहरदगा में जनता हॉस्पिटल से जुड़े सामान्य सवालों के प्रामाणिक उत्तर।
           </p>
         </ScrollReveal>
 
@@ -92,10 +91,10 @@ export function HospitalFAQ() {
             </div>
             <div>
               <h4 className="text-sm sm:text-base font-semibold text-[#122421]">
-                कोई और सवाल है या Doctor से मिलना चाहते हैं?
+                Have More Questions or Need to Consult a Doctor?
               </h4>
               <p className="text-xs sm:text-sm text-[#38534C]">
-                Hospital Reception पर सीधे बात करें या WhatsApp पर मैसेज भेजें।
+                Contact the Hospital Reception desk directly or send an inquiry via WhatsApp — सीधे बात करें या WhatsApp पर संदेश भेजें।
               </p>
             </div>
           </div>
@@ -105,7 +104,7 @@ export function HospitalFAQ() {
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-[#0A5C4F] text-white hover:bg-[#08483E] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
             >
               <Phone className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>{primaryPhone}</span>
+              <span>Call Now ({primaryPhone})</span>
             </a>
             <a
               href={whatsappHref}

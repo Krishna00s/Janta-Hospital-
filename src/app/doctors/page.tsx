@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +10,8 @@ import { Container } from "@/components/shared/Container";
 import { BotanicalSideClimber } from "@/components/ui/BotanicalDecorations";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { departmentGroups, doctorsData, allDoctors } from "@/content/doctors";
+import { hospitalDirector } from "@/content/leadership";
+import { LeadershipPortrait } from "@/components/leadership/LeadershipPortrait";
 import { hospitalConfig, primaryPhone, primaryPhoneHref } from "@/content/hospital";
 import { DoctorCard } from "@/components/doctors/DoctorCard";
 import { getCanonicalUrl, siteConfig } from "@/config/site";
@@ -53,12 +54,6 @@ export const metadata: Metadata = {
 };
 
 export default function DoctorsPage() {
-  ReactDOM.preload("/images/gallery-signboard.webp", {
-    as: "image",
-    type: "image/webp",
-    fetchPriority: "high",
-  });
-
   const phoneHref = primaryPhoneHref;
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([{ name: "Doctors", path: "/doctors" }]);
   const doctorsJsonLd = generateDoctorsJsonLd();
@@ -79,17 +74,17 @@ export default function DoctorsPage() {
         {/* Page Hero */}
         <PageHero
           breadcrumbs={[{ label: "Doctors" }]}
-          eyebrow="OUR DOCTORS & SPECIALISTS"
-          title="हमारे"
+          eyebrow="OUR DOCTORS &amp; SPECIALISTS"
+          title="Our Clinical"
           italicWord="Doctors"
-          description="Powergunj, Lohardaga में 24 घंटे फिजिशियन कवरेज और ऑन-कॉल विशेषज्ञ सर्जिकल टीम — आपकी और आपके परिवार की देखभाल के लिए समर्पित।"
+          description="Experienced resident physicians providing 24-hour hospital medical coverage, supported by visiting specialist surgeons in Lohardaga. (Powergunj, Lohardaga में 24 घंटे फिजिशियन कवरेज और ऑन-कॉल विशेषज्ञ टीम।)"
           action={
             <a
               href={primaryPhoneHref}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0A5C4F] text-white font-semibold text-xs sm:text-sm hover:bg-[#07463C] transition-colors shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
             >
               <Phone className="w-4 h-4 text-white" aria-hidden="true" />
-              <span>Doctor Availability जानकारी लें ({primaryPhone})</span>
+              <span>Check Doctor Availability ({primaryPhone})</span>
             </a>
           }
         />
@@ -120,10 +115,10 @@ export default function DoctorsPage() {
                   </div>
                   <div>
                     <span className="font-sans font-semibold text-sm sm:text-base text-[#122421] block">
-                      7 सदस्यीय क्लिनिकल टीम
+                      7 Clinical Team Members
                     </span>
                     <p className="text-xs sm:text-sm text-[#2E4540] mt-0.5 leading-snug font-normal">
-                      2 सामान्य फिजिशियन (24/7 कवरेज) + 5 ऑन-कॉल विशेषज्ञ (सर्जरी, न्यूरो, एनेस्थीसिया)।
+                      2 resident general physicians (24/7 coverage) + 5 on-call specialists (surgery, neuro, anaesthesia). (24 घंटे फिजिशियन + ऑन-कॉल विशेषज्ञ टीम)
                     </p>
                   </div>
                 </div>
@@ -136,15 +131,15 @@ export default function DoctorsPage() {
                     DOCTOR AVAILABILITY
                   </span>
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#122421] tracking-tight mt-1 leading-snug py-0.5">
-                    <span className="font-medium">Doctor</span> <span>कब मिलेंगे? </span>
+                    <span>Doctor Availability &amp; </span>
                     <span className="font-serif italic font-normal text-[#0A5C4F]">
-                      समय और व्यवस्था।
+                      Consultation Schedule.
                     </span>
                   </h2>
                 </div>
 
                 <p className="text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
-                  Janta Hospital Lohardaga में फिजिशियन व ड्यूटी डॉक्टर्स (RMO) द्वारा 24 घंटे प्राथमिक चिकित्सा कवरेज दी जाती है। साथ ही प्रतिदिन सुबह और शाम की OPD में नियमित परामर्श तथा क्लिनिकल आवश्यकतानुसार ऑन-कॉल विशेषज्ञ उपस्थित होते हैं।
+                  Janta Hospital Lohardaga provides continuous 24-hour medical coverage through resident duty doctors, alongside daily morning and afternoon outpatient (OPD) consultation clinics and an on-call specialist network — अस्पताल में 24 घंटे ड्यूटी डॉक्टर और रोज़ाना OPD परामर्श उपलब्ध रहता है।
                 </p>
 
                 <div className="space-y-3 pt-1">
@@ -152,23 +147,23 @@ export default function DoctorsPage() {
                     <CheckCircle2 className="w-4 h-4 text-[#0A5C4F] shrink-0 mt-0.5" aria-hidden="true" />
                     <div className="text-xs sm:text-sm leading-relaxed text-[#2E4540] font-normal">
                       <strong className="text-[#122421] font-semibold block mb-0.5">24/7 Hospital Physician Coverage</strong>
-                      अस्पताल में 24 घंटे फिजिशियन व ड्यूटी मेडिकल टीम की सतत उपलब्धता रहती है ताकि आपातकालीन स्थिति में तुरंत प्राथमिक मदद मिल सके।
+                      Resident physicians and duty medical officers are on-site around the clock for immediate evaluation and acute patient triage. (24 घंटे ड्यूटी डॉक्टर की उपस्थिति)
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3 p-3.5 rounded-xl bg-[#F8FAF9] border border-[#D2E6DC]">
                     <CheckCircle2 className="w-4 h-4 text-[#0A5C4F] shrink-0 mt-0.5" aria-hidden="true" />
                     <div className="text-xs sm:text-sm leading-relaxed text-[#2E4540] font-normal">
-                      <strong className="text-[#122421] font-semibold block mb-0.5">ऑन-कॉल विशेषज्ञ व्यवस्था (Specialist On-call Network)</strong>
-                      जनरल सर्जरी, न्यूरोसर्जरी और एनेस्थीसिया के विशेषज्ञ स्थायी रूप से ऑनसाइट नहीं रहते; उन्हें क्लिनिकल आवश्यकता व पूर्व पुष्टि पर बुलाया जाता है।
+                      <strong className="text-[#122421] font-semibold block mb-0.5">On-Call Specialist Network</strong>
+                      Consultants in General Surgery, Neurosurgery, and Anaesthesia attend upon clinical necessity and advance appointment scheduling via reception — ऑन-कॉल विशेषज्ञ व्यवस्था
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3 p-3.5 rounded-xl bg-[#F8FAF9] border border-[#D2E6DC]">
                     <CheckCircle2 className="w-4 h-4 text-[#0A5C4F] shrink-0 mt-0.5" aria-hidden="true" />
                     <div className="text-xs sm:text-sm leading-relaxed text-[#2E4540] font-normal">
-                      <strong className="text-[#122421] font-semibold block mb-0.5">सत्यापित टोकन प्रक्रिया</strong>
-                      रिसेप्शन काउंटर पर रोज़ाना टोकन दिए जाते हैं। आने से पहले फ़ोन पर डॉक्टर की उपलब्धता अवश्य पुष्टि कर लें।
+                      <strong className="text-[#122421] font-semibold block mb-0.5">OPD Registration &amp; Tokens</strong>
+                      Daily OPD consultation tokens are issued at the Ground Floor reception desk. Calling ahead to confirm today&apos;s queue and availability is welcomed — रिसेप्शन से टोकन प्राप्त करें
                     </div>
                   </div>
                 </div>
@@ -179,7 +174,7 @@ export default function DoctorsPage() {
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0A5C4F] text-white font-semibold text-xs sm:text-sm hover:bg-[#07463C] transition-colors shadow-xs"
                   >
                     <Phone className="w-4 h-4 text-emerald-200" aria-hidden="true" />
-                    <span>Reception से पूछें — आज कौन से Doctor उपलब्ध हैं?</span>
+                    <span>Inquire Today&apos;s Doctor Availability ({primaryPhone})</span>
                   </a>
                 </div>
               </ScrollReveal>
@@ -193,6 +188,82 @@ export default function DoctorsPage() {
           <Container>
             <div className="space-y-12 sm:space-y-16">
               
+              {/* ============================================================ */}
+              {/* DEDICATED HOSPITAL LEADERSHIP SECTION                        */}
+              {/* ============================================================ */}
+              <div id="leadership" className="scroll-mt-24 pb-4 border-b border-[#D8ECE2]">
+                <ScrollReveal direction="heading" className="max-w-3xl mb-6 sm:mb-8">
+                  <div className="flex flex-wrap items-center gap-2.5 mb-2">
+                    <span className="px-3 py-1 rounded-full bg-[#E8F5F1] text-[#0A5C4F] text-xs font-semibold uppercase tracking-wider border border-[#B7D8CA]">
+                      Hospital Leadership
+                    </span>
+                    <span className="px-3 py-1 rounded-full bg-white text-[#2E4540] text-xs font-medium border border-[#D2E6DC]">
+                      Administrative Direction
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl font-semibold text-[#122421] tracking-tight leading-snug">
+                    <span>Executive &amp; Administrative </span>
+                    <span className="font-serif italic font-normal text-[#0A5C4F]">
+                      Direction
+                    </span>
+                  </h3>
+                  <p className="text-xs sm:text-sm text-[#2E4540] font-normal leading-relaxed mt-1">
+                    Executive hospital leadership overseeing facility management, non-clinical administration, and patient reception coordination at Janta Hospital. (अस्पताल प्रशासन और कार्यकारी नेतृत्व)
+                  </p>
+                </ScrollReveal>
+
+                {/* Director Premium Editorial Card */}
+                <ScrollReveal direction="card" delay={0}>
+                  <div className="w-full max-w-3xl rounded-3xl p-5 sm:p-7 bg-linear-to-b from-white to-[#F7FCF9] border-2 border-[#96C7B4] shadow-xs flex flex-col sm:flex-row gap-6 items-center justify-between card-hover-lift">
+                    {/* Portrait Area in 4:5 ratio */}
+                    <div className="w-36 sm:w-44 md:w-48 shrink-0 mx-auto sm:mx-0">
+                      <LeadershipPortrait leader={hospitalDirector} priority />
+                    </div>
+
+                    {/* Details */}
+                    <div className="flex-1 flex flex-col justify-between space-y-3 w-full">
+                      <div>
+                        <div className="flex flex-wrap items-center gap-2 mb-2">
+                          <span className="px-2.5 py-0.5 rounded-full bg-[#0A5C4F] text-white text-[11px] font-semibold tracking-wide uppercase">
+                            {hospitalDirector.badge}
+                          </span>
+                          <span className="px-2.5 py-0.5 rounded-full bg-[#E8F5F1] text-[#0A5C4F] border border-[#B7D8CA] text-[11px] font-medium">
+                            Administrative Governance
+                          </span>
+                        </div>
+
+                        <h4 className="text-xl sm:text-2xl font-semibold text-[#122421] leading-snug">
+                          <Link href={`/leadership/${hospitalDirector.slug}`} className="hover:underline">
+                            {hospitalDirector.name}
+                          </Link>
+                        </h4>
+                        <p className="text-xs sm:text-sm font-medium text-[#0A5C4F] mt-0.5">
+                          {hospitalDirector.designation}
+                        </p>
+
+                        <p className="text-xs sm:text-sm text-[#2E4540] font-normal leading-relaxed mt-2.5">
+                          {hospitalDirector.administrativeSummary}
+                        </p>
+                      </div>
+
+                      <div className="pt-3 border-t border-[#D2E6DC]/70 flex flex-wrap items-center justify-between gap-3">
+                        <Link
+                          href={`/leadership/${hospitalDirector.slug}`}
+                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0A5C4F] text-white text-xs sm:text-sm font-semibold hover:bg-[#07463C] transition-colors shadow-2xs min-h-[38px]"
+                        >
+                          <span>View Profile</span>
+                          <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                        </Link>
+                        <span className="text-xs text-[#475B57] font-medium">
+                          Executive Administration Office
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              </div>
+
               {/* Division 1: General Physicians (Primary Focus, 24/7 Coverage) */}
               {(() => {
                 const group = departmentGroups[0];
@@ -232,7 +303,7 @@ export default function DoctorsPage() {
                           <DoctorCard
                             doctor={doc}
                             receptionPhone={primaryPhone}
-                            featured={doc.isOwner}
+                            featured={doc.displayOrder === 1}
                           />
                         </ScrollReveal>
                       ))}
@@ -260,7 +331,7 @@ export default function DoctorsPage() {
                 </div>
               </ScrollReveal>
 
-              {/* Division 2: General Surgery (Specialists Section — Expertise & Classification) */}
+              {/* Division 2: General Surgery */}
               {(() => {
                 const group = departmentGroups[1];
                 return (
@@ -282,7 +353,6 @@ export default function DoctorsPage() {
                         {group.description}
                       </p>
 
-                      {/* Supporting Specialty Visual for General Surgery Scope */}
                       <div className="relative w-full h-32 sm:h-36 rounded-2xl overflow-hidden mt-4 mb-1 border border-[#B0DCD2] bg-[#E8F5F1]">
                         <Image
                           src="/images/services/service-general-surgery.webp"
@@ -325,7 +395,7 @@ export default function DoctorsPage() {
                 return (
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
                     
-                    {/* Neurosurgery Column (Specialists Section — Expertise & Classification) */}
+                    {/* Neurosurgery Column */}
                     <div id={neuroGroup.id} className="scroll-mt-24 rounded-3xl p-5 sm:p-7 bg-[#F0F8F5] border-2 border-[#B2DFD6] shadow-2xs flex flex-col justify-between">
                       <div>
                         <ScrollReveal direction="heading" className="mb-5">
@@ -345,7 +415,6 @@ export default function DoctorsPage() {
                             {neuroGroup.description}
                           </p>
 
-                          {/* Supporting Specialty Visual for Neurosurgery */}
                           <div className="relative w-full h-28 sm:h-32 rounded-2xl overflow-hidden mt-3.5 mb-1 border border-[#B0DCD2] bg-[#E8F5F1]">
                             <Image
                               src="/images/services/service-neurosurgery.webp"
@@ -380,7 +449,7 @@ export default function DoctorsPage() {
                       </div>
                     </div>
 
-                    {/* Anaesthesia Column (Specialists Section — Expertise & Classification) */}
+                    {/* Anaesthesia Column */}
                     <div id={anaesthesiaGroup.id} className="scroll-mt-24 rounded-3xl p-5 sm:p-7 bg-[#F0F8F5] border-2 border-[#B2DFD6] shadow-2xs flex flex-col justify-between">
                       <div>
                         <ScrollReveal direction="heading" className="mb-5">
@@ -400,7 +469,6 @@ export default function DoctorsPage() {
                             {anaesthesiaGroup.description}
                           </p>
 
-                          {/* Supporting Specialty Visual for Anaesthesia */}
                           <div className="relative w-full h-28 sm:h-32 rounded-2xl overflow-hidden mt-3.5 mb-1 border border-[#B0DCD2] bg-[#E8F5F1]">
                             <Image
                               src="/images/services/service-anaesthesia.webp"
@@ -452,13 +520,13 @@ export default function DoctorsPage() {
                   OPD TIMINGS &amp; TOKEN
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-semibold text-[#122421] tracking-tight mt-1 leading-tight">
-                  <span>Doctor से मिलने का </span>
+                  <span>OPD Consultation Schedule &amp; </span>
                   <span className="font-serif italic font-normal text-[#0A5C4F]">
-                    समय और Token।
+                    Timings.
                   </span>
                 </h2>
                 <p className="text-xs sm:text-sm text-[#2E4540] font-normal mt-2">
-                  मरीज़ों की सुविधा और सही जाँच के लिए OPD का समय नीचे दिया गया है।
+                  Daily outpatient consultation guidelines and registration procedure for patients — दैनिक OPD परामर्श व टोकन व्यवस्था
                 </p>
               </ScrollReveal>
 
@@ -469,13 +537,13 @@ export default function DoctorsPage() {
                   <div className="p-5 bg-white rounded-2xl border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-2xs space-y-2 h-full card-hover-lift transition-all">
                     <div className="flex items-center gap-2 text-xs font-semibold text-[#0A5C4F] uppercase tracking-wider">
                       <Clock className="w-4 h-4" aria-hidden="true" />
-                      <span>सुबह की OPD (Morning Session)</span>
+                      <span>Daily OPD Registration</span>
                     </div>
                     <h3 className="text-lg font-semibold text-[#122421]">
-                      सुबह 9:00 से दोपहर 1:00 बजे
+                      Daily General OPD
                     </h3>
                     <p className="text-sm text-[#2E4540] leading-relaxed font-normal">
-                      सामान्य बीमारियों की जाँच, फॉलो-अप, शुगर और ब्लड प्रेशर की नियमित जाँच। टोकन सुबह 8:30 बजे से दिए जाते हैं।
+                      Routine consultation for acute fevers, respiratory conditions, blood pressure, and blood sugar checks. Consultation slips and tokens are available at the Ground Floor reception desk — सामान्य बीमारियों की जाँच व फॉलो-अप
                     </p>
                   </div>
                 </ScrollReveal>
@@ -485,13 +553,13 @@ export default function DoctorsPage() {
                   <div className="p-5 bg-white rounded-2xl border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-2xs space-y-2 h-full card-hover-lift transition-all">
                     <div className="flex items-center gap-2 text-xs font-semibold text-[#0A5C4F] uppercase tracking-wider">
                       <Clock className="w-4 h-4" aria-hidden="true" />
-                      <span>शाम की OPD (Evening Session)</span>
+                      <span>Doctor Timing &amp; Availability</span>
                     </div>
                     <h3 className="text-lg font-semibold text-[#122421]">
-                      शाम 5:00 से रात 8:00 बजे
+                      Contact Reception for Timings
                     </h3>
                     <p className="text-sm text-[#2E4540] leading-relaxed font-normal">
-                      कामकाजी लोगों और परिवारों के लिए शाम की OPD। पर्ची जाँच, Dressing और सामान्य उपचार।
+                      To confirm today&apos;s OPD consultation timings and current doctor availability, contact our reception desk (+91 9341900715) before arriving — आज के OPD समय व डॉक्टर की उपस्थिति के लिए कॉल करें
                     </p>
                   </div>
                 </ScrollReveal>
@@ -504,7 +572,7 @@ export default function DoctorsPage() {
                   <div className="flex items-center gap-2.5">
                     <AlertCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
                     <span>
-                      On-call Specialists (General Surgery, Neurosurgery, Anaesthesia) के लिए आने से पहले Reception Desk पर Call करके ज़रूर पता करें।
+                      Visiting specialists (General Surgery, Neurosurgery, Anaesthesia) visit on an on-call basis. Please contact Reception (+91 9341900715) to confirm their visiting schedule.
                     </span>
                   </div>
                   <a
@@ -521,7 +589,7 @@ export default function DoctorsPage() {
                     href="/services"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#0A5C4F] font-semibold text-xs sm:text-sm hover:bg-[#E8F5F1] transition-all border border-[#A9DCCB] shadow-2xs"
                   >
-                    <span>हॉस्पिटल की सभी Services और सर्जरी सुविधाएँ देखें</span>
+                    <span>View All Services</span>
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </Link>
                 </div>

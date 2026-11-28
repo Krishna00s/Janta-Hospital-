@@ -49,10 +49,20 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  // Desktop Hero LCP Image Preload (>= 1024px)
+  ReactDOM.preload("/images/janta-hospital-night-exterior.avif", {
+    as: "image",
+    type: "image/avif",
+    fetchPriority: "high",
+    media: "(min-width: 1024px)",
+  });
+
+  // Mobile Hero LCP Image Preload (< 1024px)
   ReactDOM.preload("/images/janta-hospital-night-exterior-mobile-sm.avif", {
     as: "image",
     type: "image/avif",
     fetchPriority: "high",
+    media: "(max-width: 1023px)",
     imageSrcSet:
       "/images/janta-hospital-night-exterior-mobile-sm.avif 480w, /images/janta-hospital-night-exterior-mobile.avif 800w",
     imageSizes: "(max-width: 640px) calc(100vw - 32px), 800px",

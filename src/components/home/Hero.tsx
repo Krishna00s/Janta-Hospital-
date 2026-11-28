@@ -179,12 +179,18 @@ export function Hero() {
               type="image/webp"
               srcSet="/images/janta-hospital-night-exterior.webp"
             />
+            {/* Viewport guard: Prevents mobile viewports (< 1024px) from falling back to eager desktop <img> */}
+            <source
+              media="(max-width: 1023px)"
+              srcSet="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            />
             <img
               src="/images/janta-hospital-night-exterior.webp"
               alt={hospitalConfig.imagery.exterior.alt}
               width={1536}
               height={1024}
-              loading="lazy"
+              loading="eager"
+              fetchPriority="high"
               decoding="async"
               className="w-full h-full object-cover object-[50%_38%] pointer-events-auto"
             />
@@ -217,10 +223,10 @@ export function Hero() {
             {/* 2. Impactful Headline with Newsreader Editorial Serif Italic Accent */}
             <h1
               id="hero-heading"
-              className="text-3xl min-[360px]:text-[2.2rem] sm:text-5xl lg:text-[clamp(2.3rem,3.4vw,3.6rem)] xl:text-[clamp(2.7rem,4vw,4.25rem)] font-semibold tracking-tight text-[#122421] leading-[1.08] sm:leading-[1.05]"
+              className="text-3xl min-[360px]:text-[2.2rem] sm:text-5xl lg:text-[clamp(2.3rem,3.4vw,3.6rem)] xl:text-[clamp(2.7rem,4vw,4.25rem)] font-semibold text-[#122421] leading-[1.12] sm:leading-[1.1] brand-headline"
             >
-              <span className="font-sans block text-[#122421]">आपकी सेहत, </span>
-              <span className="font-serif italic font-normal text-[#0A5C4F] relative inline-block mt-0.5 sm:mt-1">
+              <span className="font-sans block text-[#122421] tracking-normal">आपकी सेहत, </span>
+              <span className="font-serif italic font-normal text-[#0A5C4F] relative inline-block mt-0.5 sm:mt-1 tracking-normal">
                 हमारी ज़िम्मेदारी।
                 {/* Elegant curved underline flourish */}
                 <svg
@@ -274,6 +280,11 @@ export function Hero() {
                     type="image/webp"
                     srcSet="/images/janta-hospital-night-exterior-mobile-sm.webp 480w, /images/janta-hospital-night-exterior-mobile.webp 800w"
                     sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                  />
+                  {/* Viewport guard: Prevents desktop viewports (>= 1024px) from falling back to eager mobile <img> */}
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                   />
                   <img
                     src="/images/janta-hospital-night-exterior-mobile.webp"
@@ -343,7 +354,7 @@ export function Hero() {
                 className="w-full sm:w-auto px-5 sm:px-6 py-3 text-sm sm:text-base font-semibold min-h-[44px] shadow-sm"
                 icon={<Phone className="w-4 h-4 text-white shrink-0" aria-hidden="true" />}
               >
-                अभी Call करें
+                Call Now
               </Button>
 
               <Button
@@ -354,7 +365,7 @@ export function Hero() {
                 external
                 icon={<MapPin className="w-4 h-4 text-[#0A5C4F] shrink-0" aria-hidden="true" />}
               >
-                रास्ता देखें
+                Get Directions
               </Button>
             </div>
 

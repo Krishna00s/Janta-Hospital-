@@ -101,7 +101,7 @@ export function generateHospitalJsonLd() {
             "@type": "MedicalOrganization",
             name: "General Outpatient Department (OPD)",
             description:
-              "Daily morning and evening outpatient consultations with general physicians for seasonal illnesses and routine clinical checkups in Lohardaga.",
+              "Daily outpatient consultations with general physicians for seasonal illnesses and routine clinical checkups in Lohardaga.",
             telephone: hospitalConfig.contact.primary.value,
           },
           {
@@ -188,6 +188,8 @@ export function generateBreadcrumbJsonLd(
 
 /**
  * Doctor / Physician entity schemas for /doctors.
+ * Uses Schema.org Person with worksFor association to Janta Hospital,
+ * accurately representing doctors without implying fabricated independent medical practices.
  */
 export function generateDoctorsJsonLd() {
   const siteUrl = getSiteUrl();
@@ -201,19 +203,22 @@ export function generateDoctorsJsonLd() {
     description:
       "Medical officers, general physicians, and on-call surgical specialists consulting at Janta Hospital, Lohardaga.",
     about: allDoctors.map((doc) => ({
-      "@type": "Physician",
+      "@type": "Person",
+      "@id": `${siteUrl}/doctors/${doc.id}#person`,
       name: doc.name,
       jobTitle: doc.role,
-      medicalSpecialty: doc.specialty,
       worksFor: {
+        "@type": "Hospital",
         "@id": `${siteUrl}/#hospital`,
+        name: "Janta Hospital",
       },
     })),
   };
 }
 
 /**
- * MedicalService entity schemas for /services.
+ * Service entity schemas for /services.
+ * Uses valid Schema.org Service type with healthcare categorization.
  */
 export function generateServicesJsonLd() {
   const siteUrl = getSiteUrl();
@@ -227,11 +232,15 @@ export function generateServicesJsonLd() {
     description:
       "Explore emergency care, OPD consultations, surgical service enquiries, pharmacy and other healthcare services at Janta Hospital, Lohardaga.",
     about: servicesData.map((svc) => ({
-      "@type": "MedicalService",
+      "@type": "Service",
       name: svc.name,
       description: svc.shortDescription,
+      serviceType: svc.name,
+      category: "Healthcare",
       provider: {
+        "@type": "Hospital",
         "@id": `${siteUrl}/#hospital`,
+        name: "Janta Hospital",
       },
     })),
   };
@@ -296,3 +305,194 @@ export function generateFaqJsonLd(
     })),
   };
 }
+
+/**
+ * Dedicated Emergency Page Schema
+ */
+export function generateEmergencyJsonLd() {
+  const siteUrl = getSiteUrl();
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": `${siteUrl}/emergency#webpage`,
+    url: `${siteUrl}/emergency`,
+    name: "24/7 Emergency Medical Care in Lohardaga | Janta Hospital",
+    description:
+      "Round-the-clock emergency medical services, immediate primary stabilization, oxygen, duty doctor coverage, and trauma first aid at Janta Hospital, Lohardaga.",
+    about: {
+      "@type": "MedicalOrganization",
+      "@id": `${siteUrl}/#emergency-department`,
+      name: "Janta Hospital 24-Hour Emergency Care",
+      telephone: hospitalConfig.contact.emergency.value,
+      url: `${siteUrl}/emergency`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: siteConfig.address.street,
+        addressLocality: siteConfig.address.city,
+        addressRegion: siteConfig.address.state,
+        postalCode: siteConfig.address.postalCode,
+        addressCountry: siteConfig.address.country,
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: siteConfig.geo.latitude,
+        longitude: siteConfig.geo.longitude,
+      },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          opens: "00:00",
+          closes: "23:59",
+        },
+      ],
+      parentOrganization: {
+        "@id": `${siteUrl}/#hospital`,
+      },
+    },
+  };
+}
+
+/**
+ * Dedicated Service Detail Schema
+ * Uses valid Schema.org Service structured data with healthcare categorization.
+ */
+export function generateServiceDetailJsonLd(service: {
+  slug: string;
+  name: string;
+  hindiName?: string;
+  metaTitle: string;
+  metaDescription: string;
+  shortDescription: string;
+}) {
+  const siteUrl = getSiteUrl();
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": `${siteUrl}/services/${service.slug}#webpage`,
+    url: `${siteUrl}/services/${service.slug}`,
+    name: service.metaTitle,
+    description: service.metaDescription,
+    about: {
+      "@type": "Service",
+      "@id": `${siteUrl}/services/${service.slug}#service`,
+      name: service.name,
+      alternateName: service.hindiName,
+      description: service.shortDescription,
+      serviceType: service.name,
+      category: "Healthcare",
+      provider: {
+        "@type": "Hospital",
+        "@id": `${siteUrl}/#hospital`,
+        name: "Janta Hospital",
+      },
+      areaServed: {
+        "@type": "AdministrativeArea",
+        name: "Lohardaga",
+      },
+    },
+  };
+}
+
+/**
+ * Dedicated Doctor Profile Schema
+ * Accurately represents the doctor as a Person affiliated with Janta Hospital,
+ * avoiding implication of an independent private medical practice.
+ */
+export function generateDoctorDetailJsonLd(doctor: {
+  id: string;
+  name: string;
+  role: string;
+  specialty: string;
+}) {
+  const siteUrl = getSiteUrl();
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": `${siteUrl}/doctors/${doctor.id}#webpage`,
+    url: `${siteUrl}/doctors/${doctor.id}`,
+    name: `${doctor.name} - ${doctor.role} | Janta Hospital Lohardaga`,
+    description: `Consult ${doctor.name} (${doctor.role}) at Janta Hospital, Powergunj, Lohardaga. Specialty: ${doctor.specialty}.`,
+    mainEntity: {
+      "@type": "Person",
+      "@id": `${siteUrl}/doctors/${doctor.id}#person`,
+      name: doctor.name,
+      jobTitle: doctor.role,
+      description: `${doctor.role} consulting at Janta Hospital, Lohardaga. Specialty: ${doctor.specialty}.`,
+      url: `${siteUrl}/doctors/${doctor.id}`,
+      worksFor: {
+        "@type": "Hospital",
+        "@id": `${siteUrl}/#hospital`,
+        name: "Janta Hospital",
+      },
+    },
+  };
+}
+
+/**
+ * Dedicated Director Profile Schema
+ * Accurately represents the director as a Person affiliated with Janta Hospital,
+ * avoiding any clinical or physician classification.
+ */
+export function generateDirectorJsonLd(director: {
+  slug: string;
+  name: string;
+  designation: string;
+  summary: string;
+}) {
+  const siteUrl = getSiteUrl();
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${siteUrl}/leadership/${director.slug}#webpage`,
+    url: `${siteUrl}/leadership/${director.slug}`,
+    name: `${director.name} - ${director.designation} | Janta Hospital Lohardaga`,
+    description: `${director.designation} at Janta Hospital, Powergunj, Lohardaga. ${director.summary}`,
+    mainEntity: {
+      "@type": "Person",
+      "@id": `${siteUrl}/leadership/${director.slug}#person`,
+      name: director.name,
+      jobTitle: director.designation,
+      description: `${director.designation} at Janta Hospital, Lohardaga. ${director.summary}`,
+      url: `${siteUrl}/leadership/${director.slug}`,
+      worksFor: {
+        "@type": "Hospital",
+        "@id": `${siteUrl}/#hospital`,
+        name: "Janta Hospital",
+      },
+    },
+  };
+}
+
+/**
+ * Privacy Policy Page Schema
+ */
+export function generatePrivacyPolicyJsonLd() {
+  const siteUrl = getSiteUrl();
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${siteUrl}/privacy-policy#webpage`,
+    url: `${siteUrl}/privacy-policy`,
+    name: "Privacy Policy | Janta Hospital Lohardaga",
+    description:
+      "Official privacy policy detailing data practices for the Janta Hospital Lohardaga website.",
+    publisher: {
+      "@id": `${siteUrl}/#hospital`,
+    },
+  };
+}
+

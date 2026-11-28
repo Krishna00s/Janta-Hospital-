@@ -1,0 +1,32 @@
+# Cloudflare Pages Static Asset Caching & Security Headers Configuration
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+# 1. Next.js content-hashed static assets (JavaScript, CSS, hashed media) — 1 year immutable
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# 2. Mutable images (unversioned filenames in public/images) — 24 hours cache with background revalidation
+/images/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  X-Content-Type-Options: nosniff
+
+# 3. Mutable illustrations (unversioned filenames in public/illustrations) — 24 hours cache with background revalidation
+/illustrations/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  X-Content-Type-Options: nosniff
+
+# 4. Unversioned web font assets — 24 hours cache with CORS headers
+/*.woff2
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+  Access-Control-Allow-Origin: *
+
+# 5. Static HTML pages — Must revalidate immediately so deployments take effect instantly
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+
+# 6. Root route — Must revalidate immediately
+/
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff

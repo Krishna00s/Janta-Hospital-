@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, ArrowUpRight, Clock, ShieldCheck, MapPin, Activity, Stethoscope, AlertCircle } from "lucide-react";
+import { Phone, ArrowRight, ArrowUpRight, Clock, ShieldCheck, MapPin, Activity, Stethoscope, AlertCircle } from "lucide-react";
 import {
   hospitalConfig,
   primaryPhoneHref,
@@ -12,6 +12,15 @@ import { Badge } from "@/components/shared/Badge";
 import { ServicesToDoctorsWave } from "@/components/ui/SectionWaves";
 import { BotanicalBranchingTendril } from "@/components/ui/BotanicalDecorations";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
+
+const serviceRouteMap: Record<string, string> = {
+  "general-surgery": "/services/general-surgery",
+  "orthopaedic-surgery": "/services/orthopaedic-surgery",
+  "laparoscopic-surgery": "/services/laparoscopic-surgery",
+  "neurosurgery": "/services/neurosurgery",
+  "opd-consultations": "/services/general-medicine",
+  "pharmacy-counter": "/services/pharmacy",
+};
 
 export function MedicalServices() {
   const { contact } = hospitalConfig;
@@ -37,10 +46,10 @@ export function MedicalServices() {
             id="services-heading"
             className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#122421] leading-snug py-0.5"
           >
-            इलाज और सुविधाएँ
+            Medical &amp; Surgical Services
           </h2>
           <p className="mt-2 text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
-            Lohardaga में 24/7 आपातकालीन देखभाल, विशेषज्ञ सर्जरी परामर्श एवं दैनिक स्वास्थ्य सुविधाएँ।
+            Providing 24/7 emergency medical care, visiting specialist surgical consultations, and daily outpatient healthcare in Lohardaga. (24/7 आपातकालीन देखभाल व विशेषज्ञ परामर्श।)
           </p>
         </ScrollReveal>
 
@@ -85,6 +94,13 @@ export function MedicalServices() {
                 <Phone className="w-4 h-4 text-white animate-call-ring" aria-hidden="true" />
                 <span>Emergency Call ({emergencyPhone})</span>
               </a>
+              <Link
+                href="/emergency"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-white text-[#A63F45] border border-[#ECCDD0] hover:bg-[#F9EDEE] text-xs font-semibold transition-colors"
+              >
+                <span>View Emergency Details</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#A63F45]" aria-hidden="true" />
+              </Link>
               <span className="text-[11px] text-[#A63F45] font-medium text-center">
                 Powergunj, Lohardaga • 24 घंटे उपलब्ध
               </span>
@@ -101,7 +117,7 @@ export function MedicalServices() {
               SURGICAL SERVICES
             </span>
             <h3 className="text-xl sm:text-2xl font-semibold text-[#122421] tracking-tight leading-snug">
-              विशेषज्ञ सर्जरी एवं ऑपरेशन परामर्श
+              Specialist Surgical Consultations
             </h3>
             <p className="text-xs sm:text-sm text-[#2E4540] font-normal leading-relaxed mt-1">
               General Surgery, Orthopaedic Surgery, Laparoscopic Surgery एवं Neurosurgery के विशेषज्ञ ऑन-कॉल उपलब्ध हैं।
@@ -145,7 +161,13 @@ export function MedicalServices() {
                     <div className="p-4 sm:p-5 space-y-2.5">
                       <div>
                         <h4 className="text-base sm:text-lg font-semibold text-[#122421] leading-snug">
-                          {service.name}
+                          {serviceRouteMap[service.id] ? (
+                            <Link href={serviceRouteMap[service.id]} className="hover:underline">
+                              {service.name}
+                            </Link>
+                          ) : (
+                            service.name
+                          )}
                         </h4>
                         {service.hindiName && (
                           <p className="text-xs text-[#0A5C4F] font-medium mt-0.5">
@@ -169,14 +191,22 @@ export function MedicalServices() {
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-5 pt-0 mt-auto">
+                  <div className="p-4 sm:p-5 pt-0 mt-auto flex items-center gap-2">
                     <a
                       href={service.actionHref}
-                      className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-[#0A5C4F] text-white hover:bg-[#07463C] text-xs font-semibold shadow-xs transition-colors min-h-[40px]"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#0A5C4F] text-white hover:bg-[#07463C] text-xs font-semibold shadow-xs transition-colors min-h-[38px]"
                     >
-                      <span>परामर्श व प्रक्रिया पूछें</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                      <span>Check Availability</span>
                     </a>
+                    {serviceRouteMap[service.id] && (
+                      <Link
+                        href={serviceRouteMap[service.id]}
+                        className="inline-flex items-center justify-center gap-1 px-3 py-2 rounded-xl bg-white text-[#0A5C4F] border border-[#B7D8CA] hover:bg-[#EAF6F1] text-xs font-semibold transition-colors min-h-[38px] shrink-0"
+                      >
+                        <span>View Details</span>
+                        <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </ScrollReveal>
@@ -200,7 +230,7 @@ export function MedicalServices() {
               PRIMARY CARE &amp; ESSENTIALS
             </span>
             <h3 className="text-xl sm:text-2xl font-semibold text-[#122421] tracking-tight leading-snug">
-              दैनिक OPD, फार्मेसी एवं ड्रेसिंग सुविधाएँ
+              Daily OPD, Pharmacy &amp; Clinical Services
             </h3>
             <p className="text-xs sm:text-sm text-[#2E4540] font-normal leading-relaxed mt-1">
               अस्पताल परिसर में रोज़ाना उपलब्ध प्राथमिक स्वास्थ्य सेवाएँ।
@@ -282,7 +312,7 @@ export function MedicalServices() {
                       href="/contact"
                       className="inline-flex items-center gap-1 font-semibold text-[#0A5C4F] hover:underline"
                     >
-                      <span>Pharmacy जानकारी</span>
+                      <span>Pharmacy Info</span>
                       <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                     </Link>
                     <span className="text-[#475B57] font-medium">Front Porch</span>
@@ -323,7 +353,7 @@ export function MedicalServices() {
                       href={phoneHref}
                       className="inline-flex items-center gap-1 font-semibold text-[#0A5C4F] hover:underline"
                     >
-                      <span>ड्रेसिंग जानकारी</span>
+                      <span>View Details</span>
                       <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                     </a>
                     <span className="text-[#475B57] font-medium">Ground Floor</span>
@@ -341,7 +371,7 @@ export function MedicalServices() {
             href="/services"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#EAF6F1] text-[#0A5C4F] font-semibold text-sm sm:text-base hover:bg-[#0A5C4F] hover:text-white transition-all border border-[#A9DCCB] shadow-2xs"
           >
-            <span>सभी Services और सर्जिकल जानकारी देखें</span>
+            <span>View All Services</span>
             <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>

@@ -42,10 +42,11 @@ export function LocationContact() {
             id="visit-heading"
             className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#122421] leading-snug py-0.5"
           >
-            <span className="font-medium">Hospital</span> <span>का पता</span>
+            <span>Hospital Location &amp; </span>
+            <span className="font-serif italic font-normal text-[#0A5C4F]">Contact</span>
           </h2>
           <p className="mt-2 text-sm sm:text-base text-[#2E4540] font-normal">
-            Powergunj, Lohardaga — Head Post Office के ठीक पीछे, Bus Stand के पास। Emergency के लिए 24 घंटे खुला है।
+            Main Road, near Head Post Office, Powergunj, Lohardaga. Open 24/7 for emergency care and admissions. (24 घंटे इमरजेंसी के लिए खुला है।)
           </p>
         </ScrollReveal>
 
@@ -93,7 +94,7 @@ export function LocationContact() {
             <div className="p-5 sm:p-6 rounded-3xl bg-[#FCFDFD] border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-2xs card-hover-lift transition-all space-y-3">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-wider text-[#0A5C4F] block mb-1">
-                  Hospital Enquiries (सामान्य पूछताछ व OPD)
+                  Hospital Enquiries — सामान्य पूछताछ व OPD
                 </span>
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <a
@@ -110,7 +111,7 @@ export function LocationContact() {
                     className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-[#0A5C4F] hover:underline"
                   >
                     <MessageSquare className="w-3.5 h-3.5" aria-hidden="true" />
-                    <span>WhatsApp पर बात करें →</span>
+                    <span>WhatsApp</span>
                   </a>
                 </div>
               </div>
@@ -140,7 +141,7 @@ export function LocationContact() {
                 external
                 icon={<Navigation className="w-4 h-4 text-white" aria-hidden="true" />}
               >
-                Google Maps पर रास्ता देखें
+                Get Directions
               </Button>
 
               <Button
@@ -149,7 +150,7 @@ export function LocationContact() {
                 size="md"
                 icon={<Phone className="w-4 h-4 text-[#0A5C4F]" aria-hidden="true" />}
               >
-                अभी Call करें
+                Call Now
               </Button>
             </div>
 

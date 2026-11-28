@@ -37,7 +37,7 @@
 }
 
 @theme {
-  --font-sans: var(--font-sans), var(--font-devanagari), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: var(--font-sans), var(--font-devanagari), "Noto Sans Devanagari", "Nirmala UI", "Kohinoor Devanagari", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-serif: var(--font-newsreader), Georgia, Cambria, "Times New Roman", serif;
 
   --color-surface-bg: var(--color-surface-bg);
@@ -67,8 +67,58 @@ body {
   background-color: var(--color-surface-bg);
   color: var(--color-text-primary);
   font-family: var(--font-sans);
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================================================= */
+/* Bilingual Typography & Devanagari Script Harmonization                   */
+/* ========================================================================= */
+
+/*
+ * 1. Continuous Shirorekha & Ligature Shaping:
+ * Devanagari text must never inherit negative or excessive positive letter-spacing,
+ * which breaks the continuous top bar (shirorekha) or squashes complex conjuncts.
+ */
+:lang(hi),
+[lang="hi"],
+.hi-text,
+.bilingual-text,
+.hi-note {
+  letter-spacing: 0 !important;
+  word-spacing: normal;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "blwf" 1, "half" 1, "pstf" 1, "vatu" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/*
+ * 2. Optical Weight & Baseline Balance:
+ * In mixed-script settings, Noto Sans Devanagari harmonizes best with Manrope
+ * when given balanced line-height and optical vertical clearance for upper/lower matras.
+ */
+p,
+.prose-bilingual {
+  line-height: 1.68;
+  text-wrap: pretty;
+}
+
+/* Prevent Devanagari headline tracking distortion while maintaining balance */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+h1:lang(hi), h2:lang(hi), h3:lang(hi), h4:lang(hi),
+.brand-headline {
+  letter-spacing: 0 !important;
+  line-height: 1.32;
+}
+
+/* Enhanced contrast and readability for patient-facing guidance notes */
+.patient-note-text {
+  color: #1E3833;
+  line-height: 1.65;
+  letter-spacing: 0 !important;
 }
 
 /* Custom Emerald/Mint Scrollbar */

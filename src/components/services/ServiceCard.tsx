@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import {
   Activity,
@@ -8,10 +9,21 @@ import {
   Phone,
   CheckCircle2,
   Clock,
+  ArrowRight,
   ArrowUpRight,
   AlertCircle,
 } from "lucide-react";
 import { HospitalService } from "@/content/services";
+
+const dedicatedRouteMap: Record<string, string> = {
+  "emergency-care": "/emergency",
+  "general-surgery": "/services/general-surgery",
+  "orthopaedic-surgery": "/services/orthopaedic-surgery",
+  "laparoscopic-surgery": "/services/laparoscopic-surgery",
+  "neurosurgery": "/services/neurosurgery",
+  "opd-consultations": "/services/general-medicine",
+  "pharmacy-counter": "/services/pharmacy",
+};
 
 interface ServiceCardProps {
   service: HospitalService;
@@ -22,6 +34,7 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
   const isEmergency = service.isEmergency;
   const isSurgical = Boolean(service.isSurgical);
   const isPendingConfirmation = service.status === "pending_confirmation";
+  const dedicatedRoute = dedicatedRouteMap[service.id];
 
   const renderIcon = () => {
     const iconClass = `w-5 h-5 ${isEmergency ? "text-[#A63F45]" : "text-[#0A5C4F]"}`;
@@ -116,7 +129,13 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
                   : "text-[#122421] group-hover:text-[#0A5C4F]"
               }`}
             >
-              {service.name}
+              {dedicatedRoute ? (
+                <Link href={dedicatedRoute} className="hover:underline">
+                  {service.name}
+                </Link>
+              ) : (
+                service.name
+              )}
             </h3>
 
             {service.hindiName && (
@@ -156,11 +175,11 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
         </div>
       </div>
 
-      {/* 5. One Clear Details / Contact Action */}
-      <div className="p-5 sm:p-6 pt-0 mt-auto">
+      {/* 5. Clear Details / Contact Action */}
+      <div className="p-5 sm:p-6 pt-0 mt-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
         <a
           href={service.actionHref}
-          className={`w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-semibold transition-colors min-h-[44px] ${
+          className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-semibold transition-colors min-h-[40px] ${
             isEmergency
               ? "bg-[#A63F45] text-white hover:bg-[#8E3339] shadow-xs"
               : isSurgical
@@ -168,10 +187,20 @@ export function ServiceCard({ service, priority = false }: ServiceCardProps) {
               : "bg-[#EAF6F1] text-[#0A5C4F] hover:bg-[#0A5C4F] hover:text-white border border-[#B7D8CA]"
           }`}
         >
-          {isEmergency && <Phone className="w-3.5 h-3.5" aria-hidden="true" />}
+          <Phone className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
           <span>{service.actionLabel}</span>
-          {!isEmergency && <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />}
         </a>
+
+        {dedicatedRoute && (
+          <Link
+            href={dedicatedRoute}
+            className="inline-flex items-center justify-center gap-1 py-2.5 px-3.5 rounded-xl bg-white text-[#0A5C4F] border border-[#B7D8CA] hover:bg-[#EAF6F1] text-xs font-semibold transition-colors min-h-[40px] shrink-0"
+            aria-label={`View details for ${service.name}`}
+          >
+            <span>View Details</span>
+            <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+          </Link>
+        )}
       </div>
     </article>
   );

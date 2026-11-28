@@ -78,9 +78,9 @@ export default function ServicesPage() {
         <PageHero
           breadcrumbs={[{ label: "Services" }]}
           eyebrow="MEDICAL &amp; SURGICAL SERVICES"
-          title="इलाज और"
-          italicWord="सुविधाएँ"
-          description="24/7 Emergency Care, विशेषज्ञ सर्जरी परामर्श (General, Ortho, Laparoscopic, Neuro), दैनिक OPD और अस्पताल फार्मेसी — Powergunj, Lohardaga में संपूर्ण देखभाल।"
+          title="Medical &amp;"
+          italicWord="Surgical Services"
+          description="Providing 24/7 Emergency Care, visiting specialist surgical consultations (General, Orthopaedic, Laparoscopic, Neurosurgery), daily physician OPD, and an on-site 24-hour pharmacy in Powergunj, Lohardaga. (Powergunj, Lohardaga में 24 घंटे आपातकालीन सेवा, विशेषज्ञ परामर्श और अस्पताल फार्मेसी।)"
           action={
             <>
               <a
@@ -95,7 +95,7 @@ export default function ServicesPage() {
                 prefetch={false}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-[#122421] font-medium text-xs sm:text-sm hover:bg-gray-50 transition-colors border border-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
               >
-                <span>हमारे Doctors देखें</span>
+                <span>View Our Doctors</span>
                 <ArrowRight className="w-3.5 h-3.5 text-[#0A5C4F]" aria-hidden="true" />
               </Link>
             </>
@@ -108,7 +108,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm">
               <div className="flex items-center gap-2.5 font-semibold text-[#471E21] text-sm sm:text-base">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#A63F45] shrink-0 animate-pulse" />
-                <span>24/7 Emergency Care सेवा चालू है — सीधे Hospital आएँ।</span>
+                <span>24/7 Emergency Medical Care Active — Walk-ins Welcome (24 घंटे इमरजेंसी सेवा उपलब्ध)</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <span className="text-[#A63F45] font-medium text-xs sm:text-sm">Emergency Helpline:</span>
@@ -146,12 +146,11 @@ export default function ServicesPage() {
 
                     <div>
                       <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#122421] tracking-tight leading-snug">
-                        <span>24 घंटे आपातकालीन </span>
-                        <span className="text-[#A63F45]">प्राथमिक देखभाल</span>
-                        <span> एवं स्थिरीकरण</span>
+                        <span>24/7 Emergency Care &amp; </span>
+                        <span className="text-[#A63F45]">Immediate Primary Stabilization</span>
                       </h2>
                       <p className="mt-2 text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed">
-                        अचानक तबीयत बिगड़ने, चोट, जलने, सांस लेने में तकलीफ या गंभीर दर्द में तुरंत प्राथमिक उपचार, ऑक्सीजन सहायता और स्थिरीकरण। Duty Doctor व प्रशिक्षित नर्सिंग स्टाफ 24 घंटे उपलब्ध रहते हैं।
+                        Prompt clinical triage, medical oxygen therapy, emergency injections, and stabilization for acute fevers, respiratory distress, acute injuries, and sudden health crises. On-duty resident doctors and nursing staff are available round the clock — अचानक तबीयत खराब होने या चोट लगने पर 24 घंटे तुरंत प्राथमिक उपचार उपलब्ध है।
                       </p>
                     </div>
 
@@ -174,9 +173,13 @@ export default function ServicesPage() {
                         <Phone className="w-4 h-4 text-white animate-call-ring shrink-0" aria-hidden="true" />
                         <span>Emergency Call: {emergencyPhone}</span>
                       </a>
-                      <span className="text-xs text-[#475B57] font-medium text-center sm:text-left">
-                        Powergunj, Lohardaga • सीधे अस्पताल आएँ
-                      </span>
+                      <Link
+                        href="/emergency"
+                        className="inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-full bg-white text-[#A63F45] border border-[#ECCDD0] hover:bg-[#F9EDEE] text-xs sm:text-sm font-semibold transition-colors"
+                      >
+                        <span>View Emergency Details</span>
+                        <ArrowRight className="w-3.5 h-3.5 text-[#A63F45]" aria-hidden="true" />
+                      </Link>
                     </div>
                   </div>
 
@@ -219,14 +222,14 @@ export default function ServicesPage() {
               </div>
 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#122421] tracking-tight leading-snug">
-                <span>विशेषज्ञ सर्जरी एवं </span>
+                <span>Specialist Surgical &amp; </span>
                 <span className="font-serif italic font-normal text-[#0A5C4F]">
-                  ऑपरेशन परामर्श।
+                  Clinical Consultations.
                 </span>
               </h2>
 
               <p className="text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed mt-2">
-                General Surgery, Orthopaedic Surgery, Laparoscopic Surgery और Neurosurgery में अनुभवी ऑन-कॉल सर्जनों द्वारा प्राथमिक परामर्श एवं क्लिनिकल असेसमेंट उपलब्ध है।
+                Visiting specialists provide expert consultations in General Surgery, Orthopaedic Surgery, Laparoscopic Surgery, and Neurosurgery upon case confirmation — अनुभवी ऑन-कॉल सर्जनों द्वारा प्राथमिक परामर्श एवं क्लिनिकल असेसमेंट उपलब्ध है।
               </p>
 
               {/* Management Confirmation Caveat Banner */}
@@ -234,9 +237,9 @@ export default function ServicesPage() {
                 <AlertCircle className="w-4 h-4 text-[#0A5C4F] shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
                   <strong className="text-[#122421] font-semibold block mb-0.5">
-                    अस्पताल प्रबंधन सूचना (Verification &amp; Scheduling Policy):
+                    Hospital Scheduling &amp; Verification Policy:
                   </strong>
-                  सर्जरी व ऑपरेशन की विशिष्ट श्रेणियाँ अस्पताल प्रतिनिधि द्वारा प्रस्तावित हैं। विशिष्ट प्रक्रियाओं, आवश्यक जांचों, उपकरण उपयुक्तता एवं ऑपरेशन थिएटर (OT) समय की पुष्टि अस्पताल रिसेप्शन एवं ड्यूटी डॉक्टर से संपर्क करके की जाती है।
+                  Surgical specialties are provided via visiting on-call consultants. Specific procedure scheduling, pre-operative investigations, and theatre arrangements are confirmed following clinical case evaluation by hospital reception and consulting doctors — सर्जरी प्रक्रियाओं व समय की पुष्टि रिसेप्शन एवं डॉक्टर परामर्श के आधार पर की जाती है।
                 </div>
               </div>
             </ScrollReveal>
@@ -267,13 +270,13 @@ export default function ServicesPage() {
                 PRIMARY HEALTHCARE &amp; AMENITIES
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#122421] tracking-tight mt-1 leading-snug">
-                <span>दैनिक OPD, फार्मेसी एवं </span>
+                <span>Daily OPD, Pharmacy &amp; </span>
                 <span className="font-serif italic font-normal text-[#0A5C4F]">
-                  क्लिनिकल सुविधाएँ।
+                  Clinical Facilities.
                 </span>
               </h2>
               <p className="text-sm sm:text-base text-[#2E4540] font-normal leading-relaxed mt-2">
-                दैनिक सुबह-शाम डॉक्टर परामर्श, ऑन-साइट दवा काउंटर, सुरक्षित घाव ड्रेसिंग और मरीजों का मार्गदर्शन — एक ही छत के नीचे।
+                Daily physician consultations, an on-site 24/7 medicine counter, sterile wound dressing, and diagnostic referrals under one roof — दैनिक OPD परामर्श, 24 घंटे दवा काउंटर, और सुरक्षित प्राथमिक स्वास्थ्य देखभाल।
               </p>
             </ScrollReveal>
 
@@ -298,16 +301,16 @@ export default function ServicesPage() {
           <Container>
             <ScrollReveal direction="heading" className="text-center max-w-2xl mx-auto mb-10">
               <span className="text-xs font-medium uppercase tracking-widest text-[#0A5C4F]">
-                Patient Guide
+                PATIENT ACCESS PROTOCOL
               </span>
               <h2 className="text-2xl sm:text-3xl font-semibold text-[#122421] tracking-tight mt-1 leading-tight">
-                <span>Hospital कैसे आएँ और </span>
+                <span>How to Access Care at </span>
                 <span className="font-serif italic font-normal text-[#0A5C4F]">
-                  क्या करें?
+                  Janta Hospital.
                 </span>
               </h2>
               <p className="text-xs sm:text-sm text-[#2E4540] font-normal mt-2">
-                Emergency, OPD Consultation, सर्जरी परामर्श और Hospital Pharmacy की आसान जानकारी।
+                Clear step-by-step guidance for Emergency, OPD consultations, surgical appointments, and the pharmacy — अस्पताल में परामर्श व दवा प्राप्त करने की सरल प्रक्रिया
               </p>
             </ScrollReveal>
 
@@ -323,7 +326,7 @@ export default function ServicesPage() {
                     24/7 Emergency Care
                   </h3>
                   <p className="text-xs sm:text-sm text-[#471E21] leading-relaxed font-normal">
-                    अचानक तबीयत खराब होने या चोट लगने पर बिना किसी देरी के सीधे Powergunj Hospital आएँ। 24 घंटे Duty Staff मौजूद रहता है।
+                    In acute illness, sudden injuries, or trauma, come directly to our hospital in Powergunj. Medical duty staff is on-site 24/7 — आपातकाल में बिना किसी देरी के सीधे अस्पताल आएँ।
                   </p>
                   <div className="pt-2">
                     <a
@@ -331,7 +334,7 @@ export default function ServicesPage() {
                       className="text-xs sm:text-sm font-medium text-[#A63F45] hover:underline inline-flex items-center gap-1.5"
                     >
                       <Phone className="w-3.5 h-3.5 text-[#A63F45]" aria-hidden="true" />
-                      <span>Duty Staff को सूचित करें: {emergencyPhone}</span>
+                      <span>Notify Duty Staff: {emergencyPhone}</span>
                       <ArrowRight className="w-3 h-3" aria-hidden="true" />
                     </a>
                   </div>
@@ -345,17 +348,17 @@ export default function ServicesPage() {
                     02
                   </div>
                   <h3 className="text-base sm:text-lg font-semibold text-[#122421]">
-                    OPD एवं सर्जरी परामर्श
+                    OPD &amp; Surgical Consultations
                   </h3>
                   <p className="text-xs sm:text-sm text-[#2E4540] leading-relaxed font-normal">
-                    सोमवार से शनिवार दैनिक OPD और ऑन-कॉल सर्जन से मिलने की सुविधा। Ground Floor Reception से टोकन लें या Phone पर पुष्टि करें।
+                    Daily OPD consultations and visiting surgical clinics from Monday to Saturday. Register at the Ground Floor reception desk for your token — ग्राउंड फ्लोर रिसेप्शन से टोकन प्राप्त करें।
                   </p>
                   <div className="pt-2">
                     <Link
                       href="/doctors"
                       className="text-xs sm:text-sm font-medium text-[#0A5C4F] hover:underline inline-flex items-center gap-1"
                     >
-                      <span>हमारे Doctors देखें</span>
+                      <span>View Our Doctors</span>
                       <ArrowRight className="w-3 h-3" aria-hidden="true" />
                     </Link>
                   </div>
@@ -369,17 +372,17 @@ export default function ServicesPage() {
                     03
                   </div>
                   <h3 className="text-base sm:text-lg font-semibold text-[#122421]">
-                    Hospital Pharmacy
+                    24/7 Hospital Pharmacy
                   </h3>
                   <p className="text-xs sm:text-sm text-[#2E4540] leading-relaxed font-normal">
-                    Doctor को दिखाने के तुरंत बाद Hospital में ही दवा काउंटर से अपनी दवाएँ और ज़रूरी सर्जिकल सामान प्राप्त करें।
+                    Collect prescribed medications, emergency injectables, and wound dressings directly from our on-site pharmacy counter in the front veranda — अस्पताल परिसर में 24 घंटे दवा काउंटर उपलब्ध।
                   </p>
                   <div className="pt-2">
                     <Link
                       href="/contact"
                       className="text-xs sm:text-sm font-medium text-[#0A5C4F] hover:underline inline-flex items-center gap-1"
                     >
-                      <span>पता और समय</span>
+                      <span>View Hospital Location</span>
                       <ArrowRight className="w-3 h-3" aria-hidden="true" />
                     </Link>
                   </div>

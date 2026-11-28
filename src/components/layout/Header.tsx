@@ -139,7 +139,7 @@ export function Header() {
               size="md"
               icon={<Phone className="w-4 h-4 text-white" aria-hidden="true" />}
             >
-              अभी Call करें
+              Call Now
             </Button>
 
             <Button
@@ -149,7 +149,7 @@ export function Header() {
               external
               icon={<MapPin className="w-4 h-4" aria-hidden="true" />}
             >
-              रास्ता देखें
+              Get Directions
             </Button>
           </div>
 
@@ -282,6 +282,16 @@ export function Header() {
               </span>
             </a>
 
+            {/* Dedicated Emergency Care Page Action */}
+            <Link
+              href="/emergency"
+              onClick={closeMenu}
+              className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#F9EDEE] text-[#A63F45] hover:bg-[#F2DDE0] font-semibold text-xs sm:text-sm border border-[#ECCDD0] transition-colors"
+            >
+              <span>View Emergency Care Services</span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#A63F45]" aria-hidden="true" />
+            </Link>
+
             {/* Google Maps Directions Card */}
             <a
               href={hospitalConfig.contact.mapsUrl.value}
@@ -293,7 +303,7 @@ export function Header() {
               <div className="flex items-center gap-2.5">
                 <MapPin className="w-4 h-4 text-[#0A5C4F] shrink-0" aria-hidden="true" />
                 <span className="text-xs sm:text-sm font-bold text-[#122421]">
-                  Hospital का रास्ता देखें (Google Maps)
+                  Get Directions (Google Maps)
                 </span>
               </div>
               <Navigation className="w-4 h-4 text-[#0A5C4F] shrink-0" aria-hidden="true" />

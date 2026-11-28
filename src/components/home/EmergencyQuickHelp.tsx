@@ -1,5 +1,6 @@
+import Link from "next/link";
 import Image from "next/image";
-import { Phone, Clock, MessageSquare, ArrowUpRight, ShieldAlert, CheckCircle2 } from "lucide-react";
+import { Phone, Clock, MessageSquare, ArrowRight, ArrowUpRight, ShieldAlert, CheckCircle2 } from "lucide-react";
 import {
   hospitalConfig,
   emergencyPhone,
@@ -40,12 +41,11 @@ export function EmergencyQuickHelp() {
                   id="emergency-heading"
                   className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight text-[#122421] leading-snug py-0.5"
                 >
-                  <span>मदद चाहिए? सीधे </span>
-                  <span className="font-medium text-[#A63F45]">Call</span>
-                  <span> करें।</span>
+                  <span>Need Immediate Medical Help? </span>
+                  <span className="font-medium text-[#A63F45]">Call Now.</span>
                 </h2>
                 <p className="mt-2 text-sm sm:text-base text-[#2E4540] leading-relaxed max-w-xl font-normal">
-                  Lohardaga में 24 घंटे Emergency सेवा चालू है — अचानक तबीयत खराब होने, चोट या दर्द में बिना किसी पूर्व सूचना के सीधे Hospital आएँ या तुरंत कॉल करें।
+                  Round-the-clock emergency medical response in Powergunj, Lohardaga. In acute illness, sudden injuries, or severe pain, walk in directly or call our emergency helpline. (24 घंटे इमरजेंसी सेवा उपलब्ध है।)
                 </p>
               </div>
 
@@ -59,6 +59,14 @@ export function EmergencyQuickHelp() {
                   <span>Emergency Call ({emergencyPhone})</span>
                 </a>
 
+                <Link
+                  href="/emergency"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-[#F9EDEE] text-[#A63F45] hover:bg-[#F2DDE0] font-semibold text-xs sm:text-sm transition-colors border border-[#ECCDD0]"
+                >
+                  <span>View Emergency Details</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-[#A63F45]" aria-hidden="true" />
+                </Link>
+
                 <a
                   href={whatsappHref}
                   target="_blank"
@@ -66,7 +74,7 @@ export function EmergencyQuickHelp() {
                   className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-white text-[#0A5C4F] hover:bg-[#EAF6F1] font-semibold text-xs sm:text-sm transition-colors border border-[#B7D8CA] hover:border-[#0A5C4F]"
                 >
                   <MessageSquare className="w-4 h-4 text-[#0A5C4F]" aria-hidden="true" />
-                  <span>WhatsApp करें</span>
+                  <span>WhatsApp</span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-[#0A5C4F]" aria-hidden="true" />
                 </a>
               </div>
@@ -75,15 +83,15 @@ export function EmergencyQuickHelp() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 border-t border-[#E5EFEA] text-xs sm:text-sm font-medium text-[#2E4540]">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#0A5C4F] shrink-0" aria-hidden="true" />
-                  <span>बिना Appointment सीधे आएँ</span>
+                  <span>Walk-ins Welcome 24/7</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#0A5C4F] shrink-0" aria-hidden="true" />
-                  <span>Duty Doctors 24/7 मौजूद</span>
+                  <span>24/7 Duty Doctors On-Site</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#0A5C4F] shrink-0" aria-hidden="true" />
-                  <span>First Aid व दवा हमेशा तैयार</span>
+                  <span>On-Premises Pharmacy</span>
                 </div>
               </div>
 

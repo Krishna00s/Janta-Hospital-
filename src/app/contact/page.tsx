@@ -86,10 +86,10 @@ export default function ContactPage() {
         {/* Page Hero */}
         <PageHero
           breadcrumbs={[{ label: "Contact" }]}
-          eyebrow="CONTACT & DIRECTIONS"
-          title="पता और"
+          eyebrow="CONTACT &amp; DIRECTIONS"
+          title="Hospital Location &amp;"
           italicWord="Contact"
-          description="Main Road, near Head Post Office, Powergunj, Lohardaga. 24 घंटे Emergency, OPD परामर्श या जानकारी के लिए संपर्क करें।"
+          description="Official address: Main Road, near Head Post Office, Powergunj, Lohardaga, Jharkhand – 835302, India. Available 24/7 for emergency admissions and daily clinical inquiries. (24 घंटे इमरजेंसी व परामर्श के लिए संपर्क करें।)"
           action={
             <a
               href={emergencyPhoneHref}
@@ -103,11 +103,10 @@ export default function ContactPage() {
 
         {/* Section A: Primary Contact Cards */}
         <section className="relative py-10 sm:py-16 bg-white overflow-hidden" aria-labelledby="contact-options-heading">
-          {/* Soft asymmetric botanical curve near contact information with restrained opacity */}
           <BotanicalSideClimber side="right" className="opacity-25 sm:opacity-30" />
           <Container className="relative z-10">
             <h2 id="contact-options-heading" className="sr-only">
-              Direct Contact & Emergency Options
+              Direct Contact &amp; Emergency Options
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
               
@@ -129,7 +128,7 @@ export default function ContactPage() {
                       24/7 Emergency Helpline
                     </h3>
                     <p className="text-xs sm:text-sm text-white/90 mt-1.5 leading-relaxed font-normal">
-                      24 घंटे सीधे Emergency Duty Staff और Doctor से तुरंत आपातकालीन बातचीत।
+                      Direct connection with on-duty resident doctors and emergency medical staff for acute crises. (24 घंटे इमरजेंसी सहायता के लिए सीधे कॉल करें।)
                     </p>
 
                     <div className="mt-4 pt-3 border-t border-white/20">
@@ -150,7 +149,7 @@ export default function ContactPage() {
                     className="w-full inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl bg-white text-[#A63F45] font-semibold text-xs sm:text-sm hover:bg-[#F9EDEE] transition-colors shadow-xs"
                   >
                     <Phone className="w-4 h-4 text-[#A63F45] fill-current animate-call-ring" aria-hidden="true" />
-                    <span>Emergency Call करें</span>
+                    <span>Call Emergency Helpline</span>
                   </a>
                 </div>
               </ScrollReveal>
@@ -172,12 +171,12 @@ export default function ContactPage() {
                       WhatsApp Support
                     </h3>
                     <p className="text-xs sm:text-sm text-[#2E4540] mt-1.5 leading-relaxed font-normal">
-                      Doctor के समय, Token या दवा की जानकारी के लिए WhatsApp पर Message भेजें।
+                      Inquire about doctor availability, OPD tokens, visiting specialists, and general guidance. (Doctor के समय, टोकन या दवा की जानकारी के लिए संदेश भेजें।)
                     </p>
 
                     <div className="mt-4 pt-3 border-t border-[#EAEFEA]">
                       <span className="text-xs font-medium uppercase tracking-wider text-[#3B524E] block mb-1">
-                        WhatsApp नंबर:
+                        WhatsApp Helpline:
                       </span>
                       <a
                         href={whatsappHref}
@@ -197,7 +196,7 @@ export default function ContactPage() {
                     className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#E8F5F1] text-[#0A5C4F] font-semibold text-xs sm:text-sm hover:bg-[#0A5C4F] hover:text-white transition-all border border-[#A9DCCB]"
                   >
                     <MessageSquare className="w-4 h-4" aria-hidden="true" />
-                    <span>WhatsApp पर Chat करें</span>
+                    <span>Chat on WhatsApp</span>
                     <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </a>
                 </div>
@@ -220,13 +219,13 @@ export default function ContactPage() {
                       Hospital Enquiries
                     </h3>
                     <p className="text-xs sm:text-sm text-[#2E4540] mt-1.5 leading-relaxed font-normal">
-                      सामान्य पूछताछ, OPD समय, डॉक्टर उपलब्धता और रिसेप्शन सेवाएँ।
+                      General inquiries, OPD registration, doctor schedules, pharmacy confirmation, and patient assistance — सामान्य पूछताछ व रिसेप्शन सहायता।
                     </p>
 
                     <div className="mt-4 pt-3 border-t border-[#D2E6DC]/60 space-y-2">
                       <div>
                         <span className="text-xs font-medium uppercase tracking-wider text-[#3B524E] block mb-0.5">
-                          General Enquiries:
+                          Main Reception Desk:
                         </span>
                         <a
                           href={primaryPhoneHref}
@@ -257,7 +256,7 @@ export default function ContactPage() {
                     className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#0A5C4F] text-white font-semibold text-xs sm:text-sm hover:bg-[#07463C] transition-colors shadow-xs"
                   >
                     <Phone className="w-4 h-4 text-emerald-200" aria-hidden="true" />
-                    <span>Reception Call करें</span>
+                    <span>Call Hospital Reception</span>
                   </a>
                 </div>
               </ScrollReveal>
@@ -275,12 +274,12 @@ export default function ContactPage() {
               <ScrollReveal direction="card" delay={0} className="lg:col-span-5 space-y-6">
                 <div>
                   <span className="text-xs font-semibold uppercase tracking-widest text-[#0A5C4F]">
-                    Directions & Landmark
+                    DIRECTIONS &amp; LANDMARKS
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-semibold text-[#122421] tracking-tight mt-1 leading-snug py-0.5">
-                    <span className="font-medium">Hospital</span> <span>कैसे </span>
+                    <span>How to Reach </span>
                     <span className="font-serif italic font-normal text-[#0A5C4F]">
-                      पहुँचें?
+                      Janta Hospital.
                     </span>
                   </h2>
                 </div>
@@ -289,35 +288,35 @@ export default function ContactPage() {
                 <div className="p-5 bg-white rounded-2xl border border-[#B7D8CA] hover:border-[#8DBDAA] shadow-2xs card-hover-lift transition-all space-y-2">
                   <div className="flex items-center gap-2 text-xs font-medium text-[#0A5C4F] uppercase tracking-wider">
                     <MapPin className="w-4 h-4" aria-hidden="true" />
-                    <span>Hospital का पता</span>
+                    <span>Official Hospital Address</span>
                   </div>
                   <p className="text-base font-semibold text-[#122421] leading-snug">
                     {hospitalConfig.location.fullAddress}
                   </p>
                   <p className="text-xs sm:text-sm text-[#2E4540] font-normal pt-1">
-                    Main Road, near Head Post Office, Powergunj, Lohardaga, Jharkhand – 835302
+                    Main Road, near Head Post Office, Powergunj, Lohardaga, Jharkhand – 835302, India
                   </p>
                 </div>
 
                 {/* Transit Details */}
                 <div className="space-y-3">
                   <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#3B524E]">
-                    रास्ता और पहचान (Landmarks)
+                    Landmarks &amp; Transit Route
                   </h3>
 
                   <div className="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-[#E0EFE8]">
                     <Navigation className="w-4 h-4 text-[#0A5C4F] shrink-0 mt-0.5" aria-hidden="true" />
                     <div className="text-xs sm:text-sm leading-relaxed text-[#2E4540] font-normal">
-                      <strong className="text-[#122421] font-semibold block mb-0.5">Lohardaga Main Bus Stand से</strong>
-                      बस स्टैंड से केवल 3 से 5 मिनट की पैदल दूरी। Main Road, Powergunj मुख्य डाकघर की तरफ आएँ।
+                      <strong className="text-[#122421] font-semibold block mb-0.5">From Lohardaga Main Bus Stand:</strong>
+                      Located 3 to 5 minutes walking distance. Head along Main Road towards the Head Post Office in Powergunj — बस स्टैंड से केवल 3-5 मिनट की दूरी।
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3 p-3.5 bg-white rounded-xl border border-[#E0EFE8]">
                     <Building className="w-4 h-4 text-[#0A5C4F] shrink-0 mt-0.5" aria-hidden="true" />
                     <div className="text-xs sm:text-sm leading-relaxed text-[#2E4540] font-normal">
-                      <strong className="text-[#122421] font-semibold block mb-0.5">Head Post Office Landmark</strong>
-                      लोहरदगा मुख्य डाकघर के पास वाली सड़क पर। सामने 24 घंटे का Signboard दिखाई देगा।
+                      <strong className="text-[#122421] font-semibold block mb-0.5">Head Post Office Landmark:</strong>
+                      Situated on the street directly adjacent to the Head Post Office with prominent 24-hour entrance signage — मुख्य डाकघर के पास वाली सड़क पर।
                     </div>
                   </div>
                 </div>
@@ -333,9 +332,9 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-sm sm:text-base text-[#122421]">24 घंटे सहायता डेस्क</h4>
+                    <h4 className="font-semibold text-sm sm:text-base text-[#122421]">24/7 Telephone Assistance</h4>
                     <p className="text-xs sm:text-sm text-[#2E4540] mt-0.5 leading-relaxed font-normal">
-                      रास्ता पूछने या अस्पताल सहायता के लिए किसी भी समय Reception Desk पर फ़ोन करें।
+                      Call our reception desk anytime for directions, doctor availability, or emergency assistance — रास्ता पूछने या जानकारी के लिए कॉल करें।
                     </p>
                     <a
                       href={primaryPhoneHref}
@@ -355,7 +354,7 @@ export default function ContactPage() {
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#0A5C4F] text-white font-semibold text-xs sm:text-sm hover:bg-[#07463C] transition-colors shadow-xs"
                   >
                     <Navigation className="w-4 h-4" aria-hidden="true" />
-                    <span>Google Maps में रास्ता देखें</span>
+                    <span>Get Directions (Google Maps)</span>
                     <ArrowUpRight className="w-3.5 h-3.5 text-[#7CE4C9]" aria-hidden="true" />
                   </a>
                 </div>
@@ -375,12 +374,12 @@ export default function ContactPage() {
             <div className="max-w-3xl mx-auto">
               <ScrollReveal direction="heading" className="text-center mb-8">
                 <span className="text-xs font-medium uppercase tracking-widest text-[#0A5C4F]">
-                  Hospital Timings
+                  HOSPITAL TIMINGS
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-semibold text-[#122421] tracking-tight mt-1 leading-tight">
-                  <span>Hospital खुलने का </span>
+                  <span>Hospital Operating Hours &amp; </span>
                   <span className="font-serif italic font-normal text-[#0A5C4F]">
-                    समय।
+                    Timings.
                   </span>
                 </h2>
               </ScrollReveal>
@@ -393,40 +392,40 @@ export default function ContactPage() {
                         24/7 Emergency Care
                       </span>
                       <span className="text-xs sm:text-sm text-[#471E21] font-normal">
-                        अचानक बीमारी, चोट या आपातकाल के लिए
+                        Immediate care for acute illness, trauma, and accidents — आपातकाल के लिए
                       </span>
                     </div>
                     <span className="text-xs sm:text-sm font-semibold text-[#A63F45] inline-flex items-center gap-1.5">
                       <span className="w-2.5 h-2.5 rounded-full bg-[#A63F45]" />
-                      24 घंटे खुला (हर दिन)
+                      Open 24 Hours • Every Day (24 घंटे खुला)
                     </span>
                   </div>
 
                   <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-white">
                     <div>
                       <span className="text-xs sm:text-sm font-semibold uppercase text-[#122421] block">
-                        OPD Consultation (Morning Session)
+                        Daily OPD Consultation
                       </span>
                       <span className="text-xs sm:text-sm text-[#2E4540] font-normal">
-                        सामान्य बीमारियों की जाँच, फॉलो-अप और BP/Sugar जाँच
+                        General physician evaluations, follow-ups, and BP/Sugar tests
                       </span>
                     </div>
                     <span className="text-xs sm:text-sm text-[#122421] font-normal">
-                      सोम – शनि: सुबह 9:00 – दोपहर 1:00
+                      Mon – Sat: Contact Reception for Timing
                     </span>
                   </div>
 
                   <div className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-[#FCFDFD]">
                     <div>
                       <span className="text-xs sm:text-sm font-semibold uppercase text-[#122421] block">
-                        OPD Consultation (Evening Session)
+                        Doctor Availability &amp; Tokens
                       </span>
                       <span className="text-xs sm:text-sm text-[#2E4540] font-normal">
-                        कामकाजी लोगों और परिवारों के लिए शाम की OPD
+                        Daily OPD token issue and specialist visit schedule
                       </span>
                     </div>
-                    <span className="text-xs sm:text-sm text-[#122421] font-normal">
-                      सोम – शनि: शाम 5:00 – रात 8:00
+                    <span className="text-xs sm:text-sm text-[#0A5C4F] font-semibold">
+                      Call Reception: +91 93419 00715
                     </span>
                   </div>
 
@@ -436,11 +435,11 @@ export default function ContactPage() {
                         Hospital Pharmacy Counter
                       </span>
                       <span className="text-xs sm:text-sm text-[#2E4540] font-normal">
-                        Hospital परिसर में लिखी गई दवाएँ और सर्जिकल सामान
+                        On-site prescription medicines and emergency surgical supplies
                       </span>
                     </div>
                     <span className="text-xs sm:text-sm text-[#122421] font-normal">
-                      Hospital समय में उपलब्ध
+                      Open 24 Hours • 7 Days a Week (24 घंटे खुला)
                     </span>
                   </div>
                 </div>

@@ -30,13 +30,13 @@ export function ContactCTA({ className = "" }: ContactCTAProps) {
             <div className="space-y-2 sm:space-y-3 max-w-xl">
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F5F1] text-[#0A5C4F] text-xs font-medium uppercase tracking-wider">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#0A5C4F] animate-pulse" aria-hidden="true" />
-                Doctor से बात करनी है?
+                NEED MEDICAL ASSISTANCE?
               </span>
 
               <h2 className="text-2xl sm:text-3xl font-semibold text-[#122421] tracking-tight leading-tight">
-                <span>मदद चाहिए या </span>
+                <span>Need Medical Assistance or </span>
                 <span className="font-serif italic font-normal text-[#0A5C4F]">
-                  Hospital आना है?
+                  Visiting the Hospital?
                 </span>
               </h2>
 
@@ -53,7 +53,7 @@ export function ContactCTA({ className = "" }: ContactCTAProps) {
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#0A5C4F] text-white font-semibold text-sm hover:bg-[#07463C] transition-colors shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
               >
                 <Phone className="w-4 h-4 text-white" aria-hidden="true" />
-                <span>अभी Call करें ({primaryPhone})</span>
+                <span>Call Now ({primaryPhone})</span>
               </a>
 
               <a
@@ -63,17 +63,19 @@ export function ContactCTA({ className = "" }: ContactCTAProps) {
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#E8F5F1] text-[#0A5C4F] font-medium text-sm hover:bg-[#D5EFE6] transition-colors border border-[#A9DCCB] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
               >
                 <MessageSquare className="w-4 h-4 text-[#0A5C4F]" aria-hidden="true" />
-                <span>WhatsApp पर बात करें</span>
+                <span>WhatsApp</span>
                 <ArrowUpRight className="w-3.5 h-3.5 text-[#0A5C4F]" aria-hidden="true" />
               </a>
 
-              <Link
-                href="/contact"
+              <a
+                href={hospitalConfig.contact.mapsUrl.value}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-[#122421] font-medium text-sm hover:bg-gray-50 transition-colors border border-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A5C4F]"
               >
                 <MapPin className="w-4 h-4 text-[#475B57]" aria-hidden="true" />
-                <span>Hospital का पता</span>
-              </Link>
+                <span>Get Directions</span>
+              </a>
             </div>
 
           </div>
